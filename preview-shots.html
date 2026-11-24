@@ -10,28 +10,38 @@
   iframe{display:block; border:0; width:1280px; height:1200px; background:#fff}
   #md iframe{width:390px; height:1200px}
   .gap{height:40px}
+  #info{font:12px monospace; color:#333; padding:4px}
 </style>
 </head>
 <body>
+<p id="info">measuring…</p>
 <div class="shot" id="dd" role="img" aria-label="desktop capture"><iframe id="d" src="/?v=138ffd3" title="desktop page"></iframe></div>
 <div class="gap"></div>
 <div class="shot" id="md" role="img" aria-label="mobile capture"><iframe id="m" src="/?v=138ffd3" title="mobile page"></iframe></div>
 <script>
-  function setup(f){
+  var sizes = {};
+  function setup(f, key){
     var d = f.contentDocument, w = f.contentWindow;
-    if(!d) return;
-    var ko = d.querySelector('.lang button[data-lang="ko"]');
-    if(ko) ko.click();
+    if(!d || !d.head) return;
+    if(!d.__injected){
+      var st = d.createElement('style');
+      st.textContent = '.topbar{display:none!important} ::-webkit-scrollbar{width:0!important;height:0!important} html{scrollbar-width:none!important}';
+      d.head.appendChild(st);
+      d.__injected = true;
+    }
     var s = d.getElementById('apps');
     if(!s) return;
     var h = s.offsetHeight + 8;
     f.style.height = h + 'px';
     f.parentNode.style.height = h + 'px';
     w.scrollTo(0, s.offsetTop - 4);
+    sizes[key] = f.clientWidth + 'x' + h;
+    document.getElementById('info').textContent = 'measuring… ' + JSON.stringify(sizes);
   }
   document.querySelectorAll('iframe').forEach(function(f){
-    f.addEventListener('load', function(){ setTimeout(function(){ setup(f); }, 500); });
-    setTimeout(function(){ setup(f); }, 1500);
+    var key = (f.id === 'm') ? 'mobile' : 'desktop';
+    f.addEventListener('load', function(){ setTimeout(function(){ setup(f, key); }, 400); });
+    setTimeout(function(){ setup(f, key); }, 1200);
   });
 </script>
 </body>
