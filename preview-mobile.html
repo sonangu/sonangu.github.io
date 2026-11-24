@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>mobile preview (temporary)</title>
+<style>
+  html,body{margin:0; padding:0; background:#fff; height:993px; overflow:hidden}
+  iframe{display:block; width:390px; height:993px; border:0}
+</style>
+</head>
+<body>
+<iframe id="f" src="/?v=20261124b#apps" title="mobile preview"></iframe>
+<script>
+  document.getElementById('f').addEventListener('load', function(){
+    try{
+      var d = this.contentDocument, w = this.contentWindow;
+      // 언어를 한국어로 고정
+      var ko = d.querySelector('.lang button[data-lang="ko"]');
+      if(ko) ko.click();
+      var s = d.getElementById('apps');
+      if(s) w.scrollTo({top: s.offsetTop - 4, behavior:'instant'});
+    }catch(e){}
+  });
+</script>
+</body>
+</html>
