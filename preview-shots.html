@@ -6,15 +6,16 @@
 <title>capture (temporary)</title>
 <style>
   html,body{margin:0; padding:0; background:#fff}
+  .shot{display:block; background:#fff}
   iframe{display:block; border:0; width:1280px; height:1200px; background:#fff}
-  iframe#m{width:390px; height:1200px}
+  #md iframe{width:390px; height:1200px}
   .gap{height:40px}
 </style>
 </head>
 <body>
-<iframe id="d" src="/?v=138ffd3#apps" title="desktop capture"></iframe>
+<div class="shot" id="dd" role="img" aria-label="desktop capture"><iframe id="d" src="/?v=138ffd3" title="desktop page"></iframe></div>
 <div class="gap"></div>
-<iframe id="m" src="/?v=138ffd3#apps" title="mobile capture"></iframe>
+<div class="shot" id="md" role="img" aria-label="mobile capture"><iframe id="m" src="/?v=138ffd3" title="mobile page"></iframe></div>
 <script>
   function setup(f){
     var d = f.contentDocument, w = f.contentWindow;
@@ -23,11 +24,14 @@
     if(ko) ko.click();
     var s = d.getElementById('apps');
     if(!s) return;
-    f.style.height = (s.offsetHeight + 8) + 'px';
+    var h = s.offsetHeight + 8;
+    f.style.height = h + 'px';
+    f.parentNode.style.height = h + 'px';
     w.scrollTo(0, s.offsetTop - 4);
   }
   document.querySelectorAll('iframe').forEach(function(f){
-    f.addEventListener('load', function(){ setTimeout(function(){ setup(f); }, 300); });
+    f.addEventListener('load', function(){ setTimeout(function(){ setup(f); }, 500); });
+    setTimeout(function(){ setup(f); }, 1500);
   });
 </script>
 </body>
