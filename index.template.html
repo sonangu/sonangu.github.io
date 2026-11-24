@@ -1188,9 +1188,9 @@ footer a:hover{color:var(--sage)}
       b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
     });
     document.getElementById('langnote').classList.toggle('on', lang !== 'ko');
-    document.title = (lang==='ko' ? '이용승 | 정치학 박사 · 대구대학교 자유전공학부'
-      : lang==='en' ? 'Yongseung Lee | Ph.D. in Political Science · Daegu University'
-      : '李容承 | 政治学博士 · 大邱大学 自由专攻学部');
+    document.title = (lang==='ko' ? '이용승 교수 | 대구대학교 자유전공학부 · 정치학 박사'
+      : lang==='en' ? 'Yongseung Lee | Professor, Daegu University · Ph.D. in Political Science'
+      : '李容承 | 大邱大学 自由专攻学部 · 政治学博士');
     renderChips(); renderStats(); renderYearSeg(); renderPubs(); renderBooks(); renderTeach(); renderStatCounts();
     try{ localStorage.setItem('ys-lang', lang); }catch(e){}
   }
