@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>빅컨셉 진로·직업 나침반 | 이용승 교수 · 대구대학교 자유전공학부</title>
+<meta name="description" content="《빅컨셉》 수업의 3단계 — 내 안의 빅컨셉 10개 적기와 짧은 글쓰기 → AI 시대의 빅컨셉 → 나만의 빅컨셉 — 으로 AI 시대에 새로 생기거나 커지는 중범위 직업 영역을 탐색하는 진로 나침반.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%235F7767'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='34' fill='%23FAF8F5' text-anchor='middle'%3E%E2%9C%A6%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF8F5; --surface:#FFFFFF;
+  --ink:#22262A; --ink-2:#4A5057; --muted:#7E7A73;
+  --line:#E8E1D6; --line-soft:#F0EAE1;
+  --sage:#5F7767; --sage-2:#7C9484; --sage-soft:#EDF1EC;
+  --terra:#A9613F; --terra-soft:#F8EEE7;
+  --gold:#C0A16B; --gold-soft:#F6EFE1;
+  --shadow:0 1px 2px rgba(52,44,34,.04), 0 8px 24px rgba(52,44,34,.05);
+  --shadow-lg:0 2px 6px rgba(52,44,34,.05), 0 18px 44px rgba(52,44,34,.08);
+  --radius:16px; --max:940px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight:400; line-height:1.75; letter-spacing:-.01em;
+  background-image:radial-gradient(1100px 560px at 82% -8%, #F3EDE2 0%, rgba(243,237,226,0) 60%),
+                   radial-gradient(820px 460px at 4% 4%, #EFF3EE 0%, rgba(239,243,238,0) 58%);
+  background-repeat:no-repeat; background-attachment:fixed;
+  word-break:keep-all;
+}
+h1,h2,h3,h4,.serif{font-family:"Noto Serif KR",Georgia,"Times New Roman",serif; font-weight:600; letter-spacing:-.02em}
+a{color:inherit; text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--sage); outline-offset:3px; border-radius:6px}
+
+/* ---------- app bar ---------- */
+.appbar{position:sticky; top:0; z-index:60; background:rgba(250,248,245,.9); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid var(--line-soft)}
+.appbar .in{max-width:var(--max); margin:0 auto; padding:9px 20px; display:flex; align-items:center; gap:12px; min-height:56px}
+.back{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; color:var(--ink-2); padding:7px 12px 7px 9px; border-radius:999px; transition:background .16s ease,color .16s ease}
+.back:hover{background:var(--sage-soft); color:var(--sage)}
+.back span.a{font-size:15px; line-height:1}
+.appbar .ttl{margin-left:auto; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+@media(max-width:520px){ .appbar .ttl{display:none} }
+
+/* ---------- screens ---------- */
+.screen{display:none}
+.screen.on{display:block; animation:fade .38s ease both}
+@keyframes fade{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+
+/* ---------- intro ---------- */
+.hero{padding:44px 0 8px}
+.eyebrow{font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--sage); font-weight:500; margin:0 0 16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.eyebrow::before{content:""; width:24px; height:1px; background:var(--sage-2); display:inline-block; flex:none}
+.hero h1{font-size:clamp(30px,5.4vw,46px); line-height:1.22; margin:0 0 14px}
+.hero h1 em{font-style:normal; color:var(--sage); border-bottom:2px solid var(--gold); padding-bottom:2px}
+.hero .lead{font-size:16px; color:var(--ink-2); max-width:34em; margin:0 0 6px}
+.hero .lead b{color:var(--ink); font-weight:600}
+
+.axes{display:grid; gap:12px; margin:26px 0 8px; grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){ .axes{grid-template-columns:1fr; gap:10px} }
+@media(max-width:520px){ .axis .gl{font-size:26px; right:12px; bottom:8px} }
+.axis{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px 18px 16px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+.axis .gl{position:absolute; right:14px; bottom:10px; font-family:"Noto Serif KR",serif; font-size:30px; line-height:1; color:#E9E1D3; pointer-events:none; user-select:none; z-index:0; opacity:.9}
+.axis .n{font-size:10.5px; letter-spacing:.16em; color:var(--gold); font-weight:600; display:block; margin-bottom:6px}
+.axis h3{font-size:16px; margin:0 0 4px; position:relative}
+.axis .en{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); display:block; margin:0 0 8px}
+.axis p{font-size:13px; line-height:1.65; color:var(--ink-2); margin:0; position:relative}
+.axis p b{color:var(--ink); font-weight:600}
+
+.how{margin:30px 0 0; padding:0; list-style:none; display:grid; gap:0; border-top:1px solid var(--line)}
+.how li{display:grid; grid-template-columns:52px 1fr; gap:10px; padding:12px 2px; border-bottom:1px solid var(--line-soft); align-items:baseline}
+.how .no{font-family:"Noto Serif KR",serif; font-size:12px; letter-spacing:.08em; color:var(--sage); white-space:nowrap}
+.how b{font-weight:600; font-size:14.5px}
+.how span.d{font-size:13.5px; color:var(--muted); display:inline; margin-left:8px; line-height:1.6}
+.how small{font-size:10.5px; letter-spacing:.06em; color:var(--terra); border:1px solid #EFDDD2; background:var(--terra-soft); border-radius:999px; padding:1px 8px; margin-left:8px; white-space:nowrap; vertical-align:1px}
+
+.startrow{display:flex; flex-wrap:wrap; gap:14px; align-items:center; margin:26px 0 10px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:12px 24px; border-radius:999px; font-size:14.5px; font-weight:500; border:1px solid transparent; cursor:pointer; transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}
+.btn-primary{background:var(--sage); color:#fff}
+.btn-primary:hover{background:#4F6557; transform:translateY(-1px)}
+.btn[disabled],.btn[disabled]:hover{opacity:.38; cursor:not-allowed; transform:none; box-shadow:none; background:var(--sage); color:#fff}
+.btn-ghost[disabled],.btn-ghost[disabled]:hover{background:var(--surface); color:var(--muted); border-color:var(--line)}
+.btn-ghost{background:var(--surface); border-color:var(--line); color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--sage-2); color:var(--sage)}
+.btn-ghost[disabled]{opacity:.42; cursor:not-allowed; border-color:var(--line); color:var(--muted)}
+.btn-gold{background:var(--gold); color:#3C3222}
+.btn-gold:hover{background:#B3925C}
+.btn-sm{min-height:40px; padding:8px 16px; font-size:13px}
+
+.note{background:#FFF; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; padding:14px 16px; font-size:12.5px; line-height:1.7; color:var(--muted); margin:18px 0 0}
+.note b{color:var(--ink-2); font-weight:600}
+
+/* ---------- steps nav ---------- */
+.steps{display:flex; gap:6px; margin:26px 0 6px; padding:5px; background:#F4F0E8; border:1px solid var(--line-soft); border-radius:999px; overflow:hidden}
+.steps button{flex:1 1 0; min-width:0; border:0; background:none; border-radius:999px; padding:8px 6px; font-size:12px; color:var(--muted); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; white-space:nowrap; transition:background .18s ease,color .18s ease; line-height:1.3}
+.steps button .sn{width:18px; height:18px; border-radius:50%; border:1px solid #DCD3C4; display:grid; place-items:center; font-size:10.5px; flex:none; font-family:"Noto Serif KR",serif}
+.steps button.on{background:var(--surface); color:var(--ink); box-shadow:var(--shadow)}
+.steps button.on .sn{background:var(--sage); border-color:var(--sage); color:#fff}
+.steps button.done{color:var(--sage)}
+.steps button.done .sn{background:var(--sage-soft); border-color:#D3DFD4; color:var(--sage)}
+.steps button[disabled]{opacity:.55; cursor:default}
+@media(max-width:480px){ .steps button{font-size:11px; padding:7px 4px} .steps button .lbl2{display:none} }
+
+/* ---------- step body ---------- */
+.stephead{padding:26px 0 4px}
+.stephead .k{font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--terra); font-weight:600; display:block; margin-bottom:8px}
+.stephead h2{font-size:clamp(22px,3.6vw,29px); margin:0 0 8px; line-height:1.34}
+.stephead p{font-size:14px; color:var(--muted); margin:0; max-width:40em}
+.stephead p b{color:var(--ink-2); font-weight:600}
+.pickinfo{display:flex; align-items:center; gap:8px; font-size:12.5px; color:var(--muted); margin:18px 0 10px}
+.pickinfo b{color:var(--sage); font-weight:600; font-size:13.5px}
+.pickinfo .dot{display:inline-flex; gap:4px}
+.pickinfo .dot i{width:7px; height:7px; border-radius:50%; background:#DCD3C4; display:block}
+.pickinfo .dot i.on{background:var(--sage)}
+
+/* question cards (step 1) */
+.qgrid{display:grid; grid-template-columns:repeat(2,1fr); gap:11px; margin:6px 0 8px}
+@media(max-width:680px){ .qgrid{grid-template-columns:1fr} }
+.qcard{position:relative; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 16px 14px; cursor:pointer; display:flex; flex-direction:column; gap:6px; color:inherit; font-size:inherit; transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease,background .16s ease; box-shadow:var(--shadow)}
+.qcard:hover{border-color:var(--sage-2); transform:translateY(-2px); box-shadow:var(--shadow-lg)}
+.qcard .num{font-family:"Noto Serif KR",serif; font-size:11px; letter-spacing:.14em; color:var(--gold); font-weight:600}
+.qcard h3{font-size:16px; margin:0; line-height:1.4; padding-right:26px}
+.qcard p{font-size:13px; color:var(--ink-2); margin:0; line-height:1.6}
+.qcard .tags{display:flex; flex-wrap:wrap; gap:5px; margin-top:4px}
+.qcard .tags span{font-size:10.5px; color:var(--muted); border:1px solid var(--line-soft); background:#FCFAF6; border-radius:999px; padding:1px 7px}
+.qcard .chk{position:absolute; right:12px; top:12px; width:20px; height:20px; border-radius:50%; border:1px solid #DCD3C4; background:#fff; display:grid; place-items:center; font-size:11px; color:transparent; transition:.16s ease}
+.qcard[aria-pressed="true"]{border-color:var(--sage); background:linear-gradient(180deg,#F6F9F5 0%,#FFFFFF 70%); box-shadow:0 0 0 1px var(--sage) inset, var(--shadow)}
+.qcard[aria-pressed="true"] .chk{background:var(--sage); border-color:var(--sage); color:#fff}
+.qcard[aria-pressed="true"] .chk::after{content:""; width:9px; height:5px; border-left:1.5px solid #fff; border-bottom:1.5px solid #fff; transform:rotate(-45deg) translate(1px,-1px)}
+.qcard[aria-pressed="true"]::after{content:""; position:absolute; left:0; top:14px; bottom:14px; width:3px; background:var(--sage); border-radius:0 3px 3px 0}
+
+/* axis questions (step 2) */
+.agroup{margin:26px 0 0}
+.agroup:first-of-type{margin-top:14px}
+.agroup .gh{display:flex; align-items:baseline; gap:10px; margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--line-soft)}
+.agroup .gh b{font-family:"Noto Serif KR",serif; font-size:15px; font-weight:600}
+.agroup .gh span{font-size:11.5px; color:var(--muted)}
+.aq{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px; margin-bottom:11px; box-shadow:var(--shadow)}
+.aq .qh{display:flex; align-items:baseline; gap:9px; margin:0 0 12px}
+.aq .qn{font-family:"Noto Serif KR",serif; font-size:11.5px; color:var(--sage); border:1px solid #DCE5DC; background:var(--sage-soft); border-radius:50%; width:21px; height:21px; display:grid; place-items:center; flex:none; font-weight:600}
+.aq h3{font-size:15px; margin:0; line-height:1.5}
+.opt-grid{display:grid; grid-template-columns:1fr 1fr; gap:9px}
+@media(max-width:620px){ .opt-grid{grid-template-columns:1fr} }
+.opt{text-align:left; background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; cursor:pointer; color:inherit; display:flex; flex-direction:column; gap:3px; transition:.16s ease; min-height:66px}
+.opt:hover{border-color:var(--sage-2); background:#fff}
+.opt b{font-size:13.8px; font-weight:600; line-height:1.45; display:flex; gap:8px; align-items:flex-start}
+.opt b i{font-style:normal; font-family:"Noto Serif KR",serif; font-size:11px; color:var(--muted); border:1px solid var(--line); background:#fff; border-radius:50%; width:17px; height:17px; display:grid; place-items:center; flex:none; margin-top:2px}
+.opt span{font-size:12px; color:var(--muted); line-height:1.55; padding-left:25px}
+.opt[aria-pressed="true"]{border-color:var(--terra); background:var(--terra-soft)}
+.opt[aria-pressed="true"] b{color:#7A4630}
+.opt[aria-pressed="true"] b i{background:var(--terra); border-color:var(--terra); color:#fff}
+
+/* ---------- intro journey ---------- */
+.axescap{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; margin:30px 0 10px}
+.journey{display:grid; grid-template-columns:1fr 16px 1fr 16px 1fr; gap:8px; align-items:stretch; margin:26px 0 0}
+@media(max-width:820px){ .journey{grid-template-columns:1fr; gap:8px} .journey .jarr{display:none} }
+.jstage{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:15px 16px 13px; box-shadow:var(--shadow)}
+.jstage .n{display:block; font-size:10px; letter-spacing:.16em; color:var(--gold); font-weight:600; margin:0 0 5px}
+.jstage h3{font-size:15.5px; margin:0 0 6px}
+.jstage p{font-size:12.5px; color:var(--ink-2); line-height:1.65; margin:0 0 8px}
+.jstage p b{color:var(--ink); font-weight:600}
+.jstage .tt{display:inline-block; font-size:10.5px; color:#7A4630; background:var(--terra-soft); border:1px solid #EFDDD2; border-radius:999px; padding:1px 8px}
+.jstage.end{background:linear-gradient(180deg,#F7FAF6 0%,#FFFFFF 65%); border-color:#DCE6DC}
+.jarr{display:grid; place-items:center; color:#C9C0B0; font-size:14px}
+
+/* ---------- step 1 : keywords & writing ---------- */
+.sub2{font-family:"Noto Serif KR",serif; font-size:16px; margin:28px 0 4px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap}
+.sub2 .n{font-family:"Noto Sans KR",sans-serif; font-size:12px; color:var(--gold); font-weight:600}
+.sub2 .h{font-family:"Noto Sans KR",sans-serif; font-size:11.5px; color:var(--muted); font-weight:400}
+.desc2{font-size:13px; color:var(--muted); margin:0 0 10px; line-height:1.7; max-width:44em}
+.kwset{display:grid; gap:7px; margin:12px 0 14px}
+.kwgroup{display:flex; flex-wrap:wrap; gap:6px; align-items:center}
+.kwgroup .gl{font-size:11px; color:var(--muted); min-width:94px; flex:none; letter-spacing:.02em}
+@media(max-width:560px){ .kwgroup .gl{flex-basis:100%; min-width:0} }
+.chip{border:1px solid var(--line); background:#fff; color:var(--ink-2); border-radius:999px; padding:5px 11px; font-size:12px; cursor:pointer; line-height:1.45; transition:background .15s ease,border-color .15s ease,color .15s ease}
+.chip:hover{border-color:var(--sage-2); color:var(--sage)}
+.chip[aria-pressed="true"]{background:var(--sage-soft); border-color:#CFDDD0; color:#3F5749; font-weight:500}
+.slots{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0 0 10px}
+@media(max-width:640px){ .slots{grid-template-columns:1fr} }
+.slot{display:flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--line); border-radius:11px; padding:3px 8px 3px 6px; box-shadow:var(--shadow)}
+.slot .sn{font-family:"Noto Serif KR",serif; font-size:11px; color:var(--gold); width:18px; flex:none; text-align:center}
+.slot input{flex:1; min-width:0; border:0; background:none; font:inherit; font-size:14px; color:var(--ink); padding:9px 2px; outline:none}
+.slot input::placeholder{color:#B9B2A6; font-size:13px}
+.slot:focus-within{border-color:var(--sage-2); box-shadow:0 0 0 3px rgba(124,148,132,.13)}
+.slot.filled{background:linear-gradient(180deg,#F8FBF7 0%,#FFFFFF 82%); border-color:#DCE6DC}
+.slot .clr{border:0; background:none; color:#CFC7B9; font-size:12px; cursor:pointer; padding:5px; line-height:1; flex:none; border-radius:50%}
+.slot .clr:hover{color:var(--terra); background:var(--terra-soft)}
+.kwmeter{display:flex; align-items:center; gap:9px; flex-wrap:wrap; font-size:12.5px; color:var(--muted); margin:0 0 4px}
+.kwmeter b{font-size:14px; color:var(--sage); font-weight:600}
+.kwmeter .dots{display:inline-flex; gap:3px}
+.kwmeter .dots i{width:6px; height:6px; border-radius:50%; background:#DCD3C4; display:block}
+.kwmeter .dots i.on{background:var(--sage)}
+.write{background:#fff; border:1px solid var(--line); border-radius:16px; padding:13px 14px 11px; box-shadow:var(--shadow); margin:8px 0 0}
+.write textarea{width:100%; min-height:132px; resize:vertical; font:inherit; font-size:14.5px; line-height:1.85; color:var(--ink); background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:12px 13px}
+.write textarea:focus{outline:none; border-color:var(--sage-2); box-shadow:0 0 0 3px rgba(124,148,132,.14)}
+.write .arow{display:flex; gap:8px; align-items:center; margin-top:9px; flex-wrap:wrap}
+.write .count{margin-left:auto; font-size:11.5px; color:var(--muted)}
+.sample{margin-top:10px; background:#FCFAF6; border:1px dashed #DCD3C3; border-radius:10px; padding:12px 14px; font-size:13px; line-height:1.9; color:var(--ink-2)}
+.sample[hidden]{display:none}
+.sample b{display:block; font-size:10.5px; letter-spacing:.12em; color:var(--terra); margin-bottom:5px; font-weight:600}
+.sample u{text-decoration-color:var(--gold); text-underline-offset:3px}
+
+/* ---------- step 2 : keyword echo ---------- */
+.kwecho{display:flex; flex-wrap:wrap; gap:6px; align-items:center; background:#FCFAF6; border:1px solid var(--line); border-radius:12px; padding:10px 12px; margin:14px 0 2px}
+.kwecho[hidden]{display:none}
+.kwecho .lb{flex:none; font-size:11.5px; color:var(--sage); font-weight:600; letter-spacing:.02em; margin-right:2px}
+.kwecho button{font-size:12px; border:1px solid #DDE6DD; background:var(--sage-soft); color:#48604F; border-radius:999px; padding:3px 10px; cursor:pointer; line-height:1.5}
+.kwecho button:hover{border-color:var(--sage-2); background:#E7EFE7}
+
+/* ---------- result : journey summary & own words ---------- */
+.jsum{display:grid; grid-template-columns:1fr 16px 1fr 16px 1fr; gap:8px; align-items:stretch; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:15px; box-shadow:var(--shadow); margin:16px 0 14px}
+@media(max-width:860px){ .jsum{grid-template-columns:1fr; gap:7px} .jsum .ja{display:none} }
+.jsum .jc{background:#FCFAF6; border:1px solid var(--line-soft); border-radius:12px; padding:12px 13px; min-width:0}
+.jsum .jh{display:flex; align-items:center; gap:7px; margin:0 0 7px}
+.jsum .jn{width:18px; height:18px; border-radius:50%; background:var(--sage); color:#fff; font-size:10.5px; display:grid; place-items:center; font-family:"Noto Serif KR",serif; flex:none}
+.jsum h4{font-size:13px; margin:0; font-family:"Noto Sans KR",sans-serif; font-weight:600; letter-spacing:0}
+.jsum .jc p{font-size:12px; color:var(--ink-2); margin:0; line-height:1.7; word-break:keep-all; overflow-wrap:break-word}
+.jsum .jc p.mini{font-size:10.5px; color:var(--muted); margin-top:6px; line-height:1.6}
+.jsum .jc b.res{color:var(--sage); font-weight:600; font-size:13px}
+.jsum .minichips{display:flex; flex-wrap:wrap; gap:4px; margin:0 0 6px}
+.jsum .minichips span{font-size:10.5px; background:var(--sage-soft); border:1px solid #DDE6DD; color:#48604F; border-radius:999px; padding:1px 7px}
+.jsum .kline{display:grid; gap:4px; font-size:11.5px; color:var(--ink-2); line-height:1.55}
+.jsum .kline i{font-style:normal; color:var(--terra); font-size:10px; margin-right:6px; letter-spacing:.02em}
+.jsum .ja{display:grid; place-items:center; color:#C9C0B0; font-size:13px}
+.kwlist{display:grid; grid-template-columns:repeat(5,1fr); gap:7px; margin:0 0 16px; padding:0; list-style:none; counter-reset:kw}
+@media(max-width:720px){ .kwlist{grid-template-columns:1fr 1fr} }
+@media(max-width:400px){ .kwlist{grid-template-columns:1fr} }
+.kwlist li{display:flex; gap:6px; align-items:baseline; background:#FCFAF6; border:1px solid var(--line-soft); border-radius:9px; padding:7px 9px; font-size:13px; line-height:1.5; word-break:break-word}
+.kwlist li::before{counter-increment:kw; content:counter(kw); font-family:"Noto Serif KR",serif; font-size:10px; color:var(--gold); flex:none}
+.kwlist li.empty{color:#B9B2A6}
+.eclab{font-size:11px; letter-spacing:.1em; color:var(--terra); font-weight:600; margin:0 0 6px}
+.essayOut{background:#FCFAF6; border-left:3px solid var(--sage-2); border-radius:0 12px 12px 0; padding:13px 15px; font-size:14px; line-height:1.95; color:var(--ink); white-space:pre-wrap; word-break:keep-all; overflow-wrap:break-word; margin:0}
+.essayOut.empty{color:var(--muted); font-size:12.5px}
+.edlink{display:flex; justify-content:flex-end; margin:12px 0 0}
+
+/* navbar */
+.navbar{position:static; z-index:1; margin-top:24px; padding:12px 14px; background:#FCFAF6; border:1px solid var(--line); border-radius:14px; display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+.navbar .sp{flex:1 1 auto}
+.navbar .btn{flex:0 0 auto; white-space:nowrap}
+.navbar .hint{font-size:12px; color:var(--muted); margin:0; flex:1 1 100%; order:-1; text-align:right; padding-bottom:2px}
+@media(max-width:560px){ .navbar .hint{text-align:left} .navbar .btn{flex:1 1 auto} }
+
+/* ---------- result ---------- */
+.rhead{padding:34px 0 8px; text-align:left}
+.rhead .eyebrow{margin-bottom:12px}
+.rhead h2{font-size:clamp(24px,4vw,32px); margin:0 0 10px; line-height:1.32}
+.rhead p{font-size:13.5px; color:var(--muted); margin:0}
+.axesline{display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0}
+.axesline span{font-size:11px; color:#48604F; background:var(--sage-soft); border:1px solid #DDE6DD; border-radius:999px; padding:3px 10px}
+.axesline span.t{color:#7A4630; background:var(--terra-soft); border-color:#EFDDD2}
+
+.sec{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:22px 22px 20px; margin:0 0 14px; box-shadow:var(--shadow)}
+.sec.plain{background:transparent; border:0; box-shadow:none; padding:26px 2px 6px}
+.sec .sh{display:flex; align-items:baseline; gap:9px; margin:0 0 14px; flex-wrap:wrap}
+.sec .sh .no{font-family:"Noto Serif KR",serif; font-size:10.5px; letter-spacing:.14em; color:var(--gold); font-weight:600}
+.sec .sh h3{font-size:18px; margin:0; line-height:1.4}
+.sec .sh .sub{font-size:12px; color:var(--muted); margin-left:auto}
+@media(max-width:520px){ .sec .sh .sub{margin-left:0; flex-basis:100%} }
+.sec p.desc{font-size:13px; color:var(--muted); margin:-6px 0 14px; line-height:1.7}
+
+.decl{border-left:3px solid var(--sage); background:linear-gradient(100deg,#F7FAF6 0%,#FCFAF6 60%,#FFF 100%); border-radius:0 14px 14px 0; padding:18px 20px; margin:0}
+.decl p{font-family:"Noto Serif KR",serif; font-size:clamp(16px,2.6vw,19px); line-height:1.8; margin:0; color:var(--ink)}
+.decl p em{font-style:normal; color:var(--sage); border-bottom:1px solid rgba(95,119,103,.35)}
+.decl .cap{font-family:"Noto Sans KR",sans-serif; font-size:11.5px; color:var(--muted); margin:10px 0 0; letter-spacing:0}
+
+.autobox{background:#FCFAF6; border:1px solid var(--line); border-radius:14px; padding:14px}
+.autobox .rule{font-size:11.5px; color:var(--muted); margin:0 0 8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+.autobox textarea{width:100%; min-height:92px; resize:vertical; font:inherit; font-size:14.5px; line-height:1.75; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:10px; padding:12px 13px}
+.autobox textarea:focus{outline:none; border-color:var(--sage-2); box-shadow:0 0 0 3px rgba(124,148,132,.14)}
+.autobox .arow{display:flex; gap:8px; align-items:center; margin-top:9px; flex-wrap:wrap}
+.autobox .count{font-size:11.5px; color:var(--muted); margin-left:auto}
+
+.qlist{list-style:none; margin:0; padding:0; display:grid; gap:10px; counter-reset:q}
+.qlist li{display:grid; grid-template-columns:28px 1fr; gap:12px; padding:14px 14px 13px; background:#FCFAF6; border:1px solid var(--line-soft); border-radius:12px}
+.qlist li::before{counter-increment:q; content:counter(q); font-family:"Noto Serif KR",serif; font-size:13px; color:#fff; background:var(--sage); width:24px; height:24px; border-radius:50%; display:grid; place-items:center; margin-top:1px}
+.qlist b{display:block; font-size:14.5px; line-height:1.65; font-weight:600; margin-bottom:3px}
+.qlist span{font-size:12.5px; color:var(--muted); line-height:1.65; display:block}
+
+.major{display:grid; grid-template-columns:42px 1fr; gap:14px; padding:16px 16px 15px; background:#fff; border:1px solid var(--line); border-radius:14px; margin-bottom:10px; box-shadow:var(--shadow)}
+.major:last-child{margin-bottom:0}
+.major .rk{width:42px; height:42px; border-radius:50%; display:grid; place-items:center; font-family:"Noto Serif KR",serif; font-size:16px; color:#fff; background:var(--sage); flex:none}
+.major .rk.r1{background:var(--gold); color:#3C3222}
+.major .rk.r3{background:#7A8087}
+.major .col{font-size:10.5px; letter-spacing:.1em; color:var(--muted); display:block; margin-bottom:2px}
+.major h4{font-size:16px; margin:0 0 6px; line-height:1.45}
+.major .why{font-size:13px; color:var(--ink-2); margin:0; line-height:1.7}
+.major .fuse{font-size:12.5px; color:#48604F; background:var(--sage-soft); border-radius:9px; padding:7px 11px; margin:9px 0 0; line-height:1.6}
+.major .fuse b{font-weight:600; color:var(--sage)}
+.major .top{display:flex; align-items:center; gap:7px; flex-wrap:wrap; margin:0 0 4px}
+.major .top .col{margin:0}
+.bdg{display:inline-block; font-size:10px; letter-spacing:.02em; border-radius:999px; padding:1px 8px; border:1px solid; white-space:nowrap; line-height:1.7; vertical-align:1px}
+.bdg.new{color:#7A4630; background:var(--terra-soft); border-color:#EFDDD2}
+.bdg.fuse{color:#48604F; background:var(--sage-soft); border-color:#DDE6DD}
+.major .era{font-size:12px; color:#7A4630; background:var(--terra-soft); border-radius:9px; padding:7px 11px; margin:9px 0 0; line-height:1.65}
+.major .era b{font-weight:600}
+.major .sk{font-size:12.5px; color:#48604F; background:var(--sage-soft); border-radius:9px; padding:7px 11px; margin:6px 0 0; line-height:1.65}
+.major .sk b{font-weight:600; color:var(--sage)}
+.major .sn2{font-size:12px; color:var(--muted); margin:6px 0 0; line-height:1.65}
+.major .sn2 b{color:var(--ink-2); font-weight:600}
+.dlg-b li .bdg{margin-left:3px; font-size:9.5px; padding:0 6px}
+@media(max-width:520px){ .major{grid-template-columns:34px 1fr; gap:11px; padding:14px} .major .rk{width:34px; height:34px; font-size:14px} }
+
+.courses{display:grid; grid-template-columns:repeat(3,1fr); gap:10px}
+@media(max-width:720px){ .courses{grid-template-columns:1fr} }
+.course{background:#FCFAF6; border:1px solid var(--line); border-radius:12px; padding:13px 14px}
+.course b{font-family:"Noto Serif KR",serif; font-size:14.5px; font-weight:600; display:block; margin-bottom:3px}
+.course span{font-size:12px; color:var(--muted); line-height:1.6; display:block}
+.course .k{font-size:10px; letter-spacing:.08em; color:var(--terra); margin-top:7px; display:block}
+
+.mapbox{margin-top:4px}
+.mapbtn{display:flex; align-items:center; justify-content:space-between; gap:12px; width:100%; text-align:left; background:#FCFAF6; border:1px solid var(--line); border-radius:12px; padding:13px 15px; cursor:pointer; color:var(--ink-2); font-size:13.5px; min-height:48px}
+.mapbtn:hover{border-color:var(--sage-2); color:var(--sage)}
+.mapbtn .ar{font-size:11px; color:var(--muted)}
+
+.actions{display:flex; flex-wrap:wrap; gap:10px; margin:20px 0 0}
+.actions .btn{flex:0 1 auto}
+@media(max-width:560px){ .actions .btn{flex:1 1 100%} }
+.disclaim{font-size:11.5px; color:var(--muted); line-height:1.75; margin:16px 0 0; padding-top:14px; border-top:1px dashed var(--line)}
+
+details.more{margin:14px 0 0; border-top:1px solid var(--line-soft); padding-top:12px}
+details.more>summary{cursor:pointer; list-style:none; font-size:12.5px; color:var(--sage); display:inline-flex; align-items:center; gap:6px; user-select:none}
+details.more>summary::-webkit-details-marker{display:none}
+details.more .pm{font-size:13px; line-height:1}
+details.more .pm .mi{display:none}
+details.more[open] .pm .pl{display:none}
+details.more[open] .pm .mi{display:inline}
+details.more .body{font-size:12.5px; color:var(--muted); line-height:1.8; margin-top:10px; background:#FCFAF6; border-left:2px solid #DCD3C3; padding:11px 14px; border-radius:0 8px 8px 0}
+
+/* dialog */
+dialog#mapDlg{border:0; border-radius:20px; padding:0; max-width:680px; width:calc(100% - 32px); max-height:86vh; background:var(--bg); color:var(--ink); box-shadow:0 30px 80px rgba(34,38,42,.3)}
+dialog#mapDlg::backdrop{background:rgba(34,38,42,.42); backdrop-filter:blur(2px)}
+.dlg-h{position:sticky; top:0; background:rgba(250,248,245,.96); backdrop-filter:blur(8px); padding:16px 20px 12px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:12px; z-index:2}
+.dlg-h h3{font-size:17px; margin:0}
+.dlg-h .x{margin-left:auto; border:1px solid var(--line); background:#fff; width:32px; height:32px; border-radius:50%; cursor:pointer; font-size:15px; color:var(--muted); display:grid; place-items:center; flex:none}
+.dlg-h .x:hover{border-color:var(--sage-2); color:var(--sage)}
+.dlg-b{padding:16px 20px 24px; overflow:auto}
+.dlg-b .colg{margin-bottom:16px}
+.dlg-b .colg h4{font-size:13.5px; margin:0 0 7px; color:var(--sage); font-family:"Noto Sans KR",sans-serif; font-weight:600; letter-spacing:.02em}
+.dlg-b ul{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:1fr 1fr; gap:5px 14px}
+@media(max-width:560px){ .dlg-b ul{grid-template-columns:1fr} }
+.dlg-b li{font-size:12.5px; color:var(--ink-2); line-height:1.6; padding-left:11px; position:relative}
+.dlg-b li::before{content:""; position:absolute; left:0; top:9px; width:4px; height:4px; border-radius:50%; background:#C9C0B0}
+.dlg-b .exc{font-size:12px; color:#7A4630; background:var(--terra-soft); border:1px solid #EFDDD2; border-radius:10px; padding:10px 13px; line-height:1.7; margin-top:6px}
+
+/* toast */
+.toast{position:fixed; left:50%; bottom:26px; transform:translate(-50%, 16px); background:#2E332F; color:#F4F0E8; font-size:13.5px; padding:11px 20px; border-radius:999px; box-shadow:0 12px 30px rgba(0,0,0,.22); opacity:0; pointer-events:none; transition:opacity .2s ease, transform .2s ease; z-index:100; max-width:calc(100% - 40px); text-align:center}
+.toast.on{opacity:1; transform:translate(-50%,0)}
+
+footer.appfoot{border-top:1px solid var(--line); margin-top:34px; padding:20px 0 34px; font-size:11.5px; color:var(--muted); line-height:1.8}
+footer.appfoot .in{max-width:var(--max); margin:0 auto; padding:0 20px; display:flex; gap:10px 24px; flex-wrap:wrap; justify-content:space-between}
+footer.appfoot a{color:var(--sage); border-bottom:1px solid rgba(95,119,103,.28)}
+
+@media print{
+  .appbar,.steps,.navbar,.actions,.mapbox,.edlink,footer.appfoot,.toast,dialog{display:none !important}
+  body{background:#fff; background-image:none}
+  .sec{break-inside:avoid; box-shadow:none; border-color:#DDD}
+  .screen{display:none !important}
+  #s3{display:block !important}
+  .autobox textarea{border:0; background:#fff; padding:0; min-height:0; height:auto; overflow:visible; resize:none}
+  .autobox .arow{display:none}
+  .autobox .rule{display:none}
+  details.more{display:none}
+  .sec.mapsec{display:none}
+  .decl{background:#fff}
+  .jsum{break-inside:avoid; box-shadow:none; background:#fff; padding:0; border:0; grid-template-columns:1fr 1fr 1fr; gap:7px}
+  .jsum .ja{display:none}
+  .kwlist li{background:#fff}
+  .rhead{padding-top:0}
+}
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="in">
+    <a class="back" href="../index.html#apps"><span class="a">←</span> 이용승 교수 연구실 홈으로</a>
+    <span class="ttl">Big Concept Career Compass</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============ INTRO ============ -->
+<section class="screen on" id="s0" aria-labelledby="hIntro">
+  <div class="hero">
+    <p class="eyebrow">대구대학교 자유전공학부 · 《빅컨셉》</p>
+    <h1 id="hIntro">무엇을 묻고<br><em>살 것인가</em></h1>
+    <p class="lead">정답을 찍어 주는 적성검사가 아닙니다. 《빅컨셉》 수업의 여정을 그대로 따라갑니다 — <b>내 안의 빅컨셉 열 개</b>를 적고 짧은 글을 쓴 뒤, <b>AI 시대의 빅컨셉</b>을 지나, <b>나만의 빅컨셉</b>으로 AI 시대에 내가 설 직업의 방향을 읽습니다.</p>
+
+    <div class="journey">
+      <article class="jstage">
+        <span class="n">1단계</span>
+        <h3>내 안의 빅컨셉</h3>
+        <p>관심사·취미, 걱정·미래 불안, 가족·인간관계, 장래 고민에서 <b>열 개</b>를 적고, 그 단어가 들어간 <b>3~5문장</b>을 씁니다.</p>
+        <span class="tt">10개 적기 · 짧은 글쓰기</span>
+      </article>
+      <span class="jarr" aria-hidden="true">→</span>
+      <article class="jstage">
+        <span class="n">2단계</span>
+        <h3>AI 시대의 빅컨셉</h3>
+        <p>인간 · 노동과 창의성 · 행복. 여섯 개의 양자택일로 지금의 내가 어디에 서 있는지 비춥니다.</p>
+        <span class="tt">6문항</span>
+      </article>
+      <span class="jarr" aria-hidden="true">→</span>
+      <article class="jstage end">
+        <span class="n">3단계</span>
+        <h3>나만의 빅컨셉</h3>
+        <p>오토포이에시스. 열 개의 생각과 여섯 개의 선택을 엮어 <b>나의 선언</b>, 스스로 던질 질문 3가지, 추천 직업 영역 Top 3를 만듭니다.</p>
+        <span class="tt">결과지 · 약 5분</span>
+      </article>
+    </div>
+
+    <p class="axescap">이 여정을 떠받치는 세 축</p>
+    <div class="axes">
+      <article class="axis">
+        <span class="gl" aria-hidden="true">問</span>
+        <span class="n">축 01</span>
+        <h3>질문하는 힘</h3>
+        <span class="en">The Power of Asking</span>
+        <p>AI가 1초 만에 답을 내놓는 시대에 비싸진 것은 답이 아니라 <b>질문</b>입니다. 무엇을 물을지 정하는 힘.</p>
+      </article>
+      <article class="axis">
+        <span class="gl" aria-hidden="true">融</span>
+        <span class="n">축 02</span>
+        <h3>융합 사유</h3>
+        <span class="en">Thinking Across</span>
+        <p>인간·노동과 창의성·행복은 한 분야의 언어로 다 답할 수 없습니다. 여러 학문의 시선을 <b>겹쳐 보는</b> 힘.</p>
+      </article>
+      <article class="axis">
+        <span class="gl" aria-hidden="true">生</span>
+        <span class="n">축 03</span>
+        <h3>오토포이에시스</h3>
+        <span class="en">Autopoiesis · Self-making</span>
+        <p>남이 정해 준 정답·진로를 받아 적는 대신, 스스로 묻고 검증하며 <b>자기 기준을 계속 다시 쓰는</b> 힘.</p>
+      </article>
+    </div>
+
+    <div class="startrow">
+      <button class="btn btn-primary" type="button" data-start>나침반 열기 →</button>
+      <button class="btn btn-ghost btn-sm" type="button" data-open-map>AI 시대 직업 영역 먼저 보기</button>
+    </div>
+
+    <p class="note"><b>이 나침반이 하지 않는 일</b> — 직업을 정해 주지 않습니다. 결과지는 진로 상담과 수업 전 대화의 출발점입니다. 입력한 내용은 서버로 전송되지 않고 이 브라우저 안에서만 계산됩니다.</p>
+  </div>
+</section>
+
+<!-- ============ STEP 1 ============ -->
+<section class="screen" id="s1" aria-labelledby="hStep1">
+  <nav class="steps" aria-label="진행 단계">
+    <button type="button" class="on" data-go="1"><span class="sn">1</span><span>내 안의 빅컨셉</span></button>
+    <button type="button" data-go="2" disabled><span class="sn">2</span><span>AI 시대<span class="lbl2">의 빅컨셉</span></span></button>
+    <button type="button" data-go="3" disabled><span class="sn">3</span><span>나만의 빅컨셉</span></button>
+  </nav>
+
+  <div class="stephead">
+    <span class="k">1단계 · 질문하는 힘</span>
+    <h2 id="hStep1">내 안의 빅컨셉</h2>
+    <p>수업 첫 시간에 하는 일입니다. 거창한 개념이 아니라 <b>지금 내가 붙들고 있는 생각</b> — 관심사와 취미, 걱정과 미래 불안, 가족과 인간관계, 장래 고민, 사회와 가치관 — 을 열 개 적어 봅니다. 그 열 개가 《빅컨셉》 수업의 출발점입니다.</p>
+  </div>
+
+  <h3 class="sub2"><span class="n">①</span>내 안의 빅컨셉 10개<span class="h">예시를 눌러 채우거나 직접 적기</span></h3>
+  <p class="desc2">떠오르는 단어나 짧은 문장이면 충분합니다. 예시 칩을 누르면 빈 칸에 들어가고, 다시 누르면 빠집니다. 내 말로 고쳐 써도 됩니다.</p>
+  <div class="kwset" id="kwset"></div>
+  <div class="slots" id="slots"></div>
+  <div class="kwmeter">
+    <span class="dots" id="kwDots" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+    <b id="kwCount">0</b> / 10 적음
+    <span id="kwHint" style="margin-left:auto">세 개 이상 적으면 다음 단계로 갈 수 있습니다.</span>
+  </div>
+
+  <h3 class="sub2"><span class="n">②</span>내 안의 빅컨셉이 들어간 간단한 글쓰기<span class="h">3~5문장</span></h3>
+  <p class="desc2">적은 열 개 가운데 두세 개를 골라, 지금의 생각과 고민을 이어 써 보세요. 수업에서는 이 글로 서로의 빅컨셉을 듣습니다. 결과지와 복사·인쇄본에 그대로 담깁니다.</p>
+  <div class="write">
+    <label class="sr-only" for="essay">내 안의 빅컨셉이 들어간 간단한 글쓰기</label>
+    <textarea id="essay" rows="6" placeholder="예: 나는 요즘 취업 걱정과 가족에 대한 고마움이 함께 있다. AI가 내가 배우는 일을 대신할까 봐 불안하고, 그럴수록…"></textarea>
+    <div class="arow">
+      <button class="btn btn-ghost btn-sm" type="button" id="essaySample" aria-expanded="false" aria-controls="sampleBox">예시 글 보기</button>
+      <button class="btn btn-ghost btn-sm" type="button" id="essaySeed">내 단어로 문장 틀 넣기</button>
+      <span class="count" id="essayCount">0자</span>
+    </div>
+    <div class="sample" id="sampleBox" hidden>
+      <b>예시 글</b>
+      나는 요즘 <u>취업</u> 걱정이 가장 크다. <u>AI</u>가 내가 배우는 일을 대신할까 봐 <u>불안</u>하고, 그럴수록 <u>가족</u>에게 짐이 될까 조심스럽다. 그래도 <u>친구</u>들과 이야기할 때는 내가 무엇을 좋아하는지 조금씩 선명해진다. 나는 <u>돈</u>과 불안 사이에서, 내가 오래 할 수 있는 일을 찾고 싶다.
+    </div>
+  </div>
+
+  <div class="navbar">
+    <p class="hint" id="hint1">글쓰기는 선택 사항입니다. 적으면 결과지·복사본·인쇄본에 함께 담깁니다.</p>
+    <button class="btn btn-ghost" type="button" data-go="0">← 처음</button>
+    <span class="sp"></span>
+    <button class="btn btn-primary" type="button" id="next1" data-go="2" disabled>2단계로 →</button>
+  </div>
+</section>
+
+<!-- ============ STEP 2 ============ -->
+<section class="screen" id="s2" aria-labelledby="hStep2">
+  <nav class="steps" aria-label="진행 단계">
+    <button type="button" class="done" data-go="1"><span class="sn">1</span><span>내 안의 빅컨셉</span></button>
+    <button type="button" class="on" data-go="2"><span class="sn">2</span><span>AI 시대<span class="lbl2">의 빅컨셉</span></span></button>
+    <button type="button" data-go="3" disabled><span class="sn">3</span><span>나만의 빅컨셉</span></button>
+  </nav>
+
+  <div class="stephead">
+    <span class="k">2단계 · 융합 사유</span>
+    <h2 id="hStep2">AI 시대의 빅컨셉</h2>
+    <p>1단계에서 적은 내 안의 빅컨셉을 떠올리며, 정답 없이 <b>지금의 나</b>에 더 가까운 쪽을 고르세요. 이 여섯 개의 선택이 열 개의 생각과 만나, 어떤 직업 영역이 지금의 나와 가까운지를 가늠합니다.</p>
+  </div>
+
+  <div class="kwecho" id="kwecho" hidden></div>
+
+  <div id="axes-wrap"></div>
+
+  <div class="navbar">
+    <p class="hint" id="hint2">여섯 문항에 모두 답하면 결과지가 열립니다.</p>
+    <button class="btn btn-ghost" type="button" data-go="1">← 1단계</button>
+    <span class="sp"></span>
+    <button class="btn btn-primary" type="button" id="next2" disabled>결과지 보기 →</button>
+  </div>
+</section>
+
+<!-- ============ STEP 3 : RESULT ============ -->
+<section class="screen" id="s3" aria-labelledby="hResult">
+  <nav class="steps" aria-label="진행 단계">
+    <button type="button" class="done" data-go="1"><span class="sn">1</span><span>내 안의 빅컨셉</span></button>
+    <button type="button" class="done" data-go="2"><span class="sn">2</span><span>AI 시대<span class="lbl2">의 빅컨셉</span></span></button>
+    <button type="button" class="on" data-go="3"><span class="sn">3</span><span>나만의 빅컨셉</span></button>
+  </nav>
+
+  <div class="rhead">
+    <p class="eyebrow">3단계 · 오토포이에시스 · 나만의 빅컨셉</p>
+    <h2 id="hResult">나의 빅컨셉 결과지</h2>
+    <p id="rSub">—</p>
+    <div class="axesline" id="rAxes"></div>
+  </div>
+
+  <!-- 여정 요약 -->
+  <div class="jsum" id="jsum"></div>
+
+  <!-- 내가 적은 열 개 -->
+  <div class="sec">
+    <div class="sh"><span class="no">01</span><h3>내 안의 빅컨셉 — 내가 적은 열 개</h3><span class="sub">수업에서 낸 그대로</span></div>
+    <p class="desc">1단계에서 적은 열 개와 글쓰기입니다. 과제나 상담 자료로 낼 때 이 부분까지 함께 가져가세요.</p>
+    <ol class="kwlist" id="kwOut"></ol>
+    <p class="eclab">내 안의 빅컨셉이 들어간 글쓰기</p>
+    <p class="essayOut" id="essayOut"></p>
+    <div class="edlink"><button class="btn btn-ghost btn-sm" type="button" data-go="1">1단계로 돌아가 고치기</button></div>
+  </div>
+
+  <!-- 선언문 -->
+  <div class="sec">
+    <div class="sh"><span class="no">02</span><h3>나의 빅컨셉 선언문</h3><span class="sub">열 개의 생각과 세 가지 시선을 한 문장으로</span></div>
+    <div class="decl">
+      <p id="declText">—</p>
+      <p class="cap">이 문장은 정답이 아니라 출발점입니다. 학기마다 다시 읽어 보세요.</p>
+    </div>
+  </div>
+
+  <!-- 오토포이에시스 선언 -->
+  <div class="sec">
+    <div class="sh"><span class="no">03</span><h3>나의 오토포이에시스 선언</h3><span class="sub">스스로를 갱신하는 한 줄 규칙</span></div>
+    <p class="desc">세포는 재료가 거의 다 바뀌어도 자신을 만드는 규칙을 유지합니다. 대학 생활에서 남길 것은 지식의 양보다 <b>갱신의 규칙</b>입니다. 아래 문장을 나에게 맞게 고쳐 쓰세요.</p>
+    <div class="autobox">
+      <p class="rule"><span>제안 문장</span> <span style="color:#C9C0B0">|</span> <span>직접 고쳐 쓸 수 있습니다</span></p>
+      <label class="sr-only" for="autoText">나의 오토포이에시스 선언</label>
+      <textarea id="autoText" rows="3" spellcheck="false"></textarea>
+      <div class="arow">
+        <button class="btn btn-ghost btn-sm" type="button" id="nextProp">다른 문장 제안</button>
+        <button class="btn btn-ghost btn-sm" type="button" id="resetProp">처음 문장으로</button>
+        <span class="count" id="autoCount">0자</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 질문하는 힘 3가지 -->
+  <div class="sec">
+    <div class="sh"><span class="no">04</span><h3>AI 시대, 나의 질문하는 힘 3가지</h3><span class="sub">상담·수업 전에 내가 직접 던져 볼 질문</span></div>
+    <p class="desc">AI에게 대신 답을 베끼는 대신, 교수님 상담이나 수업 전에 <b>내가 직접 검증하고 물어볼</b> 질문입니다. 답을 받기 전에 무엇을 확인할지 먼저 정해 두세요.</p>
+    <ol class="qlist" id="q3list"></ol>
+  </div>
+
+  <!-- 추천 직업 영역 -->
+  <div class="sec">
+    <div class="sh"><span class="no">05</span><h3>추천 직업 영역 Top 3</h3><span class="sub">AI 시대 신생 · AI 융합 확장 <span data-ncareer>36</span>개 중범위 영역</span></div>
+    <p class="desc">내가 적은 열 개의 단어와 성향이 만나는 자리입니다. 순위보다 <b>이유</b>를 읽고, 끌리는 영역은 그 일을 하는 사람을 찾아 직접 물어보세요.</p>
+    <div id="majors"></div>
+  </div>
+
+  <!-- 수업 -->
+  <div class="sec">
+    <div class="sh"><span class="no">06</span><h3>함께 들으면 좋은 수업</h3><span class="sub">교양 · 진로 탐색</span></div>
+    <p class="desc">직업의 문을 열기 전에, 그 문 앞에서 오래 생각하게 해 주는 수업들입니다.</p>
+    <div class="courses" id="courses"></div>
+  </div>
+
+  <!-- 직업 영역 지도 -->
+  <div class="sec mapsec">
+    <div class="sh"><span class="no">07</span><h3>AI 시대 직업 영역 지도</h3></div>
+    <p class="desc">이 나침반이 쓰는 중범위 직업 영역 <span data-ncareer>36</span>개 전체입니다. 추천 밖의 영역도 한 번씩 읽어 보세요. 세부 직무명은 산업마다 다르게 붙습니다.</p>
+    <div class="mapbox"><button class="mapbtn" type="button" data-open-map><span>분류별 전체 직업 영역 보기 (<span data-ncareer>36</span>개 영역)</span><span class="ar">전체 보기</span></button></div>
+    <details class="more">
+      <summary>어떻게 추천이 계산되었나요? <span class="pm" aria-hidden="true"><span class="pl">+</span><span class="mi">–</span></span></summary>
+      <div class="body">
+        1단계에서 적은 열 개의 단어와 글쓰기에서 주제어를 찾아 직업 영역의 주제 태그와 겹치는 만큼 점수를 냅니다(예: 불안·외로움·상담 → 마음과 돌봄, 돈·취업·창업 → 시장과 경영, AI·코딩·데이터 → 기술과 설계, 다문화·이주·영어 → 세계와 언어, 건강·운동·환경·동물 → 몸과 생명). 영역마다 앞에 적힌 태그를 그 영역의 중심 주제로 더 무겁게 봅니다. 여기에 2단계에서 고른 성향(탐구 방식·공동체관·창작/분석·돌봄/기술·일의 무대·지향하는 변화)을 더하고, 단어가 닿는 영역을 먼저 놓되 다른 분류의 영역이 거의 같은 점수면 그쪽을 골라 시야를 넓힙니다. 단어에서 주제를 찾지 못하면 성향만으로 계산합니다. 점수는 참고용이며, 직업의 우열을 뜻하지 않습니다.
+      </div>
+    </details>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" type="button" id="copyAll">결과 요약 복사하기</button>
+    <button class="btn btn-ghost" type="button" id="printBtn">인쇄 · PDF로 저장</button>
+    <button class="btn btn-ghost" type="button" id="restart">처음부터 다시 하기</button>
+  </div>
+
+  <p class="disclaim">
+    ※ 직업 영역 <span data-ncareer>36</span>개는 AI 시대에 새로 생기거나 빠르게 커지는 <b>중범위 영역</b>입니다. 특정 학과의 진로를 뜻하지 않으며, 세부 직업명과 채용 조건은 산업과 기업에 따라 다릅니다. 실제 진로는 상담과 현장 경험으로 확인하세요.<br>
+    ※ 이 페이지는 《빅컨셉》 수업과 진로 상담을 돕기 위해 이용승 교수가 만든 도구입니다. 입력값은 저장·전송되지 않습니다.
+  </p>
+</section>
+
+</main>
+
+<footer class="appfoot">
+  <div class="in">
+    <span>《빅컨셉》 진로·직업 나침반 · 대구대학교 자유전공학부 이용승 교수</span>
+    <span><a href="../index.html#apps">연구 App</a> · <a href="../index.html#contact">연락처</a></span>
+  </div>
+</footer>
+
+<dialog id="mapDlg" aria-labelledby="mapDlgT">
+  <div class="dlg-h">
+    <h3 id="mapDlgT">AI 시대 직업 영역 지도</h3>
+    <button class="x" type="button" data-close-map aria-label="닫기">✕</button>
+  </div>
+  <div class="dlg-b" id="dlgBody"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ================= 데이터 ================= */
+  var TOPICS = [
+    { id:'t1', t:'공동체와 정의',
+      q:'사람들이 함께 살아가는 규칙은 왜, 누구를 위해 존재하는가?',
+      tags:['public','law','policy','welfare'], words:['규칙','권리','제도','정의'] },
+    { id:'t2', t:'안전과 위험',
+      q:'재난과 위험 앞에서 사회는 누구를, 어떻게 지킬 수 있는가?',
+      tags:['safety','security','disaster','military'], words:['치안','재난','보호','질서'] },
+    { id:'t3', t:'마음과 돌봄',
+      q:'사람의 마음은 어떻게 아프고, 어떻게 회복되는가?',
+      tags:['care','psy','rehab','welfare'], words:['상담','회복','돌봄','관계'] },
+    { id:'t4', t:'배움과 성장',
+      q:'사람은 어떻게 배우고, 무엇이 사람을 성장시키는가?',
+      tags:['edu','youth','welfare','info'], words:['가르침','청소년','평생','지식'] },
+    { id:'t5', t:'몸과 생명',
+      q:'건강과 생명을 지키는 일은 어디까지 기술의 몫인가?',
+      tags:['health','bio','body','food'], words:['건강','생명','먹거리','재활'] },
+    { id:'t6', t:'기술과 설계',
+      q:'AI와 기계는 우리의 일과 생각을 어떻게 바꾸는가?',
+      tags:['tech','ai','engineering','built'], words:['AI','데이터','설계','자동화'] },
+    { id:'t7', t:'시장과 글로벌',
+      q:'돈과 사람과 물건은 국경을 어떻게 넘는가?',
+      tags:['business','global','tourism','language'], words:['시장','무역','여행','언어'] },
+    { id:'t8', t:'문화와 표현',
+      q:'우리는 무엇을, 어떻게 이야기하고 표현하는가?',
+      tags:['culture','media','design','art','space'], words:['이야기','이미지','디자인','공간'] }
+  ];
+
+  var AXES = [
+    { g:'인간', gl:'인간을 어떻게 이해할 것인가',
+      items:[
+        { id:'a1', q:'인간을 이해하는 길에 더 끌리는 쪽은?', o:[
+          { id:'theory', t:'원리와 구조를 끝까지 파고든다', d:'개념·이론·실험으로 왜 그런지 알고 싶다' },
+          { id:'field',  t:'현장에서 부딪혀 답을 찾는다', d:'사례와 사람을 만나며 몸으로 익히고 싶다' } ] },
+        { id:'a2', q:'사람을 볼 때 먼저 눈에 들어오는 것은?', o:[
+          { id:'liberty',    t:'저마다의 선택과 자유', d:'각자가 원하는 삶을 얼마나 누리는가' },
+          { id:'solidarity', t:'함께 묶여 있는 관계와 규칙', d:'우리가 어떤 약속으로 함께 사는가' } ] }
+      ] },
+    { g:'노동과 창의성', gl:'AI가 일을 바꿀 때 무엇이 남는가',
+      items:[
+        { id:'a3', q:'일에서 내가 더 좋아하는 순간은?', o:[
+          { id:'create',  t:'내 손으로 무언가를 만들어 낸다', d:'아이디어가 형태가 되어 눈앞에 남는다' },
+          { id:'analyze', t:'시스템을 뜯어보고 개선한다', d:'규칙과 구조를 찾아 더 낫게 바꾼다' } ] },
+        { id:'a4', q:'AI가 반복 노동을 대신한다면, 나는 어느 쪽에 서고 싶나?', o:[
+          { id:'careWork', t:'사람을 돌보고 곁에 있어 주는 일', d:'기계가 대신하기 어려운 자리' },
+          { id:'techWork', t:'기술을 만들고 다루는 일', d:'도구를 설계하고 작동시키는 자리' } ] }
+      ] },
+    { g:'행복', gl:'어디에서, 무엇을 바꾸며 살 것인가',
+      items:[
+        { id:'a5', q:'내가 일하고 싶은 무대는?', o:[
+          { id:'local',  t:'이 지역, 이 사람들 곁', d:'가까운 곳의 변화가 내 일의 성과' },
+          { id:'global', t:'국경 밖, 낯선 세계', d:'비교하고 건너가며 더 넓게 보기' } ] },
+        { id:'a6', q:'내가 만들고 싶은 변화는?', o:[
+          { id:'order',  t:'지금의 안전과 질서를 지킨다', d:'무너지지 않게 받쳐 주는 일' },
+          { id:'change', t:'새로운 실험과 변화를 연다', d:'아직 없는 것을 먼저 시도하는 일' } ] }
+      ] }
+  ];
+
+  var LEAN_TEXT = {
+    theory:'원리를 파고드는 편이라, 이 영역에서 개념과 기준을 세우는 일이 잘 맞습니다.',
+    field:'현장에서 부딪혀 푸는 편이라, 사례와 사람을 만나는 이 영역의 일이 손에 잡힐 것입니다.',
+    liberty:'개인의 선택과 자유를 먼저 보는 시선이, 사람마다 다른 조건을 다루는 이 영역과 맞물립니다.',
+    solidarity:'공동체의 규칙과 연대를 먼저 보는 시선이, 여럿이 함께 하는 일을 설계하는 이 영역과 맞물립니다.',
+    create:'직접 만들어 결과물을 손에 쥐는 일을 좋아하니, 이 영역의 기획과 제작이 잘 맞습니다.',
+    analyze:'시스템을 뜯어보고 개선하는 편이라, 구조를 분석하는 훈련이 이 영역의 중심에 있습니다.',
+    careWork:'사람을 돌보는 일에 마음이 있어, 이 영역의 현장이 곧 배움의 자리가 됩니다.',
+    techWork:'기술을 만들고 다루는 일에 마음이 있어, 이 영역의 도구가 곧 언어가 됩니다.',
+    local:'이 지역과 사람들 곁에서 일하고 싶다면, 이 영역은 지역 현장과 맞닿아 있습니다.',
+    global:'국경 밖으로 시야를 넓히고 싶다면, 이 영역에서 비교하고 건너가는 일을 맡아 보세요.',
+    order:'지금의 안전과 질서를 지키는 일에 뜻이 있다면, 이 영역의 규칙과 절차가 곧 주제입니다.',
+    change:'새로운 실험과 변화를 여는 일에 뜻이 있다면, 이 영역은 그 변화를 만드는 쪽에 서 있습니다.'
+  };
+
+  var CAREERS = [
+    /* ---------- 인문 · 사회 · 공공 ---------- */
+    { g:'인문·사회·공공', n:'AI 윤리·신뢰성 평가 전문가', b:'AI 시대 신생',
+      tags:['ai','public','law','info'], lean:['theory','solidarity','order'],
+      core:'AI가 내리는 판단이 공정하고 설명 가능한지 시험하고, 조직이 책임질 수 있는 사용 기준을 문서로 만듭니다.',
+      era:'생성형 AI가 사람 대신 판단하기 시작하면서 검증과 책임이 별도의 직무로 굳어지고 있습니다.',
+      skills:['철학·법·정책의 개념어로 기준을 세우는 힘','편향과 오류를 확인하는 통계적 문해력','기준을 조직의 언어로 합의해 내는 문서화'],
+      senses:'기술을 두려워하지 않으면서 근거를 끝까지 묻는 태도' },
+    { g:'인문·사회·공공', n:'법률·정책 AI 활용 컨설턴트', b:'AI 융합 확장',
+      tags:['law','policy','ai','public'], lean:['theory','analyze','change'],
+      core:'법령과 정책 자료를 AI로 다루는 절차를 설계하고, 기관이 감당할 수 있는 판단의 경계를 잡아 줍니다.',
+      era:'조례·판례·민원을 AI가 요약하기 시작해, 법을 아는 사람이 도구를 길들이는 자리가 열렸습니다.',
+      skills:['법령·판례를 읽고 쟁점을 뽑는 힘','AI 결과를 교차 확인하는 절차 설계','공무원·전문가 사이를 조율하는 설명력'],
+      senses:'제도가 실제로 작동하는 현장의 감각' },
+    { g:'인문·사회·공공', n:'공공·복지 서비스 코디네이터', b:'AI 융합 확장',
+      tags:['welfare','public','care','policy'], lean:['careWork','solidarity','field'],
+      core:'복지·행정·의료의 문턱에서 끊기는 사람을 찾아, 여러 기관의 서비스를 한 사람의 삶에 맞춰 잇습니다.',
+      era:'상담 창구가 앱과 챗봇으로 옮겨가면서, 사람과 사람을 실제로 이어 주는 일의 값이 커지고 있습니다.',
+      skills:['제도와 자원을 지도처럼 그려 두는 정리력','상대의 말을 그대로 옮겨 적는 경청','기관 사이를 설득하는 실무 협상'],
+      senses:'한 사람의 하루를 기준으로 생각하는 습관' },
+    { g:'인문·사회·공공', n:'다문화·지역사회 갈등 중재 기획자', b:'AI 융합 확장',
+      tags:['global','welfare','culture','public'], lean:['solidarity','field','local'],
+      core:'이주배경 주민과 지역사회 사이의 오해와 갈등을 대화의 형식으로 바꾸어 풉니다.',
+      era:'인구 구성이 바뀌는 지역이 늘면서, 갈등을 다루는 전문성이 정책 사업으로 자리 잡고 있습니다.',
+      skills:['갈등의 이해관계를 지도로 그리는 분석','회의·공청회를 설계하고 진행하는 힘','이주배경 주민과 지역 단체의 신뢰'],
+      senses:'번역되지 않는 것까지 듣는 감각' },
+    { g:'인문·사회·공공', n:'사회문제 데이터 리서처', b:'AI 시대 신생',
+      tags:['public','policy','ai','welfare'], lean:['analyze','theory','change'],
+      core:'지역의 불평등·주거·돌봄 같은 문제를 데이터로 드러내고, 정책이 물을 질문을 다시 세웁니다.',
+      era:'공공 데이터가 열리고 AI가 분석을 대신하면서, 무엇을 셀지 정하는 사람의 몫이 커졌습니다.',
+      skills:['통계와 시각화로 주장을 뒷받침하는 힘','설문·인터뷰를 설계하는 조사 방법','데이터의 빈칸과 편향을 의심하는 태도'],
+      senses:'숫자 뒤의 사람을 상상하는 감각' },
+    { g:'인문·사회·공공', n:'도시·지역 재생 정책 기획자', b:'AI 융합 확장',
+      tags:['built','space','policy','public'], lean:['local','change','solidarity'],
+      core:'비어 가는 동네와 낡은 시설을, 그곳에 사는 사람의 생활을 기준으로 다시 설계합니다.',
+      era:'인구 감소와 기후 대응이 겹치면서 지자체마다 지역을 다시 짜는 기획 인력이 필요해졌습니다.',
+      skills:['공간·인구·산업 자료를 함께 읽는 힘','주민과 행정 사이에서 사업을 구체화하는 기획','예산과 일정을 관리하는 실무'],
+      senses:'거리에서 사람이 머무는 방식을 관찰하는 눈' },
+    { g:'인문·사회·공공', n:'재난·안보 리스크 매니저', b:'AI 융합 확장',
+      tags:['safety','disaster','security','military'], lean:['order','field','analyze'],
+      core:'재난과 안보의 위험을 미리 목록화하고, 조직이 실제로 움직일 대응 절차를 훈련으로 굳힙니다.',
+      era:'기후 재난과 사이버 위협이 일상화하면서 안전을 관리하는 직무가 공공과 기업 양쪽에서 늘고 있습니다.',
+      skills:['위험을 시나리오로 나누는 체계적 사고','대응 절차를 문서와 훈련으로 만드는 힘','기관 사이의 역할을 조정하는 실행력'],
+      senses:'평소에 불편한 질문을 던져 두는 습관' },
+
+    /* ---------- 심리 · 돌봄 · 교육 ---------- */
+    { g:'심리·돌봄·교육', n:'디지털 멘탈헬스·정서 돌봄 기획자', b:'AI 시대 신생',
+      tags:['psy','care','ai','health'], lean:['careWork','techWork','change'],
+      core:'앱·상담·커뮤니티를 엮어, 마음이 흔들리는 사람이 때를 놓치지 않고 도움을 받도록 설계합니다.',
+      era:'청년 고립과 번아웃이 사회 의제가 되고 AI 상담이 보편화되며, 사람이 설계하는 돌봄의 틀이 중요해졌습니다.',
+      skills:['심리학·상담의 기초 개념','서비스 흐름과 위기 대응 경로를 설계하는 기획','데이터로 효과를 확인하는 평가'],
+      senses:'도움을 청하는 말이 나오기 전의 신호를 알아차리는 감각' },
+    { g:'심리·돌봄·교육', n:'맞춤형 학습 경험 설계자', b:'AI 융합 확장',
+      tags:['edu','youth','ai','design'], lean:['create','analyze','careWork'],
+      core:'사람마다 다른 출발점과 목표에 맞춰 배움의 순서와 경험을 설계합니다.',
+      era:'AI가 설명과 문제를 개인별로 만들어 주면서, 배움의 설계가 교사의 새로운 전문 영역이 되었습니다.',
+      skills:['교육과정과 평가를 설계하는 힘','학습 데이터를 읽고 조정하는 능력','콘텐츠와 도구를 엮는 기획'],
+      senses:'배우는 사람이 어디서 멈추는지 보는 관찰력' },
+    { g:'심리·돌봄·교육', n:'인간 중심 상담·커뮤니티 퍼실리테이터', b:'AI 융합 확장',
+      tags:['psy','care','welfare','youth'], lean:['careWork','solidarity','field'],
+      core:'상담과 모임의 자리를 만들어, 사람들이 서로의 이야기를 듣고 관계를 다시 세우도록 돕습니다.',
+      era:'AI 상담이 늘수록 사람과 사람 사이를 만드는 퍼실리테이션의 수요가 함께 커집니다.',
+      skills:['상담·집단 과정의 이론과 실습','대화를 구조화하는 질문 설계','갈등과 침묵을 견디는 태도'],
+      senses:'자기 이야기를 오래 들을 수 있는 힘' },
+    { g:'심리·돌봄·교육', n:'시니어·재활 라이프케어 매니저', b:'AI 융합 확장',
+      tags:['care','health','rehab','welfare'], lean:['careWork','field','local'],
+      core:'돌봄이 필요한 어르신과 재활 이용자의 하루를 기준으로 의료·복지·주거 서비스를 묶어 관리합니다.',
+      era:'초고령 사회와 재택 돌봄 확대로, 여러 서비스를 한 사람 기준으로 조정하는 전문직이 늘고 있습니다.',
+      skills:['건강·재활·복지 제도의 실무 이해','돌봄 계획을 세우고 조정하는 사례관리','가족과 기관을 설득하는 소통'],
+      senses:'느린 속도를 기다려 줄 수 있는 인내' },
+    { g:'심리·돌봄·교육', n:'아동·청소년 성장 지원 전문가', b:'AI 융합 확장',
+      tags:['youth','care','edu','welfare'], lean:['careWork','solidarity','local'],
+      core:'아이와 청소년이 자라는 환경을 살피고, 가정·학교·지역의 지원을 이어 붙입니다.',
+      era:'학교 밖 청소년과 돌봄 공백이 늘면서 지역 기반 성장 지원의 자리가 넓어지고 있습니다.',
+      skills:['발달 단계와 가족 체계의 이해','지역 자원을 연결하는 네트워크 실무','기록과 사례 회의를 통한 판단'],
+      senses:'아이가 말하지 않은 것을 놓치지 않는 세심함' },
+    { g:'심리·돌봄·교육', n:'스포츠·웰니스 케어 기획자', b:'AI 융합 확장',
+      tags:['sport','health','body','care'], lean:['field','careWork','local'],
+      core:'운동과 건강 관리를 생활 속 프로그램으로 설계하고, 재활과 예방까지 이어지는 흐름을 만듭니다.',
+      era:'웨어러블 기기와 AI 코칭이 퍼지면서 데이터와 사람을 함께 보는 기획자가 필요해졌습니다.',
+      skills:['운동 생리와 건강 증진의 기초','프로그램 기획·운영과 안전 관리','생활 데이터를 해석하는 문해력'],
+      senses:'몸의 변화를 같이 느껴 주는 감각' },
+    { g:'심리·돌봄·교육', n:'에듀테크·교육 콘텐츠 기획자', b:'AI 융합 확장',
+      tags:['edu','tech','media','design'], lean:['create','techWork','analyze'],
+      core:'배움의 목표를 콘텐츠와 도구로 옮기고, 교사와 학습자가 실제로 쓰는 흐름으로 다듬습니다.',
+      era:'AI가 자료를 만들 수 있게 되면서, 무엇을 어떻게 배울지 설계하는 기획의 값이 올라갔습니다.',
+      skills:['교육과정을 콘텐츠 구조로 바꾸는 힘','교사·학생 테스트와 개선','기술·디자인 팀과 협업하는 기획력'],
+      senses:'설명이 통하지 않을 때 다른 길을 찾는 유연함' },
+
+    /* ---------- 창작 · 미디어 · 콘텐츠 ---------- */
+    { g:'창작·미디어·콘텐츠', n:'AI 협업 콘텐츠·스토리 프로듀서', b:'AI 시대 신생',
+      tags:['media','culture','art','ai'], lean:['create','change','techWork'],
+      core:'AI로 초안·이미지·편집을 만들면서, 기획과 판단과 최종 완성은 사람이 붙들고 가는 제작을 이끕니다.',
+      era:'제작 비용이 급격히 낮아져, 무엇을 왜 만들지 정하는 프로듀서의 역할이 커졌습니다.',
+      skills:['서사 구조와 기획안을 쓰는 힘','AI 도구를 조합해 결과물을 완성하는 실무','저작권·초상권 등 권리 판단'],
+      senses:'사람의 마음을 움직이는 장면을 알아보는 눈' },
+    { g:'창작·미디어·콘텐츠', n:'경험·공간 브랜드 디자이너', b:'AI 융합 확장',
+      tags:['design','space','business','art'], lean:['create','local','analyze'],
+      core:'공간·전시·서비스에서 사람이 겪는 경험을 브랜드의 이야기로 설계합니다.',
+      era:'온라인 경험이 포화되면서 오프라인의 경험과 공간이 다시 브랜드의 핵심이 되었습니다.',
+      skills:['공간과 시각 언어를 함께 다루는 조형 감각','브랜드 전략과 시장 이해','현장 시공·운영 팀과의 협업'],
+      senses:'공간에 들어설 때의 첫 느낌을 기록하는 습관' },
+    { g:'창작·미디어·콘텐츠', n:'팩트체크·데이터 저널리스트', b:'AI 시대 신생',
+      tags:['media','info','public','ai'], lean:['analyze','theory','solidarity'],
+      core:'주장의 근거를 추적하고 데이터로 확인해, 무엇이 사실이고 무엇이 아닌지 공개적으로 밝힙니다.',
+      era:'AI가 그럴듯한 거짓을 대량으로 만들면서 검증을 직업으로 하는 사람의 수요가 커졌습니다.',
+      skills:['공적 자료를 찾고 대조하는 조사력','통계와 그래프를 정확히 읽는 힘','판단의 근거를 시민에게 설명하는 글쓰기'],
+      senses:'의심하면서도 상대를 존중하는 태도' },
+    { g:'창작·미디어·콘텐츠', n:'문화·예술 큐레이터 & IP 기획자', b:'AI 융합 확장',
+      tags:['culture','art','media','business'], lean:['create','global','solidarity'],
+      core:'작품과 이야기를 모아 의미 있는 맥락으로 배열하고, 그것이 다시 쓰이고 유통되는 길을 설계합니다.',
+      era:'AI 생성물이 넘치는 시대에 무엇이 진짜 가치 있는지 골라내는 큐레이션의 몫이 커졌습니다.',
+      skills:['문화사·예술사의 맥락 이해','전시·유통 기획과 예산 관리','작가·기관과의 관계 만들기'],
+      senses:'아직 평가되지 않은 것의 가능성을 보는 눈' },
+    { g:'창작·미디어·콘텐츠', n:'뉴미디어 크리에이터·커뮤니티 빌더', b:'AI 융합 확장',
+      tags:['media','culture','business','youth'], lean:['create','liberty','change'],
+      core:'플랫폼 위에서 이야기를 만들고, 그 이야기에 모인 사람들이 머무는 관계를 설계합니다.',
+      era:'알고리즘이 도달을 대신하면서, 사람이 남아 있는 커뮤니티를 만드는 능력이 자산이 되었습니다.',
+      skills:['기획·제작·편집을 끝까지 해내는 실행력','지표를 읽고 실험을 반복하는 감각','온라인 관계의 규칙을 설계하는 힘'],
+      senses:'댓글의 온도를 읽는 감각' },
+    { g:'창작·미디어·콘텐츠', n:'패션·뷰티 브랜드 기획자', b:'AI 융합 확장',
+      tags:['body','design','business','art'], lean:['create','liberty','change'],
+      core:'옷과 뷰티의 취향과 생산을 브랜드로 엮어, 사람이 자기 몸을 표현하는 방식을 기획합니다.',
+      era:'AI가 디자인 시안과 홍보물을 대신 만들면서, 취향을 읽고 브랜드로 묶는 기획의 몫이 커졌습니다.',
+      skills:['소재·색·실루엣을 보는 조형 감각','시장과 소비자 취향을 읽는 분석','생산·유통·마케팅을 잇는 실무'],
+      senses:'사람이 자기 몸을 어떻게 보여 주고 싶어 하는지 읽는 감각' },
+    { g:'창작·미디어·콘텐츠', n:'게임·인터랙티브 경험 기획자', b:'AI 융합 확장',
+      tags:['tech','art','media','design'], lean:['create','techWork','liberty'],
+      core:'규칙과 보상, 이야기를 설계해 사람이 스스로 몰입하고 배우게 만드는 경험을 만듭니다.',
+      era:'게임의 문법이 교육·의료·공공 서비스로 옮겨 가며 인터랙션 설계의 무대가 넓어졌습니다.',
+      skills:['규칙·난이도·보상을 설계하는 시스템 사고','프로토타입을 만들어 검증하는 실무','개발·아트 팀과의 협업'],
+      senses:'재미가 어디서 생기는지 분해해 보는 습관' },
+
+    /* ---------- 비즈니스 · 경영 · 경제 ---------- */
+    { g:'비즈니스·경영·경제', n:'인간-AI 워크플로우 전략가', b:'AI 시대 신생',
+      tags:['business','ai','tech','policy'], lean:['analyze','change','solidarity'],
+      core:'조직의 일을 뜯어보고, 어디까지 AI에 맡기고 어디를 사람이 붙들지 정해 업무 흐름을 다시 짭니다.',
+      era:'도구 도입은 쉬워졌지만 일하는 방식을 바꾸는 일은 어려워, 이 간극을 메우는 직무가 생겼습니다.',
+      skills:['업무를 분해해 병목을 찾는 분석력','변화를 조직에 정착시키는 실행과 교육','비용·품질·책임을 함께 저울질하는 판단'],
+      senses:'사람이 하던 일의 숨은 맥락을 알아보는 눈' },
+    { g:'비즈니스·경영·경제', n:'소셜벤처·임팩트 비즈니스 기획자', b:'AI 융합 확장',
+      tags:['business','welfare','public','env'], lean:['change','solidarity','local'],
+      core:'사회 문제를 사업의 형태로 풀어, 돈과 의미가 함께 돌아가는 구조를 만듭니다.',
+      era:'ESG와 지역 소멸 대응이 기업의 과제가 되면서 임팩트를 사업으로 옮기는 인력이 필요해졌습니다.',
+      skills:['문제 정의와 사업 모델 설계','이해관계자·투자자와 협상하는 힘','성과를 사회적 가치로 측정하는 방법'],
+      senses:'선한 의도와 지속가능성을 함께 보는 균형' },
+    { g:'비즈니스·경영·경제', n:'글로벌 시장·트렌드 애널리스트', b:'AI 융합 확장',
+      tags:['business','global','trade','language'], lean:['global','analyze','field'],
+      core:'다른 나라의 소비·제도·문화 변화를 읽어, 우리 시장에 어떤 기회와 위험이 오는지 해석합니다.',
+      era:'AI 번역으로 정보의 국경이 사라진 만큼, 맥락을 아는 사람의 해석이 차이를 만듭니다.',
+      skills:['외국어와 현지 맥락을 함께 읽는 힘','시장·정책 자료를 구조화하는 분석','보고서로 판단을 전달하는 글쓰기'],
+      senses:'낯선 문화 앞에서 자기 기준을 의심하는 태도' },
+    { g:'비즈니스·경영·경제', n:'디지털 커머스·프롭테크 기획자', b:'AI 융합 확장',
+      tags:['business','built','tech','design'], lean:['analyze','change','techWork'],
+      core:'사고파는 경험과 공간·부동산의 거래 방식을 데이터와 서비스로 다시 설계합니다.',
+      era:'부동산·상권 데이터가 열리고 AI가 시세와 수요를 예측하면서 기획의 정밀도가 높아졌습니다.',
+      skills:['상권·시세·이용 데이터를 읽는 분석','서비스 흐름과 수익 구조를 설계하는 기획','법·규제의 기본 이해'],
+      senses:'사람이 실제로 집을 고르는 장면을 상상하는 힘' },
+    { g:'비즈니스·경영·경제', n:'로컬 관광·MICE 경험 기획자', b:'AI 융합 확장',
+      tags:['tourism','business','culture','global'], lean:['field','local','global'],
+      core:'지역의 이야기와 자원을 여행·행사·체류의 경험으로 기획해, 사람이 찾아와 머무는 이유를 만듭니다.',
+      era:'AI가 일정과 안내를 대신하면서, 현지에서만 가능한 경험을 설계하는 기획이 차별점이 되었습니다.',
+      skills:['지역 자원을 조사하고 이야기로 엮는 힘','행사·숙박·교통을 조율하는 운영 실무','관광객과 지역 주민 양쪽의 필요를 읽는 기획'],
+      senses:'낯선 사람이 이 지역에서 무엇을 기억할지 상상하는 눈' },
+    { g:'비즈니스·경영·경제', n:'푸드테크·지역 먹거리 사업 기획자', b:'AI 융합 확장',
+      tags:['food','business','bio','tourism'], lean:['field','create','local'],
+      core:'지역의 먹거리와 생산자를 산업으로 엮어, 지속가능한 방식으로 팔리고 이어지게 만듭니다.',
+      era:'기후와 식량 안보, 대체식품과 스마트 유통이 겹치며 먹거리를 기획하는 직무가 넓어졌습니다.',
+      skills:['식품·유통의 기본 구조 이해','브랜드와 스토리를 상품으로 만드는 기획','생산자·지자체와의 협업'],
+      senses:'맛과 생산의 뒷이야기를 함께 보는 눈' },
+    { g:'비즈니스·경영·경제', n:'조직·인재 개발(HRD) 매니저', b:'AI 융합 확장',
+      tags:['business','edu','psy','policy'], lean:['careWork','analyze','solidarity'],
+      core:'조직이 필요로 하는 능력을 미리 짚고, 사람이 그 능력을 기르도록 배움과 일의 구조를 설계합니다.',
+      era:'AI로 직무가 빠르게 바뀌면서, 사람을 다시 훈련시키는 일이 경영의 중심 과제가 되었습니다.',
+      skills:['직무 분석과 교육과정 설계','조직·노동의 사회과학적 이해','평가와 피드백을 운영하는 실무'],
+      senses:'사람의 성장이 보이는 순간을 알아보는 감각' },
+
+    /* ---------- 기술 · 데이터 · 바이오 · 환경 ---------- */
+    { g:'기술·데이터·바이오·환경', n:'AI 서비스 프로덕트 매니저(PM)', b:'AI 융합 확장',
+      tags:['ai','tech','business','design'], lean:['techWork','analyze','change'],
+      core:'AI로 무엇을 할 수 있는지와 사용자가 무엇을 필요로 하는지 사이에서, 서비스의 형태를 정합니다.',
+      era:'모델은 누구나 쓰게 되었고, 그것을 서비스로 완성하는 기획의 값이 커졌습니다.',
+      skills:['사용자 문제를 정의하고 검증하는 기획','데이터·지표를 근거로 판단하는 힘','개발·디자인과 협업하는 커뮤니케이션'],
+      senses:'기술의 한계를 사용자의 언어로 바꾸는 감각' },
+    { g:'기술·데이터·바이오·환경', n:'도메인 데이터 큐레이터·프롬프트 아키텍트', b:'AI 시대 신생',
+      tags:['ai','info','tech','language'], lean:['techWork','analyze','theory'],
+      core:'한 분야의 지식과 말을 데이터로 정리하고, AI가 그 분야에서 제대로 작동하도록 입력과 평가 기준을 설계합니다.',
+      era:'AI의 성능이 분야 데이터의 품질에서 갈리면서, 지식과 기술을 함께 아는 사람이 필요해졌습니다.',
+      skills:['한 분야의 지식을 체계로 정리하는 힘','데이터 품질과 평가 기준을 설계하는 능력','AI 도구를 시험하고 기록하는 실무'],
+      senses:'좋은 질문이 좋은 답을 만든다는 확신' },
+    { g:'기술·데이터·바이오·환경', n:'바이오·헬스케어 데이터 분석가', b:'AI 융합 확장',
+      tags:['bio','health','tech','ai'], lean:['analyze','techWork','theory'],
+      core:'임상·유전체·생활 데이터를 읽어, 치료와 예방에 쓸 수 있는 판단으로 바꿉니다.',
+      era:'의료 데이터가 축적되고 AI 분석이 빨라지면서, 생명을 이해하는 분석가의 자리가 넓어졌습니다.',
+      skills:['통계와 데이터 처리 실무','생명·의료의 기초 개념','연구 윤리와 재현성을 지키는 태도'],
+      senses:'숫자가 사람의 몸을 뜻한다는 책임감' },
+    { g:'기술·데이터·바이오·환경', n:'기후·지속가능성 전환 전략가', b:'AI 시대 신생',
+      tags:['env','policy','business','bio'], lean:['change','global','solidarity'],
+      core:'기업과 지역이 탄소와 에너지를 줄이는 계획을 세우고, 실제 투자와 규제 대응으로 옮깁니다.',
+      era:'기후 공시와 공급망 규제가 의무화되면서, 전환을 설계하는 전문 인력이 빠르게 늘고 있습니다.',
+      skills:['기후·에너지 정책과 규제의 이해','배출량과 비용을 계산하는 데이터 능력','경영진과 현장을 설득하는 전략 문서'],
+      senses:'미래 세대의 비용을 지금 계산에 넣는 태도' },
+    { g:'기술·데이터·바이오·환경', n:'스마트농업·반려생명 케어 기획자', b:'AI 융합 확장',
+      tags:['bio','animal','food','tech'], lean:['techWork','local','careWork'],
+      core:'센서·로봇·데이터로 작물과 반려동물의 돌봄을 정밀하게 만들고, 그 기술을 현장에 맞게 기획합니다.',
+      era:'농업 인구 감소와 반려동물 가구 증가가 겹치며 생명을 돌보는 기술 시장이 커지고 있습니다.',
+      skills:['생명·농업의 기초 과학 이해','센서·데이터를 활용한 운영 기획','농가·수의·산업 현장과의 협업'],
+      senses:'생명을 다루는 기술의 한계를 아는 신중함' },
+    { g:'기술·데이터·바이오·환경', n:'휴머노이드·로보틱스 현장 운영 전문가', b:'AI 시대 신생',
+      tags:['engineering','tech','ai','safety'], lean:['techWork','field','order'],
+      core:'로봇이 실제 일터에서 안전하게 일하도록 배치하고, 사람과 함께 일하는 절차를 만들고 고칩니다.',
+      era:'로봇이 공장을 넘어 물류·돌봄·서비스로 나오면서, 현장에서 운영하는 사람의 역할이 새로 생겼습니다.',
+      skills:['기계·전자·소프트웨어의 기초 이해','안전 기준과 작업 절차를 설계하는 실무','고장과 돌발 상황을 해결하는 현장 대응'],
+      senses:'기술과 사람 사이의 거리를 재는 감각' },
+    { g:'기술·데이터·바이오·환경', n:'사이버보안·프라이버시 설계자', b:'AI 융합 확장',
+      tags:['security','tech','ai','law'], lean:['techWork','order','analyze'],
+      core:'서비스가 처음 만들어질 때부터 개인정보와 보안을 구조에 넣어, 사고가 날 자리를 줄입니다.',
+      era:'AI가 개인정보를 다루고 공격도 자동화되면서, 설계 단계의 보안 전문성이 필수가 되었습니다.',
+      skills:['네트워크·시스템의 기본 원리','법·규제와 개인정보 보호의 이해','위험을 설명하고 우선순위를 정하는 힘'],
+      senses:'편리함과 안전 사이에서 손해를 먼저 생각하는 습관' },
+    { g:'기술·데이터·바이오·환경', n:'스마트시티·모빌리티 서비스 기획자', b:'AI 융합 확장',
+      tags:['built','tech','space','engineering'], lean:['techWork','change','local'],
+      core:'도시의 이동·주거·안전 데이터를 엮어, 시민이 실제로 쓰는 서비스로 기획하고 운영합니다.',
+      era:'자율주행·전기차·도시 데이터가 동시에 성숙하며, 교통과 도시를 함께 보는 기획자가 필요해졌습니다.',
+      skills:['도시·교통 시스템의 이해','데이터 기반 서비스 기획과 실증','행정·기업·시민 사이의 조정'],
+      senses:'길 위에서 사람이 겪는 불편을 먼저 보는 눈' }
+  ];
+
+  var COURSES = [
+    { n:'《빅컨셉》', d:'인문·사회·자연의 큰 개념을 가로지르며 스스로 질문을 세우는 법을 익히는 수업. 이 나침반이 속한 수업입니다.', k:'교양 · 융합', tags:[], base:true },
+    { n:'《권력·의무·자유》', d:'공동체의 삶에서 권력·의무·자유가 어떻게 얽히는지 함께 고민합니다.', k:'교양 · 정치사상', tags:['public','law','policy','security','military','welfare','solidarity'] },
+    { n:'《정의란 무엇인가》', d:'분배·인정·참여의 문제를 고전과 현대 논의로 질문합니다.', k:'교양 · 정치사상', tags:['public','law','policy','welfare','business','order'] },
+    { n:'《다문화사회교육론》', d:'문화적 차이를 어떻게 가르칠 것인가를 묻는 수업입니다.', k:'다문화 · 교육', tags:['edu','care','welfare','youth','global','language','culture','careWork'] },
+    { n:'《아시아 사회의 이해》', d:'지도와 삶 사이의 아시아를 읽습니다. 오리엔탈리즘과 이주로 연결된 우리 곁의 아시아까지.', k:'교양 · 지역연구', tags:['global','culture','language','trade','tourism','media'] },
+    { n:'《과학기술사회》', d:'과학기술이 개인과 사회를 어떻게 바꾸는지 일상의 사물로 읽습니다.', k:'교양 · 과학기술과 사회', tags:['tech','ai','engineering','env','bio','health','built'] },
+    { n:'《한국사회의 다문화현상 이해》', d:'이주노동자·결혼이주민·유학생의 삶과 권리를 사례로 읽습니다.', k:'교양 · 다문화/이주', tags:['welfare','culture','global','media','policy','language'] },
+    { n:'《이민법제론》', d:'이민·체류·국적·사회통합을 둘러싼 법과 제도의 구조를 검토합니다.', k:'법 · 이민법제', tags:['law','policy','global','welfare','public'] }
+  ];
+
+  var SELFQ = {
+    t1:[ { q:'우리 주변의 규칙 하나는 누구를 위해 존재하는가?', h:'학과·동아리·아르바이트의 규칙 하나를 골라, 그 규칙이 편하게 하는 사람과 불편하게 하는 사람을 각각 적어 보기.' },
+         { q:'정의롭다는 말이 사람마다 다르게 쓰이는 까닭은 무엇인가?', h:'같은 사안을 두고 다른 결론에 이른 두 사람의 논리를 나란히 놓고, 어느 지점에서 갈라지는지 표시해 보기.' } ],
+    t2:[ { q:'재난이 닥쳤을 때 가장 먼저 보호받아야 할 사람은 누구인가?', h:'우리 동네의 대피 계획이나 안전 안내를 찾아 읽고, 빠져 있는 사람이 누구인지 하나 찾아보기.' },
+         { q:'안전을 위해 우리가 포기하는 것은 무엇인가?', h:'감시·규제·검문 사례 하나를 골라 얻는 것과 잃는 것을 두 칸으로 나눠 적어 보기.' } ],
+    t3:[ { q:'돌봄은 사랑인가, 노동인가?', h:'주변의 돌봄 일 하나를 골라 누가 얼마만큼의 시간과 몸을 쓰는지 세어 보기. 그 일은 어디에 기록되어 있는가?' },
+         { q:'아픈 마음을 "치료"한다는 것은 무엇을 하는 일인가?', h:'상담·치료 사례 하나를 읽고, 그 안에서 무엇이 달라졌는지(증상·관계·해석) 표시해 보기.' } ],
+    t4:[ { q:'사람은 언제 가장 잘 배우는가?', h:'내가 최근에 뭔가를 진짜로 배운 순간을 하나 떠올려, 그때 무엇이 달라졌는지(질문·실패·관계) 적어 보기.' },
+         { q:'좋은 가르침은 좋은 설명인가, 좋은 질문인가?', h:'기억에 남는 수업 하나를 골라, 그 선생님이 무엇을 물었는지 중심으로 이유를 적어 보기.' } ],
+    t5:[ { q:'건강은 개인의 책임인가, 사회의 책임인가?', h:'우리 지역의 건강 격차를 보여 주는 자료(통계·기사·인터뷰) 하나를 찾아, 격차의 원인을 두 가지로 적어 보기.' },
+         { q:'생명을 다루는 기술은 어디까지 허용되어야 하는가?', h:'최근의 생명윤리 논쟁 하나를 골라 찬성과 반대의 근거를 각각 한 줄로 정리하고, 내가 더 무겁게 보는 가치를 적어 보기.' } ],
+    t6:[ { q:'AI가 대신해도 되는 일과 절대 맡기면 안 되는 일은 무엇인가?', h:'내 일상의 작업 세 개를 골라 직접 분류하고, 그렇게 나눈 기준을 한 문장으로 적어 보기.' },
+         { q:'기술은 문제를 풀까, 새로운 문제를 만들까?', h:'내가 매일 쓰는 앱 하나의 편리함과 부작용을 같은 개수만큼 적어 보기.' } ],
+    t7:[ { q:'값이 오르고 내리는 일은 누구의 선택인가?', h:'내가 자주 사는 물건 하나를 골라, 그 가격이 정해지는 과정(생산·유통·판매)을 단계로 적어 보기.' },
+         { q:'국경은 사람에게 무엇을 허락하고 무엇을 막는가?', h:'이주·여행·무역 기사 하나를 골라, 국경이 한 일을 표시해 보기. 누가 통과했고 누가 막혔는가?' } ],
+    t8:[ { q:'누가 이야기할 수 있고, 누구의 이야기는 잘 들리지 않는가?', h:'최근 본 콘텐츠 하나에서 목소리를 가진 사람과 빠진 사람을 적어 보기.' },
+         { q:'재미있다는 것은 무엇을 하는 힘인가?', h:'내가 끝까지 본 콘텐츠 하나를 골라, 왜 멈추지 못했는지(긴장·공감·호기심)를 구조로 분석해 보기.' } ]
+  };
+
+  var AIQ = { q:'AI가 내 관심 분야에 대해 그럴듯하게 답했을 때, 나는 무엇을 근거로 그것이 맞는지 확인할 것인가?',
+              h:'AI의 답에서 출처를 확인할 수 없는 주장 두 개를 표시하고, 원문·공식 통계·현장 인터뷰 가운데 무엇으로 검증할지 정해 보기. 검증한 결과는 한 줄로 남겨 두기.' };
+
+  var AUTO_VARIANTS = [
+    { kind:'topic', text:function(t){ return '나는 한 학기에 한 번, 「' + t + '」에 대해 내가 내린 답을 다시 읽고, 무엇이 달라졌는지 한 쪽으로 남긴다.'; } },
+    { kind:'ask',   text:function(){ return '나는 새 정보를 받아들일 때 "이것이 내 질문에 답하는가"를 먼저 묻고, 답하지 않으면 오늘은 접어 둔다.'; } },
+    { kind:'trace', text:function(){ return '나는 결과보다 과정을 남긴다. 무엇을 물었고, 무엇을 받아들이지 않았는지 한 줄씩 적는다.'; } },
+    { kind:'ground',text:function(){ return '나는 판단의 근거를 먼저 적고, 근거가 바뀌면 판단도 바꾼다. 근거 없는 확신은 내 것으로 치지 않는다.'; } }
+  ];
+
+  /* ================= 키워드 사전 (1단계 10개 → 주제 태그) ================= */
+  var KW_GROUPS = [
+    { g:'관심사 · 취미', words:['독서','여행','음악','게임','운동','그림','영상','요리','반려동물','카페'] },
+    { g:'걱정 · 미래 불안', words:['취업','돈','진로','AI','외로움','불안','건강','학점','인간관계','환경'] },
+    { g:'가족 · 인간관계', words:['가족','부모님','친구','연애','이별','돌봄','효도','형제','소통','신뢰'] },
+    { g:'장래 · 진로 고민', words:['창업','공무원','대학원','교사','개발자','디자이너','의료','공기업','유학','적성'] },
+    { g:'사회 · 가치관', words:['공정','정의','다문화','평등','자유','인권','정치','종교','행복','기후'] }
+  ];
+
+  var LEXICON = {
+    psy:['불안','마음','심리','상담','외로움','우울','고민','감정','자존감','스트레스','트라우마','멘탈','정신','마음가짐','위로'],
+    care:['가족','부모','부모님','엄마','아빠','할머니','할아버지','형제','자매','친구','연애','이별','사랑','관계','인간관계','돌봄','돌보','치료','간병','상처','공감','결혼','육아','아이','아이들','효도','반려'],
+    welfare:['복지','빈곤','소외','장애','노인','어르신','청소년','불평등','봉사','나눔','기부','소수자','약자','돌봄','가족','부모'],
+    public:['사회','공정','정의','시민','공동체','정치','국가','행정','공무원','규칙','제도','공공','마을','지역','참여','민주주의','국회','선거','평등'],
+    law:['법','법률','법학','권리','헌법','재판','소송','계약','인권','판례','규제','정의','공정','자유'],
+    policy:['정책','제도','행정','국회','지방자치','공공','법안','정치'],
+    safety:['안전','재난','소방','화재','사고','위험','대피','구조','안전관리'],
+    security:['경찰','범죄','치안','보안','수사','사이버','해킹','감시'],
+    military:['군대','국방','전쟁','병역','안보','군인','무기'],
+    disaster:['재난','지진','태풍','홍수','대피','재해','기후재난'],
+    edu:['교육','가르침','가르치','선생님','교사','수업','공부','배움','학생','학교','입시','강의','교육학','적성','진로','대학원','장학','학습','학점'],
+    youth:['청소년','20대','학생','학교','또래','성장','대학생','취준','취업준비','친구','교사'],
+    info:['책','독서','도서관','지식','정보','기록','아카이브','글쓰기','자료','문헌','큐레이션','대학원'],
+    health:['건강','병원','의료','질병','간호','의사','몸','피부','다이어트','식단','약','재활','치료','보건','면역','수면'],
+    bio:['생명','유전자','생물','식물','자연','생태','바이오','세포','유전','농업','작물','환경','기후'],
+    body:['몸','운동','체력','다이어트','피트니스','헬스','건강','뷰티','화장','패션','스타일','체형','요가','필라테스','피부'],
+    food:['요리','음식','먹거리','식당','카페','빵','커피','식품','영양','조리','베이킹','식문화','맛집'],
+    tech:['기술','컴퓨터','코딩','프로그래밍','개발','개발자','앱','소프트웨어','IT','인터넷','로봇','자동화','하드웨어','전산','정보기술','스마트','게임'],
+    ai:['AI','인공지능','챗GPT','챗지피티','데이터','알고리즘','머신러닝','빅데이터','딥러닝','생성형','자동화','개발자'],
+    engineering:['공학','기계','자동차','전자','전기','반도체','제조','설계','엔지니어','부품','배터리'],
+    built:['건축','집','아파트','도시','구조','공간','인테리어','부동산','주거','주택','단지','재개발'],
+    business:['돈','취업','회사','경영','창업','경제','주식','투자','마케팅','영업','알바','아르바이트','월급','연봉','소비','브랜드','회계','금융','재테크','사업','스타트업','공기업','비즈니스','카페'],
+    trade:['무역','수출','통상','글로벌','시장','관세','물류'],
+    global:['세계','외국','해외','여행','유학','이주','다문화','난민','국제','영어','일본','중국','베트남','번역','글로벌','국경','이민','문화차이'],
+    tourism:['여행','관광','호텔','항공','숙박','축제','레저','여가','투어'],
+    language:['언어','영어','일본어','중국어','번역','말','문학','글','독해','회화','언어교육','한국어','다문화','소통'],
+    culture:['문화','콘텐츠','이야기','영화','드라마','소설','웹툰','음악','공연','예술','축제','게임','아이돌','케이팝','K-pop','전시','미술관','서사','캐릭터','종교','신뢰','행복','독서'],
+    media:['미디어','유튜브','영상','SNS','인스타','광고','방송','뉴스','가짜뉴스','커뮤니티','구독','썸네일','편집','촬영','플랫폼','소통'],
+    design:['디자인','그림','일러스트','색','색감','포스터','웹툰','패션','뷰티','브랜딩','타이포','UX','UI','시각','디자이너','브랜드'],
+    art:['예술','그림','미술','음악','공연','창작','작가','웹툰','애니','애니메이션','조형','사진','악기','밴드','디자이너','영상'],
+    space:['공간','인테리어','집','도시','정원','조경','가드닝','텃밭','공원','녹지'],
+    sport:['운동','스포츠','축구','야구','농구','헬스','체육','러닝','등산','수영','클라이밍','트레이닝'],
+    env:['환경','기후','에너지','재활용','태양광','생태','탄소','미세먼지','쓰레기','지속가능','친환경','기후변화'],
+    animal:['동물','반려','반려동물','반려견','반려묘','강아지','고양이','유기견','동물원','축산','가축'],
+    rehab:['재활','치료','장애','회복','물리치료','작업치료','언어치료','보조기','요양','돌봄']
+  };
+
+  /* ================= 상태 ================= */
+  var S = { words:['','','','','','','','','',''], essay:'', answers:{}, step:0, propIdx:0 };
+  var LAST = null;
+  var SLOT_HINTS = ['예: 가족','예: 취업','예: 친구','예: 불안','예: AI','예: 돈','예: 진로','예: 여행','예: 건강','예: 공정'];
+
+  function $(id){ return document.getElementById(id); }
+  function el(tag, cls, html){ var e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>\"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]; }); }
+  function trim(s){ return String(s==null?'':s).replace(/\s+$/,'').replace(/^\s+/,''); }
+  function filledWords(){ return S.words.map(trim).filter(Boolean); }
+
+  /* ================= 1단계 ================= */
+  function renderChips(){
+    var box = $('kwset'); box.innerHTML = '';
+    KW_GROUPS.forEach(function(g){
+      var row = el('div','kwgroup');
+      row.appendChild(el('span','gl', esc(g.g)));
+      g.words.forEach(function(w){
+        var b = el('button','chip'); b.type = 'button'; b.textContent = w;
+        b.addEventListener('click', function(){ toggleWord(w); });
+        row.appendChild(b);
+      });
+      box.appendChild(row);
+    });
+    syncChips();
+  }
+
+  function syncChips(){
+    var on = {};
+    S.words.forEach(function(w){ var t = trim(w); if(t) on[t] = true; });
+    Array.prototype.forEach.call(document.querySelectorAll('#kwset .chip'), function(b){
+      b.setAttribute('aria-pressed', on[b.textContent] ? 'true' : 'false');
+    });
+  }
+
+  function toggleWord(w){
+    var at = -1;
+    for(var i=0;i<S.words.length;i++){ if(trim(S.words[i]) === w){ at = i; break; } }
+    if(at >= 0){
+      S.words[at] = '';
+      var inp = $('kw'+at); if(inp) inp.value = '';
+    } else {
+      var empty = -1;
+      for(var j=0;j<S.words.length;j++){ if(!trim(S.words[j])){ empty = j; break; } }
+      if(empty < 0){ toast('열 칸이 모두 찼습니다. 한 칸을 지우거나 직접 고쳐 쓰세요.'); return; }
+      S.words[empty] = w;
+      var ip = $('kw'+empty); if(ip){ ip.value = w; }
+    }
+    syncStep1();
+  }
+
+  function renderSlots(){
+    var box = $('slots'); box.innerHTML = '';
+    for(var i=0;i<10;i++){
+      (function(i){
+        var d = el('div','slot');
+        var sn = (i+1 < 10 ? '0' : '') + (i+1);
+        d.innerHTML = '<span class="sn">'+sn+'</span>' +
+          '<input type="text" id="kw'+i+'" maxlength="24" autocomplete="off" ' +
+          'placeholder="'+esc(SLOT_HINTS[i])+'" aria-label="내 안의 빅컨셉 '+(i+1)+'">' +
+          '<button class="clr" type="button" aria-label="'+(i+1)+'번 칸 지우기">✕</button>';
+        box.appendChild(d);
+        var inp = d.querySelector('input');
+        inp.value = S.words[i] || '';
+        inp.addEventListener('input', function(){ S.words[i] = this.value; syncStep1(); });
+        d.querySelector('.clr').addEventListener('click', function(){
+          S.words[i] = ''; inp.value = ''; syncStep1(); inp.focus();
+        });
+      })(i);
+    }
+  }
+
+  function syncStep1(){
+    var n = filledWords().length;
+    $('kwCount').textContent = n;
+    var dots = $('kwDots').children;
+    for(var i=0;i<dots.length;i++) dots[i].className = i < n ? 'on' : '';
+    for(var j=0;j<10;j++){
+      var inp = $('kw'+j); if(!inp) continue;
+      var slot = inp.parentNode;
+      if(slot && slot.className.indexOf('slot') === 0) slot.className = 'slot' + (trim(inp.value) ? ' filled' : '');
+    }
+    syncChips();
+    var can = n >= 3;
+    $('next1').disabled = !can;
+    var s2btn = document.querySelector('#s1 .steps button[data-go="2"]');
+    if(s2btn) s2btn.disabled = !can;
+    var s3btn = document.querySelector('#s1 .steps button[data-go="3"]');
+    if(s3btn) s3btn.disabled = !(can && answeredCount() === 6);
+    $('kwHint').textContent = n === 0
+      ? '세 개 이상 적으면 다음 단계로 갈 수 있습니다.'
+      : (n < 3 ? '좋습니다. ' + (3-n) + '개만 더 적으면 다음으로 갈 수 있습니다.'
+        : (n < 10 ? '지금 ' + n + '개. 열 개를 채우면 수업에서 하듯 완성됩니다. 아래 글쓰기로 이어가 보세요.'
+          : '열 개를 모두 채웠습니다. 이제 아래에 3~5문장 글쓰기를 해 보세요.'));
+  }
+
+  function seedEssay(){
+    var ta = $('essay');
+    if(trim(ta.value)){ toast('이미 쓰신 글이 있습니다. 지우고 나서 누르면 문장 틀을 넣어 드립니다.'); return; }
+    var ws = filledWords();
+    if(ws.length < 2){ toast('먼저 위 열 칸에 내 안의 빅컨셉을 두 개 이상 적어 주세요.'); return; }
+    var a = ws[0], b = ws[1], c = ws[2] || '';
+    var t = '나는 요즘 「' + a + '」' + josa(a,'과','와') + ' 「' + b + '」' + josa(b,'을','를') + ' 함께 생각한다. ' +
+      (c ? '「' + c + '」' + josa(c,'이라는','라는') + ' 말이 떠오를 때면, 그것이 내 삶의 어디에서 시작되었는지 적어 본다. ' : '그 두 가지가 서로 어떻게 얽혀 있는지 적어 본다. ') +
+      '아직 답은 모르지만, 이 단어들이 내가 붙들고 싶은 생각이라는 것은 알겠다. ' +
+      '나는 이것들을 내 것으로 만들기 위해 무엇을 더 물어야 할지 찾고 싶다.';
+    ta.value = t; S.essay = t; ta.dataset.seeded = '1';
+    updateEssay(); ta.focus();
+    toast('내 단어로 문장 틀을 넣었습니다. 자유롭게 고쳐 쓰세요.');
+  }
+
+  function updateEssay(){
+    $('essayCount').textContent = trim(S.essay).length + '자';
+  }
+
+  /* ================= 2단계 ================= */
+  function renderAxes(){
+    var wrap = $('axes-wrap'); wrap.innerHTML = ''; var n = 1;
+    AXES.forEach(function(g){
+      var sec = el('div','agroup');
+      sec.appendChild(el('div','gh','<b>'+esc(g.g)+'</b><span>'+esc(g.gl)+'</span>'));
+      g.items.forEach(function(item){
+        var q = el('div','aq');
+        q.setAttribute('role','group');
+        q.setAttribute('aria-labelledby','qh-'+item.id);
+        q.innerHTML = '<div class="qh"><span class="qn">'+n+'</span><h3 id="qh-'+item.id+'">'+esc(item.q)+'</h3></div>';
+        var grid = el('div','opt-grid');
+        item.o.forEach(function(op, k){
+          var b = el('button','opt');
+          b.type='button';
+          b.setAttribute('aria-pressed', S.answers[item.id]===op.id ? 'true':'false');
+          b.innerHTML = '<b><i>'+(k===0?'A':'B')+'</i>'+esc(op.t)+'</b><span>'+esc(op.d)+'</span>';
+          b.addEventListener('click', function(){
+            S.answers[item.id] = op.id;
+            var sib = grid.querySelectorAll('.opt');
+            for(var j=0;j<sib.length;j++) sib[j].setAttribute('aria-pressed','false');
+            b.setAttribute('aria-pressed','true');
+            syncAnswers();
+          });
+          grid.appendChild(b);
+        });
+        q.appendChild(grid);
+        sec.appendChild(q);
+        n++;
+      });
+      wrap.appendChild(sec);
+    });
+    syncAnswers();
+  }
+
+  function answeredCount(){
+    var c = 0;
+    AXES.forEach(function(g){ g.items.forEach(function(it){ if(S.answers[it.id]) c++; }); });
+    return c;
+  }
+
+  function syncAnswers(){
+    var c = answeredCount();
+    $('next2').disabled = c < 6;
+    $('hint2').textContent = c < 6
+      ? '여섯 문항 가운데 ' + (6-c) + '개가 남았습니다.'
+      : '답이 모였습니다. 결과지를 열어 보세요.';
+    var s3btn = document.querySelector('#s2 .steps button[data-go="3"]');
+    if(s3btn) s3btn.disabled = !(filledWords().length >= 3 && c === 6);
+  }
+
+  function renderEcho(){
+    var box = $('kwecho'); var ws = filledWords();
+    if(!ws.length){ box.hidden = true; box.innerHTML = ''; return; }
+    box.hidden = false;
+    box.innerHTML = '<span class="lb">1단계에서 적은 내 안의 빅컨셉</span>' +
+      ws.map(function(w,i){ return '<button type="button" data-kw="'+i+'">'+esc(w)+'</button>'; }).join('');
+    Array.prototype.forEach.call(box.querySelectorAll('button'), function(b){
+      b.addEventListener('click', function(){
+        show(1);
+        var idx = parseInt(b.getAttribute('data-kw'),10);
+        var target = 0;
+        for(var i=0;i<S.words.length;i++){ if(trim(S.words[i]) === ws[idx]){ target = i; break; } }
+        var inp = $('kw' + target);
+        if(inp){ inp.focus(); inp.select(); }
+      });
+    });
+  }
+
+  /* ================= 화면 전환 ================= */
+  function show(n){
+    S.step = n;
+    var ids = ['s0','s1','s2','s3'];
+    for(var i=0;i<ids.length;i++){
+      var s = $(ids[i]);
+      if(s) s.className = 'screen' + (String(i)===String(n) ? ' on':'');
+    }
+    var map = { 1:'s1', 2:'s2', 3:'s3' };
+    var cur = map[n];
+    if(cur){
+      var btns = $(cur).querySelectorAll('.steps button');
+      var ok1 = filledWords().length >= 3;
+      for(var j=0;j<btns.length;j++){
+        var g = parseInt(btns[j].getAttribute('data-go'),10);
+        btns[j].className = g===n ? 'on' : (g<n ? 'done':'');
+        btns[j].disabled = (g===2 && !ok1) || (g===3 && !(ok1 && answeredCount()===6));
+      }
+    }
+    if(n === 2) renderEcho();
+    if(n === 3) renderResult();
+    window.scrollTo({ top:0, behavior:'smooth' });
+  }
+
+  /* ================= 키워드 → 태그 ================= */
+  function wordHit(text, w){
+    if(!text) return false;
+    var t = String(text).toLowerCase();
+    var lw = String(w).toLowerCase();
+    if(lw.length <= 1) return t.replace(/\s+/g,'') === lw;
+    if(/^[a-z0-9+#.]+$/.test(lw)){
+      var safe = lw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      try { return new RegExp('(^|[^a-z0-9])' + safe + '([^a-z0-9]|$)').test(t); }
+      catch(e){ return t.indexOf(lw) >= 0; }
+    }
+    return t.indexOf(lw) >= 0;
+  }
+
+  function tagsFor(text){
+    var out = {};
+    if(!text) return out;
+    for(var tag in LEXICON){
+      var arr = LEXICON[tag];
+      for(var i=0;i<arr.length;i++){
+        if(wordHit(text, arr[i])){ out[tag] = 1; break; }
+      }
+    }
+    return out;
+  }
+
+  function keywordProfile(){
+    var tw = {}, kwHits = [];
+    S.words.forEach(function(w){
+      var ww = trim(w); if(!ww) return;
+      var tg = tagsFor(ww);
+      kwHits.push({ w:ww, tags:tg });
+      for(var k in tg) tw[k] = (tw[k]||0) + 1;
+    });
+    var et = tagsFor(S.essay || '');
+    for(var k2 in et) tw[k2] = (tw[k2]||0) + 0.5;
+    return { tw:tw, kwHits:kwHits };
+  }
+
+  function bestTheme(tw){
+    var best = null, bestS = 0;
+    TOPICS.forEach(function(tp){
+      var s = 0;
+      tp.tags.forEach(function(t){ s += tw[t] || 0; });
+      if(s > bestS){ bestS = s; best = tp; }
+    });
+    return best;
+  }
+
+  /* ================= 결과 계산 ================= */
+  function compute(){
+    var prof = keywordProfile();
+    var tw = prof.tw, kwHits = prof.kwHits;
+
+    var leanOrder = [];
+    AXES.forEach(function(g){ g.items.forEach(function(it){ if(S.answers[it.id]) leanOrder.push(S.answers[it.id]); }); });
+
+    var maxKw = 0;
+    for(var k in tw){ if(tw[k] > maxKw) maxKw = tw[k]; }
+
+    // 영역 태그는 앞에 올수록 그 영역의 중심 주제 — 가중치를 둔다
+    var TAGW = [1, 0.62, 0.38, 0.22];
+    var scored = CAREERS.map(function(d, idx){
+      var kw = 0;
+      d.tags.forEach(function(t, ti){ kw += (tw[t] || 0) * (TAGW[ti] || 0.15); });
+      var leanScore = 0, leanHits = [];
+      leanOrder.forEach(function(l){ if(d.lean.indexOf(l) >= 0){ leanScore += 2; leanHits.push(l); } });
+      var hits = kwHits.filter(function(h){
+        for(var t in h.tags){ if(d.tags.indexOf(t) >= 0) return true; }
+        return false;
+      }).map(function(h){ return h.w; });
+      return { d:d, idx:idx, kw:kw, leanScore:leanScore, hits:hits, leanHits:leanHits, s:0, kwNorm:0 };
+    });
+    var maxDeptKw = 0;
+    scored.forEach(function(x){ if(x.kw > maxDeptKw) maxDeptKw = x.kw; });
+    scored.forEach(function(x){
+      x.kwNorm = maxDeptKw > 0 ? x.kw / maxDeptKw : 0;
+      x.s = x.kwNorm * 12 + x.leanScore * 0.6;
+    });
+    scored.sort(function(a,b){ return b.s - a.s || a.idx - b.idx; });
+
+    // 1단계 키워드가 닿는 영역을 먼저 쓰고, 다른 분류의 영역이 거의 같은 점수면 그쪽을 고른다
+    var matched = scored.filter(function(x){ return x.kw > 0; });
+    var pool = matched.length >= 3 ? matched : scored;
+    var top = [];
+    if(pool.length) top.push(pool[0]);
+    while(top.length < 3 && top.length < pool.length){
+      var usedCols = {};
+      top.forEach(function(x){ usedCols[x.d.g] = true; });
+      var altA = null, altB = null;
+      for(var i=0;i<pool.length;i++){
+        if(top.indexOf(pool[i]) >= 0) continue;
+        if(!altB) altB = pool[i];
+        if(!usedCols[pool[i].d.g]){ altA = pool[i]; break; }
+      }
+      if(!altB) break;
+      var pick = (!altA || altB.s >= altA.s * 0.9) ? altB : altA;
+      top.push(pick);
+    }
+    for(var m=0;m<scored.length && top.length<3;m++){
+      if(top.indexOf(scored[m]) < 0) top.push(scored[m]);
+    }
+
+    // 수업 — 1단계 키워드의 결 + 2단계 성향
+    var courses = [COURSES.filter(function(c){ return c.base; })[0]];
+    var rest = COURSES.filter(function(c){ return !c.base; }).map(function(c, i){
+      var sc = 0;
+      c.tags.forEach(function(t){ sc += (tw[t] || 0); });
+      leanOrder.forEach(function(l){ if(c.tags.indexOf(l) >= 0) sc += 1.5; });
+      return { c:c, s:sc, i:i };
+    }).sort(function(a,b){ return b.s - a.s || a.i - b.i; });
+    for(var q=0;q<rest.length && courses.length<3;q++) courses.push(rest[q].c);
+
+    // 질문 3가지
+    var theme = bestTheme(tw);
+    var qs = [];
+    if(theme){ qs.push(SELFQ[theme.id][0]); }
+    else if(kwHits.length){
+      var w0 = kwHits[0].w;
+      qs.push({ q:'「' + w0 + '」' + josa(w0,'이','가') + ' 내 삶의 어느 장면에서 시작되었는가?',
+                h:'그 단어가 떠오르는 장면 세 가지를 적고, 세 장면의 공통점을 한 줄로 적어 보기.' });
+    } else {
+      qs.push(SELFQ[TOPICS[0].id][0]);
+    }
+    qs.push(selfQForLean(leanOrder[0]));
+    qs.push(AIQ);
+    // 중복 질문 정리
+    var seen = {}, uniq = [];
+    qs.forEach(function(it){ if(!seen[it.q]){ seen[it.q] = 1; uniq.push(it); } });
+    while(uniq.length < 3) uniq.push(AIQ);
+
+    return { kwHits:kwHits, tw:tw, maxKw:maxKw, leanOrder:leanOrder, top:top, courses:courses, questions:uniq, theme:theme };
+  }
+
+  function selfQForLean(l){
+    var m = {
+      theory:{ q:'내가 세운 이론적 설명이 현장에서 통하는지 어떻게 확인할 것인가?', h:'교과서의 개념 하나를 골라, 실제 사례에 적용해 보고 어긋나는 지점을 적어 보기.' },
+      field:{ q:'현장에서 통하던 방식이 원리로 설명되지 않는 까닭은 무엇인가?', h:'잘 작동하는 관행 하나를 골라, 그 이유를 설명해 줄 이론을 찾아보고 빈틈을 적어 보기.' },
+      liberty:{ q:'내가 원하는 것을 다른 사람도 원할 것이라고 가정해도 되는가?', h:'내가 당연하게 여긴 선택 하나를, 다른 처지의 사람 입장에서 다시 적어 보기.' },
+      solidarity:{ q:'공동체의 규칙이 개인을 너무 많이 요구하고 있지는 않은가?', h:'내가 따르는 규칙 하나를 골라, 그것이 요구하는 희생과 돌려주는 것을 저울질해 보기.' },
+      create:{ q:'내가 만든 것 없이도 할 수 있는 일은 무엇인가?', h:'최근 만든 결과물 하나를 골라, 그 안에서 내가 결정한 부분과 익힌 기술을 구분해 보기.' },
+      analyze:{ q:'분석이 끝났을 때 실제로 무엇이 달라지는가?', h:'분석한 사례 하나를 골라, 그 결과로 바꿀 수 있는 것과 바꿀 수 없는 것을 적어 보기.' },
+      careWork:{ q:'돌봄에서 \"내가 해결해 줄 수 없는 것\"은 무엇인가?', h:'도와준 경험 하나를 떠올려, 그 사람이 실제로 필요했던 것과 내가 제공한 것을 구분해 보기.' },
+      techWork:{ q:'이 기술이 없던 시절 사람들은 그 문제를 어떻게 풀었는가?', h:'내가 쓰는 기술 하나를 골라, 그 이전의 해결 방식을 찾아 비교해 보기.' },
+      local:{ q:'이 지역의 문제를 나보다 잘 아는 사람은 누구인가?', h:'내가 살아온 지역의 이슈 하나를 골라, 그 일을 오래 해 온 사람·단체를 찾아 적어 보기.' },
+      global:{ q:'다른 사회의 해법을 그대로 옮길 수 없는 이유는 무엇인가?', h:'다른 나라의 제도 하나를 골라, 한국에서 작동하지 않을 조건을 세 가지 적어 보기.' },
+      order:{ q:'지키려는 질서가 누군가에게 불편하다면 어떻게 할 것인가?', h:'내가 당연하게 여긴 규칙 하나를 골라, 그것 때문에 불편을 겪는 사람을 상상해 적어 보기.' },
+      change:{ q:'새로움을 위해 무엇을 먼저 잃어도 되는가?', h:'내가 바꾸고 싶은 것 하나를 골라, 바꾸는 과정에서 상처받을 수 있는 사람을 적어 보기.' }
+    };
+    return m[l] || { q:'내가 고른 쪽의 반대편이 옳을 수 있는 상황은 언제인가?', h:'내 선택과 반대되는 주장을 가장 강하게 펴는 글을 하나 찾아 읽고, 설득되는 지점을 한 줄로 적어 보기.' };
+  }
+
+  function autoDefault(word){
+    var w = word || (LAST && LAST.kwHits.length ? LAST.kwHits[0].w : '내 안의 빅컨셉');
+    return AUTO_VARIANTS[S.propIdx % AUTO_VARIANTS.length].text(w);
+  }
+
+  /* ================= 결과 렌더 ================= */
+  function axisChoiceLines(){
+    var out = [];
+    AXES.forEach(function(g){
+      var chosen = '';
+      g.items.forEach(function(it){
+        var a = S.answers[it.id];
+        if(a) it.o.forEach(function(o){ if(o.id === a) chosen = o.t; });
+      });
+      out.push({ g:g.g, t:chosen || '—' });
+    });
+    return out;
+  }
+
+  function renderJourney(R){
+    var ws = R.kwHits.map(function(h){ return h.w; });
+    var ex = trim(S.essay);
+    var exShort = ex ? (ex.length > 72 ? ex.slice(0,72) + '…' : ex) : '글쓰기는 아직 적지 않았습니다.';
+    var names = R.top.map(function(x){ return x.d.n; });
+    var lines = axisChoiceLines();
+    var html = '';
+    html += '<div class="jc"><div class="jh"><span class="jn">1</span><h4>내 안의 빅컨셉</h4></div>' +
+      '<div class="minichips">' + (ws.length ? ws.map(function(w){ return '<span>'+esc(w)+'</span>'; }).join('') : '<span>—</span>') + '</div>' +
+      '<p>' + esc(exShort) + '</p></div>';
+    html += '<div class="ja" aria-hidden="true">→</div>';
+    html += '<div class="jc"><div class="jh"><span class="jn">2</span><h4>AI 시대의 시선</h4></div><div class="kline">' +
+      lines.map(function(l){ return '<span><i>'+esc(l.g)+'</i> '+esc(l.t)+'</span>'; }).join('') + '</div></div>';
+    html += '<div class="ja" aria-hidden="true">→</div>';
+    html += '<div class="jc"><div class="jh"><span class="jn">3</span><h4>나만의 빅컨셉</h4></div>' +
+      '<p><b class="res">' + esc(names.join(' · ')) + '</b></p>' +
+      '<p class="mini">이 흐름이 아래 선언문 · 질문 3가지 · 추천 직업 영역으로 이어집니다.</p></div>';
+    $('jsum').innerHTML = html;
+  }
+
+  function renderOwn(R){
+    var box = $('kwOut'); box.innerHTML = '';
+    for(var i=0;i<10;i++){
+      var w = trim(S.words[i]);
+      var li = el('li', w ? '' : 'empty');
+      li.textContent = w || '—';
+      box.appendChild(li);
+    }
+    var e = $('essayOut');
+    var t = trim(S.essay);
+    e.textContent = t || '아직 글쓰기를 하지 않았습니다. 1단계로 돌아가 열 개의 단어를 이어 3~5문장을 적어 보세요.';
+    e.className = 'essayOut' + (t ? '' : ' empty');
+  }
+
+  function declarationHTML(R){
+    var kws = R.kwHits.slice(0,3).map(function(h){ return h.w; });
+    var names = R.top.map(function(x){ return x.d.n; });
+    var pairText = names.length >= 2
+      ? esc(names[0]) + josa(names[0],'과','와') + ' ' + esc(names[1])
+      : esc(names[0] || '두 영역');
+    if(kws.length >= 2){
+      var last = kws[kws.length-1];
+      return '나는 <em>' + kws.map(function(k){ return '「'+esc(k)+'」'; }).join(' · ') + '</em>' + josa(last,'이라는','라는') + ' 내 안의 빅컨셉에서 출발해, ' +
+        pairText + '의 현장에서 그 생각을 다시 묻고, 4년 동안 내 답을 고쳐 쓴다.';
+    }
+    if(kws.length === 1){
+      return '나는 <em>「' + esc(kws[0]) + '」</em>' + josa(kws[0],'이라는','라는') + ' 내 안의 빅컨셉에서 출발해, ' +
+        pairText + '의 현장에서 그 생각을 다시 묻고, 4년 동안 내 답을 고쳐 쓴다.';
+    }
+    var t0 = R.theme ? R.theme.t : TOPICS[0].t;
+    return '나는 <em>「' + esc(t0) + '」</em>' + josa(t0,'이라는','라는') + ' 물음에서 출발해, ' +
+      pairText + '의 언어로 그 질문을 다시 물으며, 4년 동안 내 답을 고쳐 쓴다.';
+  }
+
+  function renderResult(){
+    var R = compute(); LAST = R;
+    var n = R.kwHits.length;
+
+    $('rSub').textContent = '내 안의 빅컨셉 ' + n + '개 · 짧은 글쓰기 · 성향 6문항을 엮어 만든 결과지입니다. AI 시대에 새로 생기거나 커지는 ' + CAREERS.length + '개 중범위 직업 영역 가운데 골랐습니다.';
+    $('rAxes').innerHTML =
+      '<span>질문하는 힘 — 내 안의 빅컨셉 ' + n + '개</span>' +
+      '<span class="t">융합 사유 — ' + esc(leanLabel(R.leanOrder)) + '</span>' +
+      '<span>오토포이에시스 — 내가 다시 쓰는 기준</span>';
+
+    renderJourney(R);
+    renderOwn(R);
+    $('declText').innerHTML = declarationHTML(R);
+
+    var ta = $('autoText');
+    if(!ta.dataset.touched){ ta.value = autoDefault(R.kwHits.length ? R.kwHits[0].w : ''); }
+    updateCount();
+
+    var ol = $('q3list'); ol.innerHTML = '';
+    R.questions.forEach(function(item){
+      var li = el('li');
+      li.innerHTML = '<div><b>' + esc(item.q) + '</b><span>' + esc(item.h) + '</span></div>';
+      ol.appendChild(li);
+    });
+
+    var box = $('majors'); box.innerHTML = '';
+    R.top.forEach(function(item, i){
+      var d = item.d;
+      var why = d.core;
+      var hits = item.hits.slice(0,3);
+      if(hits.length){
+        why += ' 내가 적은 「' + hits.join('」·「') + '」' + josa(hits[hits.length-1],'이','가') + ' 이 영역이 다루는 주제와 맞닿습니다.';
+      } else if(R.theme){
+        why += ' 「' + R.theme.t + '」' + josa(R.theme.t,'이라는','라는') + ' 물음과도 이어집니다.';
+      }
+      if(item.leanHits.length) why += ' ' + LEAN_TEXT[item.leanHits[0]];
+      var card = el('article','major');
+      card.innerHTML =
+        '<div class="rk r' + (i+1) + '">' + (i+1) + '</div>' +
+        '<div><div class="top"><span class="col">' + esc(d.g) + '</span>' + badgeHTML(d.b) + '</div>' +
+        '<h4>' + esc(d.n) + '</h4>' +
+        '<p class="why">' + esc(why) + '</p>' +
+        '<p class="era"><b>AI 시대</b> — ' + esc(d.era) + '</p>' +
+        '<p class="sk"><b>필요한 역량</b> — ' + esc(d.skills.join(' · ')) + '</p>' +
+        '<p class="sn2"><b>함께 키우면 좋은 감각</b> — ' + esc(d.senses) + '</p></div>';
+      box.appendChild(card);
+    });
+
+    var cb = $('courses'); cb.innerHTML = '';
+    R.courses.forEach(function(c){
+      var dd = el('div','course');
+      dd.innerHTML = '<b>' + esc(c.n) + '</b><span>' + esc(c.d) + '</span><span class="k">' + esc(c.k) + '</span>';
+      cb.appendChild(dd);
+    });
+  }
+
+  function badgeHTML(b){
+    var cls = (b && b.indexOf('신생') >= 0) ? 'new' : 'fuse';
+    return '<span class="bdg ' + cls + '">' + esc(b) + '</span>';
+  }
+
+  function leanLabel(leanOrder){
+    var names = { theory:'원리 탐구', field:'현장 해결', liberty:'개인의 자유', solidarity:'공동체 연대',
+      create:'직접 창작', analyze:'시스템 분석', careWork:'사람 돌봄', techWork:'기술 구현',
+      local:'지역 곁', global:'국경 밖', order:'질서 유지', change:'변화 열기' };
+    return leanOrder.map(function(l){ return names[l] || l; }).join(' / ');
+  }
+  function shortName(n){ return String(n || ''); }
+  function josa(word, withFinal, withoutFinal){
+    var s = String(word || '');
+    var ch = s.charAt(s.length - 1);
+    var code = ch.charCodeAt(0);
+    if(code >= 0xAC00 && code <= 0xD7A3){
+      return ((code - 0xAC00) % 28 !== 0) ? withFinal : withoutFinal;
+    }
+    return withFinal;
+  }
+
+  /* ================= 복사 ================= */
+  function buildText(){
+    var R = LAST; if(!R) return '';
+    var d = new Date();
+    var date = d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate());
+    var L = [];
+    L.push('《빅컨셉》 진로·직업 나침반 — 나의 결과지');
+    L.push('대구대학교 자유전공학부 · 이용승 교수 · ' + date);
+    L.push('');
+    L.push('■ 1단계 · 내 안의 빅컨셉 (열 개)');
+    for(var i=0;i<10;i++){
+      var w = trim(S.words[i]);
+      L.push('  ' + (i+1 < 10 ? ' ' : '') + (i+1) + '. ' + (w || '—'));
+    }
+    L.push('');
+    L.push('■ 내 안의 빅컨셉이 들어간 글쓰기');
+    L.push(trim(S.essay) || '(아직 쓰지 않음)');
+    L.push('');
+    L.push('■ 여정 요약');
+    L.push('내 안의 빅컨셉(' + R.kwHits.length + '개) → AI 시대의 시선(' + leanLabel(R.leanOrder) + ') → 나만의 빅컨셉');
+    L.push('');
+    L.push('■ 나의 빅컨셉 선언문');
+    L.push(stripTags($('declText').innerHTML));
+    L.push('');
+    L.push('■ 나의 오토포이에시스 선언');
+    L.push(trim($('autoText').value));
+    L.push('');
+    L.push('■ AI 시대, 나의 질문하는 힘 3가지');
+    R.questions.forEach(function(item, k){
+      L.push((k+1) + '. ' + item.q);
+      L.push('   → ' + item.h);
+    });
+    L.push('');
+    L.push('■ 추천 직업 영역 Top 3');
+    R.top.forEach(function(item, k){
+      var dd = item.d;
+      var why = dd.core;
+      var hits = item.hits.slice(0,3);
+      if(hits.length) why += ' 내가 적은 「' + hits.join('」·「') + '」' + josa(hits[hits.length-1],'이','가') + ' 이 영역이 다루는 주제와 맞닿습니다.';
+      if(item.leanHits.length) why += ' ' + LEAN_TEXT[item.leanHits[0]];
+      L.push((k+1) + '. [' + dd.g + '] ' + dd.n + ' — ' + dd.b);
+      L.push('   왜: ' + why);
+      L.push('   AI 시대: ' + dd.era);
+      L.push('   필요한 역량: ' + dd.skills.join(' / '));
+      L.push('   함께 키우면 좋은 감각: ' + dd.senses);
+    });
+    L.push('');
+    L.push('■ 함께 들으면 좋은 수업');
+    R.courses.forEach(function(c){ L.push('- ' + c.n + ' — ' + c.d); });
+    L.push('');
+    L.push('※ 이 결과지는 질문하는 힘 · 융합 사유 · 오토포이에시스의 세 축으로 만들어졌습니다.');
+    L.push('※ 직업을 정해 주지 않습니다. 진로 상담·수업 전 대화의 출발점으로 쓰세요.');
+    L.push('※ 직업 영역 ' + CAREERS.length + '개는 AI 시대에 새로 생기거나 빠르게 커지는 중범위 영역입니다. 세부 직업명·채용 조건은 산업과 기업에 따라 다릅니다.');
+    return L.join('\n');
+  }
+  function stripTags(html){ var d = document.createElement('div'); d.innerHTML = html; return (d.textContent || '').trim(); }
+  function pad(n){ return (n<10?'0':'') + n; }
+
+  function copyText(txt){
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      return navigator.clipboard.writeText(txt).then(function(){ return true; }).catch(function(){ return fallbackCopy(txt); });
+    }
+    return Promise.resolve(fallbackCopy(txt));
+  }
+  function fallbackCopy(txt){
+    try{
+      var ta = document.createElement('textarea');
+      ta.value = txt; ta.setAttribute('readonly','');
+      ta.style.position='fixed'; ta.style.left='-9999px'; ta.style.top='0';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0, ta.value.length);
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    }catch(e){ return false; }
+  }
+
+  /* ================= 토스트 ================= */
+  var toastT = null;
+  function toast(msg){
+    var t = $('toast'); t.textContent = msg; t.className = 'toast on';
+    clearTimeout(toastT); toastT = setTimeout(function(){ t.className = 'toast'; }, 2600);
+  }
+  function updateCount(){
+    var v = $('autoText').value || '';
+    $('autoCount').textContent = trim(v).length + '자';
+  }
+
+  /* ================= 직업 영역 지도 ================= */
+  function buildMap(){
+    var body = $('dlgBody'); if(!body) return;
+    var groups = [];
+    CAREERS.forEach(function(d){
+      var g = groups.filter(function(x){ return x.g === d.g; })[0];
+      if(!g){ g = { g:d.g, list:[] }; groups.push(g); }
+      g.list.push(d);
+    });
+    var html = groups.map(function(g){
+      return '<div class="colg"><h4>' + esc(g.g) + ' <span style="color:#A9A29A;font-weight:400">' + g.list.length + '개 영역</span></h4><ul>' +
+        g.list.map(function(d){ return '<li>' + esc(d.n) + badgeHTML(d.b) + '</li>'; }).join('') + '</ul></div>';
+    }).join('');
+    html += '<p class="exc"><b>이 지도에 대하여</b> — 여기 있는 ' + CAREERS.length + '개는 학생이 방향을 잡기 좋은 중범위 직업 영역입니다. 세부 직무명과 자격·채용 조건은 산업과 기업에 따라 다르게 붙으므로, 끌리는 영역은 그 일을 하는 사람에게 직접 물어보세요.</p>';
+    body.innerHTML = html;
+  }
+  function openMap(){
+    buildMap();
+    var d = $('mapDlg');
+    if(d.showModal) d.showModal(); else d.setAttribute('open','open');
+  }
+
+  /* ================= 이벤트 ================= */
+  document.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('[data-go],[data-start],[data-open-map],[data-close-map]') : null;
+    if(!t) return;
+    if(t.hasAttribute('data-start')){ show(1); return; }
+    if(t.hasAttribute('data-open-map')){ openMap(); return; }
+    if(t.hasAttribute('data-close-map')){ $('mapDlg').close(); return; }
+    var g = t.getAttribute('data-go');
+    if(g !== null){
+      var n = parseInt(g,10);
+      if(n === 0){ show(0); return; }
+      if(n === 2 && filledWords().length < 3){ toast('1단계에서 내 안의 빅컨셉을 세 개 이상 적어 주세요.'); return; }
+      if(n === 3 && (filledWords().length < 3 || answeredCount() < 6)){ toast('1단계 열 개(최소 세 개)와 2단계 여섯 문항을 먼저 채워 주세요.'); return; }
+      show(n);
+    }
+  });
+
+  $('next1').addEventListener('click', function(){ if(filledWords().length >= 3) show(2); });
+  $('next2').addEventListener('click', function(){ if(answeredCount() === 6) show(3); });
+
+  $('essay').addEventListener('input', function(){
+    S.essay = this.value; this.dataset.touched = '1'; updateEssay();
+  });
+  $('essaySample').addEventListener('click', function(){
+    var box = $('sampleBox');
+    var open = !box.hidden;
+    box.hidden = open;
+    this.setAttribute('aria-expanded', open ? 'false' : 'true');
+    this.textContent = open ? '예시 글 보기' : '예시 글 접기';
+  });
+  $('essaySeed').addEventListener('click', seedEssay);
+
+  $('autoText').addEventListener('input', function(){ this.dataset.touched = '1'; updateCount(); });
+
+  $('nextProp').addEventListener('click', function(){
+    S.propIdx = (S.propIdx + 1) % AUTO_VARIANTS.length;
+    $('autoText').value = autoDefault();
+    $('autoText').dataset.touched = '1';
+    updateCount();
+    toast('다른 문장을 제안했습니다. 그대로 써도 되고, 고쳐 써도 됩니다.');
+  });
+  $('resetProp').addEventListener('click', function(){
+    $('autoText').value = autoDefault();
+    $('autoText').dataset.touched = '1';
+    updateCount();
+    toast('처음 문장으로 되돌렸습니다.');
+  });
+
+  $('copyAll').addEventListener('click', function(){
+    var txt = buildText();
+    copyText(txt).then(function(ok){
+      toast(ok ? '결과 요약을 복사했습니다. 상세 내용을 1단계 기록까지 함께 담았습니다.' : '복사가 막혔습니다. 결과지를 길게 눌러 직접 선택해 주세요.');
+    });
+  });
+
+  $('printBtn').addEventListener('click', function(){ window.print(); });
+
+  $('restart').addEventListener('click', function(){
+    S.words = ['','','','','','','','','',''];
+    S.essay = ''; S.answers = {}; S.propIdx = 0; LAST = null;
+    var ta = $('autoText'); ta.value = ''; delete ta.dataset.touched;
+    var es = $('essay'); es.value = ''; delete es.dataset.touched;
+    if($('sampleBox')) { $('sampleBox').hidden = true; }
+    var sb = $('essaySample'); if(sb){ sb.textContent = '예시 글 보기'; sb.setAttribute('aria-expanded','false'); }
+    renderSlots(); syncStep1(); renderAxes(); updateEssay();
+    show(0);
+    toast('처음부터 다시 시작합니다.');
+  });
+
+  // dialog: 바깥 클릭 닫기
+  $('mapDlg').addEventListener('click', function(e){
+    var r = this.getBoundingClientRect();
+    if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) this.close();
+  });
+
+  // 직업 영역 지도 버튼 (결과지 안)
+  Array.prototype.forEach.call(document.querySelectorAll('.mapbox [data-open-map]'), function(b){
+    b.addEventListener('click', openMap);
+  });
+
+  /* ================= 시작 ================= */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-ncareer]'), function(n){ n.textContent = CAREERS.length; });
+  renderChips();
+  renderSlots();
+  syncStep1();
+  renderAxes();
+  renderEcho();
+  updateEssay();
+  updateCount();
+})();
+</script>
+</body>
+</html>

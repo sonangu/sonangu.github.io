@@ -1,0 +1,6 @@
+# 배포에 필요 없는 백업·메모
+DEPLOY-NOTES.md
+index.template.backup-*.html
+data/publications.backup-*.json
+.DS_Store
+tmp/

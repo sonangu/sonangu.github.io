@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>권력·의무·자유 딜레마 나침반 | 이용승 교수 · 대구대학교</title>
+<meta name="description" content="《권력·의무·자유》 수업의 딜레마 투표·토론 앱. 수업의 세 단원 — 권력·의무·자유 — 에서 실제로 다룬 열두 장면에 A / B / 제3의 길로 답하고, 나의 균형 삼각형과 반대편의 질문, 사상가의 시선을 얻습니다. 강의실에서 거수 숫자를 바로 집계하는 수업 진행 모드도 함께.">
+<meta name="robots" content="index,follow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231C4B34'/%3E%3Cpath d='M32 14 L49 45 H15 Z' fill='none' stroke='%23F7F4EB' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F7F4EB; --surface:#FFFDF8;
+  --ink:#1D2A22; --ink-2:#41503F; --muted:#7C796E;
+  --line:#E3DCCB; --line-soft:#EDE7D9;
+  --sage:#1C4B34; --sage-2:#3F6B54; --sage-soft:#EBEFE7;
+  --terra:#A9613F; --terra-soft:#F8EEE7;
+  --gold:#B08B45; --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(52,44,34,.04), 0 8px 24px rgba(52,44,34,.05);
+  --shadow-lg:0 2px 6px rgba(52,44,34,.05), 0 18px 44px rgba(52,44,34,.08);
+  --radius:16px; --max:960px;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight:400; line-height:1.75; letter-spacing:-.01em;
+  background-image:radial-gradient(1100px 560px at 82% -8%, #F1EBDC 0%, rgba(241,235,220,0) 60%),
+                   radial-gradient(820px 460px at 4% 4%, #EAEFE6 0%, rgba(234,239,230,0) 58%);
+  background-repeat:no-repeat; background-attachment:fixed;
+  word-break:keep-all;
+}
+h1,h2,h3,h4,.serif{font-family:"Noto Serif KR",Georgia,"Times New Roman",serif; font-weight:600; letter-spacing:-.02em}
+a{color:inherit; text-decoration:none}
+button{font-family:inherit}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--sage); outline-offset:3px; border-radius:6px}
+
+/* ---------- app bar ---------- */
+.appbar{position:sticky; top:0; z-index:60; background:rgba(247,244,235,.93); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid var(--line-soft)}
+.appbar .in{max-width:var(--max); margin:0 auto; padding:9px 20px; display:flex; align-items:center; gap:12px; min-height:56px}
+.back{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; color:var(--ink-2); padding:7px 12px 7px 9px; border-radius:999px; transition:background .16s ease,color .16s ease}
+.back:hover{background:var(--sage-soft); color:var(--sage)}
+.back .a{font-size:15px; line-height:1}
+.appbar .ttl{margin-left:auto; font-size:11.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); white-space:nowrap}
+@media(max-width:520px){ .appbar .ttl{display:none} }
+
+/* ---------- mode switch ---------- */
+.modewrap{padding:16px 0 2px}
+.modes{display:flex; gap:4px; padding:4px; background:#F2EDE4; border:1px solid var(--line-soft); border-radius:999px; max-width:440px}
+.modes button{flex:1 1 0; border:0; background:none; border-radius:999px; padding:9px 10px; font-size:13px; color:var(--muted); cursor:pointer; line-height:1.35; transition:background .18s ease,color .18s ease,box-shadow .18s ease}
+.modes button.on{background:var(--surface); color:var(--ink); box-shadow:var(--shadow); font-weight:500}
+.modes button:hover:not(.on){color:var(--ink-2)}
+@media(max-width:430px){ .modes button{font-size:12px; padding:9px 4px} }
+
+/* ---------- screens ---------- */
+.screen{display:none}
+.screen.on{display:block; animation:fade .38s ease both}
+@keyframes fade{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+
+/* ---------- intro ---------- */
+.hero{padding:34px 0 6px}
+.eyebrow{font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--sage); font-weight:500; margin:0 0 16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap}
+.eyebrow::before{content:""; width:24px; height:1px; background:var(--sage-2); display:inline-block; flex:none}
+.hero h1{font-size:clamp(30px,5.4vw,46px); line-height:1.22; margin:0 0 14px}
+.hero h1 em{font-style:normal; color:var(--sage); border-bottom:2px solid var(--gold); padding-bottom:2px}
+.hero .lead{font-size:16px; color:var(--ink-2); max-width:35em; margin:0 0 8px}
+.hero .lead b{color:var(--ink); font-weight:600}
+.hero .quote{margin:18px 0 0; padding:14px 0 0 18px; border-left:2px solid var(--gold); font-size:13.5px; color:var(--muted); line-height:1.8; max-width:38em}
+.hero .quote b{color:var(--ink-2); font-weight:500}
+
+.axes{display:grid; gap:12px; margin:26px 0 8px; grid-template-columns:repeat(3,1fr)}
+@media(max-width:760px){ .axes{grid-template-columns:1fr; gap:10px} }
+.axis{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:18px 18px 16px; box-shadow:var(--shadow); position:relative; overflow:hidden}
+.axis .gl{position:absolute; right:14px; bottom:8px; font-family:"Noto Serif KR",serif; font-size:28px; line-height:1; color:#E9E1D3; pointer-events:none; user-select:none; z-index:0; opacity:.9}
+.axis .n{font-size:10.5px; letter-spacing:.16em; color:var(--gold); font-weight:600; display:block; margin-bottom:6px}
+.axis h3{font-size:17px; margin:0 0 4px; position:relative}
+.axis .en{font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); display:block; margin:0 0 8px}
+.axis p{font-size:13px; line-height:1.68; color:var(--ink-2); margin:0; position:relative}
+.axis p b{color:var(--ink); font-weight:600}
+
+.how{margin:26px 0 0; padding:0; list-style:none; display:grid; gap:0; border-top:1px solid var(--line)}
+.how li{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 10px; padding:12px 2px; border-bottom:1px solid var(--line-soft)}
+.how .no{font-family:"Noto Serif KR",serif; font-size:12px; letter-spacing:.08em; color:var(--sage); white-space:nowrap; width:34px; flex:none}
+.how b{font-weight:600; font-size:14.5px}
+.how span.d{font-size:13.5px; color:var(--muted); display:inline; margin-left:8px; line-height:1.6}
+
+.uninote{margin:18px 0 0; font-size:13px; line-height:1.8; color:var(--ink-2); background:var(--sage-soft); border:1px solid #DCE6DC; border-radius:12px; padding:13px 16px}
+.uninote b{color:var(--sage); font-weight:600}
+
+/* ---------- course blocks ---------- */
+.axis .pq{font-family:"Noto Serif KR",serif; font-size:13.5px; line-height:1.7; color:var(--ink); margin:0 0 9px; padding-bottom:9px; border-bottom:1px solid var(--line-soft); position:relative; font-weight:500}
+.cycle{margin:22px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow)}
+.cyc-t{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; margin:0 0 8px}
+.cyc-t b{font-family:"Noto Serif KR",serif; font-size:14.5px; font-weight:600; color:var(--ink)}
+.cyc-t span{font-size:12px; color:var(--sage); letter-spacing:.01em}
+.cycle p{margin:0; font-size:12.8px; line-height:1.75; color:var(--muted)}
+.cycle p b{color:var(--ink-2); font-weight:600}
+
+.ufilter{display:flex; gap:5px; flex-wrap:wrap; margin:0 0 12px}
+.uf{border:1px solid var(--line); background:#FCFBF8; border-radius:999px; padding:6px 12px; font-size:12px; color:var(--ink-2); cursor:pointer; font-family:inherit; display:inline-flex; align-items:center; gap:5px; transition:border-color .14s ease, background .14s ease, color .14s ease}
+.uf span{font-size:10.5px; color:var(--muted); font-family:"Noto Serif KR",serif}
+.uf:hover{border-color:var(--sage-2); color:var(--sage)}
+.uf.on{background:var(--sage); border-color:var(--sage); color:#fff}
+.uf.on span{color:rgba(255,255,255,.72)}
+
+.pick .ub{display:inline-block; font-size:9.5px; letter-spacing:.1em; font-weight:600; padding:1px 6px; border-radius:999px; margin-right:5px; vertical-align:1px; border:1px solid transparent}
+.pick .ub.p{background:var(--terra-soft); color:#8C4E31; border-color:#EFDDD2}
+.pick .ub.d{background:var(--sage-soft); color:#1C4B34; border-color:#D6E0D6}
+.pick .ub.f{background:var(--gold-soft); color:#7C6231; border-color:#EADFC7}
+
+.qkrow{display:flex; align-items:center; gap:8px; margin-bottom:8px}
+.uk{font-size:10.5px; letter-spacing:.14em; font-weight:600; padding:2px 9px; border-radius:999px; border:1px solid transparent}
+.uk.p{background:var(--terra-soft); color:#8C4E31; border-color:#EFDDD2}
+.uk.d{background:var(--sage-soft); color:#1C4B34; border-color:#D6E0D6}
+.uk.f{background:var(--gold-soft); color:#7C6231; border-color:#EADFC7}
+.uk.x{background:#F1EFEA; color:var(--ink-2); border-color:#E4DCCC}
+.qkrow .k{margin:0}
+.qsrc{margin:10px 0 0; font-size:11.5px; color:var(--muted); line-height:1.65; padding-left:10px; border-left:2px solid var(--line)}
+.qsrc b{color:var(--ink-2); font-weight:600; letter-spacing:.04em; font-size:10.5px; margin-right:5px}
+
+.unitbox{display:grid; gap:0; padding:6px 18px}
+.ubrow{display:grid; grid-template-columns:66px 1fr auto; gap:12px; align-items:center; padding:11px 0; border-bottom:1px solid var(--line-soft); font-size:12.5px}
+.ubrow:last-child{border-bottom:0}
+.ubrow .un{font-family:"Noto Serif KR",serif; font-size:14px; color:var(--ink)}
+.ubrow .seg{display:flex; height:8px; border-radius:999px; overflow:hidden; background:#F2ECE2}
+.ubrow .seg i{display:block; height:100%}
+.ubrow .seg i.p{background:var(--terra)} .ubrow .seg i.d{background:var(--sage)} .ubrow .seg i.f{background:var(--gold)}
+.ubrow .uv{font-size:11.5px; color:var(--muted); text-align:right; line-height:1.5; white-space:nowrap}
+.ubrow .uv b{display:block; color:var(--ink-2); font-weight:600; font-size:12px}
+.ubrow.none .seg{opacity:.35}
+@media(max-width:520px){ .ubrow{grid-template-columns:54px 1fr} .ubrow .uv{grid-column:2; text-align:left; white-space:normal} }
+
+.pres .psrc{font-size:11.5px; color:var(--muted); margin:10px 0 0; padding-left:10px; border-left:2px solid var(--line); line-height:1.6}
+.pres .psrc b{color:var(--ink-2); font-weight:600; font-size:10.5px; letter-spacing:.04em; margin-right:5px}
+
+.startrow{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:26px 0 6px}
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:48px; padding:12px 24px; border-radius:999px; font-size:14.5px; font-weight:500; border:1px solid transparent; cursor:pointer; transition:background .16s ease,border-color .16s ease,color .16s ease,transform .16s ease}
+.btn-primary{background:var(--sage); color:#fff}
+.btn-primary:hover{background:#4F6557; transform:translateY(-1px)}
+.btn[disabled],.btn[disabled]:hover{opacity:.38; cursor:not-allowed; transform:none; background:var(--sage); color:#fff}
+.btn-ghost{background:var(--surface); border-color:var(--line); color:var(--ink-2)}
+.btn-ghost:hover{border-color:var(--sage-2); color:var(--sage)}
+.btn-ghost[disabled],.btn-ghost[disabled]:hover{opacity:.42; cursor:not-allowed; border-color:var(--line); color:var(--muted); background:var(--surface)}
+.btn-sm{min-height:40px; padding:8px 16px; font-size:13px}
+.btn-gold{background:var(--gold); color:#3C3222}
+.btn-gold:hover{background:#B3925C}
+
+.note{background:#FFF; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; padding:14px 16px; font-size:12.5px; line-height:1.7; color:var(--muted); margin:18px 0 0}
+.note b{color:var(--ink-2); font-weight:600}
+
+/* ---------- topic picker ---------- */
+.picker{margin:6px 0 0; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); padding:16px 16px 14px; box-shadow:var(--shadow)}
+.picker[hidden]{display:none}
+.picker h3{font-size:14.5px; margin:0 0 4px}
+.picker p.hint{font-size:12.5px; color:var(--muted); margin:0 0 12px}
+.picks{display:grid; grid-template-columns:1fr 1fr; gap:8px}
+@media(max-width:620px){ .picks{grid-template-columns:1fr} }
+.pick{display:flex; gap:9px; align-items:flex-start; text-align:left; background:#FCFBF8; border:1px solid var(--line-soft); border-radius:10px; padding:10px 12px; cursor:pointer; font-size:12.5px; line-height:1.5; color:var(--ink-2); transition:border-color .16s ease,background .16s ease}
+.pick:hover{border-color:var(--sage-2)}
+.pick .bx{width:16px; height:16px; border-radius:4px; border:1px solid #D6CCBC; flex:none; margin-top:2px; display:grid; place-items:center; font-size:11px; color:#fff; background:#fff}
+.pick.on{border-color:var(--sage); background:var(--sage-soft)}
+.pick.on .bx{background:var(--sage); border-color:var(--sage)}
+.pick .num{font-family:"Noto Serif KR",serif; color:var(--gold); font-size:11.5px; margin-right:5px}
+.picker .prow{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-top:12px}
+.picker .cnt{font-size:12.5px; color:var(--muted)}
+
+/* ---------- question ---------- */
+.qtop{display:flex; align-items:center; gap:10px; padding:20px 0 0; font-size:12.5px; color:var(--muted)}
+@media(max-width:460px){
+  .qtop{gap:6px; font-size:11.5px}
+  .qtop .qback{font-size:11.5px; white-space:nowrap; padding:6px 4px 6px 0}
+  .qtop .prog{white-space:nowrap; font-size:11.5px}
+  .qtop .mid{gap:6px; margin-left:auto; margin-right:auto}
+  .qtop .dots{display:none}
+}
+.qtop .qback{border:0; background:none; color:var(--muted); font-size:12.5px; cursor:pointer; padding:6px 8px 6px 0}
+.qtop .qback:hover{color:var(--sage)}
+.qtop .mid{margin-left:auto; margin-right:auto; display:flex; align-items:center; gap:8px}
+.qtop .prog{font-family:"Noto Serif KR",serif; letter-spacing:.08em; color:var(--sage); font-size:12.5px}
+.dots{display:flex; gap:4px}
+.dots i{width:6px; height:6px; border-radius:50%; background:#DFD6C6; display:block}
+.dots i.done{background:var(--sage-2)}
+.dots i.now{background:var(--terra); transform:scale(1.25)}
+
+.sharedbar{margin:12px 0 0; background:var(--gold-soft); border:1px solid #EADFC7; border-radius:10px; padding:10px 14px; font-size:12.5px; color:#6E5728; line-height:1.65}
+.sharedbar b{font-weight:600}
+.qhead{padding:14px 0 0}
+.qhead .k{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--terra); font-weight:600; display:block; margin-bottom:8px}
+.qhead h2{font-size:clamp(21px,3.4vw,28px); margin:0 0 8px; line-height:1.38}
+.qhead .frame{font-size:12px; color:var(--muted); border:1px solid var(--line-soft); background:#FCFBF8; border-radius:999px; padding:3px 11px; display:inline-block}
+
+.sit{margin:16px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:16px 18px; box-shadow:var(--shadow); font-size:14.5px; line-height:1.85; color:var(--ink-2)}
+.sit .lab{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; display:block; margin-bottom:6px}
+.sit p{margin:0}
+.sit p + p{margin-top:8px}
+
+.askline{font-family:"Noto Serif KR",serif; font-size:15px; margin:22px 0 10px; color:var(--ink)}
+
+.opts{display:grid; gap:10px}
+.opt{display:grid; grid-template-columns:44px 1fr auto; gap:12px; align-items:center; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:15px 16px; cursor:pointer; transition:border-color .16s ease, box-shadow .16s ease, background .16s ease; box-shadow:var(--shadow)}
+.opt:hover{border-color:var(--sage-2)}
+.opt .lt{width:34px; height:34px; border-radius:50%; border:1px solid #DCD3C4; display:grid; place-items:center; font-family:"Noto Serif KR",serif; font-size:14px; color:var(--ink-2); flex:none; align-self:start}
+.opt .tx b{display:block; font-size:14.5px; font-weight:600; margin-bottom:2px; color:var(--ink)}
+.opt .tx span{display:block; font-size:13px; color:var(--muted); line-height:1.65}
+.opt .chk{width:18px; height:18px; border-radius:50%; border:1px solid #D6CCBC; flex:none; position:relative; align-self:start; margin-top:6px}
+.opt.on{border-color:var(--sage); background:#FCFDFB; box-shadow:0 0 0 1px rgba(95,119,103,.25), var(--shadow)}
+.opt.on .lt{background:var(--sage); border-color:var(--sage); color:#fff}
+.opt.on .chk{border-color:var(--sage); background:var(--sage)}
+.opt.on .chk::after{content:""; position:absolute; inset:4px; border-radius:50%; background:#fff}
+@media(max-width:520px){ .opt{grid-template-columns:34px 1fr; gap:10px; padding:13px 13px} .opt .chk{display:none} .opt .lt{width:30px; height:30px; font-size:13px} }
+
+/* ---------- reveal ---------- */
+.reveal{margin:14px 0 0; border:1px solid var(--line); border-radius:var(--radius); background:var(--surface); box-shadow:var(--shadow-lg); overflow:hidden; animation:fade .3s ease both}
+.reveal[hidden]{display:none}
+.rv-head{display:flex; align-items:center; gap:10px; flex-wrap:wrap; padding:13px 18px; border-bottom:1px solid var(--line-soft); background:#FCFBF8}
+.rv-head .bl{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); font-weight:600}
+.badge{font-size:11.5px; border-radius:999px; padding:3px 11px; border:1px solid transparent; font-weight:600; letter-spacing:.01em}
+.badge.p{background:var(--terra-soft); color:#8C4E31; border-color:#EFDDD2}
+.badge.d{background:var(--sage-soft); color:#41594A; border-color:#D6E0D6}
+.badge.f{background:var(--gold-soft); color:#7C6231; border-color:#EADFC7}
+.badge.x{background:#F1EFEA; color:var(--ink-2); border-color:#E4DCCC}
+.rv-grid{display:grid; grid-template-columns:1.25fr 1fr; gap:0}
+@media(max-width:760px){ .rv-grid{grid-template-columns:1fr} }
+.rv-col{padding:16px 18px}
+.rv-col + .rv-col{border-left:1px solid var(--line-soft)}
+@media(max-width:760px){ .rv-col + .rv-col{border-left:0; border-top:1px solid var(--line-soft)} }
+.rv-col h4{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin:0 0 8px; font-weight:600}
+.rv-q{font-family:"Noto Serif KR",serif; font-size:15px; line-height:1.75; margin:0 0 8px; color:var(--ink)}
+.rv-src{font-size:12px; color:var(--muted); margin:0}
+.think{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+.think li{font-size:12.8px; line-height:1.7; color:var(--ink-2); padding-left:12px; border-left:2px solid var(--line)}
+.think b{display:block; font-size:11.5px; letter-spacing:.06em; color:var(--sage); font-weight:600; margin-bottom:1px}
+.cost{font-size:12.8px; color:var(--ink-2); margin:12px 0 0; padding-top:10px; border-top:1px dashed var(--line)}
+.cost b{color:var(--terra); font-weight:600; font-size:11.5px; letter-spacing:.06em; display:block; margin-bottom:2px}
+
+.navrow{display:flex; gap:10px; align-items:center; margin:20px 0 8px}
+.navrow .sp{flex:1}
+.navrow .hint{font-size:12px; color:var(--muted)}
+
+/* ---------- result ---------- */
+.rhead{padding:28px 0 4px}
+.rhead .k{font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--terra); font-weight:600; display:block; margin-bottom:8px}
+.rhead h2{font-size:clamp(24px,4vw,34px); margin:0 0 6px}
+.rhead .sub{font-size:13px; color:var(--muted); margin:0}
+.namein{display:flex; align-items:center; gap:8px; margin:14px 0 0; font-size:12.5px; color:var(--muted); flex-wrap:wrap}
+.namein input{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:7px 14px; font-family:inherit; font-size:13px; color:var(--ink); min-width:180px; max-width:100%}
+.namein input:focus{outline:2px solid var(--sage); outline-offset:2px}
+
+.rgrid{display:grid; grid-template-columns:1.05fr 1fr; gap:16px; margin:20px 0 0; align-items:stretch}
+@media(max-width:820px){ .rgrid{grid-template-columns:1fr} }
+.card{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow); padding:18px}
+.triwrap{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px}
+.triwrap svg{width:100%; max-width:330px; height:auto; display:block}
+.triwrap .cap{font-size:11.5px; color:var(--muted); text-align:center; line-height:1.6; margin:0; max-width:30em}
+.bars{display:grid; gap:12px; margin:2px 0 0}
+.bar{display:grid; grid-template-columns:54px 1fr 48px; gap:10px; align-items:center; font-size:12.5px}
+.bar .n{font-family:"Noto Serif KR",serif; font-size:13px; color:var(--ink)}
+.bar .track{display:block; height:9px; background:#F2ECE2; border-radius:999px; overflow:hidden}
+.bar .fill{display:block; height:100%; border-radius:999px; transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.bar.p .fill{background:linear-gradient(90deg,#B9724E,#A9613F)}
+.bar.d .fill{background:linear-gradient(90deg,#7C9484,#5F7767)}
+.bar.f .fill{background:linear-gradient(90deg,#D3B784,#C0A16B)}
+.bar .v{text-align:right; font-family:"Noto Serif KR",serif; font-size:13px; color:var(--ink-2)}
+.bars .lg{margin-top:14px; border-top:1px solid var(--line-soft); padding-top:12px; font-size:12.5px; color:var(--muted); line-height:1.7}
+.bars .lg b{color:var(--ink-2); font-weight:600}
+
+.typebox{margin:16px 0 0}
+.typebox .tn{font-family:"Noto Serif KR",serif; font-size:22px; margin:0 0 2px; line-height:1.35}
+.typebox .tt{font-size:12px; color:var(--terra); letter-spacing:.02em; margin:0 0 10px}
+.typebox .tl{font-size:14px; color:var(--ink-2); margin:0 0 10px; line-height:1.85}
+.typebox .two{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 0}
+@media(max-width:520px){ .typebox .two{grid-template-columns:1fr} }
+.typebox .two div{background:#FCFBF8; border:1px solid var(--line-soft); border-radius:10px; padding:10px 12px; font-size:12.5px; color:var(--ink-2); line-height:1.7}
+.typebox .two b{display:block; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); margin-bottom:3px}
+
+.sech{margin:30px 0 12px; display:flex; align-items:baseline; gap:10px; border-bottom:1px solid var(--line); padding-bottom:8px}
+.sech h3{font-size:16.5px; margin:0}
+.sech span{font-size:11.5px; color:var(--muted); letter-spacing:.04em}
+
+.choices{list-style:none; margin:0; padding:0; display:grid; gap:0; border-top:1px solid var(--line-soft)}
+.choices li{display:grid; grid-template-columns:34px 1fr auto; gap:10px; align-items:baseline; padding:10px 2px; border-bottom:1px solid var(--line-soft); font-size:13px}
+.choices .no{font-family:"Noto Serif KR",serif; color:var(--gold); font-size:11.5px}
+.choices .q{color:var(--ink-2); line-height:1.6}
+.choices .q b{display:block; color:var(--ink); font-weight:500; font-size:13px; margin-bottom:1px}
+.choices .sel{font-size:11.5px; white-space:nowrap; padding:2px 9px; border-radius:999px; border:1px solid var(--line); color:var(--ink-2); background:#FCFBF8}
+.choices .sel.p{color:#8C4E31; border-color:#EFDDD2; background:var(--terra-soft)}
+.choices .sel.d{color:#41594A; border-color:#D6E0D6; background:var(--sage-soft)}
+.choices .sel.f{color:#7C6231; border-color:#EADFC7; background:var(--gold-soft)}
+@media(max-width:560px){ .choices li{grid-template-columns:26px 1fr; row-gap:4px} .choices .sel{grid-column:2; justify-self:start} }
+
+.asks{list-style:none; margin:0; padding:0; display:grid; gap:10px; counter-reset:a}
+.asks li{counter-increment:a; position:relative; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:13px 16px 13px 46px; font-size:13.5px; line-height:1.75; color:var(--ink-2); box-shadow:var(--shadow)}
+.asks li::before{content:counter(a); position:absolute; left:15px; top:13px; width:20px; height:20px; border-radius:50%; background:var(--sage-soft); color:var(--sage); font-family:"Noto Serif KR",serif; font-size:11.5px; display:grid; place-items:center}
+.asks li b{color:var(--ink); font-weight:600; display:block; margin-bottom:2px; font-size:12.5px}
+
+.voices{display:grid; gap:8px; margin:0}
+.voices div{font-size:12.8px; color:var(--ink-2); line-height:1.7; padding-left:12px; border-left:2px solid var(--line)}
+.voices b{color:var(--sage); font-weight:600; font-size:12px; display:block; margin-bottom:1px}
+
+.acts{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 0; align-items:center}
+.acts .sp{flex:1}
+.disclaim{font-size:11.5px; color:var(--muted); line-height:1.75; margin:18px 0 0}
+
+/* ---------- presentation ---------- */
+.presctrl{display:flex; gap:10px; flex-wrap:wrap; align-items:center; padding:18px 0 0}
+.chips{display:flex; gap:5px; flex-wrap:wrap}
+.chips button{border:1px solid var(--line); background:var(--surface); border-radius:8px; min-width:34px; padding:5px 7px; font-family:"Noto Serif KR",serif; font-size:11.5px; color:var(--muted); cursor:pointer; transition:border-color .14s ease,color .14s ease,background .14s ease}
+.chips button:hover{border-color:var(--sage-2); color:var(--sage)}
+.chips button.on{background:var(--sage); border-color:var(--sage); color:#fff}
+.chips button.has{border-color:#CFDCCF; color:var(--sage); background:var(--sage-soft)}
+.chips button.has.on{background:var(--sage); color:#fff}
+.ptools{margin-left:auto; display:flex; gap:6px; flex-wrap:wrap}
+.ptools button{border:1px solid var(--line); background:var(--surface); border-radius:999px; padding:6px 12px; font-size:11.5px; color:var(--ink-2); cursor:pointer}
+.ptools button:hover{border-color:var(--sage-2); color:var(--sage)}
+
+.pres{margin:14px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow-lg); padding:clamp(18px,3vw,30px)}
+.prow{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:12px; color:var(--muted)}
+.prow .pnum{font-family:"Noto Serif KR",serif; font-size:15px; color:var(--gold); letter-spacing:.06em}
+.prow .pk{font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--terra); font-weight:600}
+.prow .ptot{margin-left:auto; font-size:12px; color:var(--muted); border:1px solid var(--line-soft); border-radius:999px; padding:2px 10px; background:#FCFBF8}
+.pres h2{font-size:clamp(22px,3.6vw,36px); line-height:1.3; margin:12px 0 10px}
+.pres .psit{font-size:clamp(13.5px,1.5vw,16px); line-height:1.85; color:var(--ink-2); margin:0; max-width:52em}
+.pres .psit .lab{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-right:8px}
+
+.stacked{display:flex; height:12px; border-radius:999px; overflow:hidden; background:#F2ECE2; margin:20px 0 4px; border:1px solid var(--line-soft)}
+.stacked i{display:block; height:100%; transition:flex-basis .4s ease}
+.stacked i.a{background:var(--sage)} .stacked i.b{background:var(--terra)} .stacked i.c{background:var(--gold)}
+.stacked.empty{opacity:.5}
+.stacklegend{display:flex; gap:14px; flex-wrap:wrap; font-size:11.5px; color:var(--muted); margin:0 0 6px}
+.stacklegend span{display:inline-flex; align-items:center; gap:5px}
+.stacklegend i{width:7px; height:7px; border-radius:2px; display:block}
+
+.pcols{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:16px 0 0}
+@media(max-width:820px){ .pcols{grid-template-columns:1fr} }
+.pcol{border:1px solid var(--line); border-radius:14px; padding:14px 14px 12px; background:#FCFBF8; display:flex; flex-direction:column}
+.pcol.a{border-top:3px solid var(--sage)} .pcol.b{border-top:3px solid var(--terra)} .pcol.c{border-top:3px solid var(--gold)}
+.pcol .lt{width:28px; height:28px; border-radius:50%; background:#fff; border:1px solid #DCD3C4; display:grid; place-items:center; font-family:"Noto Serif KR",serif; font-size:13px; color:var(--ink-2); margin-bottom:8px}
+.pcol h3{font-size:clamp(16px,1.7vw,20px); margin:0 0 4px; line-height:1.4}
+.pcol .pd{font-size:clamp(13px,1.3vw,15px); color:var(--ink-2); line-height:1.7; margin:0 0 12px; flex:1}
+.stepper{display:flex; align-items:center; gap:6px; margin-top:auto}
+.stepper button{width:34px; height:34px; border-radius:50%; border:1px solid var(--line); background:#fff; font-size:16px; line-height:1; color:var(--ink-2); cursor:pointer; display:grid; place-items:center; transition:background .14s ease,border-color .14s ease}
+.stepper button:hover{background:var(--sage-soft); border-color:var(--sage-2); color:var(--sage)}
+.stepper input{width:64px; height:34px; text-align:center; border:1px solid var(--line); border-radius:8px; font-family:"Noto Serif KR",serif; font-size:15px; color:var(--ink); background:#fff}
+.stepper .pc{margin-left:auto; font-family:"Noto Serif KR",serif; font-size:19px; color:var(--ink)}
+.pbar{height:6px; border-radius:999px; background:#EFE8DC; margin:9px 0 0; overflow:hidden}
+.pbar i{display:block; height:100%; border-radius:999px; transition:width .35s ease}
+.pcol.a .pbar i{background:var(--sage)} .pcol.b .pbar i{background:var(--terra)} .pcol.c .pbar i{background:var(--gold)}
+
+.pdeb{margin:20px 0 0; border-top:1px solid var(--line); padding-top:14px}
+.pdeb h3{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin:0 0 8px; font-weight:600}
+.pdeb ol{margin:0; padding-left:20px; font-size:clamp(13px,1.4vw,15px); line-height:1.8; color:var(--ink-2)}
+.pdeb li + li{margin-top:4px}
+.pfoot{display:flex; gap:10px; align-items:center; margin-top:18px; border-top:1px solid var(--line-soft); padding-top:14px}
+.pfoot .keys{flex:1; text-align:center; font-size:11px; color:var(--muted); line-height:1.5}
+@media(max-width:600px){ .pfoot .keys{display:none} .pfoot .sp{flex:1} }
+.pfoot button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:9px 16px; font-size:12.5px; color:var(--ink-2); cursor:pointer}
+.pfoot button:hover{border-color:var(--sage-2); color:var(--sage)}
+.pres.hidenum .stepper input,.pres.hidenum .stepper .pc,.pres.hidenum .stacked,.pres.hidenum .stacklegend,.pres.hidenum .pbar{visibility:hidden}
+.presnote{font-size:11.5px; color:var(--muted); margin:12px 0 0; line-height:1.7}
+.sharebar{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:10px 0 0; background:var(--surface); border:1px solid var(--line); border-radius:10px; padding:8px 12px}
+.sharebar .lb{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); font-weight:600; white-space:nowrap}
+.sharebar input{flex:1 1 260px; min-width:0; border:1px solid var(--line-soft); border-radius:6px; background:#FCFBF8; padding:5px 8px; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--ink-2)}
+.sharebar button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:5px 12px; font-size:11.5px; color:var(--ink-2); cursor:pointer}
+.sharebar button:hover{border-color:var(--sage-2); color:var(--sage)}
+
+/* ---------- new dilemma dialog ---------- */
+dialog{border:1px solid var(--line); border-radius:18px; padding:0; max-width:620px; width:calc(100% - 32px); background:var(--bg); color:var(--ink); box-shadow:0 30px 80px rgba(34,30,24,.28)}
+dialog::backdrop{background:rgba(34,30,24,.42)}
+.ndlg{padding:20px 22px 18px; max-height:86vh; overflow:auto}
+.ndlg h3{font-size:19px; margin:0 0 4px}
+.ndlg .nhint{font-size:12px; color:var(--muted); margin:0 0 14px; line-height:1.65}
+.ndlg label{display:block; font-size:12px; color:var(--ink-2); font-weight:500; margin:0 0 10px}
+.ndlg input[type=text],.ndlg textarea,.ndlg select{display:block; width:100%; margin-top:4px; border:1px solid var(--line); border-radius:9px; background:#fff; padding:8px 11px; font-family:inherit; font-size:13.5px; color:var(--ink); line-height:1.6}
+.ndlg textarea{resize:vertical}
+.ndlg .grid2{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+@media(max-width:520px){ .ndlg .grid2{grid-template-columns:1fr} }
+.ndlg .wrow{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+@media(max-width:520px){ .ndlg .wrow{grid-template-columns:1fr} }
+.ndlg fieldset{border:1px solid var(--line-soft); border-radius:10px; padding:10px 12px 4px; margin:2px 0 12px}
+.ndlg legend{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); padding:0 6px}
+.ndlg .nrow{display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; border-top:1px solid var(--line-soft); padding-top:12px; margin-top:4px}
+.ndlg .nrow button{border:1px solid var(--line); background:#fff; border-radius:999px; padding:9px 16px; font-size:13px; color:var(--ink-2); cursor:pointer; font-family:inherit}
+.ndlg .nrow button.go{background:var(--sage); border-color:var(--sage); color:#fff}
+.ndlg .nrow button.go2{background:var(--gold); border-color:var(--gold); color:#3C3222}
+.ndlg .nrow button:hover{filter:brightness(.97)}
+
+/* ---------- footer / toast ---------- */
+footer.appfoot{border-top:1px solid var(--line); margin-top:34px; padding:20px 0 34px; font-size:11.5px; color:var(--muted); line-height:1.8}
+footer.appfoot .in{max-width:var(--max); margin:0 auto; padding:0 20px; display:flex; gap:10px 24px; flex-wrap:wrap; justify-content:space-between}
+footer.appfoot a{color:var(--sage); border-bottom:1px solid rgba(95,119,103,.28)}
+.toast{position:fixed; left:50%; bottom:26px; transform:translate(-50%,14px); background:#2E3338; color:#F7F3EA; font-size:13px; padding:10px 18px; border-radius:999px; opacity:0; pointer-events:none; transition:opacity .22s ease, transform .22s ease; z-index:120; box-shadow:var(--shadow-lg); max-width:90vw; text-align:center}
+.toast.on{opacity:1; transform:translate(-50%,0)}
+
+@media print{
+  @page{margin:14mm 12mm}
+  .appbar,.modes,.modewrap,.picker,.qtop,.actions,.acts,.navrow,footer.appfoot,.toast,.presctrl{display:none !important}
+  body{background:#fff; background-image:none; -webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .screen{display:none !important}
+  #s2{display:block !important}
+  #s2 .rhead{padding-top:0}
+  .card{box-shadow:none; border-color:#DDD; break-inside:avoid}
+  .rgrid{grid-template-columns:1fr 1fr; gap:10px}
+  .namein{margin-top:8px; color:#555}
+  .namein input{border:0; border-bottom:1px solid #BBB; border-radius:0; padding:1px 4px; background:#fff}
+  .namein input::placeholder{color:transparent}
+  .bar .track,.bar .fill,.badge,.sech,.asks li::before{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  .bar.p .fill{background:#A9613F !important}
+  .bar.d .fill{background:#5F7767 !important}
+  .bar.f .fill{background:#C0A16B !important}
+  .choices,.asks,.voices,.typebox,.triwrap,.unitbox,.cycle{break-inside:avoid}
+  .choices li,.asks li,.voices div{break-inside:avoid}
+  .sech{break-after:avoid; break-inside:avoid; margin-top:18px}
+  .asks li{box-shadow:none}
+  .disclaim{font-size:9.5px}
+}
+</style>
+</head>
+<body>
+
+<header class="appbar">
+  <div class="in">
+    <a class="back" href="../index.html#apps"><span class="a">←</span> 이용승 교수 연구실 홈으로</a>
+    <span class="ttl">Power · Duty · Freedom</span>
+  </div>
+</header>
+
+<div class="modewrap">
+  <div class="wrap">
+    <div class="modes" role="tablist" aria-label="앱 모드">
+      <button type="button" class="on" id="mStudent" role="tab" aria-selected="true">학생 탐색 모드</button>
+      <button type="button" id="mPres" role="tab" aria-selected="false">수업 진행 모드</button>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+<!-- ============ S0 · INTRO ============ -->
+<section class="screen on" id="s0" aria-labelledby="hIntro">
+  <div class="hero">
+    <p class="eyebrow">대구대학교 교양 · 《권력·의무·자유》 · Power, Duty, Freedom</p>
+    <h1 id="hIntro">정답을 찾는 대신,<br><em>더 나은 질문</em>을 얻습니다</h1>
+    <p class="lead">권력 · 의무 · 자유, 세 단원에서 실제로 다룬 <b>열두 개의 장면</b>입니다. 공신과 배제된 목소리, 만기친람과 공관병, 사랑과 두려움, 안건이 되지 못한 것 — 그리고 연명의료, 부양 의무, 도청 명령, 일회용 컵. 각 장면에서 <b>A와 B, 제3의 길</b> 가운데 하나를 고르면, 그 자리가 세 개념 가운데 어디에 무게를 실었는지, 반대편이 던질 가장 날카로운 질문은 무엇인지 바로 확인합니다.</p>
+    <p class="quote">“학생들은 문제에 대한 답을 찾는 것이 아니라 <b>무수한 답의 가능성</b>을 동료 학생들과 체험하는 과정을 통해 근대 정치와 민주주의에 대해 깊이 생각해 보는 기회를 갖게 될 것이다.”<br>— 《권력·의무·자유》 교과목 개요</p>
+
+    <div class="axes">
+      <article class="axis">
+        <span class="gl">力</span>
+        <span class="n">PILLAR 01 · 권력</span>
+        <h3>권력 <span class="en" style="display:inline;margin:0">Power</span></h3>
+        <p class="pq">“내가 만약 조직의 최고 권력자라면 가장 먼저 무엇을 할까? 그리고 그 이유는 무엇인가?”</p>
+        <p>누가 결정하고, 그 힘을 누가 견제하는가. 네 장면 — 공신, 위임, 두려움, 의제.</p>
+      </article>
+      <article class="axis">
+        <span class="gl">務</span>
+        <span class="n">PILLAR 02 · 의무</span>
+        <h3>의무 <span class="en" style="display:inline;margin:0">Duty</span></h3>
+        <p class="pq">“내가 세상에 태어날 때, 주어진 단 하나의 의무가 있다면 그것은 무엇일까?”</p>
+        <p>무엇을 함께 지는가. 어기면 처벌이 따르는가. 네 장면 — 삶, 돌봄, 생각, 자연.</p>
+      </article>
+      <article class="axis">
+        <span class="gl">由</span>
+        <span class="n">PILLAR 03 · 자유</span>
+        <h3>자유 <span class="en" style="display:inline;margin:0">Freedom</span></h3>
+        <p class="pq">“당신은 자유(自由)인가? 만약 모든 것으로부터 자유롭고 단 한 가지를 할 수 있다면 무엇을 할 것인가?”</p>
+        <p>어디까지 스스로 정하는가. 자유는 무엇에 쓰는 물건인가. 네 장면 — 선택지, 계약, 말, 쓸모.</p>
+      </article>
+    </div>
+
+    <div class="cycle">
+      <div class="cyc-t"><b>수업은 이렇게 돌아갑니다</b><span>질문 제시 → 개별 글쓰기 → 조내 발표(5인 1조) → 전체 발표·질의응답</span></div>
+      <p>조별 평가는 없습니다. 모든 평가는 <b>개별 글쓰기</b>로 이루어집니다. 이 앱의 열두 장면은 그 글쓰기 전에 자기 자리를 먼저 찾아보는 연습입니다.</p>
+    </div>
+
+    <ol class="how">
+      <li><span class="no">01</span><b>단원을 고른다</b><span class="d">권력 4 · 의무 4 · 자유 4. 열둘을 다 해도 되고, 수업이 끝난 단원만 골라도 됩니다.</span></li>
+      <li><span class="no">02</span><b>A · B · 제3의 길</b><span class="d">찬성과 반대, 그리고 조건을 붙이는 유보. 어느 쪽도 정답이 아니다.</span></li>
+      <li><span class="no">03</span><b>무게와 반론</b><span class="d">선택 즉시 무게 배지, 반대편의 가장 날카로운 질문, 수업에서 나온 사상가의 한 줄 시선.</span></li>
+      <li><span class="no">04</span><b>나의 나침반</b><span class="d">권력·의무·자유 균형 삼각형, 단원별로 내가 선 자리, 내가 던져볼 질문 셋. 복사·인쇄.</span></li>
+    </ol>
+
+    <div class="startrow">
+      <button type="button" class="btn btn-primary" id="startAll">열두 개 모두 시작 <span aria-hidden="true">→</span></button>
+      <button type="button" class="btn btn-ghost" id="startPick">단원·장면 골라서 하기</button>
+      <span class="hint" style="font-size:12px;color:var(--muted)">약 12~18분 · 응답은 저장·전송되지 않습니다</span>
+    </div>
+
+    <div class="picker" id="picker" hidden>
+      <h3>어떤 장면부터 볼까요</h3>
+      <p class="hint">단원으로 걸러 볼 수 있습니다. 세 개 이상 고르면 나침반이 성립하고, 고른 순서대로 진행합니다.</p>
+      <div class="ufilter" id="uFilter" role="group" aria-label="단원 고르기">
+        <button type="button" class="uf on" data-unit="all">전체 <span>12</span></button>
+        <button type="button" class="uf" data-unit="p">권력 <span>4</span></button>
+        <button type="button" class="uf" data-unit="d">의무 <span>4</span></button>
+        <button type="button" class="uf" data-unit="f">자유 <span>4</span></button>
+      </div>
+      <div class="picks" id="picks"></div>
+      <div class="prow">
+        <button type="button" class="btn btn-primary btn-sm" id="startPicked" disabled>선택한 장면으로 시작</button>
+        <button type="button" class="btn btn-ghost btn-sm" id="pickAll">보이는 것 전체 선택</button>
+        <span class="cnt" id="pickCnt">0개 선택</span>
+      </div>
+    </div>
+
+    <p class="uninote"><b>수업 목표와 이어서.</b> 이 교과목은 권력·의무·자유라는 세 개념을 통해 나와 일상, 그리고 우리가 살고 있는 현실을 바로 보고 자신과 공동체의 미래를 구상하는 것을 목표로 합니다. 앱의 열두 장면은 모두 수업의 발표와 토론에서 나왔습니다. 각 장면 아래에 <b>어느 시간에서 나왔는지</b>를 적어 두었으니, 복습할 때 다시 찾아보세요.</p>
+
+    <p class="note"><b>수업용 안내.</b> 중간·기말고사는 모두 <b>개별 글쓰기</b>로 평가합니다(권력 과제 20% · 의무 중간고사 30% · 자유 기말고사 30% · 출석 및 참여도 20%). 조별 평가는 없습니다. 사례는 수업을 위한 구성이며 특정 개인·기관을 지칭하지 않습니다. 사상가의 문장은 원문 인용이 아니라 논점을 압축한 <b>요약</b>입니다. 입력한 응답은 서버로 전송되지 않고, 화면을 닫으면 사라집니다.</p>
+  </div>
+</section>
+
+<!-- ============ S1 · DILEMMAS ============ -->
+<section class="screen" id="s1" aria-labelledby="hQ">
+  <div class="qtop">
+    <button type="button" class="qback" id="qBack">← 처음으로</button>
+    <div class="mid"><span class="prog" id="qProg">01 / 08</span><span class="dots" id="qDots" aria-hidden="true"></span></div>
+    <button type="button" class="qback" id="qSkip" style="padding-right:0">결과지 보기 →</button>
+  </div>
+
+  <div class="sharedbar" id="sharedBar" hidden></div>
+
+  <div class="qhead">
+    <div class="qkrow"><span class="uk" id="qUnit">권력</span><span class="k" id="qTag">01 · 플랫폼과 표현</span></div>
+    <h2 id="hQ">질문</h2>
+    <span class="frame" id="qFrame">권력 · 의무 · 자유</span>
+    <p class="qsrc" id="qSrc"></p>
+  </div>
+
+  <div class="sit"><span class="lab">상황</span><div id="qSit"></div></div>
+
+  <p class="askline">이 상황에서 당신은?</p>
+  <div class="opts" id="opts" role="group" aria-label="선택지"></div>
+
+  <div class="reveal" id="reveal" hidden>
+    <div class="rv-head">
+      <span class="bl">이 선택이 실은 무게</span>
+      <span class="badge x" id="rvBadge">균형</span>
+      <span style="font-size:11.5px;color:var(--muted);margin-left:auto" id="rvPick"></span>
+    </div>
+    <div class="rv-grid">
+      <div class="rv-col">
+        <h4>반대편의 가장 날카로운 질문</h4>
+        <p class="rv-q" id="rvQ"></p>
+        <p class="rv-src" id="rvQb"></p>
+        <p class="cost" id="rvCost"><b>이 선택이 감수하는 것</b><span></span></p>
+      </div>
+      <div class="rv-col">
+        <h4>사상가의 한 줄 시선</h4>
+        <ul class="think" id="rvThink"></ul>
+      </div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:14px"><b>키보드.</b> A · B · C 키로 답을 고르고 → 키로 다음, ← 키로 이전 문항으로 갈 수 있습니다. 수업 진행 모드에서는 A · B · C 가 바로 +1, Shift + 키가 −1, Z 가 되돌리기입니다.</p>
+
+  <div class="navrow">
+    <button type="button" class="btn btn-ghost btn-sm" id="prevQ" disabled>← 이전</button>
+    <span class="sp"></span>
+    <span class="hint" id="qHint">선택하면 다음으로 넘어갈 수 있습니다</span>
+    <button type="button" class="btn btn-ghost btn-sm" id="extraBtn" hidden>나머지 열두 장면도 하기</button>
+    <button type="button" class="btn btn-primary btn-sm" id="nextQ" disabled>다음 문제 →</button>
+  </div>
+</section>
+
+<!-- ============ S2 · RESULT ============ -->
+<section class="screen" id="s2" aria-labelledby="hRes">
+  <div class="rhead">
+    <span class="k">결과지 · 나의 권력·의무·자유 나침반</span>
+    <h2 id="hRes">나는 어디에 무게를 두는 사람인가</h2>
+    <p class="sub" id="rSub">열두 장면의 선택이 남긴 세 가지 무게</p>
+    <div class="namein"><label for="nameIn">이름 (선택)</label><input id="nameIn" type="text" maxlength="20" placeholder="결과지에 적을 이름" autocomplete="off"><span id="dateTxt"></span></div>
+  </div>
+
+  <div class="rgrid">
+    <div class="card triwrap">
+      <div id="triHost"></div>
+      <p class="cap">가장 무거운 축이 꼭짓점에 닿습니다. 세 축이 고르면 정삼각형에 가까워지고, 한쪽으로 쏠리면 그 꼭짓점이 길게 늘어납니다. 권력은 <b>남을 움직이는 힘</b>, 의무는 <b>그 힘에 왜 따라야 하는가</b>, 자유는 <b>그 힘을 무엇에 쓰는가</b>의 자리입니다.</p>
+    </div>
+    <div class="card">
+      <div class="bars" id="bars"></div>
+    </div>
+  </div>
+
+  <div class="sech"><h3>단원별로 내가 선 자리</h3><span>권력 · 의무 · 자유, 각 단원의 무게</span></div>
+  <div class="card unitbox" id="unitBox"></div>
+
+  <div class="card typebox" id="typeBox"></div>
+
+  <div class="sech"><h3>내 선택의 지도</h3><span id="choiceMeta"></span></div>
+  <ul class="choices" id="choices"></ul>
+
+  <div class="sech"><h3>수업 토론에서 내가 던져볼 질문 세 가지</h3><span>내가 고른 자리에서 출발한 질문</span></div>
+  <ol class="asks" id="asks"></ol>
+
+  <div class="sech"><h3>오늘 나를 흔든 목소리</h3><span>고른 선택에 붙은 사상가의 시선</span></div>
+  <div class="card voices" id="voices"></div>
+
+  <div class="acts">
+    <button type="button" class="btn btn-primary" id="copyBtn">결과 요약 복사</button>
+    <button type="button" class="btn btn-ghost" id="printBtn">인쇄 / PDF로 저장</button>
+    <span class="sp"></span>
+    <button type="button" class="btn btn-ghost btn-sm" id="restartBtn">처음부터 다시 하기</button>
+  </div>
+
+  <p class="disclaim">※ 이 결과지는 성격 검사가 아닙니다. 수업의 열두 장면에서 고른 자리가 세 개념 가운데 어디에 무게를 실었는지 보여 주는 <b>수업용 지도</b>이며, 정답이나 우열을 말하지 않습니다. 같은 사람도 상황과 문항에 따라 다른 자리를 고를 수 있습니다.<br>※ 《권력·의무·자유》 딜레마 나침반 · 대구대학교 이용승 교수 · 응답은 저장·전송되지 않습니다.</p>
+</section>
+
+<!-- ============ P0 · PRESENTATION ============ -->
+<section class="screen" id="p0" aria-labelledby="pH">
+  <div class="presctrl">
+    <div class="ufilter" id="pFilter" role="group" aria-label="단원 고르기" style="flex:1 1 100%; margin-bottom:2px">
+      <button type="button" class="uf on" data-punit="all">전체</button>
+      <button type="button" class="uf" data-punit="p">권력</button>
+      <button type="button" class="uf" data-punit="d">의무</button>
+      <button type="button" class="uf" data-punit="f">자유</button>
+    </div>
+    <div class="chips" id="pChips" role="group" aria-label="문제 선택"></div>
+    <div class="ptools">
+      <button type="button" id="pNew">+ 새 딜레마</button>
+      <button type="button" id="pShare">이 질문 공유 링크</button>
+      <button type="button" id="pHide">숫자 숨기기</button>
+      <button type="button" id="pResetQ">이 문제 초기화</button>
+      <button type="button" id="pResetAll">전체 초기화</button>
+    </div>
+  </div>
+
+  <article class="pres" id="presCard" aria-live="polite">
+    <div class="prow">
+      <span class="pnum" id="pNum">01</span>
+      <span class="pk" id="pTag">플랫폼과 표현</span>
+      <span class="ptot" id="pTot">응답 0</span>
+    </div>
+    <h2 id="pH">질문</h2>
+    <p class="psit"><span class="lab">상황</span><span id="pSit"></span></p>
+    <p class="psrc" id="pSrc"></p>
+
+    <div class="stacked" id="pStack" aria-hidden="true"><i class="a" style="flex:0 0 0%"></i><i class="b" style="flex:0 0 0%"></i><i class="c" style="flex:0 0 0%"></i></div>
+    <div class="stacklegend" id="pLegend"><span><i style="background:var(--sage)"></i>A 0%</span><span><i style="background:var(--terra)"></i>B 0%</span><span><i style="background:var(--gold)"></i>제3의 길 0%</span></div>
+
+    <div class="pcols" id="pCols"></div>
+
+    <div class="pdeb">
+      <h3>이 문제로 열어 볼 토론</h3>
+      <ol id="pDeb"></ol>
+    </div>
+
+    <div class="pfoot">
+      <button type="button" id="pPrev">← 이전 문제</button>
+      <span class="keys">A · B · C 키로 +1, Shift + 키로 −1, Z 로 되돌리기 · ← → 로 문제 이동</span>
+      <span class="sp"></span>
+      <button type="button" id="pNext">다음 문제 →</button>
+    </div>
+  </article>
+  <p class="presnote">학생들이 손을 든 뒤 A · B · 제3의 길 칸의 <b>+</b>를 누르면 비율 막대가 바로 움직입니다. 숫자를 잠시 감춰 두었다가(“숫자 숨기기”) 먼저 선택을 받고, 나중에 드러낼 수 있습니다. 집계는 이 화면 안에만 있고 저장되지 않습니다.</p>
+  <div class="sharebar">
+    <span class="lb">이 질문 링크</span>
+    <input id="shareUrl" type="text" readonly aria-label="이 질문의 공유 링크">
+    <button type="button" id="shareCopy">복사</button>
+  </div>
+</section>
+
+</main>
+
+<footer class="appfoot">
+  <div class="in">
+    <span>《권력·의무·자유》 딜레마 나침반 · 대구대학교 이용승 교수</span>
+    <span><a href="../index.html#apps">연구 App</a> · <a href="../index.html#contact">연락처</a></span>
+  </div>
+</footer>
+
+<dialog id="newDlg" aria-labelledby="newDlgT">
+  <form class="ndlg" method="dialog" id="newForm">
+    <h3 id="newDlgT">새 딜레마 만들기</h3>
+    <p class="nhint">어떤 수업에서나 지금 이 자리에서 질문을 만들어 바로 투표에 올립니다. 저장되지 않으니, 남겨 두려면 ‘올리고 링크 복사’로 주소를 보관하세요.</p>
+    <label>질문 제목 (필수)<input type="text" id="ndTitle" maxlength="140" placeholder="예: 대학은 학생의 SNS를 볼 수 있는가?"></label>
+    <label>상황 설명 (선택)<textarea id="ndSit" rows="3" placeholder="학생들이 판단할 장면을 두세 문장으로 적으면 토론이 구체해집니다."></textarea></label>
+    <div class="grid2">
+      <label>A 입장 (필수)<input type="text" id="ndA" maxlength="70" placeholder="예: 볼 수 있다"></label>
+      <label>B 입장 (필수)<input type="text" id="ndB" maxlength="70" placeholder="예: 볼 수 없다"></label>
+    </div>
+    <label>제3의 길 (선택 — 비워 두면 A/B만)<input type="text" id="ndC" maxlength="70" placeholder="예: 사전 고지와 동의가 있을 때만"></label>
+    <fieldset>
+      <legend>각 선택이 싣는 무게 (학생 결과지 계산용)</legend>
+      <div class="wrow">
+        <label>A<select id="ndWA"><option value="auto">자동 (권력)</option><option value="p">권력</option><option value="d">의무</option><option value="f">자유</option><option value="x">균형</option></select></label>
+        <label>B<select id="ndWB"><option value="auto">자동 (자유)</option><option value="p">권력</option><option value="d">의무</option><option value="f">자유</option><option value="x">균형</option></select></label>
+        <label>제3의 길<select id="ndWC"><option value="auto">자동 (균형)</option><option value="p">권력</option><option value="d">의무</option><option value="f">자유</option><option value="x">균형</option></select></label>
+      </div>
+    </fieldset>
+    <label>토론 질문 (선택 — 한 줄에 하나, 최대 3개)<textarea id="ndDeb" rows="3" placeholder="예: 규칙이 없는 것이 자유인가, 불공정인가?"></textarea></label>
+    <div class="nrow">
+      <button type="button" id="ndCancel">취소</button>
+      <button type="button" class="go2" id="ndAddShare">올리고 링크 복사</button>
+      <button type="button" class="go" id="ndAdd">투표에 올리기</button>
+    </div>
+  </form>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* =========================================================
+     데이터 — 《권력·의무·자유》 기본 12문항 (권력 4 · 의무 4 · 자유 4)
+     ========================================================= */
+  var BASE = [
+  /* ============ 권력 단원 ============ */
+  {
+    id:'p1', n:'01', k:'권력 ① · 지지 기반과 포용', unit:'p',
+    title:'배제된 목소리를 들으면, 나를 세운 사람들이 등을 돌린다',
+    frame:'권력은 제로섬인가 — 공신의 몫과 배제된 몫',
+    src:'권력 발표 2 (이다윤) Q1·Q2 · 유시민의 ABC론 · 대구대 총장선거 학생 투표권 0%',
+    sit:'학생 대표에게 이사회 의결권을 주는 학칙 개정안을 냈습니다. 개정되면 교수·직원의 표 비중이 줄어듭니다. 나를 총장 자리에 올려 준 것은 교수회와 직원노조입니다. 이사회는 “지금은 때가 아니다”라며 미루자 학생회가 본관 앞에서 농성을 시작했습니다. 교수회장이 전화합니다. “우리가 아니었으면 당신은 거기 없어.”',
+    opts:{
+      A:{t:'개정을 강행한다', d:'개정안을 표결에 부치고, 반대하는 공신에게는 줄어드는 몫을 다른 권한으로 보상하는 안을 함께 내놓는다.',
+        w:{p:3,d:1,f:0}, badge:'권력에 무게',
+        q:'당신이 준 보상은 공신의 몫을 되돌려 주는 것인가, 아니면 배제된 사람의 몫을 다시 빼앗는 것인가?',
+        qb:'단계적 설득을 주장하는 쪽이 묻습니다',
+        think:[{n:'마키아벨리', l:'권력은 두려움으로 유지되지만, 두려움이 미움으로 바뀌는 순간 힘을 잃는다.'},{n:'루소', l:'공동체의 법은 모두가 함께 정하고 모두가 함께 지는 것이어야 한다.'}],
+        cost:'당신을 세운 지지 기반을 스스로 깎는다. 개혁은 혁명보다 어렵다.',
+        ask:'권력 기반이 무너진 뒤에도 개혁을 계속할 힘은 어디서 오는가?'},
+      B:{t:'때를 기다린다', d:'공개 토론과 단계적 설득으로 공신을 납득시킨 뒤 2년 뒤 재상정한다. 그동안 학생 대표에게는 발언권과 자료 열람권을 준다.',
+        w:{p:1,d:2,f:0}, badge:'의무와 절차에 무게',
+        q:'기다리는 동안 회의실 밖에 남는 사람은 누구이며, 그는 무엇을 기다리는가?',
+        qb:'강행을 주장하는 쪽이 묻습니다',
+        think:[{n:'아렌트', l:'권력은 명령이 아니라 함께 행동하는 사람들 사이에서 생긴다.'},{n:'하버마스', l:'정당한 결정은 그 결정으로 영향을 받는 사람들의 동의를 필요로 한다.'}],
+        cost:'설득이 실패했을 때, 약속한 2년은 다시 미룰 수 있는 변명이 된다.',
+        ask:'공신이 끝내 납득하지 않으면, 그때는 무엇을 할 것인가?'},
+      C:{t:'의제를 바꾼다', d:'의결권 대신 ‘거부권 있는 자문’과 예산·등록금 자료의 전면 공개를 먼저 얻고, 그 권한이 실제로 작동하는지 1년간 검증한다.',
+        w:{p:2,d:1,f:2}, badge:'균형 · 권력과 자유 사이',
+        q:'자문과 거부권은 표가 아니다. 검증이 끝난 뒤에도 표를 주지 않으면 무엇이 남는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'루크스', l:'2차원 권력은 불리한 이슈가 논의되지 못하게 막는다. 무엇이 안건이 되지 못하는가를 보라.'},{n:'롤스', l:'정의는 가장 불리한 사람의 몫으로 먼저 시험된다.'}],
+        cost:'권한을 나눠 주는 대신 결정을 미룬다. 학생회는 “또 미루기”라고 말할 수 있다.',
+        ask:'검증의 기준은 누가 정하고, 누가 판정하는가?'}
+    },
+    deb:['정치에서 ‘옳음’만으로 기득권의 몫을 바꿀 수 있는가? 바꿨다면 무엇이 함께 있었는가?',
+         '공신의 반발을 무마하는 정당한 설득과, 자리와 돈으로 입을 막는 부패한 포섭은 무엇으로 갈라지는가?',
+         '학생에게 투표권을 주면 교수의 몫이 줄어든다. 이 제로섬을 비제로섬으로 바꾸는 방법이 있는가?']
+  },
+  {
+    id:'p2', n:'02', k:'권력 ② · 위임과 남용', unit:'p',
+    title:'사적인 일을 시키는 리더는 무능한가, 권력자인가',
+    frame:'만기친람과 가산제 — 공과 사의 경계',
+    src:'권력 발표 3 (박준모) Q1 · 만기친람 · 공관병 갑질 사건 · 베버의 가산제',
+    sit:'기관장이 된 첫 주, 비서실에 개인 택배 수령과 가족 행사 준비를 부탁했습니다. “내 말 한마디면 움직이는 사람이 이렇게 많은데” 싶었습니다. 그런데 직원들은 업무 지시와 사적 심부름을 구분하지 못해 밤늦게까지 대기합니다. 참모가 조심스럽게 말합니다. “선생님, 이건 좀….”',
+    opts:{
+      A:{t:'사적인 일은 사적으로 산다', d:'개인 비서를 자기 돈으로 고용하고, 공적 업무와 사적 업무를 문서로 분리한다. 조직의 자원은 조직의 목적에만 쓴다.',
+        w:{p:1,d:3,f:1}, badge:'의무에 무게',
+        q:'이 분리를 리더의 양심에만 맡길 수 있는가? 규정을 만들면 그 규정을 누가 지키게 하는가?',
+        qb:'위임을 강조하는 쪽이 묻습니다',
+        think:[{n:'베버', l:'근대 관료제의 핵심은 공적 직무와 사적 생활, 공적 재산과 사적 재산을 분리하는 데 있다.'},{n:'칸트', l:'사람을 자기 편의의 수단으로만 대하는 관계는 정당하지 않다.'}],
+        cost:'리더의 시간이 사적인 일로 새고, 그만큼 판단이 느려진다.',
+        ask:'어디까지가 공적 필요이고, 어디부터가 사적 편의인가?'},
+      B:{t:'위임은 리더의 일이다', d:'비서실에 업무 매뉴얼과 보상 기준을 만들고, 위임한 만큼 성과와 보상을 준다. 판단이 필요한 일은 내가, 잡무는 체계가 맡는다.',
+        w:{p:2,d:1,f:1}, badge:'권력과 절차에 무게',
+        q:'위임과 남용을 가르는 기준을 리더가 스스로 정하고 스스로 판정한다면, 그 기준은 누구를 위한 것인가?',
+        qb:'공사 분리를 요구하는 쪽이 묻습니다',
+        think:[{n:'플라톤', l:'수호자에게 사적 재산과 가족을 금한 것도, 공적 판단이 사적 이해에 끌려가지 않게 하기 위해서였다.'},{n:'아렌트', l:'권력은 명령이 아니라 함께 행동하는 사람들 사이에서 생긴다.'}],
+        cost:'체계가 없으면 위임은 다시 사적인 부탁으로 돌아간다.',
+        ask:'위임한 일의 성과는 누가, 무엇으로 평가하는가?'},
+      C:{t:'목록과 협의로 나눈다', d:'업무를 목록으로 나눠 공적·사적으로 표시하고, 사적 업무는 외부 인력과 계약한다. 직원 대표와 협의해 위임 범위를 정한다.',
+        w:{p:2,d:2,f:1}, badge:'균형 · 권력과 의무 사이',
+        q:'규정을 만드는 사람이 최고 권력자일 때, 그 규정이 자기에게 불리해지면 어떻게 되는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'하버마스', l:'규칙의 정당성은 그 규칙의 당사자들이 함께 정했는가에서 나온다.'},{n:'로크', l:'권력은 신탁받은 것이다. 신탁의 범위를 넘으면 정당성을 잃는다.'}],
+        cost:'규정과 협의가 늘어나는 만큼 결정이 느려진다.',
+        ask:'협의할 직원 대표가 없으면, 누구와 협의할 것인가?'}
+    },
+    deb:['리더가 편해지려고 넘기는 일과, 판단에 집중하려고 넘기는 일은 무엇으로 구별되는가?',
+         '대통령의 경호는 공적 필요이고 장군의 빨래는 사적 이익이다. 그 사이(임원 차량 기사, 조교의 잔심부름)는 어디에 놓이는가?',
+         '만기친람과 위임 사이에서, 리더가 직접 해야 하는 일은 무엇인가?']
+  },
+  {
+    id:'p3', n:'03', k:'권력 ③ · 사랑과 두려움', unit:'p',
+    title:'반대를 위한 반대를 하는 사람에게, 공감은 통하는가',
+    frame:'마키아벨리의 질문 — 포섭인가, 제압인가',
+    src:'권력 발표 3 (박준모) Q2·Q4·Q5 · 마키아벨리 『군주론』 17장 · 김형욱과 김재규',
+    sit:'조직 개편을 앞두고 한 팀장이 모든 회의에서 반대합니다. 대안은 내놓지 않고 “그건 안 됩니다”만 반복합니다. 구성원들은 그의 눈치를 봅니다. 그를 잘라 내면 조직은 조용해지지만, 남은 사람들은 “다음은 나”라고 생각할 것입니다.',
+    opts:{
+      A:{t:'원칙으로 자른다', d:'조직의 목적을 해치는 반대는 절차를 거쳐 제명한다. 규칙과 기록으로 처리하고, 왜 그런 결정을 했는지 전 직원에게 공개한다.',
+        w:{p:3,d:2,f:0}, badge:'권력에 무게',
+        q:'잘린 사람을 지켜본 사람들은 “저렇게 하면 안 되겠다”고 배우는가, “저 사람처럼 되지 말아야겠다”고 배우는가?',
+        qb:'포용을 주장하는 쪽이 묻습니다',
+        think:[{n:'마키아벨리', l:'둘 다 갖추기 어렵다면 두려움을 사는 편이 안전하다. 다만 미움은 사지 말아야 한다.'},{n:'홉스', l:'질서 없는 자유는 모두의 자유가 아니라 모두의 공포다.'}],
+        cost:'두려움은 에너지처럼 쌓이고, 어느 날 한 번에 터진다. 김재규는 박정희를 쏘았다.',
+        ask:'제명의 기준은 누가 정하고, 누가 그 기준을 심사하는가?'},
+      B:{t:'포섭한다', d:'그가 무엇을 원하는지 듣고 책임과 권한이 있는 자리를 준다. 리더를 위해 일하는 것이 그의 이익이 되게 만든다.',
+        w:{p:1,d:2,f:2}, badge:'의무와 자유 사이',
+        q:'포섭이 자리와 돈으로 입을 막는 일과 무엇이 다른가?',
+        qb:'원칙을 세우자는 쪽이 묻습니다',
+        think:[{n:'마키아벨리', l:'심기를 건드리는 사람을 잘라 내면 곁에는 아첨꾼만 남는다. 현명한 군주는 소수에게 진실을 말할 자유를 준다.'},{n:'하버마스', l:'정당한 결정은 그 결정으로 영향을 받는 사람들의 동의를 필요로 한다.'}],
+        cost:'자리를 준 사람이 그 자리에서 더 큰 반대를 준비할 수 있다.',
+        ask:'포섭한 사람이 계속 조직의 목적을 해치면, 언제까지 설득을 반복할 것인가?'},
+      C:{t:'압력을 빼는 제도를 만든다', d:'반대를 막는 대신 언제든 안건으로 올릴 수 있는 정기 회의와 기록 창구를 만든다. 결정은 리더가 하되 반대는 기록으로 남긴다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'제도가 있어도 리더가 그 제도를 무력화하면 무엇이 남는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'아렌트', l:'권력은 명령이 아니라 함께 행동하는 사람들 사이에서 생긴다.'},{n:'윈트로브', l:'공포로 통치할수록 아무도 진실을 말하지 않아, 지배자는 자기 지지도조차 알 수 없게 된다.'}],
+        cost:'반대를 기록으로 남기는 일은 갈등을 없애지 않고 오래 끌게 한다.',
+        ask:'리더가 스스로 만든 견제 장치를 스스로 무력화할 때, 누가 그것을 막는가?'}
+    },
+    deb:['공감과 강제력 가운데 무엇이 조직을 오래 유지하는가?',
+         '‘반대를 위한 반대’와 정당한 비판은 무엇으로 갈라지는가?',
+         '아끼던 사람을 어느 날 처단한 뒤 남는 두려움은 어디로 가는가?']
+  },
+  {
+    id:'p4', n:'04', k:'권력 ④ · 의제 설정', unit:'p',
+    title:'논의되지 못한 것이 논의된 것보다 클 때',
+    frame:'루크스의 3차원 — 무엇이 안건이 되지 못하는가',
+    src:'「권력이란 2」 · 루크스의 3차원 권력 · 무의사결정 · 타워크레인 고공농성',
+    sit:'대학 본부와 학생회가 매달 ‘소통 회의’를 엽니다. 안건은 늘 등산로 정비, 축제 예산, 도서관 좌석입니다. 등록금과 비정규직 청소노동자의 계약은 한 번도 안건이 된 적이 없습니다. 총장은 말합니다. “회의는 열려 있고, 안건은 누구나 낼 수 있습니다.”',
+    opts:{
+      A:{t:'절차 안에서 안건을 민다', d:'등록금과 비정규직 안건을 공식 안건으로 제출하고, 거절되면 그 이유를 문서로 받아 공개한다.',
+        w:{p:1,d:2,f:2}, badge:'의무와 자유 사이',
+        q:'안건을 올렸는데 회의가 “검토 후 재논의”로 끝나면, 다음 카드는 무엇인가?',
+        qb:'절차 밖을 택하는 쪽이 묻습니다',
+        think:[{n:'하버마스', l:'공론장은 지위와 권력이 아니라 근거로 결정되는 공간이어야 한다.'},{n:'루크스', l:'2차원 권력은 불리한 이슈가 논의되지 못하게 막는다.'}],
+        cost:'절차를 지키는 동안, 계약은 그대로 갱신된다.',
+        ask:'거절의 이유를 받아 내는 것만으로 무엇이 바뀌는가?'},
+      B:{t:'몸을 걸어 의제를 만든다', d:'회의실 밖에서 농성·점거·행진으로 의제를 강제한다. 언론이 15초를 줄 때까지 멈추지 않는다.',
+        w:{p:3,d:0,f:2}, badge:'권력과 자유에 무게',
+        q:'몸을 걸어 얻은 15초 뒤에 무엇이 남는가? 그 15초를 되풀이하지 않으면 안건은 다시 사라진다.',
+        qb:'절차를 지키자는 쪽이 묻습니다',
+        think:[{n:'루크스', l:'의제를 강제로 올리는 힘은 대개 절차 밖에 있다. 문제는 그 힘이 흩어진 뒤다.'},{n:'아렌트', l:'권력은 함께 행동하는 사람들 사이에서 생기고, 그들이 흩어지면 함께 사라진다.'}],
+        cost:'몸을 거는 사람이 다치고, 여론은 갈라지고, 대화 상대는 사라진다.',
+        ask:'농성이 끝난 다음 주에 회의실에서 무엇을 할 것인가?'},
+      C:{t:'의제를 정하는 규칙을 바꾼다', d:'안건 제안권을 학생·노동자 대표에게 의무적으로 배분하고, 회의록과 거절 사유를 공개한다. 의제를 정하는 규칙 자체를 개정한다.',
+        w:{p:2,d:2,f:2}, badge:'균형',
+        q:'지금의 규칙으로 뽑힌 사람들이 왜 그 규칙을 바꾸겠는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'그람시', l:'지배는 강제만이 아니라 언론·학교·문화를 통한 자발적 동의로 유지된다. 그 기구를 바꾸지 않으면 의제도 바뀌지 않는다.'},{n:'롤스', l:'불평등은 가장 불리한 사람에게 이익이 될 때만 정당하다.'}],
+        cost:'규칙 개정은 가장 오래 걸리는 길이고, 그 사이 사람들은 지친다.',
+        ask:'규칙이 바뀌지 않을 때, 규칙을 만든 사람들을 무엇으로 설득할 것인가?'}
+    },
+    deb:['당신의 조직에서 ‘논의되지 않는 것’은 무엇인가?',
+         '“안건은 누구나 낼 수 있다”는 말이 사실이어도 권력은 작동할 수 있는가?',
+         '미디어가 다루지 않는 문제는 사회적으로 존재하지 않는 것인가?']
+  },
+
+  /* ============ 의무 단원 ============ */
+  {
+    id:'d1', n:'05', k:'의무 ① · 나의 삶을 살아갈 의무', unit:'d',
+    title:'살아갈 의무는 어디까지인가 — 연명의료를 거부하는 것은 의무 위반인가',
+    frame:'자기 보존의 의무와 자기결정권',
+    src:'의무 발표 2 (4조) Q3 · 칸트의 자기 자신에 대한 의무 · 연명의료결정법',
+    sit:'아버지가 말기 진단을 받았습니다. 의사는 “수술해도 살 가능성은 10%도 안 된다”고 합니다. 아버지는 건강할 때 사전연명의료의향서를 작성해 두었습니다. “기계로 목숨을 늘리지 말라”고요. 형이 말합니다. “1%라도 가능성이 있으면 해야지. 그게 자식이 할 도리야.”',
+    opts:{
+      A:{t:'의향서를 존중한다', d:'아버지가 자기 손으로 적어 둔 뜻을 따른다. 연명의료는 하지 않고 통증 완화와 임종 돌봄에 집중한다.',
+        w:{p:0,d:1,f:3}, badge:'자유에 무게',
+        q:'그 문서를 쓸 때와 지금의 뜻이 같다고 어떻게 확신하는가? 본인의 뜻을 확인할 수 없을 때 누가 대신 말하는가?',
+        qb:'살아갈 의무를 강조하는 쪽이 묻습니다',
+        think:[{n:'밀', l:'남에게 해가 되지 않는 한, 자기 자신에 관한 결정은 스스로의 몫이다.'},{n:'칸트', l:'자기 생명을 끊는 것과 자기 재능을 방치하는 것은 모두 자기 자신에 대한 의무 위반이다.'}],
+        cost:'가족이 평생 “그때 더 해 볼 수 있었는데”라고 묻게 된다.',
+        ask:'존엄한 죽음은 누가 판정하는가 — 의사인가, 본인인가, 가족인가?'},
+      B:{t:'가능성이 있는 한 살린다', d:'수술을 진행한다. 살아갈 의무가 있다면 가능성이 있는 한 최선을 다하는 것이 의무에 충실한 것이다.',
+        w:{p:1,d:3,f:0}, badge:'의무에 무게',
+        q:'10%의 수술을 결정한 것이 아버지의 뜻이 아니라 형의 죄책감이었다면, 그 결정의 주인은 누구인가?',
+        qb:'자기결정권을 강조하는 쪽이 묻습니다',
+        think:[{n:'홉스', l:'모든 인간에게는 자기 생명을 보존하려는 자연권이 있고, 자기 생명을 파괴하는 일을 금하는 자연법이 있다.'},{n:'아렌트', l:'인간은 관계를 통해 만들어진다. 한 사람의 죽음은 그를 둘러싼 모든 관계를 끊는 일이다.'}],
+        cost:'본인이 원하지 않은 고통을, 남은 사람의 마음 때문에 지우게 한다.',
+        ask:'살아 있는 것이 곧 삶인가? ‘살려는 드릴게’가 협박이 되는 순간은 언제인가?'},
+      C:{t:'가족이 함께 다시 묻는다', d:'의사와 가족, 환자의 뜻을 아는 사람이 함께 모여 사전 의향서를 다시 읽고 해석한다. 결정은 문서와 대화에 근거해 남긴다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'가족 전원의 합의를 요구하면, 가족이 없는 사람은 무엇으로 자기 뜻을 말하는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'하버마스', l:'정당한 결정은 그 결정으로 영향을 받는 사람들의 동의를 필요로 한다.'},{n:'로스', l:'우리에게는 여러 의무가 있고, 서로 부딪치면 구체적 상황에서 어느 쪽이 더 무거운지 판단해야 한다.'}],
+        cost:'합의를 기다리는 동안 환자는 고통 속에 남는다.',
+        ask:'의무가 서로 부딪칠 때, 무엇이 더 무거운지 누가 정하는가?'}
+    },
+    deb:['생존은 권리인가 의무인가 — 공동체가 없을 때도 성립하는가?',
+         '신념을 위해 목숨을 바친 사람(이만도, 소크라테스)은 의무를 저버린 사람인가, 최선의 삶을 산 사람인가?',
+         '나에게 죽을 자유는 있는가? 밀은 자유를 영구히 넘기는 계약을 자유의 이름으로 허용하지 않았다.']
+  },
+  {
+    id:'d2', n:'06', k:'의무 ② · 효도와 연고적 의무', unit:'d',
+    title:'자식에게 부모 돌봄을 법으로 요구할 수 있는가',
+    frame:'받은 것에 대한 보답, 그리고 그 예외',
+    src:'의무 단원 ①·② · 블랙 스완 논변 · 샌델의 연대의 의무',
+    sit:'치매를 앓는 어머니를 요양원에 모신 40대 가장에게 지자체가 부양비 청구를 통지했습니다. 그는 어릴 때 어머니에게 버림받아 보육원에서 자랐습니다. “낳아 주기만 한 사람에게 무엇을 갚으라고 하는 겁니까.” 옆집 노인은 자식이 다섯인데 아무도 오지 않습니다. 법은 직계비속의 부양 의무를 정하고 있습니다.',
+    opts:{
+      A:{t:'법이 요구해야 한다', d:'부양 의무를 그대로 두고, 이행하지 않으면 부양료 청구와 제재를 한다. 돌봄을 시장에 맡기면 결국 여성과 저소득층이 진다.',
+        w:{p:2,d:3,f:0}, badge:'의무와 권력에 무게',
+        q:'버려진 사람에게도 같은 의무를 지우면, 그 의무는 누가 받은 것에 대한 보답인가?',
+        qb:'법을 최소화하는 쪽이 묻습니다',
+        think:[{n:'맹자', l:'남의 고통을 차마 그냥 보지 못하는 마음이 없으면 사람이 아니다.'},{n:'샌델', l:'내가 동의하지 않았지만 속한 관계에서 생기는 의무가 있다.'}],
+        cost:'법이 사랑을 대신하면, 사랑이 없던 관계까지 의무로 묶는다.',
+        ask:'부모가 자식을 사랑하지 않았다는 사실은 무엇으로 증명되는가?'},
+      B:{t:'최소한만 요구한다', d:'부양 의무는 폐지하거나 청구 요건을 강하게 좁히고, 돌봄은 공적 제도와 시장에 맡긴다.',
+        w:{p:0,d:0,f:3}, badge:'자유에 무게',
+        q:'법을 없애면 그 빈자리를 누가 채우는가? 자식이 없는 노인, 아들이 없는 노인은 누가 돌보는가?',
+        qb:'법적 의무를 요구하는 쪽이 묻습니다',
+        think:[{n:'밀', l:'강제된 덕은 덕이 아니다.'},{n:'로크', l:'권력은 개인의 몫을 함부로 다시 나누지 않는다.'}],
+        cost:'돌봄의 값이 대부분 여성과 저소득층에게 다시 돌아간다.',
+        ask:'공적 돌봄이 부족할 때, 그 부족분은 누구의 시간으로 메워지는가?'},
+      C:{t:'관계를 기준으로 나눈다', d:'법은 유지하되 양육·보호의 이행 여부와 관계의 실제를 심사해 부양 의무를 조정한다. 돌봄 노동의 사회적 보상을 함께 늘린다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'‘관계의 실제’를 심사하는 사람은 누구이며, 그 사람은 무엇을 근거로 판단하는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'로스', l:'보답의 의무는 일견 지켜야 하지만, 다른 의무와 부딪치면 무게를 저울질해야 한다.'},{n:'롤스', l:'정의는 가장 불리한 사람의 몫으로 먼저 시험된다.'}],
+        cost:'심사가 길어지고, 그 사이 돌봄은 여전히 누군가의 몫이 된다.',
+        ask:'심사에서 탈락한 노인은 누가 돌보는가?'}
+    },
+    deb:['효도의 근거는 낳아 줌인가, 키워 줌인가, 사랑인가?',
+         '자식을 사랑하지 않는 부모라는 예외(블랙 스완)는 효도가 보편적 의무라는 주장을 무너뜨리는가?',
+         '돌봄을 의무로 만들면 누가 더 자유로워지는가?']
+  },
+  {
+    id:'d3', n:'07', k:'의무 ③ · 생각할 의무', unit:'d',
+    title:'명령을 따랐을 뿐 — 생각하지 않은 사람도 처벌받아야 하는가',
+    frame:'아렌트의 악의 평범성, 아이히만',
+    src:'의무 토론 3 (2조) · 한나 아렌트 『예루살렘의 아이히만』 · 불법 도청 질문',
+    sit:'공무원 시험에 합격해 정보기관에 배속되었습니다. 첫 업무가 영장 없는 불법 도청입니다. 전시가 아니면 불법이라는 것을 압니다. 상사가 말합니다. “여기서 거부하면 인사에 남아. 너 하나 바뀌면 아무것도 아니야.” 월급과 가족이 걸려 있습니다.',
+    opts:{
+      A:{t:'거부한다', d:'명령을 거부하고 위법임을 문서로 남긴다. 필요하면 내부 고발과 법적 절차를 택한다.',
+        w:{p:0,d:2,f:3}, badge:'자유에 무게',
+        q:'거부한 사람이 해고되고 그 자리에 다른 사람이 앉아 같은 일을 한다면, 거부는 무엇을 바꾸었는가?',
+        qb:'명령을 따르는 쪽이 묻습니다',
+        think:[{n:'아렌트', l:'생각하지 않는 것이 범죄가 되고, 수백만 명의 죽음으로 이어질 수 있다.'},{n:'소크라테스', l:'철학을 그만두라는 국가의 명령에는 따르지 않겠다고 했다. 그가 지킨 것은 법이 아니라 올바른 삶의 원칙이었다.'}],
+        cost:'생계와 안전을 걸고, 아무것도 바뀌지 않을 수 있다.',
+        ask:'거부가 혼자여도 의무인가, 여럿이어야 의무가 되는가?'},
+      B:{t:'따른다', d:'명령을 따른다. 나 한 사람이 거부해도 제도는 바뀌지 않고 가족을 부양해야 한다. 책임은 명령한 사람에게 있다.',
+        w:{p:2,d:1,f:0}, badge:'질서와 권력에 무게',
+        q:'아이히만도 “명령을 따랐을 뿐”이라고 말했다. 그 논리와 무엇이 다른가?',
+        qb:'거부를 요구하는 쪽이 묻습니다',
+        think:[{n:'홉스', l:'국가의 최고 목적은 생존이다. 국가는 원래 윤리적인 집단이 아니다.'},{n:'아렌트', l:'악은 괴물이 아니라 생각하지 않는 평범한 사람에게서 나온다.'}],
+        cost:'책임을 위로 미루는 일이 반복되면, 아무도 책임지지 않는 조직이 된다.',
+        ask:'어디까지가 명령이고, 어디부터가 자신의 판단인가?'},
+      C:{t:'기록하고 공론화한다', d:'일단 명령을 수행하되 위법의 증거를 남기고, 감사·언론·국회를 통해 문제를 제기한다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'기록을 남기는 동안에도 도청은 진행된다. 그 사이 침해되는 사람의 권리는 누가 갚는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'아렌트', l:'생각은 나 자신과 나누는 말 없는 대화다. 나쁜 짓을 하면 그 자신과 평생 함께 살아야 한다.'},{n:'포퍼', l:'불관용을 무제한 관용하면 결국 관용 자체가 파괴된다.'}],
+        cost:'증거를 남기는 사람이 먼저 표적이 된다.',
+        ask:'위법을 기록하는 일과 위법에 가담하는 일의 경계는 어디인가?'}
+    },
+    deb:['생각할 의무는 비윤리적 명령을 받은 특수한 상황에만 해당하는가, 일상에도 해당하는가?',
+         '국가가 비판적 사고를 기르지 않았다면, 생각하지 못한 개인의 책임은 줄어드는가?',
+         '명령을 거부하는 데 드는 비용을 개인에게만 지우는 제도는 정의로운가?']
+  },
+  {
+    id:'d4', n:'08', k:'의무 ④ · 자연보호의 의무', unit:'d',
+    title:'라면 한 그릇과 지구 반대편의 숲 — 개인의 실천에 무슨 의미가 있는가',
+    frame:'집합행동의 문제와 구조적 책임',
+    src:'의무 토론 4 (1조) · 올슨의 집합행동의 문제 · 아이리스 매리언 영의 정치적 책임',
+    sit:'“일회용 컵을 쓰는 사람은 모두 의무 위반자냐”는 질문에 아무도 답하지 못했습니다. 라면과 과자에는 팜유가 들어가고, 그 팜유를 만들려고 열대우림이 탑니다. 그런데 AI 데이터센터가 쓰는 전력은 가정이 쓰는 전력과 비교가 되지 않습니다. 개인이 텀블러를 가져오는 일은, 산업이 전기를 아끼는 일과 같은 무게일 수 있습니까?',
+    opts:{
+      A:{t:'개인의 의무로 정한다', d:'일회용품을 줄이는 것을 시민의 의무로 정하고, 학교와 회사가 그 이행을 확인한다.',
+        w:{p:1,d:3,f:0}, badge:'의무에 무게',
+        q:'모두가 어긴다고 의무가 아니게 되지는 않는다. 그런데 아무도 지키지 못하는 의무를 정하는 것은 무엇을 위한 것인가?',
+        qb:'집단 규제를 주장하는 쪽이 묻습니다',
+        think:[{n:'칸트', l:'네 행위의 준칙이 보편적 법칙이 될 수 있는가를 물어야 한다.'},{n:'흄', l:'모두가 그렇게 한다는 사실에서 그렇게 해도 된다는 결론은 나오지 않는다.'}],
+        cost:'개인의 죄책감을 키우고, 실제 배출량은 거의 줄지 않는다.',
+        ask:'개인의 실천이 결과를 바꾸지 못할 때에도 그것은 의무인가?'},
+      B:{t:'집단의 의무로 정한다', d:'개인 규제 대신 기업과 국가의 생산·공급망을 규제한다. 팜유·목축·데이터센터의 배출을 법으로 묶는다.',
+        w:{p:3,d:2,f:1}, badge:'권력과 의무에 무게',
+        q:'집단의 의무도 결국 개인이 지킨다. 규제가 없던 시절의 개인은 책임이 없는가?',
+        qb:'개인의 실천을 강조하는 쪽이 묻습니다',
+        think:[{n:'롤스', l:'제도의 정당성은 가장 불리한 사람에게 어떤 몫을 주는가로 판단된다.'},{n:'영', l:'구조적 부정의의 책임은 잘못한 사람을 벌하는 것이 아니라, 그 구조에 연결된 모두가 나눠 지는 정치적 책임이다.'}],
+        cost:'규제가 산업을 옮기면, 숲은 다른 나라에서 더 빨리 탄다.',
+        ask:'규제의 기준은 누가 정하고, 누가 그 기준이 지켜지는지 감시하는가?'},
+      C:{t:'연결된 책임을 나눈다', d:'처벌 대신, 구조에 연결된 모두(개인·기업·국가)가 각자의 몫을 나눠 지는 책임을 만든다. 개인의 실천은 작지만 그 실천이 규제를 만드는 힘이 된다.',
+        w:{p:2,d:2,f:2}, badge:'균형',
+        q:'처벌이 없는 책임은 어디까지 의무인가? 책임을 나누면 아무도 지지 않게 되지 않는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'영', l:'처벌받아야 할 위반자는 아니지만, 책임이 없는 것도 아니다.'},{n:'올슨', l:'모두가 함께해야 이루어지는 일에서는 각자 ‘나 하나쯤이야’ 하고 빠지기 쉽다.'}],
+        cost:'책임이 흩어지면, 결국 아무도 책임지지 않는다는 말이 된다.',
+        ask:'내 몫이 얼마인지 어떻게 계산하는가?'}
+    },
+    deb:['자연은 우리에게 권리를 주는가, 혜택을 줄 뿐인가?',
+         '모두가 지키지 못하는 의무는 여전히 의무인가?',
+         '자연을 보호하는 것은 인간을 위해서인가, 자연 그 자체를 위해서인가?']
+  },
+
+  /* ============ 자유 단원 ============ */
+  {
+    id:'f1', n:'09', k:'자유 ① · 주어진 선택지 안의 선택', unit:'f',
+    title:'짜장면과 짬뽕 중에 골랐다면, 그것은 자유인가',
+    frame:'자유(自由)는 스스로에게서 말미암는 것',
+    src:'자유 토론 1 · 짜장면과 짬뽕 · 아마티아 센의 실질적 자유',
+    sit:'진로 상담 시간, 학생은 “공부와 운동 중에 고르라”는 말을 들었습니다. 부모는 “네가 고르면 지원하겠다”고 했습니다. 그런데 운동을 하려면 한 달에 수백만 원이 들고, 공부를 하려면 과외비가 듭니다. 다른 선택지는 애초에 이야기되지 않았습니다. 학생은 말합니다. “제가 고른 거예요.”',
+    opts:{
+      A:{t:'조건을 먼저 바꾼다', d:'선택지가 생기기 전에 조건을 바꾼다. 장학금·훈련 지원·정보 제공으로 실제로 고를 수 있는 폭을 넓힌다.',
+        w:{p:3,d:1,f:1}, badge:'권력에 무게',
+        q:'조건을 바꾸는 일은 누구의 몫인가? 국가인가, 학교인가, 당사자인가?',
+        qb:'지금 고르라는 쪽이 묻습니다',
+        think:[{n:'센', l:'자유는 법이 금지하지 않는 것이 아니라, 실제로 할 수 있고 될 수 있는 것의 폭이다.'},{n:'루소', l:'사유재산과 문명이 불평등을 만들었다. 자연으로 돌아가라.'}],
+        cost:'조건이 바뀔 때까지 기다리는 동안, 지금의 선택은 여전히 제한된 채로 남는다.',
+        ask:'어디까지가 조건이고, 어디부터가 변명인가?'},
+      B:{t:'주어진 조건에서 최선을 고른다', d:'주어진 조건 안에서 최선을 고르고 그 선택에 책임을 진다. 조건은 나중에 바꾼다.',
+        w:{p:0,d:1,f:3}, badge:'자유에 무게',
+        q:'선택지가 둘뿐이었는데 그중 하나를 고른 사람에게, 결과 전체의 책임을 물을 수 있는가?',
+        qb:'조건을 먼저 바꾸자는 쪽이 묻습니다',
+        think:[{n:'사르트르', l:'인간은 자유롭도록 선고받았다. 선택하지 않는 것도 선택이고, 그 결과의 책임도 피할 수 없다.'},{n:'벌린', l:'소극적 자유는 남의 간섭을 받지 않을 몫이다.'}],
+        cost:'조건을 만든 사람의 몫을, 선택한 사람이 대신 진다.',
+        ask:'선택지를 정해 둔 쪽(학교, 정당 체계, 사회)에도 책임이 있는가?'},
+      C:{t:'비교하는 힘을 기른다', d:'정보·비교·경험의 힘을 기르는 교육을 먼저 한다. 좋은 선택은 선택지의 수와 비교하는 힘에서 나온다.',
+        w:{p:1,d:2,f:3}, badge:'자유와 의무에 무게',
+        q:'비교하는 힘도 불평등하다. 여유도 지혜도 없는 사람에게 무엇을 먼저 줄 것인가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'센', l:'선택지의 폭도, 그것을 비교하는 힘도 조건에 따라 다르다.'},{n:'아렌트', l:'말하고 행동하는 자리에서 사람은 자기 삶의 주인이 된다.'}],
+        cost:'교육은 가장 느린 길이고, 오늘의 선택은 오늘 해야 한다.',
+        ask:'정보를 주는 일과 판단하는 힘을 기르는 일은 같은 일인가?'}
+    },
+    deb:['지금 내가 하는 선택 가운데 정말 ‘나로부터 말미암은’ 것은 무엇인가?',
+         '‘하고 싶은 것을 하는 것’과 ‘스스로 삶의 주인이 되는 것’은 같은가, 다른가?',
+         '기권도 선택지인가? 선택지가 셋이면 좋은 선택의 조건이 성립하는가?']
+  },
+  {
+    id:'f2', n:'10', k:'자유 ② · 자유를 포기할 자유', unit:'f',
+    title:'자유를 넘기는 계약을, 자유의 이름으로 허용할 수 있는가',
+    frame:'밀의 노예 계약, 프롬의 자유로부터의 도피',
+    src:'자유 토론 2 · 밀 『자유론』 5장 · 프롬 『자유로부터의 도피』',
+    sit:'데뷔를 앞둔 연습생이 7년 전속계약서에 서명합니다. 수입 배분은 회사가 정하고, 사생활과 SNS는 회사가 관리하며, 중도 해지 위약금은 5억입니다. 친구가 말합니다. “네가 원해서 사인한 거잖아.” 연습생이 답합니다. “이 계약을 안 하면 데뷔는 없어.”',
+    opts:{
+      A:{t:'계약을 무효로 한다', d:'자유를 영구히 넘기는 계약은 자유의 이름으로 허용할 수 없다. 기간·수입 배분·위약금의 상한을 법으로 정한다.',
+        w:{p:3,d:2,f:1}, badge:'권력과 의무에 무게',
+        q:'계약을 막으면 데뷔의 기회도 함께 사라진다. 보호가 기회를 빼앗을 때 무엇이 남는가?',
+        qb:'당사자의 선택을 강조하는 쪽이 묻습니다',
+        think:[{n:'밀', l:'자유의 원칙은 자유롭지 않을 자유를 요구할 수 없다. 자기 자유를 넘겨주는 계약은 자유가 아니다.'},{n:'칸트', l:'인간은 수단이 아니라 목적으로 대해야 한다.'}],
+        cost:'기회의 문을 좁히고, 그 문 밖에 남는 사람을 만든다.',
+        ask:'어디까지가 자유로운 동의이고, 어디부터가 강요인가?'},
+      B:{t:'본인이 정한다', d:'계약은 당사자의 몫이다. 조건은 시장이 정하고, 더 나은 조건이 나타나면 바꾸면 된다.',
+        w:{p:0,d:0,f:3}, badge:'자유에 무게',
+        q:'자유를 포기하는 선택이 자유라면, 그 선택의 결과로 자유를 잃은 뒤에도 자유로운가?',
+        qb:'계약을 막자는 쪽이 묻습니다',
+        think:[{n:'벌린', l:'간섭받지 않을 몫을 지키는 것이 자유의 출발이다.'},{n:'프롬', l:'자유의 무게를 견디지 못한 사람은 스스로 권위에 복종한다.'}],
+        cost:'포기한 뒤에는 되돌릴 자유가 없다.',
+        ask:'포기하기 전의 자유와 포기한 뒤의 자유는 같은 자유인가?'},
+      C:{t:'조건을 공개하고 되돌릴 문을 남긴다', d:'표준계약서, 조건 비교 공개, 분쟁조정 절차, 그리고 일정 기간 뒤 재협상할 권리를 보장한다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'재협상할 권리가 있어도 시장에 회사가 하나뿐이면, 협상 상대는 어디에 있는가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'하버마스', l:'정당한 계약은 조건을 알 수 있고 이의를 제기할 수 있는 당사자들 사이에서 성립한다.'},{n:'벌린', l:'마음속으로 물러나 “이제 나는 자유롭다”고 말하는 것은 정치적 자유를 대신하지 못한다.'}],
+        cost:'절차를 갖춰도 힘의 차이는 그대로다.',
+        ask:'정보를 공개하는 것만으로 힘의 차이가 줄어드는가?'}
+    },
+    deb:['군중에 휩쓸린 선택은 자유로운 선택인가? 그 책임은 누구에게 있는가?',
+         '권위가 죄책감을 덜어 준다면, 복종은 자유의 포기인가 아니면 다른 자유의 추구인가?',
+         '죽을 자유도 자유인가? 밀의 원칙을 죽음에까지 넓힐 수 있는가?']
+  },
+  {
+    id:'f3', n:'11', k:'자유 ③ · 말할 자유와 해악 원칙', unit:'f',
+    title:'남에게 해가 되지 않는다면, 무엇이든 해도 되는가',
+    frame:'의무 단원의 마지막 답이 자유 단원의 첫 질문이 된다',
+    src:'의무 단원 ⑤ (5조) · 밀의 해악 원칙 · 소크라테스와 예수 · 곡물상 사례',
+    sit:'한 학생이 익명 커뮤니티에 “우리 과 교수는 수업을 대충 한다”는 글을 올렸습니다. 사실과 다른 부분이 있고, 교수는 명예훼손이라며 삭제와 사과를 요구합니다. 학생은 말합니다. “판단은 학생이 합니다. 저는 틀린 말을 했을 뿐, 남을 다치게 한 건 아니에요.”',
+    opts:{
+      A:{t:'말에도 책임이 따른다', d:'허위 사실과 모욕에 대해서는 삭제·정정·배상을 요구할 수 있게 한다. 말에도 해악이 있다.',
+        w:{p:1,d:3,f:1}, badge:'의무에 무게',
+        q:'오늘 해악으로 보이는 말이 훗날 진리로 밝혀질 수 있다. 소크라테스도 예수도 그렇게 처형되었다.',
+        qb:'표현을 지키자는 쪽이 묻습니다',
+        think:[{n:'밀', l:'같은 말이라도 신문 칼럼은 괜찮고, 곡물상 집 앞에 몰려든 흥분한 군중에게 외치면 처벌할 수 있다.'},{n:'포퍼', l:'불관용을 무제한 관용하면 결국 관용 자체가 파괴된다.'}],
+        cost:'무엇이 해악인지 판정하는 권한이, 그 판정을 신뢰할 수 없는 사람에게 간다.',
+        ask:'명예훼손과 정당한 비판을 가르는 선은 누가 그어야 하는가?'},
+      B:{t:'말은 막지 않는다', d:'삭제와 처벌은 최소로 하고 반박과 공개 토론으로 대응한다. 틀린 말을 막는 순간, 틀렸다는 것을 배울 기회도 사라진다.',
+        w:{p:0,d:0,f:3}, badge:'자유에 무게',
+        q:'반박이 이기려면 시간이 필요하다. 그 시간 동안 다친 사람은 누구의 몫인가?',
+        qb:'말의 책임을 요구하는 쪽이 묻습니다',
+        think:[{n:'밀', l:'틀린 의견도 억압되면, 사회는 그것이 왜 틀렸는지 배울 기회를 잃는다.'},{n:'소크라테스', l:'청년을 타락시켰다는 죄목으로 처형되었지만, 지금 그는 인류의 스승으로 남아 있다.'}],
+        cost:'이미 퍼진 뒤에는 되돌릴 수 없는 피해를, 피해자 스스로 감당하게 한다.',
+        ask:'반박이 이기려면 최소한 무엇이 보장되어야 하는가?'},
+      C:{t:'판단하는 힘을 기른다', d:'처벌보다 판단을 가르친다. 사회가 당연하다고 가르친 것에 문제를 제기할 수 있어야 하고, 그래야 어디서 합의할지 토론할 수 있다.',
+        w:{p:1,d:2,f:2}, badge:'균형 · 의무와 자유 사이',
+        q:'판단하는 힘을 기르는 데는 시간이 걸린다. 그동안의 피해는 어떻게 할 것인가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'아렌트', l:'생각은 나 자신과 나누는 말 없는 대화다.'},{n:'하버마스', l:'정당한 결정은 토론에 참여할 수 있는 사람들의 동의에서 나온다.'}],
+        cost:'교육은 가장 느린 길이고, 피해는 오늘 발생한다.',
+        ask:'판단을 가르치는 일과 처벌하는 일 가운데 무엇을 먼저 할 것인가?'}
+    },
+    deb:['누가 해악을 정하는가 — 사회적 합의는 그 합의가 옳은지 물을 수 있는가?',
+         '동의가 있으면 해악이 아닌가? 힘의 차이가 있는 관계에서 나온 동의는 자발적인가?',
+         '소크라테스와 예수의 처형은 당시에 정당했는가?']
+  },
+  {
+    id:'f4', n:'12', k:'자유 ④ · 자유의 쓸모', unit:'f',
+    title:'자유는 도대체 무엇에 쓰는 물건인가',
+    frame:'소극적 자유와 적극적 자유, 그리고 존재의 이유',
+    src:'자유 토론 1·2 · 벌린의 두 개념 · 파스칼의 무료함과 프롬',
+    sit:'수업 마지막 질문에 학생들은 “수업을 빨리 끝내고 집에 가고 싶다”, “맛있는 걸 먹고 싶다”, “여행을 가고 싶다”고 답했습니다. 교수는 되물었습니다. “그것이 자유인가? 자유는 도대체 무엇에 쓰는 물건인가?” 몇 달 뒤 같은 질문이 AI 앞에서 다시 옵니다. 일하지 않아도 되는 세상에서, 당신은 무엇을 할 것인가.',
+    opts:{
+      A:{t:'하고 싶은 것을 한다', d:'간섭받지 않는 몫을 지킨다. 하고 싶은 일을 하고, 그것을 막는 규제와 시선을 줄인다.',
+        w:{p:0,d:0,f:3}, badge:'자유에 무게',
+        q:'하고 싶은 일이 없을 때, 자유는 무엇을 하는가?',
+        qb:'삶의 주인이 되자는 쪽이 묻습니다',
+        think:[{n:'벌린', l:'소극적 자유는 남의 간섭을 받지 않는 것, 곧 무엇으로부터의 자유다.'},{n:'파스칼', l:'사람들이 원하는 것은 토끼가 아니라, 자기 처지를 잊게 해 주는 사냥이다.'}],
+        cost:'자유를 소비로 채우면, 채울수록 더 필요해진다.',
+        ask:'하고 싶은 것과, 하고 싶게 만들어진 것은 어떻게 구별되는가?'},
+      B:{t:'스스로 삶의 주인이 된다', d:'스스로 판단하고 선택해 자기 삶을 이끈다. 무엇을 향한 자유인가를 먼저 정한다.',
+        w:{p:1,d:2,f:3}, badge:'자유와 의무에 무게',
+        q:'스스로 주인이 되라는 요구가 자기 계발의 의무가 되면, 쉬는 사람은 의무 위반자인가?',
+        qb:'하고 싶은 것을 하자는 쪽이 묻습니다',
+        think:[{n:'벌린', l:'적극적 자유는 스스로 자기 삶의 주인이 되는 것, 곧 무엇을 향한 자유다.'},{n:'칸트', l:'자기 재능을 계발하는 것은 불완전 의무다. 언제 어떻게 할지에는 재량이 남는다.'}],
+        cost:'삶의 주인이 되라는 요구가, 쉬지 못하게 하는 또 하나의 압력이 된다.',
+        ask:'적극적 자유가 강제로 바뀌는 순간은 언제인가?'},
+      C:{t:'자유를 함께 쓰는 자리로 돌린다', d:'자유를 개인의 소비가 아니라 함께 말하고 행동하는 자리로 돌린다. 먹고사는 일에서 벗어난 시간을 공동의 일에 쓴다.',
+        w:{p:2,d:3,f:2}, badge:'의무와 권력에 무게',
+        q:'공동의 일에 쓰지 않는 자유는 자유가 아닌가?',
+        qb:'양쪽에서 동시에 묻습니다',
+        think:[{n:'아렌트', l:'자유는 필연에서 벗어나 다른 사람들 앞에서 말하고 행동할 때 나타난다.'},{n:'프롬', l:'자유의 무게를 견디지 못한 사람들은 권위와 집단에 스스로 복종했다.'}],
+        cost:'자유를 의무로 바꾸는 순간, 그것은 더 이상 자유가 아니다.',
+        ask:'함께 하는 일이 강제가 되지 않으려면 무엇이 필요했는가?'}
+    },
+    deb:['자유가 존재의 이유라면, 왜 사람들은 스스로 자유를 반납하고 복종을 택했는가?',
+         '밥을 먹는 것은 선택인가 필연인가? 선택지가 있다고 다 선택은 아니다.',
+         'AI가 노동을 대신한 세상에서, 자유는 무엇에 쓸 물건이 되는가?']
+  }
+  ];
+  var ALL = BASE.slice();
+  var BY = {};
+  BASE.forEach(function(d){ BY[d.id] = d; });
+  function byId(id){ return BY[id] || null; }
+
+  /* 세 단원 — 수업의 세 기둥 */
+  var UNITS = {
+    p:{ key:'p', no:'01', name:'권력', en:'Power', glyph:'力',
+        q:'내가 만약 조직의 최고 권력자라면 가장 먼저 무엇을 할까? 그리고 그 이유는 무엇인가?' },
+    d:{ key:'d', no:'02', name:'의무', en:'Duty', glyph:'務',
+        q:'인간으로서 나는 내 주변과 세상에 의무가 있는가? 주어진 단 하나의 의무가 있다면 그것은 무엇인가?' },
+    f:{ key:'f', no:'03', name:'자유', en:'Freedom', glyph:'由',
+        q:'당신은 자유인가? 만약 모든 것으로부터 자유롭고 단 한 가지를 할 수 있다면 무엇을 할 것인가?' }
+  };
+  var UORDER = ['p','d','f'];
+  function unitOf(d){ return (d && d.unit && UNITS[d.unit]) ? UNITS[d.unit] : null; }
+  function unitName(d){ var u = unitOf(d); return u ? u.name : '직접 만든 질문'; }
+  function unitCls(d){ var u = unitOf(d); return u ? u.key : 'x'; }
+  function subK(d){ return String(d.k||'').replace(/^(권력|의무|자유)\s*[①-⑳]?\s*·?\s*/, ''); }
+
+  var PRESET = {
+    p:{p:3,d:1,f:0}, d:{p:1,d:3,f:0}, f:{p:0,d:0,f:3}, x:{p:1,d:1,f:1}
+  };
+
+  var S = { order:[], idx:0, ans:{}, screen:'s0', shared:null };
+  var P = { list: BASE.slice(), idx:0, counts:{}, hist:[], hide:false, customN:0, filter:'' };
+  BASE.forEach(function(d){ P.counts[d.id] = {A:0,B:0,C:0}; });
+
+  /* ================= 도우미 ================= */
+  function $(id){ return document.getElementById(id); }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>\"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]; }); }
+  function keysOf(d){ return ['A','B','C'].filter(function(k){ return d.opts[k]; }); }
+  function countOf(id){ if(!P.counts[id]) P.counts[id] = {A:0,B:0,C:0}; return P.counts[id]; }
+  function totalOf(c){ return (c.A||0)+(c.B||0)+(c.C||0); }
+  function dominant(w){
+    var a = [['p',w.p],['d',w.d],['f',w.f]].sort(function(x,y){ return y[1]-x[1]; });
+    if(a[0][1] === a[1][1]) return 'x';
+    return a[0][0];
+  }
+  var AXN = {p:'권력', d:'의무', f:'자유', x:'균형'};
+  function autoBadge(w){
+    var ax = dominant(w);
+    if(ax === 'x') return '균형에 무게';
+    var a = [['p',w.p],['d',w.d],['f',w.f]].sort(function(x,y){ return y[1]-x[1]; });
+    if(a[1][1] > 0 && a[0][1] - a[1][1] <= 1) return AXN[ax] + ' + ' + AXN[a[1][0]] + '에 무게';
+    return AXN[ax] + '에 무게';
+  }
+  function badgeClass(w){
+    var ax = dominant(w);
+    return ax === 'x' ? 'x' : ax;
+  }
+  function show(id){
+    ['s0','s1','s2','p0'].forEach(function(x){ var n = $(x); if(n) n.classList.toggle('on', x === id); });
+    if(id.charAt(0) === 's') S.screen = id;
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
+  var toastT = null;
+  function toast(msg){
+    var t = $('toast'); if(!t) return;
+    t.textContent = msg; t.classList.add('on');
+    clearTimeout(toastT);
+    toastT = setTimeout(function(){ t.classList.remove('on'); }, 2400);
+  }
+  function copyText(txt, okMsg){
+    function done(){ toast(okMsg || '복사했습니다.'); }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(txt).then(done).catch(function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      try{
+        var ta = document.createElement('textarea');
+        ta.value = txt; ta.style.position = 'fixed'; ta.style.left = '-9999px';
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        if(ok) done(); else toast('복사하지 못했습니다. 직접 선택해 복사해 주세요.');
+      }catch(e){ toast('복사하지 못했습니다.'); }
+    }
+  }
+
+  /* ================= 모드 ================= */
+  function setMode(m){
+    $('mStudent').classList.toggle('on', m === 'student');
+    $('mPres').classList.toggle('on', m === 'pres');
+    $('mStudent').setAttribute('aria-selected', m === 'student' ? 'true' : 'false');
+    $('mPres').setAttribute('aria-selected', m === 'pres' ? 'true' : 'false');
+    if(m === 'pres'){ show('p0'); renderPres(); }
+    else { show(S.screen || 's0'); }
+  }
+
+  /* ================= 인트로 · 장면 고르기 ================= */
+  var picked = {};
+  var pickFilter = '';
+  function pickVisible(){ return pickFilter ? BASE.filter(function(d){ return d.unit === pickFilter; }) : BASE.slice(); }
+  function renderPicks(){
+    var host = $('picks');
+    if(!host) return;
+    host.innerHTML = '';
+    pickVisible().forEach(function(d){
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'pick' + (picked[d.id] ? ' on' : ''); b.setAttribute('data-id', d.id);
+      b.innerHTML = '<span class="bx">✓</span><span><span class="ub ' + unitCls(d) + '">' + unitName(d) + '</span><span class="num">' + d.n + '</span>' +
+        esc(subK(d)) + ' · ' + esc(d.title) + '</span>';
+      b.addEventListener('click', function(){
+        if(picked[d.id]){ delete picked[d.id]; b.classList.remove('on'); }
+        else { picked[d.id] = true; b.classList.add('on'); }
+        syncPick();
+      });
+      host.appendChild(b);
+    });
+    Array.prototype.forEach.call($('uFilter').children, function(btn){
+      var u = btn.getAttribute('data-unit');
+      btn.classList.toggle('on', (u === 'all' && !pickFilter) || u === pickFilter);
+    });
+  }
+  function pickedIds(){ return BASE.filter(function(d){ return picked[d.id]; }).map(function(d){ return d.id; }); }
+  function syncPick(){
+    var n = pickedIds().length;
+    $('pickCnt').textContent = n + '개 선택';
+    $('startPicked').disabled = n < 3;
+  }
+
+  /* ================= 문항 화면 ================= */
+  function startStudent(order){
+    S.order = order.slice();
+    S.idx = 0; S.ans = {}; S.shared = null;
+    $('sharedBar').hidden = true;
+    $('extraBtn').hidden = true;
+    renderQ(); show('s1');
+  }
+  function renderQ(){
+    var id = S.order[S.idx];
+    var d = byId(id);
+    if(!d) return;
+    var sd = S.shared && S.shared === id;
+    $('sharedBar').hidden = !sd;
+    if(sd){
+      $('sharedBar').innerHTML = '선생님이 보낸 질문입니다. <b>' + esc(d.title) + '</b> — 답한 뒤 <b>나머지 문항도 하기</b>를 누르면 열두 장면을 이어서 채울 수 있습니다.';
+    }
+    var u = unitOf(d);
+    var uk = $('qUnit');
+    uk.textContent = u ? u.name : '직접';
+    uk.className = 'uk ' + unitCls(d);
+    $('qTag').textContent = d.custom ? '직접 만든 질문' : (d.n + ' · ' + subK(d));
+    $('hQ').textContent = d.title;
+    $('qFrame').textContent = d.frame || '권력 · 의무 · 자유';
+    var qs = $('qSrc');
+    if(d.src){ qs.hidden = false; qs.innerHTML = '<b>수업 원천</b>' + esc(d.src); }
+    else { qs.hidden = true; qs.innerHTML = ''; }
+    $('qSit').innerHTML = String(d.sit||'').split('\n').filter(Boolean).map(function(p){ return '<p>' + esc(p) + '</p>'; }).join('') || '<p>상황 설명 없이 질문으로 바로 토론합니다.</p>';
+    $('qProg').textContent = pad(S.idx+1) + ' / ' + pad(S.order.length);
+    var dots = '';
+    S.order.forEach(function(x, i){
+      var cls = S.ans[x] ? 'done' : '';
+      if(i === S.idx) cls += ' now';
+      dots += '<i class="' + cls + '"></i>';
+    });
+    $('qDots').innerHTML = dots;
+    $('prevQ').disabled = S.idx === 0;
+    renderOpts(d);
+    renderReveal(d);
+    syncNext();
+    $('extraBtn').hidden = !(S.shared && S.ans[id]);
+    $('qHint').textContent = S.ans[id] ? '다른 답을 고르면 무게와 반론이 바뀝니다' : '선택하면 다음으로 넘어갈 수 있습니다';
+  }
+  function renderOpts(d){
+    var host = $('opts'); host.innerHTML = '';
+    keysOf(d).forEach(function(k){
+      var o = d.opts[k];
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'opt' + (S.ans[d.id] === k ? ' on' : '');
+      b.setAttribute('data-k', k);
+      b.setAttribute('aria-pressed', S.ans[d.id] === k ? 'true' : 'false');
+      b.innerHTML = '<span class="lt">' + k + '</span>' +
+        '<span class="tx"><b>' + esc(o.t) + '</b>' + (o.d ? '<span>' + esc(o.d) + '</span>' : '') + '</span>' +
+        '<span class="chk" aria-hidden="true"></span>';
+      b.addEventListener('click', function(){ choose(d, k); });
+      host.appendChild(b);
+    });
+  }
+  function choose(d, k){
+    S.ans[d.id] = k;
+    Array.prototype.forEach.call($('opts').children, function(b){
+      var on = b.getAttribute('data-k') === k;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    renderReveal(d);
+    syncNext();
+    $('qHint').textContent = '다른 답을 고르면 무게와 반론이 바뀝니다';
+    $('extraBtn').hidden = !(S.shared && S.ans[d.id]);
+  }
+  function renderReveal(d){
+    var box = $('reveal');
+    var k = S.ans[d.id];
+    if(!k){ box.hidden = true; return; }
+    var o = d.opts[k];
+    box.hidden = false;
+    var badge = $('rvBadge');
+    badge.textContent = o.badge || autoBadge(o.w);
+    badge.className = 'badge ' + badgeClass(o.w);
+    $('rvPick').textContent = k + ' · ' + o.t;
+    $('rvQ').textContent = o.q || '이 질문에는 아직 반론 카드가 없습니다. 동료의 답을 듣고 함께 채워 보세요.';
+    $('rvQb').textContent = o.qb || '';
+    $('rvQb').hidden = !o.qb;
+    var cost = $('rvCost');
+    if(o.cost){ cost.style.display = ''; cost.querySelector('span').textContent = o.cost; }
+    else { cost.style.display = 'none'; }
+    var ul = $('rvThink'); ul.innerHTML = '';
+    (o.think || []).forEach(function(t){
+      var li = document.createElement('li');
+      li.innerHTML = '<b>' + esc(t.n) + '</b>' + esc(t.l);
+      ul.appendChild(li);
+    });
+    if(!(o.think||[]).length){
+      var li2 = document.createElement('li');
+      li2.innerHTML = '<b>스스로에게</b>이 선택이 옳다는 것을 무엇으로 확인할 수 있는가? 직접 사상가를 붙여 보세요.';
+      ul.appendChild(li2);
+    }
+  }
+  function syncNext(){
+    var id = S.order[S.idx];
+    $('nextQ').disabled = !S.ans[id];
+    $('nextQ').textContent = (S.idx === S.order.length-1) ? '결과지 보기 →' : '다음 문제 →';
+  }
+  function pad(n){ return (n<10?'0':'') + n; }
+  function josa(word, withFinal, withoutFinal){
+    var c = String(word).charCodeAt(String(word).length-1);
+    if(c < 0xAC00 || c > 0xD7A3) return withoutFinal;
+    return ((c - 0xAC00) % 28) ? withFinal : withoutFinal;
+  }
+
+  /* ================= 결과 계산 ================= */
+  function answeredIds(){ return S.order.filter(function(id){ return !!S.ans[id]; }); }
+  function computeShares(){
+    var t = {p:0,d:0,f:0};
+    S.order.forEach(function(id){
+      var o = byId(id) && byId(id).opts[S.ans[id]];
+      if(!o) return;
+      t.p += o.w.p; t.d += o.w.d; t.f += o.w.f;
+    });
+    var sum = t.p + t.d + t.f;
+    var sh = {p:0,d:0,f:0};
+    if(sum > 0){
+      sh.p = Math.round(t.p/sum*100);
+      sh.d = Math.round(t.d/sum*100);
+      sh.f = 100 - sh.p - sh.d;
+      if(sh.f < 0){ sh.d += sh.f; sh.f = 0; }
+    }
+    return sh;
+  }
+
+  var TYPES = {
+    seed:{ name:'여정의 시민', tag:'아직 문항이 모자랍니다',
+      lead:'한두 문항만으로도 방향은 보이지만, 나침반은 문항이 늘수록 정확해집니다.',
+      body:'지금의 답은 “내가 어느 쪽을 먼저 보는 사람인가”의 첫 장면입니다. 열두 장면을 마치면 세 축의 무게가 훨씬 분명해집니다.',
+      strong:'첫 직관을 붙잡고 있다.', watch:'한 장면이 성향 전체인 것처럼 읽힐 수 있다.', q:'두 번째, 세 번째 장면에서도 같은 자리를 고를 것인가?' },
+    cond:{ name:'조건의 시민', tag:'원칙보다 조건을 먼저 묻는 사람',
+      lead:'당신의 대답에는 늘 “다만 …라면”이 붙습니다. 어느 편도 서둘러 정하지 않고, 원칙이 실제로 작동하는 조건을 먼저 확인합니다.',
+      body:'제3의 길은 우유부단이 아니라, 권력이 어디까지 미치는지·의무를 누가 감당하는지·자유가 어디서 침해되는지를 한꺼번에 보려는 태도입니다. 다만 조건을 붙이는 일이 결정을 미루는 방식으로 굳으면, 가장 늦게 보호받아야 할 사람이 가장 오래 기다리게 됩니다.',
+      strong:'정책의 부작용과 예외를 먼저 보고, 토론에서 합의의 실마리를 만든다.',
+      watch:'조건이 너무 많아지면 아무것도 정하지 않은 것과 같아진다.',
+      q:'내가 붙인 조건 가운데, 실제로 검증할 수 있는 것은 몇 개인가?' },
+    balance:{ name:'균형의 시민', tag:'어느 쪽도 먼저 정하지 않는다',
+      lead:'세 축의 무게가 놀랄 만큼 고르게 놓였습니다. 권력도 의무도 자유도 서로를 지우지 않고, 상황에 따라 다른 축을 앞세웁니다.',
+      body:'균형은 중간에 서 있는 것이 아니라, 매번 세 축을 함께 저울에 올리는 일입니다. 이 태도는 토론에서 강하지만, 결정의 순간에는 “그래서 어느 쪽인가”라는 질문을 피할 수 없습니다.',
+      strong:'한쪽의 논리로 달려가지 않고, 빠진 축을 먼저 찾아낸다.',
+      watch:'모두를 만족시키려다 아무도 설득하지 못할 수 있다.',
+      q:'내가 마지막으로 ‘이쪽’이라고 단정한 것은 언제였나?' },
+    free:{ name:'자유의 시민', tag:'간섭받지 않을 몫을 먼저 지킨다',
+      lead:'국가와 공동체가 나를 대신 결정할 때, 당신은 가장 먼저 멈추게 합니다. 좋은 뜻이라도 강제되면 자유가 아니라는 감각이 대답마다 앞에 섭니다.',
+      body:'자유를 앞세우는 태도는 권력의 선의를 믿지 않는 데서 나옵니다. 그 믿지 않음이 민주주의의 안전장치이기도 합니다. 다만 자유만으로는 답하지 못하는 질문 — 아무것도 선택하지 않은 사람의 몫 — 이 남습니다.',
+      strong:'권력의 확장을 가장 빨리 감지하고, 소수 의견의 자리를 지킨다.',
+      watch:'보호가 필요한 사람에게 “알아서 하라”고 말하는 셈이 될 수 있다.',
+      q:'내가 지킨 자유는 누구의 자유까지 포함하고 있는가?' },
+    contract:{ name:'사회계약의 시민', tag:'자유를 지키되, 함께 지는 값도 안다',
+      lead:'당신은 자유를 먼저 말하지만, 그 자유가 공동체 위에서만 가능하다는 것도 압니다. 강제에는 신중하지만, 함께 지는 값에서 빠지지는 않습니다.',
+      body:'이 태도는 자유와 의무를 맞바꾸는 계약의 감각입니다. 권력은 최소로, 의무는 공정하게, 자유는 끝까지 — 세 가지를 동시에 요구하기 때문에 현실에서는 늘 불완전한 타협을 고릅니다.',
+      strong:'자유를 명분으로 책임을 회피하지 않는다.',
+      watch:'계약의 조건이 누구에게 유리한지 따지는 일을 건너뛸 수 있다.',
+      q:'내가 동의한 계약에서 빠진 사람은 누구인가?' },
+    solidarity:{ name:'연대의 시민', tag:'함께 사는 값은 함께 치른다',
+      lead:'당신은 의무를 먼저 말하지만, 그 의무가 자유를 짓밟아도 된다고는 생각하지 않습니다. 공동체의 그물을 짜는 일과 그 그물이 사람을 조이지 않게 하는 일을 함께 봅니다.',
+      body:'연대는 감정이 아니라 제도입니다. 누가 얼마나 지는지, 지지 못하는 사람은 어떻게 덮는지 — 그 구체적인 설계에서 당신의 답이 갈립니다.',
+      strong:'공동의 비용을 회피하지 않고, 약한 쪽의 몫을 먼저 계산한다.',
+      watch:'연대의 이름으로 개인의 선택을 쉽게 압박할 수 있다.',
+      q:'내가 요구한 의무를 지지 못하는 사람에게 나는 무엇을 제안했나?' },
+    duty:{ name:'의무의 시민', tag:'공동체를 유지하는 값을 먼저 말한다',
+      lead:'당신의 대답에는 “그래도 함께 사는 이상”이라는 문장이 자주 등장합니다. 권리를 말하기 전에, 그 권리를 가능하게 하는 공동의 값부터 계산합니다.',
+      body:'의무를 앞세우는 태도는 공동체가 저절로 유지되지 않는다는 사실을 아는 데서 나옵니다. 다만 의무를 강조할수록, 그 의무가 누구에게 집중되는지 — 성별·계층·세대 — 를 함께 보아야 합니다.',
+      strong:'공동의 몫을 미루지 않고, 제도의 지속가능성을 먼저 본다.',
+      watch:'의무를 요구하는 쪽과 지는 쪽이 늘 같은 사람이 될 수 있다.',
+      q:'내가 말한 의무는 누구에게 가장 무겁게 떨어지는가?' },
+    order:{ name:'질서의 시민', tag:'결정할 힘과 그 절차를 믿는다',
+      lead:'당신은 혼란보다 절차를, 방관보다 결정을 택합니다. 권력은 두렵지만 필요한 것이며, 그래서 더 정교한 규칙과 견제 속에 놓여야 한다고 봅니다.',
+      body:'질서를 앞세우는 태도는 집단이 스스로를 지킬 수 있다는 믿음입니다. 그 믿음이 건강하려면, 권력이 틀렸을 때 그것을 되돌릴 수 있는 장치가 함께 있어야 합니다.',
+      strong:'결정이 필요한 순간에 책임을 미루지 않는다.',
+      watch:'질서를 지키는 권력 자체를 의심하는 일을 잊을 수 있다.',
+      q:'내가 만든 규칙을 누가, 어떻게 되돌릴 수 있는가?' },
+    design:{ name:'설계의 시민', tag:'권력을 없애기보다 견제하는 장치를 만든다',
+      lead:'당신은 권력 그 자체보다 권력이 흐르는 구조를 봅니다. 누구를 믿을 것인가가 아니라, 믿지 않아도 견딜 수 있는 제도를 어떻게 만들 것인가를 묻습니다.',
+      body:'설계의 시민은 자유와 의무를 제도로 번역합니다. 투명성, 상호운용, 감독, 일몰 — 이 단어들이 당신의 답에 자주 등장합니다. 다만 설계는 사람이 작동시켜야 하고, 설계자도 권력이 됩니다.',
+      strong:'구조적 해법을 찾고, 감정적 대결을 제도로 바꾼다.',
+      watch:'제도를 만드는 사람의 권력을 검토하지 않을 수 있다.',
+      q:'내가 설계한 장치를 누가 감독하는가?' },
+    border:{ name:'경계의 시민', tag:'문맥에 따라 편을 바꾼다',
+      lead:'당신은 같은 원칙을 반복하지 않습니다. 어떤 장면에서는 규제를, 어떤 장면에서는 자유를 택합니다. 그 이동은 일관성의 결핍이 아니라, 장면마다 다른 권력이 작동한다는 판단입니다.',
+      body:'경계에 서는 사람은 양쪽의 논리를 모두 이해합니다. 그래서 토론에서 가장 좋은 중재자가 되기도 하고, 가장 설명하기 어려운 사람이 되기도 합니다. 자신의 이동에 이유를 붙일 수 있다면 그것은 이미 하나의 원칙입니다.',
+      strong:'맥락을 읽고, 상황이 바뀌면 입장도 바꿀 수 있다.',
+      watch:'“그때는 다르다”가 반복되면 신뢰를 잃는다.',
+      q:'내가 편을 바꾼 이유를 한 문장으로 말할 수 있는가?' }
+  };
+
+  function disposition(sh, answered){
+    var n = answered.length;
+    var res = 0, sw = 0, prev = null;
+    answered.forEach(function(id, i){
+      var o = byId(id) && byId(id).opts[S.ans[id]];
+      if(!o) return;
+      if(S.ans[id] === 'C') res++;
+      var ax = dominant(o.w);
+      if(i > 0 && prev && ax !== 'x' && prev !== 'x' && ax !== prev) sw++;
+      if(ax !== 'x') prev = ax;
+    });
+    var arr = [['p',sh.p],['d',sh.d],['f',sh.f]].sort(function(a,b){ return b[1]-a[1]; });
+    var top = arr[0][0], gap = arr[0][1] - arr[1][1], spread = arr[0][1] - arr[2][1];
+    var why = n + '문항 · 권력 ' + sh.p + '% · 의무 ' + sh.d + '% · 자유 ' + sh.f + '% · 제3의 길 ' + res + '개';
+    var key;
+    if(n < 3) key = 'seed';
+    else if(res >= Math.ceil(n/2)) key = 'cond';
+    else if(spread <= 7) key = 'balance';
+    else if(sw >= Math.max(3, Math.round(n*0.5)) && spread <= 18) key = 'border';
+    else if(top === 'f') key = (gap >= 8 ? 'free' : 'contract');
+    else if(top === 'd') key = (arr[1][0] === 'f' ? 'solidarity' : 'duty');
+    else if(top === 'p') key = (arr[1][0] === 'd' ? 'order' : 'design');
+    else key = 'design';
+    var t = TYPES[key];
+    return { key:key, name:t.name, tag:t.tag, lead:t.lead, body:t.body, strong:t.strong, watch:t.watch, q:t.q, why:why };
+  }
+
+  function throwQuestions(answered){
+    var cands = answered.map(function(id){
+      var d = byId(id), o = d.opts[S.ans[id]];
+      var ax = dominant(o.w);
+      var w = Math.max(o.w.p, o.w.d, o.w.f);
+      return { id:id, d:d, k:S.ans[id], o:o, ax:ax, w:w,
+        q: o.ask || ('내가 ' + S.ans[id] + '를 고른 이유를 한 문장으로 말한다면 무엇인가?') };
+    }).sort(function(a,b){ return b.w - a.w; });
+    var out = [], used = {};
+    ['p','d','f','x'].forEach(function(ax){
+      for(var i=0; i<cands.length && out.length<3; i++){
+        if(!used[cands[i].id] && cands[i].ax === ax){ out.push(cands[i]); used[cands[i].id] = 1; }
+      }
+    });
+    for(var i=0; i<cands.length && out.length<3; i++){
+      if(!used[cands[i].id]){ out.push(cands[i]); used[cands[i].id] = 1; }
+    }
+    return out;
+  }
+
+  function triSVG(sh){
+    var max = Math.max(sh.p, sh.d, sh.f, 1);
+    var V = {p:{x:160,y:56}, d:{x:288,y:266}, f:{x:32,y:266}};
+    var C = {x:160,y:196};
+    function at(v,t){ return {x:C.x+(v.x-C.x)*t, y:C.y+(v.y-C.y)*t}; }
+    function n(v){ return v.x.toFixed(1)+','+v.y.toFixed(1); }
+    var s = '';
+    [0.25,0.5,0.75,1].forEach(function(t){
+      var a=at(V.p,t), b=at(V.d,t), c=at(V.f,t);
+      s += '<polygon points="'+n(a)+' '+n(b)+' '+n(c)+'" fill="none" stroke="'+(t===1?'#DBCFBB':'#EFE8DC')+'" stroke-width="1"/>';
+    });
+    ['p','d','f'].forEach(function(k){
+      s += '<line x1="'+C.x+'" y1="'+C.y+'" x2="'+V[k].x+'" y2="'+V[k].y+'" stroke="#E6DED0" stroke-width="1"/>';
+    });
+    var r = {p:sh.p/max, d:sh.d/max, f:sh.f/max};
+    var A=at(V.p,r.p), B=at(V.d,r.d), Fc=at(V.f,r.f);
+    s += '<polygon points="'+n(A)+' '+n(B)+' '+n(Fc)+'" fill="rgba(95,119,103,.16)" stroke="#5F7767" stroke-width="2" stroke-linejoin="round"/>';
+    [A,B,Fc].forEach(function(pt){ s += '<circle cx="'+pt.x.toFixed(1)+'" cy="'+pt.y.toFixed(1)+'" r="3.1" fill="#5F7767"/>'; });
+    s += '<circle cx="'+C.x+'" cy="'+C.y+'" r="2" fill="#D8CBB6"/>';
+    s += '<text x="160" y="30" text-anchor="middle" font-family="Noto Serif KR,serif" font-size="13" fill="#22262A">권력</text>';
+    s += '<text x="160" y="45" text-anchor="middle" font-size="11" fill="#A9613F">'+sh.p+'%</text>';
+    s += '<text x="288" y="291" text-anchor="middle" font-family="Noto Serif KR,serif" font-size="13" fill="#22262A">의무</text>';
+    s += '<text x="288" y="306" text-anchor="middle" font-size="11" fill="#5F7767">'+sh.d+'%</text>';
+    s += '<text x="32" y="291" text-anchor="middle" font-family="Noto Serif KR,serif" font-size="13" fill="#22262A">자유</text>';
+    s += '<text x="32" y="306" text-anchor="middle" font-size="11" fill="#B08B45">'+sh.f+'%</text>';
+    return '<svg viewBox="0 0 320 314" role="img" aria-label="권력 '+sh.p+'퍼센트, 의무 '+sh.d+'퍼센트, 자유 '+sh.f+'퍼센트의 균형 삼각형">'+s+'</svg>';
+  }
+
+  function unitShares(ids){
+    var t = {p:0,d:0,f:0};
+    ids.forEach(function(id){
+      var d = byId(id); var o = d && d.opts[S.ans[id]];
+      if(!o) return;
+      t.p += o.w.p; t.d += o.w.d; t.f += o.w.f;
+    });
+    var sum = t.p + t.d + t.f;
+    if(!sum) return null;
+    return { p:t.p/sum*100, d:t.d/sum*100, f:t.f/sum*100, total:ids.length };
+  }
+  function unitRowHTML(label, ids, question){
+    var sh = unitShares(ids);
+    if(!sh) return '<div class="ubrow none"' + (question ? ' title="' + esc(question) + '"' : '') + '><span class="un">' + esc(label) + '</span><span class="seg"></span><span class="uv">아직 답하지 않음</span></div>';
+    var top = [['p',sh.p],['d',sh.d],['f',sh.f]].sort(function(a,b){ return b[1]-a[1]; });
+    return '<div class="ubrow"' + (question ? ' title="' + esc(question) + '"' : '') + '><span class="un">' + esc(label) + '</span>' +
+      '<span class="seg"><i class="p" style="width:' + sh.p.toFixed(1) + '%"></i><i class="d" style="width:' + sh.d.toFixed(1) + '%"></i><i class="f" style="width:' + sh.f.toFixed(1) + '%"></i></span>' +
+      '<span class="uv"><b>' + sh.total + '장면 · ' + AXN[top[0][0]] + ' ' + Math.round(top[0][1]) + '%</b>권력 ' + Math.round(sh.p) + ' · 의무 ' + Math.round(sh.d) + ' · 자유 ' + Math.round(sh.f) + '</span></div>';
+  }
+  function renderUnitBox(answered){
+    var host = $('unitBox'); if(!host) return;
+    var html = '';
+    UORDER.forEach(function(u){
+      var ids = answered.filter(function(id){ var d = byId(id); return d && d.unit === u; });
+      html += unitRowHTML(UNITS[u].name, ids, UNITS[u].q);
+    });
+    var custom = answered.filter(function(id){ var d = byId(id); return d && !d.unit; });
+    if(custom.length) html += unitRowHTML('직접 만든 질문', custom, '');
+    host.innerHTML = html;
+  }
+
+  function renderResult(){
+    var answered = answeredIds();
+    var sh = computeShares();
+    var t = disposition(sh, answered);
+    $('triHost').innerHTML = triSVG(sh);
+    $('bars').innerHTML =
+      barHTML('p','권력',sh.p) + barHTML('d','의무',sh.d) + barHTML('f','자유',sh.f) +
+      '<div class="lg"><b>' + (sh.p>=sh.d && sh.p>=sh.f ? '권력' : (sh.d>=sh.f ? '의무' : '자유')) + josa(sh.p>=sh.d && sh.p>=sh.f ? '권력' : (sh.d>=sh.f ? '의무' : '자유'), '이', '가') + ' 가장 무겁습니다.</b> ' +
+      '이 무게는 정답이 아니라 지금의 출발점입니다. 같은 딜레마에서 다른 자리를 고르면 무게도 달라집니다.</div>';
+    $('rSub').textContent = t.why;
+    $('typeBox').innerHTML =
+      '<p class="tn">' + esc(t.name) + '</p>' +
+      '<p class="tt">' + esc(t.tag) + '</p>' +
+      '<p class="tl">' + esc(t.lead) + '</p>' +
+      '<p class="tl" style="font-size:13.5px;color:var(--ink-2)">' + esc(t.body) + '</p>' +
+      '<div class="two"><div><b>이 사람의 강점</b>' + esc(t.strong) + '</div><div><b>이 사람이 조심할 것</b>' + esc(t.watch) + '</div></div>' +
+      '<p class="tl" style="margin:12px 0 0"><b style="color:var(--sage)">스스로에게</b> ' + esc(t.q) + '</p>' +
+      '<p class="tl" style="margin:10px 0 0;font-size:12px;color:var(--muted)">세 단원의 질문 — <b>권력은 무엇으로 유지되는가 / 우리는 무엇을 지는가 / 자유는 무엇에 쓰는가</b> — 에 대한 당신의 대답 순서가 이 이름을 만들었습니다.</p>';
+
+    renderUnitBox(answered);
+
+    var list = $('choices'); list.innerHTML = '';
+    answered.forEach(function(id){
+      var d = byId(id), o = d.opts[S.ans[id]];
+      var li = document.createElement('li');
+      li.innerHTML = '<span class="no">' + (d.custom ? '✎' : d.n) + '</span>' +
+        '<span class="q"><b><span class="uk ' + unitCls(d) + '" style="font-size:9.5px;padding:1px 6px;margin-right:6px;vertical-align:1px">' + unitName(d) + '</span>' + esc(d.title) + '</b>' + esc(o.t) + '</span>' +
+        '<span class="sel ' + badgeClass(o.w) + '">' + esc(o.badge || autoBadge(o.w)) + '</span>';
+      list.appendChild(li);
+    });
+    $('choiceMeta').textContent = answered.length + '문항 응답';
+
+    var asks = throwQuestions(answered);
+    var ol = $('asks'); ol.innerHTML = '';
+    asks.forEach(function(a){
+      var li = document.createElement('li');
+      li.innerHTML = '<b>' + esc(a.d.title) + ' — ' + a.k + '. ' + esc(a.o.t) + '</b>' + esc(a.q);
+      ol.appendChild(li);
+    });
+    if(!asks.length){
+      var li2 = document.createElement('li');
+      li2.innerHTML = '<b>아직 질문이 없습니다</b>한 문항 이상 골라야 질문이 만들어집니다.';
+      ol.appendChild(li2);
+    }
+
+    var voices = [], seen = {};
+    answered.forEach(function(id){
+      (byId(id).opts[S.ans[id]].think || []).forEach(function(v){
+        if(!seen[v.n]){ seen[v.n] = 1; voices.push(v); }
+      });
+    });
+    var vh = $('voices');
+    if(voices.length){
+      vh.innerHTML = voices.slice(0,6).map(function(v){ return '<div><b>' + esc(v.n) + '</b>' + esc(v.l) + '</div>'; }).join('');
+    } else {
+      vh.innerHTML = '<div>직접 만든 질문에는 사상가 카드가 붙지 않습니다. 동료의 답에서 가장 날카로운 문장을 골라 여기에 적어 보세요.</div>';
+    }
+    var today = new Date();
+    $('dateTxt').textContent = today.getFullYear() + '. ' + (today.getMonth()+1) + '. ' + today.getDate() + '.';
+    show('s2');
+  }
+  function barHTML(cls, label, v){
+    return '<div class="bar ' + cls + '"><span class="n">' + label + '</span><span class="track"><span class="fill" style="width:' + v + '%"></span></span><span class="v">' + v + '%</span></div>';
+  }
+
+  function buildText(){
+    var answered = answeredIds();
+    var sh = computeShares();
+    var t = disposition(sh, answered);
+    var name = ($('nameIn').value || '').trim();
+    var out = [];
+    out.push('나의 권력·의무·자유 나침반');
+    out.push('《권력·의무·자유》 딜레마 투표·토론 — 대구대학교 이용승 교수');
+    out.push($('dateTxt').textContent + (name ? ' · ' + name : ''));
+    out.push('');
+    out.push('권력 ' + sh.p + '% · 의무 ' + sh.d + '% · 자유 ' + sh.f + '%');
+    out.push('성향: ' + t.name + ' — ' + t.tag);
+    out.push(t.lead);
+    out.push('강점: ' + t.strong);
+    out.push('조심할 것: ' + t.watch);
+    out.push('스스로에게: ' + t.q);
+    out.push('');
+    out.push('[단원별로 내가 선 자리]');
+    UORDER.forEach(function(u){
+      var ids = answered.filter(function(id){ var d = byId(id); return d && d.unit === u; });
+      var s2 = unitShares(ids);
+      if(!s2){ out.push('· ' + UNITS[u].name + ' — 아직 답하지 않음'); return; }
+      var top = [['p',s2.p],['d',s2.d],['f',s2.f]].sort(function(a,b){ return b[1]-a[1]; });
+      out.push('· ' + UNITS[u].name + ' — ' + s2.total + '장면 · 권력 ' + Math.round(s2.p) + ' / 의무 ' + Math.round(s2.d) + ' / 자유 ' + Math.round(s2.f) + ' → 가장 무거운 축: ' + AXN[top[0][0]]);
+    });
+    out.push('');
+    out.push('[내 선택]');
+    answered.forEach(function(id){
+      var d = byId(id), o = d.opts[S.ans[id]];
+      out.push((d.custom ? '✎' : d.n) + '. [' + unitName(d) + '] ' + d.title + ' → ' + S.ans[id] + ') ' + o.t + ' (' + (o.badge || autoBadge(o.w)) + ')');
+      if(d.src) out.push('    수업 원천: ' + d.src);
+    });
+    out.push('');
+    out.push('[수업 토론에서 내가 던져볼 질문]');
+    throwQuestions(answered).forEach(function(a, i){
+      out.push((i+1) + '. ' + a.q + '  («' + a.d.title + '»에서)');
+    });
+    out.push('');
+    out.push('※ 성격 검사가 아니라, 수업의 열두 장면에서 고른 자리가 세 개념 가운데 어디에 무게를 실었는지 보여 주는 수업용 지도입니다.');
+    return out.join('\n');
+  }
+
+  /* ================= 프레젠테이션 ================= */
+  function pView(){ return P.filter ? P.list.filter(function(x){ return x.unit === P.filter; }) : P.list; }
+  function renderPFilter(){
+    var box = $('pFilter'); if(!box) return;
+    Array.prototype.forEach.call(box.children, function(btn){
+      var u = btn.getAttribute('data-punit');
+      btn.classList.toggle('on', (u === 'all' && !P.filter) || u === P.filter);
+    });
+  }
+  function renderChips(){
+    var host = $('pChips'); host.innerHTML = '';
+    var list = pView();
+    list.forEach(function(d, i){
+      var b = document.createElement('button');
+      b.type = 'button';
+      var label = d.custom ? '✎' : d.n;
+      b.textContent = label;
+      b.title = unitName(d) + ' · ' + d.title;
+      b.className = (i === P.idx ? 'on ' : '') + (totalOf(countOf(d.id)) ? 'has' : '');
+      b.addEventListener('click', function(){ P.idx = i; renderPres(); });
+      host.appendChild(b);
+    });
+  }
+  function pcts(c){
+    var t = totalOf(c);
+    if(!t) return {A:0,B:0,C:0};
+    var a = Math.round(c.A/t*100), b = Math.round(c.B/t*100), d = 100 - a - b;
+    if(d < 0){ b += d; d = 0; }
+    return {A:a,B:b,C:d};
+  }
+  function renderPres(){
+    renderPFilter();
+    var list = pView();
+    if(P.idx >= list.length) P.idx = Math.max(0, list.length - 1);
+    if(P.idx < 0) P.idx = 0;
+    var d = list[P.idx];
+    if(!d){ $('pH').textContent = '이 단원에는 아직 질문이 없습니다.'; $('pSit').textContent = ''; $('pSrc').hidden = true; $('pNum').textContent = '—'; $('pTag').textContent = ''; $('pTot').textContent = '응답 0'; $('pCols').innerHTML = ''; $('pDeb').innerHTML = ''; renderChips(); return; }
+    var c = countOf(d.id), pc = pcts(c), tot = totalOf(c);
+    $('pNum').textContent = d.custom ? '✎' : d.n;
+    $('pTag').textContent = d.custom ? '직접 만든 질문' : d.k;
+    $('pTot').textContent = '응답 ' + tot;
+    $('pH').textContent = d.title;
+    $('pSit').textContent = d.sit || '상황 설명 없이 질문으로 바로 토론합니다.';
+    var ps = $('pSrc');
+    if(d.src){ ps.hidden = false; ps.innerHTML = '<b>수업 원천</b>' + esc(d.src); }
+    else { ps.hidden = true; ps.innerHTML = ''; }
+    $('pStack').className = 'stacked' + (tot ? '' : ' empty');
+    $('pStack').innerHTML = '<i class="a" style="flex:0 0 ' + pc.A + '%"></i><i class="b" style="flex:0 0 ' + pc.B + '%"></i><i class="c" style="flex:0 0 ' + pc.C + '%"></i>';
+    $('pLegend').innerHTML = '<span><i style="background:var(--sage)"></i>A ' + pc.A + '%</span><span><i style="background:var(--terra)"></i>B ' + pc.B + '%</span><span><i style="background:var(--gold)"></i>제3의 길 ' + pc.C + '%</span>';
+    var cols = $('pCols'); cols.innerHTML = '';
+    keysOf(d).forEach(function(k){
+      var o = d.opts[k];
+      var cls = k.toLowerCase();
+      var col = document.createElement('div');
+      col.className = 'pcol ' + cls;
+      col.innerHTML = '<span class="lt">' + k + '</span>' +
+        '<h3>' + esc(o.t) + '</h3>' +
+        (o.d ? '<p class="pd">' + esc(o.d) + '</p>' : '') +
+        '<div class="stepper"><button type="button" data-k="' + k + '" data-d="-1" aria-label="' + k + ' 하나 줄이기">−</button>' +
+        '<input type="number" min="0" max="999" value="' + (c[k]||0) + '" data-in="' + k + '" aria-label="' + k + ' 응답 수">' +
+        '<button type="button" data-k="' + k + '" data-d="1" aria-label="' + k + ' 하나 늘리기">+</button>' +
+        '<span class="pc">' + pc[k] + '%</span></div>' +
+        '<div class="pbar"><i style="width:' + pc[k] + '%"></i></div>';
+      cols.appendChild(col);
+    });
+    var ol = $('pDeb'); ol.innerHTML = '';
+    (d.deb || []).forEach(function(q){ var li = document.createElement('li'); li.textContent = q; ol.appendChild(li); });
+    if(!(d.deb||[]).length){ var li2 = document.createElement('li'); li2.textContent = '이 질문으로 무엇을 물어볼지 학생들과 함께 정해 보세요.'; ol.appendChild(li2); }
+    renderChips();
+    var su = $('shareUrl');
+    if(su) su.value = shareURL(d);
+  }
+  function addCount(k, delta){
+    var d = pView()[P.idx]; if(!d) return;
+    var c = countOf(d.id);
+    c[k] = Math.max(0, (c[k]||0) + delta);
+    P.hist.push({id:d.id, k:k, d:delta});
+    renderPres();
+  }
+  function undo(){
+    var h = P.hist.pop();
+    if(!h){ toast('되돌릴 기록이 없습니다.'); return; }
+    var c = countOf(h.id);
+    c[h.k] = Math.max(0, (c[h.k]||0) - h.d);
+    P.filter = '';
+    var i = P.list.findIndex(function(x){ return x.id === h.id; });
+    if(i >= 0) P.idx = i;
+    renderPres();
+  }
+
+  /* ================= 직접 만든 딜레마 ================= */
+  function mkOpt(t, w){
+    return {t:t, d:'', w:w, badge:autoBadge(w), q:'', qb:'', think:[], cost:'', ask:''};
+  }
+  function weightOf(sel, fallback){
+    var v = sel || 'auto';
+    if(v === 'auto') return PRESET[fallback];
+    return PRESET[v] || PRESET[fallback];
+  }
+  function readForm(){
+    var title = ($('ndTitle').value || '').trim();
+    var a = ($('ndA').value || '').trim();
+    var b = ($('ndB').value || '').trim();
+    var c = ($('ndC').value || '').trim();
+    if(!title){ toast('질문 제목을 적어 주세요.'); $('ndTitle').focus(); return null; }
+    if(!a || !b){ toast('A와 B 입장을 모두 적어 주세요.'); (!a ? $('ndA') : $('ndB')).focus(); return null; }
+    var sit = ($('ndSit').value || '').trim();
+    var deb = ($('ndDeb').value || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean).slice(0,3);
+    var id = 'c' + (++P.customN) + Date.now().toString(36);
+    var d = {
+      id:id, n:'✎', k:'직접 만든 질문', custom:true,
+      title:title, frame:'직접 만든 질문 · 권력 · 의무 · 자유', sit:sit || '상황 설명 없이 질문으로 바로 토론합니다.',
+      opts:{ A:mkOpt(a, weightOf($('ndWA').value, 'p')), B:mkOpt(b, weightOf($('ndWB').value, 'f')) },
+      deb:deb
+    };
+    if(c) d.opts.C = mkOpt(c, weightOf($('ndWC').value, 'x'));
+    return d;
+  }
+  function registerCustom(d){
+    ALL.push(d); BY[d.id] = d;
+    P.list.push(d);
+    P.counts[d.id] = {A:0,B:0,C:0};
+    P.filter = '';
+    P.idx = P.list.length - 1;
+    renderPres();
+  }
+  function clearForm(){
+    ['ndTitle','ndSit','ndA','ndB','ndC','ndDeb'].forEach(function(id){ $(id).value = ''; });
+    ['ndWA','ndWB','ndWC'].forEach(function(id){ $(id).value = 'auto'; });
+  }
+  function openNewDlg(){ clearForm(); var dl = $('newDlg'); if(dl.showModal) dl.showModal(); else dl.setAttribute('open',''); }
+  function closeNewDlg(){ var dl = $('newDlg'); if(dl.close) dl.close(); else dl.removeAttribute('open'); }
+
+  function b64e(str){
+    return btoa(unescape(encodeURIComponent(str))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  function b64d(s){
+    s = s.replace(/-/g,'+').replace(/_/g,'/');
+    while(s.length % 4) s += '=';
+    return decodeURIComponent(escape(atob(s)));
+  }
+  function shareURL(d){
+    var base = location.href.split('#')[0];
+    if(!d.custom) return base + '#d=' + encodeURIComponent(d.id);
+    var payload = {v:1, t:d.title, s:d.sit, o:{}, b:d.deb || []};
+    keysOf(d).forEach(function(k){
+      var o = d.opts[k];
+      payload.o[k] = {t:o.t, d:o.d, w:o.w, b:o.badge};
+    });
+    return base + '#q=' + b64e(JSON.stringify(payload));
+  }
+  function shareCurrent(){
+    var d = P.list[P.idx];
+    if(!d) return;
+    copyText(shareURL(d), '이 질문의 링크를 복사했습니다. 학생에게 보내면 바로 열립니다.');
+  }
+  function dilemmaFromPayload(p){
+    var id = 'shared' + (++P.customN);
+    var d = { id:id, n:'✎', k:'선생님이 보낸 질문', custom:true, title:p.t || '질문',
+      frame:'선생님이 보낸 질문 · 권력 · 의무 · 자유',
+      sit:p.s || '상황 설명 없이 질문으로 바로 토론합니다.', opts:{}, deb:p.b || [] };
+    ['A','B','C'].forEach(function(k){
+      var o = p.o && p.o[k];
+      if(!o) return;
+      var w = (o.w && typeof o.w.p === 'number') ? o.w : PRESET[k === 'A' ? 'p' : (k === 'B' ? 'f' : 'x')];
+      d.opts[k] = {t:o.t || k, d:o.d || '', w:w, badge:o.b || autoBadge(w), q:'', qb:'', think:[], cost:'', ask:''};
+    });
+    if(!d.opts.A) d.opts.A = mkOpt('찬성', PRESET.p);
+    if(!d.opts.B) d.opts.B = mkOpt('반대', PRESET.f);
+    ALL.push(d); BY[d.id] = d;
+    return d;
+  }
+  function loadHash(){
+    var h = location.hash || '';
+    if(h.indexOf('#d=') === 0){
+      var d = byId(decodeURIComponent(h.slice(3)));
+      if(d) return openShared(d);
+      toast('링크의 질문을 찾지 못했습니다.');
+    } else if(h.indexOf('#q=') === 0){
+      try{ var p = JSON.parse(b64d(h.slice(3))); return openShared(dilemmaFromPayload(p)); }
+      catch(e){ toast('링크를 읽을 수 없습니다.'); }
+    }
+    return false;
+  }
+  function openShared(d){
+    S.order = [d.id]; S.idx = 0; S.ans = {}; S.shared = d.id;
+    setMode('student');
+    renderQ(); show('s1');
+    return true;
+  }
+
+  /* ================= 이벤트 ================= */
+  function bind(){
+    $('mStudent').addEventListener('click', function(){ setMode('student'); });
+    $('mPres').addEventListener('click', function(){ setMode('pres'); });
+
+    $('startAll').addEventListener('click', function(){ startStudent(BASE.map(function(d){ return d.id; })); });
+    $('startPick').addEventListener('click', function(){
+      var p = $('picker'); p.hidden = !p.hidden;
+      if(!p.hidden) $('startPick').textContent = '장면 고르기 접기';
+      else $('startPick').textContent = '단원·장면 골라서 하기';
+    });
+    $('pickAll').addEventListener('click', function(){
+      var vis = pickVisible();
+      var allOn = vis.every(function(d){ return picked[d.id]; });
+      vis.forEach(function(d){ if(allOn) delete picked[d.id]; else picked[d.id] = true; });
+      Array.prototype.forEach.call($('picks').children, function(b){ b.classList.toggle('on', !allOn); });
+      syncPick();
+    });
+    $('uFilter').addEventListener('click', function(e){
+      var b = e.target.closest('button[data-unit]');
+      if(!b) return;
+      var u = b.getAttribute('data-unit');
+      pickFilter = (u === 'all') ? '' : u;
+      renderPicks();
+    });
+    $('startPicked').addEventListener('click', function(){
+      var ids = pickedIds();
+      if(ids.length < 3){ toast('세 개 이상 골라 주세요.'); return; }
+      startStudent(ids);
+    });
+
+    $('prevQ').addEventListener('click', function(){ if(S.idx > 0){ S.idx--; renderQ(); } });
+    $('nextQ').addEventListener('click', function(){
+      var id = S.order[S.idx];
+      if(!S.ans[id]){ toast('먼저 하나를 골라 주세요.'); return; }
+      if(S.idx < S.order.length - 1){ S.idx++; renderQ(); }
+      else { renderResult(); }
+    });
+    $('qBack').addEventListener('click', function(){ show('s0'); });
+    $('qSkip').addEventListener('click', function(){
+      if(!answeredIds().length){ toast('한 문항 이상 선택해야 결과지가 만들어집니다.'); return; }
+      renderResult();
+    });
+    $('extraBtn').addEventListener('click', function(){
+      var have = {}; S.order.forEach(function(id){ have[id] = 1; });
+      BASE.forEach(function(d){ if(!have[d.id]) S.order.push(d.id); });
+      S.shared = null; $('sharedBar').hidden = true; $('extraBtn').hidden = true;
+      var target = S.order.length; 
+      for(var i=0;i<S.order.length;i++){ if(!S.ans[S.order[i]]){ target = i; break; } }
+      S.idx = Math.min(target, S.order.length-1);
+      renderQ();
+    });
+
+    $('copyBtn').addEventListener('click', function(){ copyText(buildText(), '결과를 복사했습니다. 붙여넣기로 제출·공유할 수 있습니다.'); });
+    $('printBtn').addEventListener('click', function(){ try{ window.print(); }catch(e){ toast('인쇄 창을 열지 못했습니다.'); } });
+    $('restartBtn').addEventListener('click', function(){ S.order = []; S.idx = 0; S.ans = {}; S.shared = null; $('nameIn').value = ''; show('s0'); });
+
+    $('pPrev').addEventListener('click', function(){ if(P.idx > 0){ P.idx--; renderPres(); } });
+    $('pNext').addEventListener('click', function(){
+      if(P.idx < pView().length - 1){ P.idx++; renderPres(); }
+      else { toast('이 단원의 마지막 질문입니다. ‘단원’ 단추로 다른 단원을 열거나 ‘+ 새 딜레마’로 이어서 만드세요.'); }
+    });
+    $('pFilter').addEventListener('click', function(e){
+      var b = e.target.closest('button[data-punit]');
+      if(!b) return;
+      var u = b.getAttribute('data-punit');
+      P.filter = (u === 'all') ? '' : u;
+      P.idx = 0;
+      renderPres();
+    });
+    $('pCols').addEventListener('click', function(e){
+      var b = e.target.closest('button[data-k]');
+      if(!b) return;
+      addCount(b.getAttribute('data-k'), parseInt(b.getAttribute('data-d'),10) || 0);
+    });
+    $('pCols').addEventListener('change', function(e){
+      var inp = e.target.closest('input[data-in]');
+      if(!inp) return;
+      var k = inp.getAttribute('data-in');
+      var v = Math.max(0, Math.min(999, parseInt(inp.value,10) || 0));
+      var d = pView()[P.idx]; if(!d) return;
+      countOf(d.id)[k] = v;
+      renderPres();
+    });
+    $('pHide').addEventListener('click', function(){
+      P.hide = !P.hide;
+      $('presCard').classList.toggle('hidenum', P.hide);
+      $('pHide').textContent = P.hide ? '숫자 보이기' : '숫자 숨기기';
+    });
+    $('pResetQ').addEventListener('click', function(){
+      var d = pView()[P.idx]; if(!d) return;
+      P.counts[d.id] = {A:0,B:0,C:0};
+      renderPres(); toast('이 문제의 집계를 0으로 되돌렸습니다.');
+    });
+    $('pResetAll').addEventListener('click', function(){
+      P.list.forEach(function(d){ P.counts[d.id] = {A:0,B:0,C:0}; });
+      P.hist = []; renderPres(); toast('모든 문제의 집계를 0으로 되돌렸습니다.');
+    });
+    $('pNew').addEventListener('click', openNewDlg);
+    $('pShare').addEventListener('click', shareCurrent);
+    $('shareCopy').addEventListener('click', function(){ var v = $('shareUrl').value; if(v) copyText(v, '링크를 복사했습니다.'); });
+    $('ndCancel').addEventListener('click', closeNewDlg);
+    $('ndAdd').addEventListener('click', function(){
+      var d = readForm(); if(!d) return;
+      registerCustom(d); closeNewDlg(); toast('질문을 투표에 올렸습니다. 이제 학생 손을 세어 보세요.');
+    });
+    $('ndAddShare').addEventListener('click', function(){
+      var d = readForm(); if(!d) return;
+      registerCustom(d); closeNewDlg();
+      copyText(shareURL(d), '질문을 올리고 링크를 복사했습니다. 학생에게 보내면 바로 열립니다.');
+    });
+
+    document.addEventListener('keydown', function(e){
+      var tg = e.target;
+      if(tg && /^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName)) return;
+      if($('s1').classList.contains('on') && !document.querySelector('dialog[open]')){
+        var kk = (e.key || '').toLowerCase();
+        var d = byId(S.order[S.idx]);
+        if(!d) return;
+        if(kk === 'a' || kk === 'b' || kk === 'c'){
+          var K = kk.toUpperCase();
+          if(d.opts[K]){ e.preventDefault(); choose(d, K); }
+          return;
+        }
+        if(e.key === 'ArrowRight'){ e.preventDefault(); $('nextQ').click(); return; }
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); $('prevQ').click(); return; }
+        return;
+      }
+      if(!$('p0').classList.contains('on')) return;
+      if(document.querySelector('dialog[open]')) return;
+      var tg = e.target;
+      if(tg && /^(INPUT|TEXTAREA|SELECT)$/.test(tg.tagName)) return;
+      var k = (e.key || '').toLowerCase();
+      if(k === 'a' || k === 'b' || k === 'c'){
+        e.preventDefault(); addCount(k.toUpperCase(), e.shiftKey ? -1 : 1); return;
+      }
+      if(k === 'z'){ e.preventDefault(); undo(); return; }
+      if(e.key === 'ArrowRight'){ e.preventDefault(); if(P.idx < pView().length-1){ P.idx++; renderPres(); } return; }
+      if(e.key === 'ArrowLeft'){ e.preventDefault(); if(P.idx > 0){ P.idx--; renderPres(); } }
+    });
+  }
+
+  /* ================= 시작 ================= */
+  renderPicks();
+  syncPick();
+  bind();
+  renderPres();
+  if(!loadHash()) show('s0');
+})();
+</script>
+</body>
+</html>
