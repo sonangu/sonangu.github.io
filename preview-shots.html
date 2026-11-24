@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>capture (temporary)</title>
+<style>
+  html,body{margin:0; padding:0; background:#fff}
+  iframe{display:block; border:0; width:1280px; height:1200px; background:#fff}
+  iframe#m{width:390px; height:1200px}
+  .gap{height:40px}
+</style>
+</head>
+<body>
+<iframe id="d" src="/?v=138ffd3#apps" title="desktop capture"></iframe>
+<div class="gap"></div>
+<iframe id="m" src="/?v=138ffd3#apps" title="mobile capture"></iframe>
+<script>
+  function setup(f){
+    var d = f.contentDocument, w = f.contentWindow;
+    if(!d) return;
+    var ko = d.querySelector('.lang button[data-lang="ko"]');
+    if(ko) ko.click();
+    var s = d.getElementById('apps');
+    if(!s) return;
+    f.style.height = (s.offsetHeight + 8) + 'px';
+    w.scrollTo(0, s.offsetTop - 4);
+  }
+  document.querySelectorAll('iframe').forEach(function(f){
+    f.addEventListener('load', function(){ setTimeout(function(){ setup(f); }, 300); });
+  });
+</script>
+</body>
+</html>
