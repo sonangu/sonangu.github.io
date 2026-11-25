@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>이용승 교수 | 대구대학교 자유전공학부 · 정치학 박사</title>
-<meta name="description" content="대구대학교 자유전공학부 이용승 교수(정치학 박사)의 연구·논문·저서·강의 아카이브. 이주와 이주민 통합, 이민정책, 다문화주의, 사회통합, 민족주의, 행위자 연결망 이론(ANT)을 연구합니다.">
-<meta name="keywords" content="이용승, 이용승 교수, 대구대 이용승, 대구대학교 이용승, 대구대학교 자유전공학부, 정치학 박사, 이민정책, 다문화주의, 다문화, 사회통합, 민족주의, 이주, 행위자 연결망 이론, Yongseung Lee, 李容承">
+<meta name="description" content="대구대학교 자유전공학부 이용승 교수(정치학 박사)의 연구·논문·저서·강의 아카이브. 이민정책과 이주민 통합, 다문화주의와 다문화 수용성, 사회통합, 성원권·시민권, 민족주의, 행위자 연결망 이론(ANT)을 연구합니다.">
+<meta name="keywords" content="이용승, 이용승 교수, 대구대 이용승, 대구대학교 이용승, 대구대학교 자유전공학부, 정치학 박사, 이민정책, 이주민 통합, 다문화주의, 다문화 수용성, 사회통합, 성원권, 시민권, 주민권, 지역 이민정책, 다문화교육, 한국어교육, 민족주의, 행위자 연결망 이론, 빅컨셉, 정의란 무엇인가, 권력 의무 자유, Yongseung Lee, 李容承">
 <meta name="author" content="이용승">
 <meta name="robots" content="index,follow">
 <link rel="canonical" href="https://yslee.pe.kr/">
@@ -190,6 +190,9 @@ section{padding:64px 0}
 .links button.citebtn:hover,.links button.citebtn:focus-visible{border-color:var(--sage-2); background:var(--sage-soft); color:var(--sage)}
 .links button.citebtn.done{background:var(--sage); border-color:var(--sage); color:#fff}
 .links button.citebtn svg{width:12px; height:12px; stroke:currentColor; fill:none; stroke-width:1.7}
+.links a.detail{display:inline-flex; align-items:center; gap:5px; padding:4px 11px; border-radius:999px; border:1px solid var(--line); background:#fff; font-size:12.5px; font-weight:500; color:var(--ink-2); border-bottom:1px solid var(--line)}
+.links a.detail svg{width:12px; height:12px; stroke:currentColor; fill:none; stroke-width:1.7}
+.links a.detail:hover{border-color:var(--sage-2); background:var(--sage-soft); color:var(--sage); border-bottom-color:var(--sage-2)}
 .empty{padding:48px 0; text-align:center; color:var(--muted); font-size:14.5px}
 
 /* teaching */
@@ -206,6 +209,12 @@ section{padding:64px 0}
 .app-row .num{font-family:"Noto Serif KR",serif; font-size:21px; font-weight:600; color:var(--gold); letter-spacing:.06em; line-height:1.3; padding-top:1px}
 .app-row .num::after{content:""; display:block; width:20px; height:1px; background:var(--line); margin-top:12px}
 .app-row .k{font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); font-family:"Noto Sans KR",sans-serif; font-weight:600; display:block; margin-bottom:7px}
+/* 대상 뱃지 — 카드가 무엇을 위한 앱인지 한눈에 */
+.app-top{display:flex; align-items:center; gap:9px; flex-wrap:wrap; margin-bottom:7px}
+.app-top .k{margin-bottom:0}
+.app-badge{font-family:"Noto Sans KR",sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.02em; line-height:1.5; white-space:nowrap; padding:2px 9px; border-radius:999px; border:1px solid #DDE6DD; background:var(--sage-soft); color:#405347}
+.app-badge.research{border-color:#E8DDC6; background:#F7F1E4; color:#866733}
+.app-badge.korean{border-color:#EFDDD2; background:var(--terra-soft); color:#7A4630}
 .app-row h3{font-size:17.5px; margin:0 0 8px}
 .app-row p{font-size:13.5px; color:var(--ink-2); line-height:1.78; margin:0}
 .app-row .meta{margin-top:11px; font-size:12px; color:var(--muted); letter-spacing:.01em}
@@ -329,7 +338,7 @@ footer a:hover{color:var(--sage)}
         "addressRegion": "경상북도",
         "addressCountry": "KR"
       },
-      "knowsAbout": ["이주·이민정책", "다문화주의", "사회통합", "시민권·주민권", "민족주의", "행위자 연결망 이론(ANT)"],
+      "knowsAbout": ["이민정책", "이주민 통합", "다문화주의", "다문화 수용성", "사회통합", "성원권", "시민권·주민권", "지역 정주형 이민정책", "민족주의", "행위자 연결망 이론(ANT)", "다문화교육", "한국어교육"],
       "knowsLanguage": ["ko", "en", "zh"]
     },
     {
@@ -392,8 +401,8 @@ footer a:hover{color:var(--sage)}
       <div>
         <p class="eyebrow" data-i18n="hero.eyebrow">대구대학교 자유전공학부 · 정치학 박사</p>
         <h1 id="hero-title"><span data-i18n="hero.name">이용승</span><span class="latin" data-i18n="hero.nameLatin">Lee, Yongseung, Ph.D.</span></h1>
-        <p class="role" data-i18n-html="hero.role"><b>대구대학교 자유전공학부</b> 부교수 · 이주와 사회통합 연구자</p>
-        <p class="lead" data-i18n="hero.lead">이주와 이주민 통합, 이민정책, 사회통합, 민족주의를 연구합니다. 제도와 일상의 층위에서 통합의 과정을 읽고, 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 지평을 넓히는 작업을 하고 있습니다.</p>
+        <p class="role" data-i18n-html="hero.role"><b>대구대학교 자유전공학부</b> 부교수 · 이주·이민정책과 사회통합 연구자</p>
+        <p class="lead" data-i18n="hero.lead">이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합, 민족주의를 연구합니다. 제도와 일상의 층위에서 통합의 과정을 읽고, 성원권·시민권 논의와 행위자 연결망 이론(ANT), 존재론적 전회의 관점에서 이주 연구의 지평을 넓히는 작업을 하고 있습니다.</p>
         <ul class="chips" id="heroChips"></ul>
         <div class="actions">
           <a class="btn btn-primary" href="#pubs" data-i18n="hero.cta1">논문 보기</a>
@@ -426,9 +435,9 @@ footer a:hover{color:var(--sage)}
         <p data-i18n="about.sub">연구의 출발점과 지금의 관심사</p>
       </div>
       <div class="about-body">
-        <p class="first" data-i18n="about.p1">이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안에 주목합니다.</p>
+        <p class="first" data-i18n="about.p1">이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안(지역 정주형 이민정책, 다문화 수용성 제고, 성원권과 주민권)에 주목합니다.</p>
         <p data-i18n="about.p2">최근에는 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 새로운 지평을 모색하고 있습니다. 이주 현상을 인간과 비인간 행위자들의 복합적 연결망으로 재해석하는 작업입니다.</p>
-        <p data-i18n="about.p3">이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.</p>
+        <p data-i18n="about.p3">이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 다문화 수용성과 성원권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.</p>
       </div>
       <div class="about-cards">
         <div class="aside">
@@ -461,7 +470,7 @@ footer a:hover{color:var(--sage)}
       <div class="sec-head">
         <p class="eyebrow" data-i18n="pubs.eyebrow">논문</p>
         <h2 data-i18n="pubs.h2">Publications</h2>
-        <p data-i18n="pubs.sub">학술지 논문을 연도순으로 정리했습니다. 제목을 누르면 초록이 펼쳐지고, 각 논문의 원문 링크로 이동할 수 있습니다.</p>
+        <p data-i18n="pubs.sub">이민정책·다문화 수용성·사회통합·성원권을 다룬 학술지 논문을 연도순으로 정리했습니다. 초록을 펼쳐 보고, PDF 원문과 개별 공유 페이지(초록·서지·인용)로 바로 이동할 수 있습니다.</p>
       </div>
 
       <div class="toolbar" role="search">
@@ -490,7 +499,7 @@ footer a:hover{color:var(--sage)}
       <div class="sec-head">
         <p class="eyebrow" data-i18n="teach.eyebrow">강의</p>
         <h2 data-i18n="teach.h2">강의</h2>
-        <p data-i18n="teach.sub">대구대학교 자유전공학부를 비롯해 다문화·이주, 사회과학 고전, 과학기술과 사회, 아시아의 사회와 역사를 주제로 강의합니다.</p>
+        <p data-i18n="teach.sub">대구대학교 자유전공학부를 비롯해 다문화·이주와 다문화교육, 이민법제, 정의론과 정치사상(《정의란 무엇인가》, 《권력·의무·자유》), 과학기술과 사회, 아시아의 사회와 역사를 주제로 강의합니다.</p>
       </div>
       <div class="teach-grid" id="teachGrid"></div>
     </div>
@@ -514,13 +523,16 @@ footer a:hover{color:var(--sage)}
       <div class="sec-head">
         <p class="eyebrow" data-i18n="apps.eyebrow">연구 App</p>
         <h2 data-i18n="apps.h2">연구 App</h2>
-        <p data-i18n="apps.sub">연구와 수업을 위해 만든 웹 도구를 이곳에서 바로 열 수 있습니다.</p>
+        <p data-i18n="apps.sub">수업과 연구에 쓴 웹 도구입니다. 《빅컨셉》 진로·직업 탐색, 《권력·의무·자유》·《정의란 무엇인가》 딜레마 수업, 미디어·알고리즘 분석, 한국어 학습 도구를 이곳에서 바로 열 수 있습니다.</p>
       </div>
       <div class="apps-list">
         <article class="app-row">
           <div class="num">01</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps.k">《빅컨셉》 · 진로·직업 탐색</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps.k">《빅컨셉》 · 진로·직업 탐색</span>
+              <span class="app-badge course" data-i18n="badge.course">수업용</span>
+            </div>
             <h3 data-i18n="apps.t">빅컨셉 진로·직업 나침반</h3>
             <p data-i18n="apps.d">《빅컨셉》 수업 흐름 그대로, 내 안의 빅컨셉 10개와 짧은 글쓰기, AI 시대 6문항을 거쳐 나만의 결과지와 가까운 중범위 직업 영역 3곳(36개 중), 오토포이에시스 선언까지 정리해 주는 진로·직업 탐색 나침반입니다.</p>
             <p class="meta" data-i18n="apps.m">내 안의 빅컨셉 10개 · 짧은 글쓰기 · 6문항 · 직업 영역 36개 · 약 10분</p>
@@ -533,7 +545,10 @@ footer a:hover{color:var(--sage)}
         <article class="app-row">
           <div class="num">02</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps2.k">《권력·의무·자유》 · 정치사상</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps2.k">《권력·의무·자유》 · 정치사상</span>
+              <span class="app-badge course" data-i18n="badge.course">수업용</span>
+            </div>
             <h3 data-i18n="apps2.t">권력·의무·자유 딜레마 나침반</h3>
             <p data-i18n="apps2.d">수업 세 단원의 12장면에 A·B·제3의 길로 답하며 권력·의무·자유의 무게, 균형 삼각형과 사상가의 시선을 확인하는 딜레마 나침반입니다. 강의실 거수 집계 모드와 질문 제작·공유 모드도 함께 씁니다.</p>
             <p class="meta" data-i18n="apps2.m">12개 장면 · 단원 필터 · A/B/제3의 길 · 수업 진행 모드 · 약 15분</p>
@@ -546,7 +561,10 @@ footer a:hover{color:var(--sage)}
         <article class="app-row">
           <div class="num">03</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps3.k">《정의란 무엇인가》 · 정의론</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps3.k">《정의란 무엇인가》 · 정의론</span>
+              <span class="app-badge course" data-i18n="badge.course">수업용</span>
+            </div>
             <h3 data-i18n="apps3.t">정의란 무엇인가 딜레마 수업</h3>
             <p data-i18n="apps3.d">수단·자격·한계·주체 4축의 16장면으로 공리적 조화·존엄과 권리·시스템적 공정 3대 준거 위의 내 자리를 확인하는 수업 앱입니다. 거수 집계와 새 딜레마 링크 공유를 지원합니다.</p>
             <p class="meta" data-i18n="apps3.m">16개 장면 · 4개 축 · 3대 준거 · 수업 진행 모드 · 약 20분</p>
@@ -559,7 +577,10 @@ footer a:hover{color:var(--sage)}
         <article class="app-row">
           <div class="num">04</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps4.k">AI · 소셜 미디어 알고리즘</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps4.k">AI · 소셜 미디어 알고리즘</span>
+              <span class="app-badge research" data-i18n="badge.research">연구·분석</span>
+            </div>
             <h3 data-i18n="apps4.t">알고리즘 분석기</h3>
             <p data-i18n="apps4.d">YouTube·Facebook URL을 입력하면 참여율, 댓글 AI 감정, 추천 알고리즘 적합도를 분석해 주는 도구입니다. 플랫폼 알고리즘이 무엇을 밀어 올리고 무엇을 가리는지를 연구·수업에서 함께 살펴봅니다.</p>
             <p class="meta" data-i18n="apps4.m">참여율 분석 · AI 감정 분석 · 알고리즘 점수 · YouTube / Facebook 지원</p>
@@ -572,7 +593,10 @@ footer a:hover{color:var(--sage)}
         <article class="app-row">
           <div class="num">05</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps5.k">AI · 한국어 쓰기·어휘 학습</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps5.k">AI · 한국어 쓰기·어휘 학습</span>
+              <span class="app-badge korean" data-i18n="badge.korean">한국어 학습</span>
+            </div>
             <h3 data-i18n="apps5.t">한글 마스터</h3>
             <p data-i18n="apps5.d">TOPIK 1~6급 수준과 우체국·병원·식당 같은 일상 상황에 맞춰 글쓰기 연습, 과제 평가, 어휘 설명, 예문 생성을 도와주는 AI 기반 한국어 쓰기·어휘 트레이너입니다.</p>
             <p class="meta" data-i18n="apps5.m">글쓰기 연습 · 과제 평가 · 어휘 설명 · 예문 생성 · 1~6급 맞춤</p>
@@ -585,7 +609,10 @@ footer a:hover{color:var(--sage)}
         <article class="app-row">
           <div class="num">06</div>
           <div class="app-body">
-            <span class="k" data-i18n="apps6.k">AI · 개념 탐구·강의/논문 보조</span>
+            <div class="app-top">
+              <span class="k" data-i18n="apps6.k">AI · 개념 탐구·강의/논문 보조</span>
+              <span class="app-badge research" data-i18n="badge.research">연구·분석</span>
+            </div>
             <h3 data-i18n="apps6.t">Gnosis — 개념·인물 지식 구조화</h3>
             <p data-i18n="apps6.d">인물·개념을 입력하면 5분 설명·강의 1장·논문 서론·토론 대비·일상 적용 등 목적에 맞춰 지식 카드, 계보학 지도, 검증된 인용과 회상 퀴즈를 만들어 주는 앱입니다.</p>
             <p class="meta" data-i18n="apps6.m">목적 기반 요약(5가지) · 계보학 지도 · 검증된 인용 · 회상 퀴즈</p>
@@ -655,7 +682,8 @@ footer a:hover{color:var(--sage)}
   var I18N = {
     ko: {
       'nav.label':'섹션 바로가기','nav.about':'소개','nav.pubs':'논문','nav.teaching':'강의','nav.books':'저서','nav.apps':'연구 App','nav.contact':'연락처',
-      'apps.eyebrow':'연구 App','apps.h2':'연구 App','apps.sub':'연구와 수업을 위해 만든 웹 도구를 이곳에서 바로 열 수 있습니다.',
+      'apps.eyebrow':'연구 App','apps.h2':'연구 App','apps.sub':'수업과 연구에 쓴 웹 도구입니다. 《빅컨셉》 진로·직업 탐색, 《권력·의무·자유》·《정의란 무엇인가》 딜레마 수업, 미디어·알고리즘 분석, 한국어 학습 도구를 이곳에서 바로 열 수 있습니다.',
+      'badge.course':'수업용','badge.research':'연구·분석','badge.korean':'한국어 학습',
       'apps.k':'《빅컨셉》 · 진로·직업 탐색','apps.t':'빅컨셉 진로·직업 나침반','apps.d':'《빅컨셉》 수업 흐름 그대로, 내 안의 빅컨셉 10개와 짧은 글쓰기, AI 시대 6문항을 거쳐 나만의 결과지와 가까운 중범위 직업 영역 3곳(36개 중), 오토포이에시스 선언까지 정리해 주는 진로·직업 탐색 나침반입니다.','apps.m':'내 안의 빅컨셉 10개 · 짧은 글쓰기 · 6문항 · 직업 영역 36개 · 약 10분','apps.btn':'나침반 열기 →','apps.alt':'독립 주소 big-concept.surge.sh',
       'apps2.k':'《권력·의무·자유》 · 정치사상','apps2.t':'권력·의무·자유 딜레마 나침반','apps2.d':'수업 세 단원의 12장면에 A·B·제3의 길로 답하며 권력·의무·자유의 무게, 균형 삼각형과 사상가의 시선을 확인하는 딜레마 나침반입니다. 강의실 거수 집계 모드와 질문 제작·공유 모드도 함께 씁니다.','apps2.m':'12개 장면 · 단원 필터 · A/B/제3의 길 · 수업 진행 모드 · 약 15분','apps2.btn':'나침반 열기 →','apps2.alt':'독립 주소 power-duty-freedom.surge.sh','apps3.k':'《정의란 무엇인가》 · 정의론','apps3.t':'정의란 무엇인가 딜레마 수업','apps3.d':'수단·자격·한계·주체 4축의 16장면으로 공리적 조화·존엄과 권리·시스템적 공정 3대 준거 위의 내 자리를 확인하는 수업 앱입니다. 거수 집계와 새 딜레마 링크 공유를 지원합니다.','apps3.m':'16개 장면 · 4개 축 · 3대 준거 · 수업 진행 모드 · 약 20분','apps3.btn':'수업 앱 열기 →','apps3.alt':'독립 주소 what-is-justice.surge.sh',
       'apps4.k':'AI · 소셜 미디어 알고리즘','apps4.t':'알고리즘 분석기','apps4.d':'YouTube·Facebook URL을 입력하면 참여율, 댓글 AI 감정, 추천 알고리즘 적합도를 분석해 주는 도구입니다. 플랫폼 알고리즘이 무엇을 밀어 올리고 무엇을 가리는지를 연구·수업에서 함께 살펴봅니다.','apps4.m':'참여율 분석 · AI 감정 분석 · 알고리즘 점수 · YouTube / Facebook 지원','apps4.btn':'앱 열기 ↗','apps4.note':'외부 앱 · algorithmanalysis.lovable.app',
@@ -664,27 +692,27 @@ footer a:hover{color:var(--sage)}
       'hero.name':'이용승','hero.nameLatin':'Lee, Yongseung, Ph.D.',
       'notice.translation':'논문 카드의 PDF 버튼에서 원문을 열 수 있습니다.',
       'hero.eyebrow':'대구대학교 자유전공학부 · 정치학 박사',
-      'hero.role':'<b>대구대학교 자유전공학부</b> 부교수 · 이주와 사회통합 연구자',
-      'hero.lead':'이주와 이주민 통합, 이민정책, 사회통합, 민족주의를 연구합니다. 제도와 일상의 층위에서 통합의 과정을 읽고, 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 지평을 넓히는 작업을 하고 있습니다.',
+      'hero.role':'<b>대구대학교 자유전공학부</b> 부교수 · 이주·이민정책과 사회통합 연구자',
+      'hero.lead':'이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합, 민족주의를 연구합니다. 제도와 일상의 층위에서 통합의 과정을 읽고, 성원권·시민권 논의와 행위자 연결망 이론(ANT), 존재론적 전회의 관점에서 이주 연구의 지평을 넓히는 작업을 하고 있습니다.',
       'hero.cta1':'논문 보기','hero.cta2':'연락하기','hero.office':'경북 경산시 진량읍 대구대로 201',
       'portrait.alt':'숲을 마주하고 앉아 명상하는 이용승 교수',
       'absMore':'초록 보기','stat.papers':'학술지 논문','stat.books':'저서·교재','stat.visits':'방문자 수',
       'about.eyebrow':'소개','about.h2':'이주를, 사람과 제도가 서로를 다시 만드는 과정으로',
       'about.sub':'연구의 출발점과 지금의 관심사',
-      'about.p1':'이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안에 주목합니다.',
+      'about.p1':'이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안(지역 정주형 이민정책, 다문화 수용성 제고, 성원권과 주민권)에 주목합니다.',
       'about.p2':'최근에는 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 새로운 지평을 모색하고 있습니다. 이주 현상을 인간과 비인간 행위자들의 복합적 연결망으로 재해석하는 작업입니다.',
-      'about.p3':'이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.',
+      'about.p3':'이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 다문화 수용성과 성원권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.',
       'about.edu':'학력','about.career':'주요 경력',
       'edu.phd':'고려대학교 대학원 정치외교학과, 정치학 박사','edu.ma':'고려대학교 대학원 정치외교학과, 정치학 석사','edu.ba':'고려대학교 정경대학 정치외교학과 졸업',
       'car.now':'대구대학교 자유전공학부 부교수','car.catholic':'대구가톨릭대학교 다문화연구소 연구교수',
       'car.editor':'『민족연구』(KCI 등재) 편집주간','car.editor2':'『디아스포라연구』·『다문화콘텐츠연구』 편집위원','car.editor3':'(전) 『현대사회와 다문화』 부편집위원장',
       'car.inst':'(전) 대구대 다문화사회정책연구소 부소장','car.labor':'공인 노무사(10기)',
-      'pubs.eyebrow':'논문','pubs.h2':'Publications','pubs.sub':'학술지 논문을 연도순으로 정리했습니다. 제목을 누르면 초록이 펼쳐지고, 각 논문의 원문 링크로 이동할 수 있습니다.',
+      'pubs.eyebrow':'논문','pubs.h2':'Publications','pubs.sub':'이민정책·다문화 수용성·사회통합·성원권을 다룬 학술지 논문을 연도순으로 정리했습니다. 초록을 펼쳐 보고, PDF 원문과 개별 공유 페이지(초록·서지·인용)로 바로 이동할 수 있습니다.',
       'pubs.search':'논문 검색','pubs.searchPh':'제목·저자·학술지로 검색','pubs.empty':'조건에 맞는 논문이 없습니다.',
       'type.all':'전체','type.kci':'KCI 등재','type.other':'그 외 논문',
       'dec.all':'전체','dec.2020':'2020년대','dec.2010':'2010년대','dec.2000':'2000년대',
       'count':'총 <b>{n}</b>건 표시','countAll':'논문 <b>{p}</b>편 · 저서·교재 <b>{b}</b>종',
-      'teach.eyebrow':'강의','teach.h2':'강의','teach.sub':'대구대학교 자유전공학부를 비롯해 다문화·이주, 사회과학 고전, 과학기술과 사회, 아시아의 사회와 역사를 주제로 강의합니다.',
+      'teach.eyebrow':'강의','teach.h2':'강의','teach.sub':'대구대학교 자유전공학부를 비롯해 다문화·이주와 다문화교육, 이민법제, 정의론과 정치사상(《정의란 무엇인가》, 《권력·의무·자유》), 과학기술과 사회, 아시아의 사회와 역사를 주제로 강의합니다.',
       'books.eyebrow':'저서','books.h2':'저서 · 교재','books.sub':'공저와 교재를 포함한 집필 목록입니다.',
       'contact.eyebrow':'연락처','contact.h2':'Contact','contact.sub':'연구 협력, 발표·토론, 특강 요청, 학술·교육 상담은 아래로 연락 주시기 바랍니다.',
       'contact.affil':'소속','contact.affilV':'대구대학교 자유전공학부','contact.addr':'주소','contact.addrV':'경북 경산시 진량읍 대구대로 201, 인문대 3207',
@@ -692,13 +720,15 @@ footer a:hover{color:var(--sage)}
       'foot.copy':'© 2026 이용승 · 대구대학교 자유전공학부','foot.src':'서지 정보: KCI · DBpia, 교수님 제공 목록','foot.top':'맨 위로',
       'abs':'초록','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'초록','link.kci':'KCI 원문','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'출판사 정보','pdf.soon':'PDF 준비 중','pdf.ko':'원문 PDF','pdf.koTrans':'한국어판 PDF','pdf.en':'영문판 PDF','pdf.enOrig':'영문 원문 PDF','pdf.zh':'중문판 PDF',
       'cite.btn':'인용 복사','cite.done':'✓ 복사됨','cite.fail':'복사하지 못했습니다. 다시 눌러 주세요.','card.dl':'다운로드 수',
+      'link.detail':'상세 · 공유','link.detail.title':'이 글의 개별 페이지(초록·서지·인용) 열기',
       'lbl.authors':'저자','toast.en':'영문 번역본은 준비 중입니다. 업로드되면 이 자리에서 열립니다.','toast.zh':'중국어 번역본은 준비 중입니다. 업로드되면 이 자리에서 열립니다.','toast.ko':'한국어 원문으로 표시합니다.',
-      'chips':'다문화주의|이주·이민정책|시민권·주민권|사회통합|지역 이민정책|ANT·존재론적 전회|민족과 민족주의',
+      'chips':'다문화주의|이주·이민정책|다문화 수용성|성원권·시민권|사회통합|지역 이민정책|ANT·존재론적 전회|민족과 민족주의',
       'lang.pill.title':'언어'
     },
     en: {
       'nav.label':'Section shortcuts','nav.about':'About','nav.pubs':'Publications','nav.teaching':'Teaching','nav.books':'Books','nav.apps':'Research Apps','nav.contact':'Contact',
-      'apps.eyebrow':'Research Apps','apps.h2':'Research Apps','apps.sub':'Web tools made for research and teaching open straight from here.',
+      'apps.eyebrow':'Research Apps','apps.h2':'Research Apps','apps.sub':'Web tools for class and research: the Big Concept career compass, dilemma classrooms for Power, Obligation and Freedom and What Is Justice, media and algorithm analysis, and Korean-learning aids open from here.',
+      'badge.course':'Course App','badge.research':'Research & Analysis','badge.korean':'Korean Learning',
       'apps.k':'Big Concepts · Career explorer','apps.t':'Big Concept Career Compass','apps.d':'Following the Big Concept course itself: ten big concepts inside you, a short piece of writing and six AI-era prompts lead to your own result sheet, three of 36 mid-range career areas that fit you, and an autopoiesis statement. A career compass for the classroom.','apps.m':'10 keywords · short writing · 6 prompts · 36 career areas · about 10 minutes','apps.btn':'Open the compass →','apps.alt':'Standalone address big-concept.surge.sh',
       'apps2.k':'Power, Obligation and Freedom · Political thought','apps2.t':'Power · Obligation · Freedom Dilemma Compass','apps2.d':'Twelve scenes from the course’s three units, answered with A, B or a third way, show where your weight falls on power, obligation and freedom, with a balance triangle and a philosopher’s line. Includes live show-of-hands counts and a mode for making and sharing your own questions.','apps2.m':'12 scenes · unit filter · A / B / third way · classroom mode · about 15 minutes','apps2.btn':'Open the compass →','apps2.alt':'Standalone address power-duty-freedom.surge.sh','apps3.k':'What Is Justice? · Theory of justice','apps3.t':'What Is Justice — Dilemma Classroom','apps3.d':'Sixteen scenes on four axes — means, standing, limits, agent — place you on three criteria: utilitarian harmony, dignity and rights, and systemic fairness. A classroom app with live hand counts and shareable new dilemma links.','apps3.m':'16 scenes · 4 axes · 3 criteria · classroom mode · about 20 minutes','apps3.btn':'Open the classroom app →','apps3.alt':'Standalone address what-is-justice.surge.sh',
       'apps4.k':'AI · Social media algorithm','apps4.t':'Algorithm Analyzer','apps4.d':'Paste a YouTube or Facebook URL and it reads engagement, AI sentiment in the comments and fit with the recommendation algorithm. A tool for examining, in research and in class, what platform algorithms push up and what they keep out of sight.','apps4.m':'Engagement analysis · AI sentiment analysis · Algorithm score · YouTube / Facebook','apps4.btn':'Open the app ↗','apps4.note':'External app · algorithmanalysis.lovable.app',
@@ -707,27 +737,27 @@ footer a:hover{color:var(--sage)}
       'hero.name':'Yongseung Lee','hero.nameLatin':'이용승',
       'notice.translation':'Click a PDF button on any publication card to open the full text.',
       'hero.eyebrow':'Daegu University · Ph.D. in Political Science',
-      'hero.role':'Associate Professor, <b>Daegu University</b> · Researcher of migration and social integration',
-      'hero.lead':'I study migration and migrant integration, immigration policy, social integration and nationalism in Korea. My work reads integration across institutions and everyday life, and extends migration studies through actor-network theory (ANT) and the ontological turn.',
+      'hero.role':'Associate Professor, <b>Daegu University</b> · Researcher of migration, immigration policy and social integration',
+      'hero.lead':'I study migration and migrant integration, immigration policy, multicultural receptivity, social integration and nationalism in Korea. My work reads integration across institutions and everyday life, and extends migration studies through debates on membership and citizenship, actor-network theory (ANT) and the ontological turn.',
       'hero.cta1':'Publications','hero.cta2':'Contact','hero.office':'201 Daegudae-ro, Jillyang-eup, Gyeongsan, Korea',
       'portrait.alt':'Yongseung Lee seated in quiet contemplation facing the forest',
       'absMore':'Read abstract','stat.papers':'Journal articles','stat.books':'Books & textbooks','stat.visits':'Visitors',
       'about.eyebrow':'About','about.h2':'Migration as a process in which people and institutions remake one another',
       'about.sub':'Where the research began, and where it is going',
-      'about.p1':'Yongseung Lee is Associate Professor at the College of Liberal Arts, Daegu University. His research centres on migration and migrant integration, immigration policy, social integration policy and nationalism, with attention to the multi-layered process of integration that migrants experience in Korean society and to the policy responses it calls for.',
+      'about.p1':'Yongseung Lee is Associate Professor at the College of Liberal Arts, Daegu University. His research centres on migration and migrant integration, immigration policy, multicultural receptivity, social integration policy and nationalism, with attention to the multi-layered process of integration that migrants experience in Korean society and to the policy responses it calls for — locally based immigration policy, multicultural receptivity programmes, and questions of membership and denizenship.',
       'about.p2':'More recently he has explored new horizons for migration studies through actor-network theory (ANT) and the ontological turn — reinterpreting migration as a composite network of human and non-human actors.',
-      'about.p3':'Migration, in this view, is not simply movement: people, institutions, objects and places remake one another in the process. Recent work follows this thread through locally based immigration policy, the relational citizenship of migrants, and the spread of fake news about migrants.',
+      'about.p3':'Migration, in this view, is not simply movement: people, institutions, objects and places remake one another in the process. Recent work follows this thread through locally based immigration policy, the relational citizenship of migrants, multicultural receptivity and membership, and the spread of fake news about migrants.',
       'about.edu':'Education','about.career':'Career',
       'edu.phd':'Ph.D. in Political Science, Korea University','edu.ma':'M.A. in Political Science, Korea University','edu.ba':'B.A. in Political Science, Korea University',
       'car.now':'Associate Professor, Daegu University','car.catholic':'Research Professor, Multiculture Research Institute, Daegu Catholic University',
       'car.editor':'Editor-in-Chief, Minjok Yeonku (KCI)','car.editor2':'Editorial board, Diaspora Studies and Journal of Multi-Cultural Contents Studies','car.editor3':'(Former) Deputy Editor, Contemporary Society and Multiculture',
       'car.inst':'(Former) Vice Director, Institute for Multicultural Social Policy, Daegu University','car.labor':'Certified Public Labor Attorney (10th Cohort)',
-      'pubs.eyebrow':'Publications','pubs.h2':'Publications','pubs.sub':'Journal articles in reverse chronological order. Select a title to read its abstract; each entry links to the original text.',
+      'pubs.eyebrow':'Publications','pubs.h2':'Publications','pubs.sub':'Journal articles on immigration policy, multicultural receptivity, social integration and membership, in reverse chronological order. Open an abstract, follow the PDF, or visit each article’s own page for its record and citation.',
       'pubs.search':'Search publications','pubs.searchPh':'Search by title, author or journal','pubs.empty':'No publications match these filters.',
       'type.all':'All','type.kci':'KCI-indexed','type.other':'Other articles',
       'dec.all':'All','dec.2020':'2020s','dec.2010':'2010s','dec.2000':'2000s',
       'count':'Showing <b>{n}</b> items','countAll':'<b>{p}</b> articles · <b>{b}</b> books and textbooks',
-      'teach.eyebrow':'Teaching','teach.h2':'Teaching','teach.sub':'Courses, mainly at the Faculty of Liberal Studies, Daegu University, on migration and multicultural society, classics of social science, science, technology and society, and the societies and histories of Asia.',
+      'teach.eyebrow':'Teaching','teach.h2':'Teaching','teach.sub':'Courses, mainly at the Faculty of Liberal Studies, Daegu University, on migration and multicultural society, multicultural education, immigration law, justice and political thought (What Is Justice; Power, Obligation and Freedom), science, technology and society, and the societies and histories of Asia.',
       'books.eyebrow':'Books','books.h2':'Books & Textbooks','books.sub':'Authored and co-authored volumes and textbooks.',
       'contact.eyebrow':'Contact','contact.h2':'Contact','contact.sub':'For research collaboration, talks and seminars, lectures or academic advising, please get in touch.',
       'contact.affil':'Affiliation','contact.affilV':'College of Liberal Arts, Daegu University','contact.addr':'Address','contact.addrV':'201 Daegudae-ro, Jillyang-eup, Gyeongsan, Gyeongbuk, Korea (Humanities Bldg. 3207)',
@@ -735,13 +765,15 @@ footer a:hover{color:var(--sage)}
       'foot.copy':'© 2026 Yongseung Lee · Daegu University','foot.src':'Bibliographic data: KCI · DBpia, and the author’s own list','foot.top':'Back to top',
       'abs':'Abstract','absEn':'Abstract','absEnNote':'Abstract','absKoNote':'Abstract (Korean original)','link.kci':'KCI record','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'Publisher','pdf.soon':'PDF forthcoming','pdf.ko':'Original PDF','pdf.koTrans':'Korean edition','pdf.en':'English edition','pdf.enOrig':'Original English PDF','pdf.zh':'Chinese edition',
       'cite.btn':'Copy Citation','cite.done':'✓ Copied','cite.fail':'Could not copy. Please try again.','card.dl':'Downloads',
+      'link.detail':'Permalink · Share','link.detail.title':'Open this article’s own page (abstract, record, citation)',
       'lbl.authors':'Authors','toast.en':'The English translation is in preparation and will open here once uploaded.','toast.zh':'The Chinese translation is in preparation and will open here once uploaded.','toast.ko':'Showing the Korean original.',
-      'chips':'Multiculturalism|Immigration policy|Citizenship & denizenship|Social integration|Local immigration policy|ANT & the ontological turn|Nation & nationalism',
+      'chips':'Multiculturalism|Immigration policy|Multicultural receptivity|Membership & citizenship|Social integration|Local immigration policy|ANT & the ontological turn|Nation & nationalism',
       'lang.pill.title':'Language'
     },
     zh: {
       'nav.label':'章节快捷链接','nav.about':'简介','nav.pubs':'论文','nav.teaching':'课程','nav.books':'著作','nav.apps':'研究应用','nav.contact':'联系方式',
-      'apps.eyebrow':'研究应用','apps.h2':'研究应用','apps.sub':'为研究与教学制作的网页工具，可在此直接打开。',
+      'apps.eyebrow':'研究应用','apps.h2':'研究应用','apps.sub':'课堂与研究用的网页工具：《大概念》职业罗盘、《权力·义务·自由》与《何谓正义》困境课堂、媒体与算法分析、韩语学习工具，均可在此直接打开。',
+      'badge.course':'课程应用','badge.research':'研究与分析','badge.korean':'韩语学习',
       'apps.k':'《大概念》· 职业探索','apps.t':'大概念职业罗盘','apps.d':'沿用《大概念》课堂的流程：写下内心的大概念十条与短文，经过 AI 时代六道题，生成属于自己的结果单，并从 36 个中观职业领域中给出与你相近的三个，附自我生产宣言。是一个职业探索罗盘。','apps.m':'我内心的大概念 10 条 · 短文写作 · 6 道题 · 36 个职业领域 · 约 10 分钟','apps.btn':'打开罗盘 →','apps.alt':'独立地址 big-concept.surge.sh',
       'apps2.k':'《权力·义务·自由》· 政治思想','apps2.t':'权力·义务·自由 困境罗盘','apps2.d':'在课程三个单元的十二个场景中以 A、B 或第三条路作答，显示你把重心放在权力、义务与自由的哪一边，并给出平衡三角与思想家的点睛之语。课堂另支持举手表决统计与自拟问题分享模式。','apps2.m':'12 个场景 · 单元筛选 · A/B/第三条路 · 课堂模式 · 约 15 分钟','apps2.btn':'打开罗盘 →','apps2.alt':'独立地址 power-duty-freedom.surge.sh','apps3.k':'《何谓正义》· 正义论','apps3.t':'何谓正义 困境课堂','apps3.d':'以手段、资格、界限、主体四条轴的十六个场景，在功利和谐、尊严与权利、系统性公正三项标准上显示你所站的位置。支持举手表决统计与新困境链接分享。','apps3.m':'16个场景 · 4条轴 · 三项标准 · 课堂模式 · 约20分钟','apps3.btn':'打开课堂应用 →','apps3.alt':'独立地址 what-is-justice.surge.sh',
       'apps4.k':'AI · 社交媒体算法','apps4.t':'算法分析器','apps4.d':'输入 YouTube、Facebook 链接，即可分析互动率、评论 AI 情感与推荐算法契合度。用于在研究与课堂上共同考察平台算法把什么推上去、又把什么藏起来。','apps4.m':'互动率分析 · AI 情感分析 · 算法分数 · 支持 YouTube / Facebook','apps4.btn':'打开应用 ↗','apps4.note':'外部应用 · algorithmanalysis.lovable.app',
@@ -750,27 +782,27 @@ footer a:hover{color:var(--sage)}
       'hero.name':'李容承','hero.nameLatin':'이용승 · Lee, Yongseung',
       'notice.translation':'点击论文卡片上的 PDF 按钮即可阅读全文。',
       'hero.eyebrow':'大邱大学 自由专攻学部 · 政治学博士',
-      'hero.role':'<b>大邱大学</b>副教授 · 移民与社会整合研究者',
-      'hero.lead':'研究移民与移民融合、移民政策、社会整合与民族主义。关注制度与日常生活层面的融合过程，并以行动者网络理论（ANT）与本体论转向拓展移民研究的视野。',
+      'hero.role':'<b>大邱大学</b>副教授 · 移民政策与社会整合研究者',
+      'hero.lead':'研究移民与移民融合、移民政策、多元文化接受性、社会整合与民族主义。关注制度与日常生活层面的融合过程，并以成员权·公民权讨论、行动者网络理论（ANT）与本体论转向拓展移民研究的视野。',
       'hero.cta1':'查看论文','hero.cta2':'联系','hero.office':'庆尚北道庆山市珍良邑大邱大路201',
       'portrait.alt':'面对森林静坐冥想的李容承教授',
       'absMore':'查看摘要','stat.papers':'学术论文','stat.books':'著作与教材','stat.visits':'访问量',
       'about.eyebrow':'简介','about.h2':'移民，是人与制度彼此重塑的过程',
       'about.sub':'研究的起点与当前的关心',
-      'about.p1':'李容承（Yongseung Lee）现任大邱大学自由专攻学部副教授，长期研究移民与移民融合、移民政策、社会整合政策与民族主义，关注韩国社会中移民所经历的融合过程及其政策应对。',
+      'about.p1':'李容承（Yongseung Lee）现任大邱大学自由专攻学部副教授，长期研究移民与移民融合、移民政策、多元文化接受性、社会整合政策与民族主义，关注韩国社会中移民所经历的融合过程及其政策应对，包括地方定居型移民政策、多元文化接受性的提升与成员权·居民权问题。',
       'about.p2':'近年来，他以行动者网络理论（ANT）与本体论转向探索移民研究的新视野，将移民现象重新理解为人类与非人类行动者的复合网络。',
-      'about.p3':'移民不只是移动：人、制度、物与场所在此过程中彼此重塑。近期研究沿着这一线索，延伸到地方定居型移民政策、移民的关系性公民权，以及有关移民的假新闻扩散。',
+      'about.p3':'移民不只是移动：人、制度、物与场所在此过程中彼此重塑。近期研究沿着这一线索，延伸到地方定居型移民政策、移民的关系性公民权、多元文化接受性与成员权，以及有关移民的假新闻扩散。',
       'about.edu':'学历','about.career':'主要经历',
       'edu.phd':'高丽大学研究生院 政治外交学系，政治学博士','edu.ma':'高丽大学研究生院 政治外交学系，政治学硕士','edu.ba':'高丽大学 政经学院 政治外交学系 毕业',
       'car.now':'大邱大学 自由专攻学部 副教授','car.catholic':'大邱加图立大学 多文化研究所 研究教授',
       'car.editor':'《民族研究》（KCI）编辑主管','car.editor2':'《离散研究》《多文化内容研究》编辑委员','car.editor3':'（前）《现代社会与多文化》副编辑委员长',
       'car.inst':'（前）大邱大学多文化社会政策研究所 副所长','car.labor':'公认劳务士（第10期）',
-      'pubs.eyebrow':'论文','pubs.h2':'论文','pubs.sub':'按年份倒序整理学术论文。点击标题可展开摘要，并可前往原文链接。',
+      'pubs.eyebrow':'论文','pubs.h2':'论文','pubs.sub':'按年份倒序整理有关移民政策、多元文化接受性、社会整合与成员权的学术论文。可展开摘要，并前往 PDF 原文或本文的独立页面（摘要、书目、引用）查看与分享。',
       'pubs.search':'检索论文','pubs.searchPh':'按标题、作者或期刊检索','pubs.empty':'没有符合条件的论文。',
       'type.all':'全部','type.kci':'KCI 收录','type.other':'其他论文',
       'dec.all':'全部','dec.2020':'2020年代','dec.2010':'2010年代','dec.2000':'2000年代',
       'count':'共显示 <b>{n}</b> 项','countAll':'论文 <b>{p}</b> 篇 · 著作·教材 <b>{b}</b> 种',
-      'teach.eyebrow':'课程','teach.h2':'课程','teach.sub':'以大邱大学自由专攻学部为主，讲授多文化与移民、社会科学经典、科学技术与社会、亚洲的社会与历史等主题。',
+      'teach.eyebrow':'课程','teach.h2':'课程','teach.sub':'以大邱大学自由专攻学部为主，讲授多文化与移民、多文化教育、移民法制、正义论与政治思想（《何谓正义》《权力·义务·自由》）、科学技术与社会、亚洲的社会与历史等主题。',
       'books.eyebrow':'著作','books.h2':'著作 · 教材','books.sub':'包括合著与教材的著述目录。',
       'contact.eyebrow':'联系方式','contact.h2':'联系方式','contact.sub':'如需研究合作、发表与讨论、讲座邀请或学术咨询，欢迎联系。',
       'contact.affil':'所属','contact.affilV':'大邱大学 自由专攻学部','contact.addr':'地址','contact.addrV':'庆尚北道庆山市珍良邑大邱大路201 人文馆 3207',
@@ -778,8 +810,9 @@ footer a:hover{color:var(--sage)}
       'foot.copy':'© 2026 李容承 · 大邱大学 自由专攻学部','foot.src':'书目信息：KCI · DBpia 及作者提供目录','foot.top':'回到顶部',
       'abs':'摘要','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'摘要（韩语原文）','link.kci':'KCI 原文','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'出版社信息','pdf.soon':'PDF 准备中','pdf.ko':'韩语原文 PDF','pdf.koTrans':'韩文译本','pdf.en':'英文译本','pdf.enOrig':'英语原文 PDF','pdf.zh':'中文译本',
       'cite.btn':'复制引文','cite.done':'✓ 已复制','cite.fail':'复制失败，请重试。','card.dl':'下载次数',
+      'link.detail':'详情 · 分享','link.detail.title':'打开本文的独立页面（摘要、书目、引用）',
       'lbl.authors':'作者','toast.en':'英文译本正在准备中，上传后将在此处打开。','toast.zh':'中文译本正在准备中，上传后将在此处打开。','toast.ko':'显示韩语原文。',
-      'chips':'多元文化主义|移民政策|公民权·居民权|社会整合|地方移民政策|ANT·本体论转向|民族与民族主义',
+      'chips':'多元文化主义|移民政策|多元文化接受性|成员权·公民权|社会整合|地方移民政策|ANT·本体论转向|民族与民族主义',
       'lang.pill.title':'语言'
     }
   };
@@ -941,6 +974,9 @@ footer a:hover{color:var(--sage)}
     if(p.pdfEn) L.push(pdfBtn(p.pdfEn, p.pdfEnOriginal ? 'pdf.enOrig' : 'pdf.en', 'EN', pdfKey(p, 'en')));
     if(p.pdfZh) L.push(pdfBtn(p.pdfZh, 'pdf.zh', 'ZH', pdfKey(p, 'zh')));
     if(p.kind === 'article' && !p.pdf && !p.pdfEn && !p.pdfZh) L.push('<span class="soon">'+esc(t('pdf.soon'))+'</span>');
+    L.push('<a class="detail" href="p/'+esc(p.id)+'.html" title="'+esc(t('link.detail.title'))+'">'
+      + '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.4.6l2.5-2.5a5 5 0 0 0-7-7L11.5 5.5"/><path d="M14 11a5 5 0 0 0-7.4-.6L4.1 12.9a5 5 0 0 0 7 7l1.4-1.4"/></svg>'
+      + '<span>'+esc(t('link.detail'))+'</span></a>');
     L.push('<button type="button" class="citebtn" data-cite="'+esc(p.id)+'" title="'+esc(t('cite.btn'))+'">'
       + '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9"/></svg>'
       + '<span class="clabel">'+esc(t('cite.btn'))+'</span></button>');
@@ -1020,6 +1056,9 @@ footer a:hover{color:var(--sage)}
         +   '<p class="meta">' + authorsHTML(p) + ' <em>·</em> ' + esc(p.v) + (p.vol ? ' <em>·</em> ' + esc(p.vol) : '') + (p.pages ? ' <em>·</em> ' + esc(p.pages) : '') + '</p>'
         +   (p.abs ? '<p class="note">' + esc(p.abs) + '</p>' : '')
         +   '<div class="links">'
+        +     '<a class="detail" href="p/' + esc(p.id) + '.html" title="' + esc(t('link.detail.title')) + '">'
+        +       '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.4.6l2.5-2.5a5 5 0 0 0-7-7L11.5 5.5"/><path d="M14 11a5 5 0 0 0-7.4-.6L4.1 12.9a5 5 0 0 0 7 7l1.4-1.4"/></svg>'
+        +       '<span>' + esc(t('link.detail')) + '</span></a>'
         +     '<button type="button" class="citebtn" data-cite="' + esc(p.id) + '" title="' + esc(t('cite.btn')) + '">'
         +       '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M15 5H6a2 2 0 0 0-2 2v9"/></svg>'
         +       '<span class="clabel">' + esc(t('cite.btn')) + '</span></button>'
