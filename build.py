@@ -672,6 +672,35 @@ def detail_page(p, items):
     return html
 
 
+def quicklinks(ql):
+    """data/quicklinks.json → (하단 바로가기 칩 HTML, 이름 i18n JSON 문자열).
+
+    항목 형식: {"id": "slug", "url": "https://…",
+                "name": {"ko": "…", "en": "…", "zh": "…"}}
+    name은 세 언어(없는 언어는 ko로 대체). 링크가 한 줄 폭을 넘으면
+    메인 페이지 스크립트가 자동으로 가로 흐름(marquee)으로 바꾼다.
+    """
+    items = ql.get("items") or []
+    lis = []
+    i18n = {k: {} for k in ("ko", "en", "zh")}
+    for it in items:
+        name = it.get("name") or {}
+        if isinstance(name, str):
+            name = {"ko": name}
+        key = "ql." + it["id"]
+        ko = name.get("ko") or next((v for v in name.values() if v), "")
+        lis.append(
+            '<li><a class="ql-chip" href="%s" target="_blank" rel="noopener noreferrer">'
+            '<span data-i18n="%s">%s</span><span class="arw" aria-hidden="true">↗</span></a></li>'
+            % (esc(it["url"]), esc(key), esc(ko or it["url"])))
+        for lang in ("ko", "en", "zh"):
+            v = name.get(lang) or ko
+            if v:
+                i18n[lang][key] = v
+    return ("\n            ".join(lis),
+            json.dumps(i18n, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"))
+
+
 def curation_ld(items, url):
     """추천 글 페이지용 JSON-LD — CollectionPage(+ 항목이 있으면 ItemList)."""
     page = {
@@ -730,8 +759,13 @@ def main():
 
     # 1) 메인 페이지
     tpl = (BASE / "index.template.html").read_text(encoding="utf-8")
+    ql = json.loads((BASE / "data" / "quicklinks.json").read_text(encoding="utf-8"))
+    ql_html, ql_i18n = quicklinks(ql)
     js = json.dumps({"items": items}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    out = tpl.replace("__DATA__", js)
+    out = (tpl
+           .replace("__QUICKLINKS_I18N__", ql_i18n)
+           .replace("__QUICKLINKS__", ql_html)
+           .replace("__DATA__", js))
     (BASE / "index.html").write_text(out, encoding="utf-8")
 
     # 2) 개별 페이지
@@ -758,8 +792,8 @@ def main():
     arts = [p for p in items if p["kind"] == "article"]
     books = [p for p in items if p["kind"] == "book"]
     briefs = [p for p in items if p["kind"] == "brief"]
-    print("built index.html (%d bytes) — %d articles, %d books, %d briefs"
-          % (len(out.encode()), len(arts), len(books), len(briefs)))
+    print("built index.html (%d bytes) — %d articles, %d books, %d briefs, %d quick links"
+          % (len(out.encode()), len(arts), len(books), len(briefs), len(ql.get("items") or [])))
     print("built p/ — %d individual pages + detail.css" % len(items))
     print("built curation.html (%d bytes) — %d curated items"
           % (len(cur_html.encode()), len(cur_items)))

@@ -1,0 +1,33 @@
+{
+  "updated": "2026-11-26",
+  "_note": "메인 페이지 맨 하단 '바로가기' 영역의 링크 목록. 항목을 추가하고 `python3 build.py`만 다시 돌리면 칩이 늘어나고, 칩이 한 줄 폭을 넘으면 자동으로 가로 흐름(marquee)으로 바뀐다. name은 ko/en/zh 세 언어(없는 언어는 ko로 대체). url은 외부 주소 전체.",
+  "items": [
+    {
+      "id": "nationsworld",
+      "url": "http://www.nationsworld.kr/",
+      "name": {
+        "ko": "한국민족연구원",
+        "en": "Korea Research Center of Ethnology",
+        "zh": "韩国民族研究院"
+      }
+    },
+    {
+      "id": "beopjeong-ebook",
+      "url": "http://beopjeong.clean94.or.kr/ebook.php",
+      "name": {
+        "ko": "법정스님 전자책",
+        "en": "Beopjeong Sunim E-books",
+        "zh": "法顶法师电子书"
+      }
+    },
+    {
+      "id": "eastern-classics-db",
+      "url": "https://db.cyberseodang.or.kr/front/main/main.do",
+      "name": {
+        "ko": "동양고전DB",
+        "en": "Eastern Classics DB",
+        "zh": "东方古典DB"
+      }
+    }
+  ]
+}

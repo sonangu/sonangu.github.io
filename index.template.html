@@ -127,9 +127,6 @@ section{padding:64px 0}
 .about-body{max-width:44em}
 .about-body p{font-size:16px; color:var(--ink-2)}
 .about-body p.first::first-letter{font-family:"Noto Serif KR",serif; font-size:1.05em}
-.topic-tags{margin-top:30px; max-width:44em}
-.topic-tags h3{font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; margin:0}
-.topic-tags .chips{margin:12px 0 0}
 .aside{background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:24px 24px 20px; box-shadow:var(--shadow)}
 .aside h3{font-size:14px; letter-spacing:.1em; text-transform:uppercase; color:var(--sage); margin:0 0 12px; font-family:"Noto Sans KR",sans-serif; font-weight:600}
 /* 소개글 하단 학력·주요 경력 2열 카드 (2026-11-24) */
@@ -283,6 +280,26 @@ footer .foot-visits{display:flex; align-items:baseline; gap:9px; margin:0}
 footer .foot-visits b{font-family:"Noto Serif KR",serif; font-size:15px; font-weight:600; color:var(--ink); letter-spacing:0}
 footer a:hover{color:var(--sage)}
 
+/* 하단 바로가기 (data/quicklinks.json → build.py가 칩 생성) */
+.quicklinks{padding:18px 0 6px}
+.ql-box{background:linear-gradient(160deg,#FDFBF7 0%,#F4EFE6 100%); border:1px solid var(--line); border-radius:22px; padding:22px 26px 20px; box-shadow:var(--shadow)}
+.ql-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 16px; margin:0 0 14px}
+.ql-head h2{font-size:17px; margin:0; letter-spacing:.02em; display:flex; align-items:center; gap:10px}
+.ql-head h2::before{content:""; width:22px; height:1px; background:var(--sage-2); display:inline-block; flex:none}
+.ql-sub{margin:0; font-size:12.5px; color:var(--muted)}
+.ql-viewport{position:relative; overflow:hidden; padding:1px 0}
+.ql-viewport.is-flowing{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 34px,#000 calc(100% - 34px),transparent calc(100%)); mask-image:linear-gradient(90deg,transparent 0,#000 34px,#000 calc(100% - 34px),transparent calc(100%))}
+.ql-track{display:flex; align-items:center; gap:10px; min-width:0}
+.ql-viewport.is-flowing .ql-track{width:max-content; will-change:transform; animation:ql-flow var(--ql-dur,60s) linear infinite}
+.ql-viewport.is-flowing:hover .ql-track,.ql-viewport.is-flowing:focus-within .ql-track{animation-play-state:paused}
+.ql-set{display:flex; align-items:center; gap:10px; flex:none; list-style:none; margin:0; padding:0}
+.ql-chip{display:inline-flex; align-items:center; gap:8px; white-space:nowrap; font-size:13.5px; line-height:1.3; color:var(--ink-2); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:9px 15px 9px 13px; transition:background .16s ease,border-color .16s ease,color .16s ease}
+.ql-chip::before{content:""; width:5px; height:5px; border-radius:50%; background:var(--gold); flex:none}
+.ql-chip .arw{font-size:11px; line-height:1; color:var(--muted); transition:color .16s ease,transform .16s ease}
+.ql-chip:hover,.ql-chip:focus-visible{border-color:var(--sage-2); background:var(--sage-soft); color:var(--sage)}
+.ql-chip:hover .arw,.ql-chip:focus-visible .arw{color:var(--sage); transform:translate(1px,-1px)}
+@keyframes ql-flow{from{transform:translate3d(0,0,0)} to{transform:translate3d(calc(-1 * var(--ql-shift,0px)),0,0)}}
+
 /* language notice */
 .langnote{display:none; background:var(--sage-soft); border-bottom:1px solid #DDE6DD; color:#40534A; font-size:13px}
 .langnote.on{display:block}
@@ -311,6 +328,11 @@ footer a:hover{color:var(--sage)}
   .book{grid-template-columns:84px 1fr; gap:16px}
   .book .spine{height:112px}
   section{padding:46px 0}
+  .quicklinks{padding:10px 0 4px}
+  .ql-box{padding:18px 16px 16px; border-radius:18px}
+  .ql-head{margin-bottom:12px}
+  .ql-head h2{font-size:16px}
+  .ql-sub{font-size:12px}
 }
 @media (max-width:768px){
   .about-cards{grid-template-columns:1fr; gap:16px; margin-top:28px}
@@ -320,7 +342,10 @@ footer a:hover{color:var(--sage)}
   .toolbar{padding:12px}
   .dl div{grid-template-columns:1fr; gap:2px}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none !important; scroll-behavior:auto !important}}
+@media (prefers-reduced-motion:reduce){*{transition:none !important; scroll-behavior:auto !important}
+  .ql-viewport.is-flowing{overflow-x:auto; -webkit-mask-image:none; mask-image:none}
+  .ql-viewport.is-flowing .ql-track{animation:none !important; width:auto}
+}
 @media print{
   .topbar,.langnote,.toolbar,.toast,.actions{display:none !important}
   body{background:#fff}
@@ -456,11 +481,6 @@ footer a:hover{color:var(--sage)}
         <p class="first" data-i18n="about.p1">이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안(지역 정주형 이민정책, 다문화 수용성 제고, 성원권과 주민권)에 주목합니다.</p>
         <p data-i18n="about.p2">최근에는 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 새로운 지평을 모색하고 있습니다. 이주 현상을 인간과 비인간 행위자들의 복합적 연결망으로 재해석하는 작업입니다.</p>
         <p data-i18n="about.p3">이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 다문화 수용성과 성원권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.</p>
-        <p data-i18n="about.p4">주요 연구 주제는 다문화주의와 다문화정책, 이민정책과 지방이민정책, 이주민의 정주와 사회통합입니다. 외국인노동자·이주노동자, 결혼이주민, 북한이탈주민, 유학생, 난민 등 이주배경 주민의 삶과 시민권·주민권의 문제를 함께 다룹니다.</p>
-      </div>
-      <div class="topic-tags">
-        <h3 data-i18n="about.topics">연구 키워드</h3>
-        <ul class="chips about-chips" data-i18n-html="about.chips"><li>다문화주의</li><li>다문화정책</li><li>이민정책</li><li>시민권</li><li>지방이민정책</li><li>정주</li><li>이주민</li><li>외국인노동자</li><li>이주노동자</li><li>결혼이주민</li><li>북한이탈주민</li><li>유학생</li><li>난민</li><li>주민권</li><li>사회통합</li></ul>
       </div>
       <div class="about-cards">
         <div class="aside">
@@ -685,6 +705,25 @@ footer a:hover{color:var(--sage)}
       </div>
     </div>
   </section>
+
+  <!-- QUICK LINKS (하단 바로가기 · data/quicklinks.json) -->
+  <section id="quicklinks" class="quicklinks" aria-labelledby="ql-h">
+    <div class="wrap">
+      <div class="ql-box">
+        <div class="ql-head">
+          <h2 id="ql-h" data-i18n="ql.title">바로가기</h2>
+          <p class="ql-sub" data-i18n="ql.sub">자주 찾는 기관과 자료실로 바로 이동합니다.</p>
+        </div>
+        <div class="ql-viewport" id="qlViewport" role="group" aria-label="바로가기 링크" data-i18n-aria="ql.label">
+          <div class="ql-track" id="qlTrack">
+            <ul class="ql-set">
+          __QUICKLINKS__
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -740,9 +779,6 @@ footer a:hover{color:var(--sage)}
       'about.p1':'이용승 교수는 대구대학교 자유전공학부 부교수로, 이주와 이주민 통합, 이민정책, 다문화 수용성, 사회통합정책, 민족주의를 중심으로 연구를 수행해 왔습니다. 한국 사회에서 이주민이 경험하는 통합의 다층적 과정과 정책적 대응 방안(지역 정주형 이민정책, 다문화 수용성 제고, 성원권과 주민권)에 주목합니다.',
       'about.p2':'최근에는 행위자 연결망 이론(ANT)과 존재론적 전회의 관점에서 이주 연구의 새로운 지평을 모색하고 있습니다. 이주 현상을 인간과 비인간 행위자들의 복합적 연결망으로 재해석하는 작업입니다.',
       'about.p3':'이주는 단순한 이동이 아니라, 사람과 제도, 사물과 장소가 서로를 새롭게 재구성하는 과정이라고 봅니다. 지역 정주형 이민정책, 이주민의 관계적 시민권, 다문화 수용성과 성원권, 이주민에 관한 가짜뉴스의 확산 같은 주제가 이 관점에서 이어지고 있습니다.',
-      'about.p4':'주요 연구 주제는 다문화주의와 다문화정책, 이민정책과 지방이민정책, 이주민의 정주와 사회통합입니다. 외국인노동자·이주노동자, 결혼이주민, 북한이탈주민, 유학생, 난민 등 이주배경 주민의 삶과 시민권·주민권의 문제를 함께 다룹니다.',
-      'about.topics':'연구 키워드',
-      'about.chips':'<li>다문화주의</li><li>다문화정책</li><li>이민정책</li><li>시민권</li><li>지방이민정책</li><li>정주</li><li>이주민</li><li>외국인노동자</li><li>이주노동자</li><li>결혼이주민</li><li>북한이탈주민</li><li>유학생</li><li>난민</li><li>주민권</li><li>사회통합</li>',
       'about.edu':'학력','about.career':'주요 경력',
       'edu.phd':'고려대학교 대학원 정치외교학과, 정치학 박사','edu.ma':'고려대학교 대학원 정치외교학과, 정치학 석사','edu.ba':'고려대학교 정경대학 정치외교학과 졸업',
       'car.now':'대구대학교 자유전공학부 부교수','car.catholic':'대구가톨릭대학교 다문화연구소 연구교수',
@@ -758,6 +794,7 @@ footer a:hover{color:var(--sage)}
       'contact.eyebrow':'연락처','contact.h2':'Contact','contact.sub':'연구 협력, 발표·토론, 특강 요청, 학술·교육 상담은 아래로 연락 주시기 바랍니다.',
       'contact.affil':'소속','contact.affilV':'대구대학교 자유전공학부','contact.addr':'주소','contact.addrV':'경북 경산시 진량읍 대구대로 201, 인문대 3207',
       'contact.mail':'이메일','contact.mail2':'개인 메일','contact.tel':'전화','contact.hours':'오피스 아워','contact.hoursV':'사전 협의',
+      'ql.title':'바로가기','ql.sub':'자주 찾는 기관과 자료실로 바로 이동합니다.','ql.label':'바로가기 링크',
       'foot.copy':'© 2026 이용승 · 대구대학교 자유전공학부','foot.src':'서지 정보: KCI · DBpia, 교수님 제공 목록','foot.top':'맨 위로',
       'abs':'초록','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'초록','link.kci':'KCI 원문','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'출판사 정보','pdf.soon':'PDF 준비 중','pdf.ko':'원문 PDF','pdf.koTrans':'한국어판 PDF','pdf.en':'영문판 PDF','pdf.enOrig':'영문 원문 PDF','pdf.zh':'중문판 PDF',
       'cite.btn':'인용 복사','cite.done':'✓ 복사됨','cite.fail':'복사하지 못했습니다. 다시 눌러 주세요.','card.dl':'다운로드 수',
@@ -789,9 +826,6 @@ footer a:hover{color:var(--sage)}
       'about.p1':'Yongseung Lee is Associate Professor at the College of Liberal Arts, Daegu University. His research centres on migration and migrant integration, immigration policy, multicultural receptivity, social integration policy and nationalism, with attention to the multi-layered process of integration that migrants experience in Korean society and to the policy responses it calls for — locally based immigration policy, multicultural receptivity programmes, and questions of membership and denizenship.',
       'about.p2':'More recently he has explored new horizons for migration studies through actor-network theory (ANT) and the ontological turn — reinterpreting migration as a composite network of human and non-human actors.',
       'about.p3':'Migration, in this view, is not simply movement: people, institutions, objects and places remake one another in the process. Recent work follows this thread through locally based immigration policy, the relational citizenship of migrants, multicultural receptivity and membership, and the spread of fake news about migrants.',
-      'about.p4':'His research focuses on multiculturalism and multicultural policy, immigration policy and local immigration policy, and the settlement of migrants and social integration — alongside the lives of foreign and migrant workers, marriage migrants, North Korean defectors, international students and refugees, and questions of citizenship and denizenship.',
-      'about.topics':'Research keywords',
-      'about.chips':'<li>Multiculturalism</li><li>Multicultural policy</li><li>Immigration policy</li><li>Citizenship</li><li>Local immigration policy</li><li>Settlement</li><li>Migrants</li><li>Foreign workers</li><li>Migrant workers</li><li>Marriage migrants</li><li>North Korean defectors</li><li>International students</li><li>Refugees</li><li>Denizenship</li><li>Social integration</li>',
       'about.edu':'Education','about.career':'Career',
       'edu.phd':'Ph.D. in Political Science, Korea University','edu.ma':'M.A. in Political Science, Korea University','edu.ba':'B.A. in Political Science, Korea University',
       'car.now':'Associate Professor, Daegu University','car.catholic':'Research Professor, Multiculture Research Institute, Daegu Catholic University',
@@ -807,6 +841,7 @@ footer a:hover{color:var(--sage)}
       'contact.eyebrow':'Contact','contact.h2':'Contact','contact.sub':'For research collaboration, talks and seminars, lectures or academic advising, please get in touch.',
       'contact.affil':'Affiliation','contact.affilV':'College of Liberal Arts, Daegu University','contact.addr':'Address','contact.addrV':'201 Daegudae-ro, Jillyang-eup, Gyeongsan, Gyeongbuk, Korea (Humanities Bldg. 3207)',
       'contact.mail':'Email','contact.mail2':'Personal email','contact.tel':'Phone','contact.hours':'Office hours','contact.hoursV':'By appointment',
+      'ql.title':'Quick Links','ql.sub':'Direct links to the institutions and archives I keep coming back to.','ql.label':'Quick links',
       'foot.copy':'© 2026 Yongseung Lee · Daegu University','foot.src':'Bibliographic data: KCI · DBpia, and the author’s own list','foot.top':'Back to top',
       'abs':'Abstract','absEn':'Abstract','absEnNote':'Abstract','absKoNote':'Abstract (Korean original)','link.kci':'KCI record','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'Publisher','pdf.soon':'PDF forthcoming','pdf.ko':'Original PDF','pdf.koTrans':'Korean edition','pdf.en':'English edition','pdf.enOrig':'Original English PDF','pdf.zh':'Chinese edition',
       'cite.btn':'Copy Citation','cite.done':'✓ Copied','cite.fail':'Could not copy. Please try again.','card.dl':'Downloads',
@@ -838,9 +873,6 @@ footer a:hover{color:var(--sage)}
       'about.p1':'李容承（Yongseung Lee）现任大邱大学自由专攻学部副教授，长期研究移民与移民融合、移民政策、多元文化接受性、社会整合政策与民族主义，关注韩国社会中移民所经历的融合过程及其政策应对，包括地方定居型移民政策、多元文化接受性的提升与成员权·居民权问题。',
       'about.p2':'近年来，他以行动者网络理论（ANT）与本体论转向探索移民研究的新视野，将移民现象重新理解为人类与非人类行动者的复合网络。',
       'about.p3':'移民不只是移动：人、制度、物与场所在此过程中彼此重塑。近期研究沿着这一线索，延伸到地方定居型移民政策、移民的关系性公民权、多元文化接受性与成员权，以及有关移民的假新闻扩散。',
-      'about.p4':'主要研究主题为多元文化主义与多元文化政策、移民政策与地方移民政策、移民定居与社会整合，并关注外籍劳工·移工、婚姻移民、脱北住民、留学生、难民等移民背景居民的生活，以及公民权·居民权问题。',
-      'about.topics':'研究关键词',
-      'about.chips':'<li>多元文化主义</li><li>多元文化政策</li><li>移民政策</li><li>公民权</li><li>地方移民政策</li><li>定居</li><li>移民</li><li>外籍劳工</li><li>移工</li><li>婚姻移民</li><li>脱北住民</li><li>留学生</li><li>难民</li><li>居民权</li><li>社会整合</li>',
       'about.edu':'学历','about.career':'主要经历',
       'edu.phd':'高丽大学研究生院 政治外交学系，政治学博士','edu.ma':'高丽大学研究生院 政治外交学系，政治学硕士','edu.ba':'高丽大学 政经学院 政治外交学系 毕业',
       'car.now':'大邱大学 自由专攻学部 副教授','car.catholic':'大邱加图立大学 多文化研究所 研究教授',
@@ -856,6 +888,7 @@ footer a:hover{color:var(--sage)}
       'contact.eyebrow':'联系方式','contact.h2':'联系方式','contact.sub':'如需研究合作、发表与讨论、讲座邀请或学术咨询，欢迎联系。',
       'contact.affil':'所属','contact.affilV':'大邱大学 自由专攻学部','contact.addr':'地址','contact.addrV':'庆尚北道庆山市珍良邑大邱大路201 人文馆 3207',
       'contact.mail':'电子邮箱','contact.mail2':'个人邮箱','contact.tel':'电话','contact.hours':'办公时间','contact.hoursV':'需预约',
+      'ql.title':'常用链接','ql.sub':'常去的机构与资料库，点击即可前往。','ql.label':'常用链接',
       'foot.copy':'© 2026 李容承 · 大邱大学 自由专攻学部','foot.src':'书目信息：KCI · DBpia 及作者提供目录','foot.top':'回到顶部',
       'abs':'摘要','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'摘要（韩语原文）','link.kci':'KCI 原文','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'出版社信息','pdf.soon':'PDF 准备中','pdf.ko':'韩语原文 PDF','pdf.koTrans':'韩文译本','pdf.en':'英文译本','pdf.enOrig':'英语原文 PDF','pdf.zh':'中文译本',
       'cite.btn':'复制引文','cite.done':'✓ 已复制','cite.fail':'复制失败，请重试。','card.dl':'下载次数',
@@ -865,6 +898,13 @@ footer a:hover{color:var(--sage)}
       'lang.pill.title':'语言'
     }
   };
+
+  /* data/quicklinks.json — build.py가 넣는 하단 바로가기 기관명(ko/en/zh) */
+  var QL_I18N = __QUICKLINKS_I18N__;
+  Object.keys(QL_I18N).forEach(function(lang){
+    if(!I18N[lang]) return;
+    Object.keys(QL_I18N[lang]).forEach(function(k){ I18N[lang][k] = QL_I18N[lang][k]; });
+  });
 
   var TEACH = [
     { ko:{t:'한국사회의 다문화현상 이해', d:'다문화 현상을 철학적·이론적으로 살펴보고, 이주노동자·미등록 이주민·결혼이주민·동포·유학생·돌봄노동자의 삶과 권리를 다룹니다. 사례연구와 인터뷰, 지역 이민정책과 공존의 제도화를 함께 읽습니다.', k:'전공 · 다문화/이주'},
@@ -1290,7 +1330,7 @@ footer a:hover{color:var(--sage)}
     document.title = (lang==='ko' ? '이용승 | 대구대학교 자유전공학부 교수 · 정치학 박사'
       : lang==='en' ? 'Yongseung Lee | Professor, Daegu University · Ph.D. in Political Science'
       : '李容承 | 大邱大学 自由专攻学部 · 政治学博士');
-    renderChips(); renderStats(); renderYearSeg(); renderPubs(); renderBooks(); renderTeach(); renderStatCounts();
+    renderChips(); renderStats(); renderYearSeg(); renderPubs(); renderBooks(); renderTeach(); renderStatCounts(); qlLayout();
     try{ localStorage.setItem('ys-lang', lang); }catch(e){}
   }
 
@@ -1341,6 +1381,50 @@ footer a:hover{color:var(--sage)}
     window.addEventListener('scroll', spy, {passive:true});
     window.addEventListener('resize', spy);
     spy();
+  }
+
+  /* 하단 바로가기: 한 줄에 다 들어가면 정지 정렬, 넘치면 자동 가로 흐름(marquee) */
+  var qlViewport = document.getElementById('qlViewport');
+  var qlTrack = document.getElementById('qlTrack');
+  function qlLayout(){
+    if(!qlViewport || !qlTrack) return;
+    var set = qlTrack.querySelector('.ql-set');
+    if(!set) return;
+    var clones = qlTrack.querySelectorAll('.ql-set[data-clone]');
+    for(var i = 0; i < clones.length; i++){ qlTrack.removeChild(clones[i]); }
+    qlViewport.classList.remove('is-flowing');
+    qlTrack.style.removeProperty('--ql-shift');
+    qlTrack.style.removeProperty('--ql-dur');
+    qlTrack.style.justifyContent = 'flex-start';
+    /* 항목이 컬테이너 가로 폭 안에 다 들어가면 움직이지 않는다 */
+    if(qlTrack.scrollWidth <= qlViewport.clientWidth + 1){
+      qlTrack.style.justifyContent = 'center';
+      return;
+    }
+    /* 넘치면 이음매 없는 반복을 위해 한 벌 더 붙이고 흐르게 한다 */
+    var clone = set.cloneNode(true);
+    clone.setAttribute('data-clone', '');
+    clone.setAttribute('aria-hidden', 'true');
+    var links = clone.querySelectorAll('a');
+    for(var j = 0; j < links.length; j++){ links[j].setAttribute('tabindex', '-1'); }
+    qlTrack.appendChild(clone);
+    var gap = parseFloat(getComputedStyle(qlTrack).columnGap || '0') || 0;
+    var shift = clone.offsetLeft - set.offsetLeft;
+    if(!(shift > 0)) shift = set.offsetWidth + gap;
+    var speed = 44; /* 초당 이동 픽셀 — 너무 빠르지 않게 */
+    qlTrack.style.setProperty('--ql-shift', shift.toFixed(1) + 'px');
+    qlTrack.style.setProperty('--ql-dur', Math.max(20, shift / speed).toFixed(1) + 's');
+    qlViewport.classList.add('is-flowing');
+  }
+  qlLayout();
+  var qlResizeTimer = null;
+  window.addEventListener('resize', function(){
+    clearTimeout(qlResizeTimer);
+    qlResizeTimer = setTimeout(qlLayout, 150);
+  });
+  window.addEventListener('load', qlLayout);
+  if(document.fonts && document.fonts.ready && document.fonts.ready.then){
+    document.fonts.ready.then(function(){ qlLayout(); }).catch(function(){});
   }
 
   var saved = 'ko';
