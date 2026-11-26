@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "updated": "2026-11-26",
+  "items": [
+    {
+      "id": "2026-11-16-yonhap-nhrck-non-tenure",
+      "date": "2026-11-16",
+      "lang": "ko",
+      "source": {
+        "ko": "연합뉴스",
+        "en": "Yonhap News",
+        "zh": "韩联社"
+      },
+      "title": {
+        "ko": "[연합뉴스] 비정년 교수, 교수회 활동·총장 선출서 배제…인권위 \"차별\"",
+        "en": "[Yonhap News] Exclusion of Non-Tenure-Track Faculty from Faculty Senate and Presidential Election Constitutes \"Discrimination,\" NHRCK Rules",
+        "zh": "[韩联社] 韩国国家人权委员会认定将非终身轨教授排除出教授会活动及校长选举属于“歧视”"
+      },
+      "url": "https://www.yna.co.kr/view/AKR20261116084500004"
+    }
+  ]
+}

@@ -4,9 +4,24 @@
 
     1) index.template.html + data/publications.json  →  index.html
     2) 논문·이슈브리프·저서마다 개별 페이지           →  p/{id}.html  (+ 공용 스타일 p/detail.css)
-    3) 메인 + 앱 3개 + 개별 페이지 전부                →  sitemap.xml
+    3) curation.template.html + data/curations.json   →  curation.html (추천 글 · 큐레이션)
+    4) 메인 + 앱 3개 + 추천 글 + 개별 페이지 전부      →  sitemap.xml
 
 정적 사이트입니다. (Supabase 연동은 2026-11-21 취소되어 코드에서 제거됨)
+
+추천 글 항목(data/curations.json의 items 배열) 한 항목의 형식:
+    {
+      "id": "slug",                       # 카드 앵커(선택)
+      "date": "2026-11-26",               # 게시·선별 날짜(정렬 기준, 최신이 위)
+      "title": {"ko": "…", "en": "…", "zh": "…"},   # 문자열 한 개만 줘도 됨
+      "source": "출처 매체·블로그",
+      "author": "저자(선택)",
+      "url": "https://…",                 # 원문 바로가기
+      "quote": {"ko": "…"},              # Glasp 하이라이트 인용(선택)
+      "note":  {"ko": "…"},              # 교수님 한 줄 평
+      "lang": "ko",                       # 원문 언어 배지(선택)
+      "tags": ["다문화주의"]              # 주제 칩(선택)
+    }
 """
 import datetime
 import html as htmllib
@@ -403,6 +418,7 @@ DETAIL_TPL = """<!DOCTYPE html>
       <a href="../index.html">홈</a>
       <a href="../index.html#pubs">논문 목록</a>
       <a href="../index.html#apps">연구 App</a>
+      <a href="../curation.html">추천 글</a>
       <a href="../index.html#contact">연락처</a>
     </nav>
   </div>
@@ -656,8 +672,46 @@ def detail_page(p, items):
     return html
 
 
+def curation_ld(items, url):
+    """추천 글 페이지용 JSON-LD — CollectionPage(+ 항목이 있으면 ItemList)."""
+    page = {
+        "@type": "CollectionPage",
+        "@id": url,
+        "url": url,
+        "name": "추천 글 · 큐레이션 — 이용승 교수",
+        "description": "이용승 교수가 직접 고른 추천 글과 Glasp 하이라이트 모음. 출처와 한 줄 평, 원문 링크를 함께 실었다.",
+        "inLanguage": "ko",
+        "isPartOf": {"@id": SITE + "/#website"},
+        "about": {"@id": SITE + "/#person"},
+        "mainEntity": {"@id": SITE + "/#person"},
+        "breadcrumb": {"@id": url + "#breadcrumb"},
+    }
+    if items:
+        parts = []
+        for i, it in enumerate(items, 1):
+            title = it.get("title")
+            if isinstance(title, dict):
+                title = title.get("ko") or title.get("en") or title.get("zh") or ""
+            node = {"@type": "ListItem", "position": i, "name": title or ""}
+            if it.get("url"):
+                node["url"] = it["url"]
+            parts.append(node)
+        page["hasPart"] = {"@type": "ItemList", "numberOfItems": len(items),
+                           "itemListElement": parts}
+    graph = [page, {
+        "@type": "BreadcrumbList",
+        "@id": url + "#breadcrumb",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "이용승 교수 홈페이지", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "추천 글 · 큐레이션", "item": url},
+        ],
+    }]
+    out = {"@context": "https://schema.org", "@graph": graph}
+    return json.dumps(out, ensure_ascii=False, indent=2).replace("</", "<\\/")
+
+
 def sitemap_xml(items):
-    urls = [(SITE + "/", "1.0", "weekly")]
+    urls = [(SITE + "/", "1.0", "weekly"), (SITE + "/curation.html", "0.7", "weekly")]
     for path, pri in APPS:
         urls.append(("%s/%s" % (SITE, path), pri, "monthly"))
     for p in items:
@@ -687,7 +741,18 @@ def main():
     for p in items:
         (pdir / ("%s.html" % p["id"])).write_text(detail_page(p, items), encoding="utf-8")
 
-    # 3) sitemap
+    # 3) 추천 글 · 큐레이션 페이지
+    cur = json.loads((BASE / "data" / "curations.json").read_text(encoding="utf-8"))
+    cur_items = cur.get("items") or []
+    ctpl = (BASE / "curation.template.html").read_text(encoding="utf-8")
+    cjs = json.dumps({"items": cur_items, "updated": cur.get("updated") or TODAY},
+                     ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    cur_html = (ctpl
+                .replace("__CURATIONS__", cjs)
+                .replace("__CURATION_LD__", curation_ld(cur_items, SITE + "/curation.html")))
+    (BASE / "curation.html").write_text(cur_html, encoding="utf-8")
+
+    # 4) sitemap
     (BASE / "sitemap.xml").write_text(sitemap_xml(items), encoding="utf-8")
 
     arts = [p for p in items if p["kind"] == "article"]
@@ -696,7 +761,9 @@ def main():
     print("built index.html (%d bytes) — %d articles, %d books, %d briefs"
           % (len(out.encode()), len(arts), len(books), len(briefs)))
     print("built p/ — %d individual pages + detail.css" % len(items))
-    print("built sitemap.xml — %d urls" % (1 + len(APPS) + len(items)))
+    print("built curation.html (%d bytes) — %d curated items"
+          % (len(cur_html.encode()), len(cur_items)))
+    print("built sitemap.xml — %d urls" % (2 + len(APPS) + len(items)))
 
 
 if __name__ == "__main__":

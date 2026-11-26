@@ -234,6 +234,20 @@ section{padding:64px 0}
 }
 
 
+/* curated reads — 메인에서는 컴팩트한 진입 카드 하나만 */
+section.curation-band{padding:0 0 10px}
+.curation-card{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:26px; align-items:center; background:linear-gradient(115deg,#FDFBF7 0%,#F1F4EE 100%); border:1px solid var(--line); border-radius:var(--radius); padding:24px 28px; box-shadow:var(--shadow); transition:border-color .18s ease, box-shadow .18s ease, transform .18s ease}
+.curation-card:hover,.curation-card:focus-visible{border-color:#D5DFD6; transform:translateY(-1px)}
+.curation-card .k{font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--sage); font-weight:600; display:block; margin-bottom:7px}
+.curation-card h3{font-size:18px; margin:0 0 6px}
+.curation-card p{font-size:13.5px; color:var(--muted); margin:0; line-height:1.72}
+.curation-go{display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:500; color:#fff; background:var(--sage); border-radius:999px; padding:10px 20px; min-height:42px; white-space:nowrap; transition:background .16s ease}
+.curation-card:hover .curation-go{background:#4F6557}
+@media (max-width:700px){
+  .curation-card{grid-template-columns:1fr; gap:15px; padding:20px}
+  .curation-go{justify-self:start}
+}
+
 /* books */
 .book-list{display:grid; gap:14px; list-style:none; margin:0; padding:0}
 .book{display:grid; grid-template-columns:120px 1fr; gap:22px; align-items:start; padding:22px; background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow)}
@@ -376,6 +390,7 @@ footer a:hover{color:var(--sage)}
       <a href="#teaching" data-i18n="nav.teaching">강의</a>
       <a href="#books" data-i18n="nav.books">저서</a>
       <a href="#apps" data-i18n="nav.apps">연구 App</a>
+      <a href="curation.html" data-i18n="nav.curation">추천 글</a>
       <a href="#contact" data-i18n="nav.contact">연락처</a>
     </nav>
     <div class="lang" role="group" aria-label="언어 선택 / Language / 语言">
@@ -626,6 +641,20 @@ footer a:hover{color:var(--sage)}
     </div>
   </section>
 
+  <!-- CURATED READS -->
+  <section id="curation" class="curation-band" aria-labelledby="curation-h">
+    <div class="wrap">
+      <a class="curation-card" href="curation.html">
+        <div>
+          <span class="k" data-i18n="curation.k">추천 글 · 큐레이션</span>
+          <h3 id="curation-h" data-i18n="curation.t">읽어 둘 만한 글과 하이라이트</h3>
+          <p data-i18n="curation.d">Glasp 하이라이트와 함께 읽을 만한 글을 골라 한 줄 평과 원문 링크로 모아 둡니다.</p>
+        </div>
+        <span class="curation-go" data-i18n="curation.btn">추천 글 둘러보기 →</span>
+      </a>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section id="contact">
     <div class="wrap">
@@ -681,7 +710,8 @@ footer a:hover{color:var(--sage)}
   /* ---------- i18n ---------- */
   var I18N = {
     ko: {
-      'nav.label':'섹션 바로가기','nav.about':'소개','nav.pubs':'논문','nav.teaching':'강의','nav.books':'저서','nav.apps':'연구 App','nav.contact':'연락처',
+      'nav.label':'섹션 바로가기','nav.about':'소개','nav.pubs':'논문','nav.teaching':'강의','nav.books':'저서','nav.apps':'연구 App','nav.curation':'추천 글','nav.contact':'연락처',
+      'curation.k':'추천 글 · 큐레이션','curation.t':'읽어 둘 만한 글과 하이라이트','curation.d':'Glasp 하이라이트와 함께 읽을 만한 글을 골라 한 줄 평과 원문 링크로 모아 둡니다.','curation.btn':'추천 글 둘러보기 →',
       'apps.eyebrow':'연구 App','apps.h2':'연구 App','apps.sub':'수업과 연구에 쓴 웹 도구입니다. 《빅컨셉》 진로·직업 탐색, 《권력·의무·자유》·《정의란 무엇인가》 딜레마 수업, 미디어·알고리즘 분석, 한국어 학습 도구를 이곳에서 바로 열 수 있습니다.',
       'badge.course':'수업용','badge.research':'연구·분석','badge.korean':'한국어 학습',
       'apps.k':'《빅컨셉》 · 진로·직업 탐색','apps.t':'빅컨셉 진로·직업 나침반','apps.d':'《빅컨셉》 수업 흐름 그대로, 내 안의 빅컨셉 10개와 짧은 글쓰기, AI 시대 6문항을 거쳐 나만의 결과지와 가까운 중범위 직업 영역 3곳(36개 중), 오토포이에시스 선언까지 정리해 주는 진로·직업 탐색 나침반입니다.','apps.m':'내 안의 빅컨셉 10개 · 짧은 글쓰기 · 6문항 · 직업 영역 36개 · 약 10분','apps.btn':'나침반 열기 →','apps.alt':'독립 주소 big-concept.surge.sh',
@@ -726,7 +756,8 @@ footer a:hover{color:var(--sage)}
       'lang.pill.title':'언어'
     },
     en: {
-      'nav.label':'Section shortcuts','nav.about':'About','nav.pubs':'Publications','nav.teaching':'Teaching','nav.books':'Books','nav.apps':'Research Apps','nav.contact':'Contact',
+      'nav.label':'Section shortcuts','nav.about':'About','nav.pubs':'Publications','nav.teaching':'Teaching','nav.books':'Books','nav.apps':'Research Apps','nav.curation':'Curated Reads','nav.contact':'Contact',
+      'curation.k':'Curated Reads','curation.t':'Pieces worth keeping, and the highlights','curation.d':'A small shelf of articles chosen alongside Glasp highlights, each with a one-line note and a link to the original.','curation.btn':'Browse curated reads →',
       'apps.eyebrow':'Research Apps','apps.h2':'Research Apps','apps.sub':'Web tools for class and research: the Big Concept career compass, dilemma classrooms for Power, Obligation and Freedom and What Is Justice, media and algorithm analysis, and Korean-learning aids open from here.',
       'badge.course':'Course App','badge.research':'Research & Analysis','badge.korean':'Korean Learning',
       'apps.k':'Big Concepts · Career explorer','apps.t':'Big Concept Career Compass','apps.d':'Following the Big Concept course itself: ten big concepts inside you, a short piece of writing and six AI-era prompts lead to your own result sheet, three of 36 mid-range career areas that fit you, and an autopoiesis statement. A career compass for the classroom.','apps.m':'10 keywords · short writing · 6 prompts · 36 career areas · about 10 minutes','apps.btn':'Open the compass →','apps.alt':'Standalone address big-concept.surge.sh',
@@ -771,7 +802,8 @@ footer a:hover{color:var(--sage)}
       'lang.pill.title':'Language'
     },
     zh: {
-      'nav.label':'章节快捷链接','nav.about':'简介','nav.pubs':'论文','nav.teaching':'课程','nav.books':'著作','nav.apps':'研究应用','nav.contact':'联系方式',
+      'nav.label':'章节快捷链接','nav.about':'简介','nav.pubs':'论文','nav.teaching':'课程','nav.books':'著作','nav.apps':'研究应用','nav.curation':'推荐阅读','nav.contact':'联系方式',
+      'curation.k':'推荐阅读','curation.t':'值得留下的文章与划线摘录','curation.d':'汇集亲自选读的文章与 Glasp 划线摘录，每篇附一句话推荐与原文链接。','curation.btn':'浏览推荐阅读 →',
       'apps.eyebrow':'研究应用','apps.h2':'研究应用','apps.sub':'课堂与研究用的网页工具：《大概念》职业罗盘、《权力·义务·自由》与《何谓正义》困境课堂、媒体与算法分析、韩语学习工具，均可在此直接打开。',
       'badge.course':'课程应用','badge.research':'研究与分析','badge.korean':'韩语学习',
       'apps.k':'《大概念》· 职业探索','apps.t':'大概念职业罗盘','apps.d':'沿用《大概念》课堂的流程：写下内心的大概念十条与短文，经过 AI 时代六道题，生成属于自己的结果单，并从 36 个中观职业领域中给出与你相近的三个，附自我生产宣言。是一个职业探索罗盘。','apps.m':'我内心的大概念 10 条 · 短文写作 · 6 道题 · 36 个职业领域 · 约 10 分钟','apps.btn':'打开罗盘 →','apps.alt':'独立地址 big-concept.surge.sh',
@@ -1280,7 +1312,7 @@ footer a:hover{color:var(--sage)}
   /* quicknav scrollspy */
   var qnav = document.getElementById('quicknav');
   if(qnav){
-    var qlinks = [].slice.call(qnav.querySelectorAll('a'));
+    var qlinks = [].slice.call(qnav.querySelectorAll('a[href^="#"]'));
     var qsecs = qlinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
     var spy = function(){
       var pos = window.scrollY + 150, best = -1;
