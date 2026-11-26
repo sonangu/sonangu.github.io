@@ -1398,9 +1398,8 @@ footer a:hover{color:var(--sage)}
     qlTrack.style.removeProperty('--ql-shift');
     qlTrack.style.removeProperty('--ql-dur');
     qlTrack.style.justifyContent = 'flex-start';
-    /* 항목이 컬테이너 가로 폭 안에 다 들어가면 움직이지 않는다 */
+    /* 항목이 컨테이너 가로 폭 안에 다 들어가면 움직이지 않는다 */
     if(qlTrack.scrollWidth <= qlViewport.clientWidth + 1){
-      qlTrack.style.justifyContent = 'center';
       return;
     }
     /* 넘치면 이음매 없는 반복을 위해 한 벌 더 붙이고 흐르게 한다 */
