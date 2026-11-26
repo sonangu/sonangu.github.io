@@ -243,7 +243,7 @@ footer a:hover{color:var(--sage)}
       'curation.eyebrow':'추천 글 · 큐레이션','curation.h1':'추천 글 · 큐레이션',
       'curation.sub':'교수님이 직접 골라 읽은 글과 Glasp 하이라이트를 모아 둡니다. 각 글에는 출처와 원문으로 가는 링크를, 곁들일 말이 있으면 한 줄 평을 함께 싣습니다.',
       'curation.listLabel':'추천 글 목록',
-      'curation.count':'{n}편의 글',
+      'curation.count':'{n}편의 글','curation.count1':'{n}편의 글',
       'curation.highlight':'Glasp 하이라이트','curation.note':'한 줄 평',
       'curation.open':'원문 보기',
       'curation.empty.pill':'준비 중','curation.empty.h':'아직 등록된 글이 없습니다',
@@ -257,7 +257,7 @@ footer a:hover{color:var(--sage)}
       'curation.eyebrow':'Curated Reads','curation.h1':'Curated Reads',
       'curation.sub':'Articles I have read and chosen to keep, together with Glasp highlights. Each entry carries its source and a link to the original, with a one-line note where there is more to say.',
       'curation.listLabel':'List of curated reads',
-      'curation.count':'{n} pieces',
+      'curation.count':'{n} pieces','curation.count1':'{n} piece',
       'curation.highlight':'Glasp highlight','curation.note':'Why I picked it',
       'curation.open':'Read the original',
       'curation.empty.pill':'In preparation','curation.empty.h':'No pieces listed yet',
@@ -271,7 +271,7 @@ footer a:hover{color:var(--sage)}
       'curation.eyebrow':'推荐阅读','curation.h1':'推荐阅读',
       'curation.sub':'汇集亲自选读的文章与 Glasp 划线摘录。每篇附出处与原文链接，有话要说时再添一句话推荐。',
       'curation.listLabel':'推荐阅读列表',
-      'curation.count':'共 {n} 篇',
+      'curation.count':'共 {n} 篇','curation.count1':'共 {n} 篇',
       'curation.highlight':'Glasp 划线摘录','curation.note':'一句话推荐',
       'curation.open':'阅读原文',
       'curation.empty.pill':'准备中','curation.empty.h':'暂无收录文章',
@@ -383,7 +383,7 @@ footer a:hover{color:var(--sage)}
     list.hidden = false;
     empty.hidden = true;
     empty.innerHTML = '';
-    count.textContent = t('curation.count').replace('{n}', ordered.length);
+    count.textContent = t(ordered.length === 1 ? 'curation.count1' : 'curation.count').replace('{n}', ordered.length);
     list.innerHTML = ordered.map(cardHTML).join('');
   }
 
