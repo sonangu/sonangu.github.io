@@ -9,6 +9,10 @@
 
 정적 사이트입니다. (Supabase 연동은 2026-11-21 취소되어 코드에서 제거됨)
 
+발표자료(슬라이드) 연결 — publications.json 항목에 선택 필드로 붙인다. 없으면 버튼이 나오지 않는다.
+    "slidesPdf": "papers/slides/<slug>-ko.pdf"   # 사이트에 올린 발표자료 PDF (메인 행·개별 페이지에 [PPT] 발표자료 버튼)
+    "slidesUrl": "https://…"                      # 외부 링크(Drive 공유·NotebookLM 등) — slidesPdf가 없을 때만 쓰임
+
 추천 글 항목(data/curations.json의 items 배열) 한 항목의 형식:
     {
       "id": "slug",                       # 카드 앵커(선택)
