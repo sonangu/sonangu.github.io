@@ -57,7 +57,8 @@
    ],
    "pdf": "papers/relational-citizenship-ko.pdf",
    "pdfEn": "papers/relational-citizenship-en.pdf",
-   "pdfZh": "papers/relational-citizenship-zh.pdf"
+   "pdfZh": "papers/relational-citizenship-zh.pdf",
+   "slidesPdf": "papers/slides/relational-citizenship-slides-ko.pdf"
   },
   {
    "id": "2025-fake-news",
