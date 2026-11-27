@@ -896,8 +896,15 @@
    "vol": "1(2)",
    "pages": "199–233",
    "langs": [
-    "ko"
-   ]
+    "ko",
+    "en",
+    "zh"
+   ],
+   "pdf": "papers/integration-comparison-ko.pdf",
+   "pdfEn": "papers/integration-comparison-en.pdf",
+   "pdfZh": "papers/integration-comparison-zh.pdf",
+   "pdfEnTrans": true,
+   "pdfZhTrans": true
   },
   {
    "id": "2011-us-multicultural-education",
