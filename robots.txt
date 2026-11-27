@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://yslee.pe.kr/sitemap.xml
+
+#DaumWebMasterTool:277f1210efd955b00f1a4fdf05df53c3177451e2e4f47506c17f7b779e1ae865:bBY3xhlFAprgQb834vQqzA==
