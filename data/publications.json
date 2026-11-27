@@ -574,7 +574,7 @@
     "zh"
    ],
    "pdf": "papers/multiculturalism-anti-korea-ko.pdf",
-   "pdfKoLabel": "한국어 원고 PDF",
+   "pdfKoTrans": true,
    "pdfEn": "papers/multiculturalism-anti-korea-en.pdf",
    "pdfEnOriginal": true,
    "pdfZh": "papers/multiculturalism-anti-korea-zh.pdf"

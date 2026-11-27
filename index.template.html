@@ -796,7 +796,7 @@ footer a:hover{color:var(--sage)}
       'contact.mail':'이메일','contact.mail2':'개인 메일','contact.tel':'전화','contact.hours':'오피스 아워','contact.hoursV':'사전 협의',
       'ql.title':'바로가기','ql.sub':'자주 찾는 기관과 자료실로 바로 이동합니다.','ql.label':'바로가기 링크',
       'foot.copy':'© 2026 이용승 · 대구대학교 자유전공학부','foot.src':'서지 정보: KCI · DBpia, 교수님 제공 목록','foot.top':'맨 위로',
-      'abs':'초록','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'초록','link.kci':'KCI 원문','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'출판사 정보','pdf.soon':'PDF 준비 중','pdf.ko':'원문 PDF','pdf.koTrans':'한국어판 PDF','pdf.koMs':'한국어 원고 PDF','pdf.en':'영문판 PDF','pdf.enOrig':'영문 원문 PDF','pdf.zh':'중문판 PDF',
+      'abs':'초록','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'초록','link.kci':'KCI 원문','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'출판사 정보','pdf.soon':'PDF 준비 중','pdf.ko':'원문 PDF','pdf.koTrans':'한국어판 PDF','pdf.en':'영문판 PDF','pdf.enOrig':'영문 원문 PDF','pdf.zh':'중문판 PDF',
       'cite.btn':'인용 복사','cite.done':'✓ 복사됨','cite.fail':'복사하지 못했습니다. 다시 눌러 주세요.','card.dl':'다운로드 수',
       'link.detail':'상세 · 공유','link.detail.title':'이 글의 개별 페이지(초록·서지·인용) 열기',
       'lbl.authors':'저자','toast.en':'영문 번역본은 준비 중입니다. 업로드되면 이 자리에서 열립니다.','toast.zh':'중국어 번역본은 준비 중입니다. 업로드되면 이 자리에서 열립니다.','toast.ko':'한국어 원문으로 표시합니다.',
@@ -843,7 +843,7 @@ footer a:hover{color:var(--sage)}
       'contact.mail':'Email','contact.mail2':'Personal email','contact.tel':'Phone','contact.hours':'Office hours','contact.hoursV':'By appointment',
       'ql.title':'Quick Links','ql.sub':'Direct links to the institutions and archives I keep coming back to.','ql.label':'Quick links',
       'foot.copy':'© 2026 Yongseung Lee · Daegu University','foot.src':'Bibliographic data: KCI · DBpia, and the author’s own list','foot.top':'Back to top',
-      'abs':'Abstract','absEn':'Abstract','absEnNote':'Abstract','absKoNote':'Abstract (Korean original)','link.kci':'KCI record','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'Publisher','pdf.soon':'PDF forthcoming','pdf.ko':'Original PDF','pdf.koTrans':'Korean edition','pdf.koMs':'Korean manuscript PDF','pdf.en':'English edition','pdf.enOrig':'Original English PDF','pdf.zh':'Chinese edition',
+      'abs':'Abstract','absEn':'Abstract','absEnNote':'Abstract','absKoNote':'Abstract (Korean original)','link.kci':'KCI record','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'Publisher','pdf.soon':'PDF forthcoming','pdf.ko':'Original PDF','pdf.koTrans':'Korean edition','pdf.en':'English edition','pdf.enOrig':'Original English PDF','pdf.zh':'Chinese edition',
       'cite.btn':'Copy Citation','cite.done':'✓ Copied','cite.fail':'Could not copy. Please try again.','card.dl':'Downloads',
       'link.detail':'Permalink · Share','link.detail.title':'Open this article’s own page (abstract, record, citation)',
       'lbl.authors':'Authors','toast.en':'The English translation is in preparation and will open here once uploaded.','toast.zh':'The Chinese translation is in preparation and will open here once uploaded.','toast.ko':'Showing the Korean original.',
@@ -890,7 +890,7 @@ footer a:hover{color:var(--sage)}
       'contact.mail':'电子邮箱','contact.mail2':'个人邮箱','contact.tel':'电话','contact.hours':'办公时间','contact.hoursV':'需预约',
       'ql.title':'常用链接','ql.sub':'常去的机构与资料库，点击即可前往。','ql.label':'常用链接',
       'foot.copy':'© 2026 李容承 · 大邱大学 自由专攻学部','foot.src':'书目信息：KCI · DBpia 及作者提供目录','foot.top':'回到顶部',
-      'abs':'摘要','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'摘要（韩语原文）','link.kci':'KCI 原文','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'出版社信息','pdf.soon':'PDF 准备中','pdf.ko':'韩语原文 PDF','pdf.koTrans':'韩文译本','pdf.koMs':'韩语原稿 PDF','pdf.en':'英文译本','pdf.enOrig':'英语原文 PDF','pdf.zh':'中文译本',
+      'abs':'摘要','absEn':'Abstract','absEnNote':'Abstract (EN)','absKoNote':'摘要（韩语原文）','link.kci':'KCI 原文','link.doi':'DOI','link.dbpia':'DBpia','link.pub':'出版社信息','pdf.soon':'PDF 准备中','pdf.ko':'韩语原文 PDF','pdf.koTrans':'韩文译本','pdf.en':'英文译本','pdf.enOrig':'英语原文 PDF','pdf.zh':'中文译本',
       'cite.btn':'复制引文','cite.done':'✓ 已复制','cite.fail':'复制失败，请重试。','card.dl':'下载次数',
       'link.detail':'详情 · 分享','link.detail.title':'打开本文的独立页面（摘要、书目、引用）',
       'lbl.authors':'作者','toast.en':'英文译本正在准备中，上传后将在此处打开。','toast.zh':'中文译本正在准备中，上传后将在此处打开。','toast.ko':'显示韩语原文。',
@@ -1059,7 +1059,7 @@ footer a:hover{color:var(--sage)}
         + (dlkey ? '<span class="pcount" data-dlcount="'+esc(dlkey)+'" title="'+esc(t('card.dl'))+'">–</span>' : '')
         + '</a>';
     }
-    if(p.pdf) L.push(pdfBtn(p.pdf, p.pdfKoLabel ? 'pdf.koMs' : (p.pdfKoTrans ? 'pdf.koTrans' : 'pdf.ko'), 'KO', pdfKey(p, 'ko')));
+    if(p.pdf) L.push(pdfBtn(p.pdf, p.pdfKoTrans ? 'pdf.koTrans' : 'pdf.ko', 'KO', pdfKey(p, 'ko')));
     if(p.pdfEn) L.push(pdfBtn(p.pdfEn, p.pdfEnOriginal ? 'pdf.enOrig' : 'pdf.en', 'EN', pdfKey(p, 'en')));
     if(p.pdfZh) L.push(pdfBtn(p.pdfZh, 'pdf.zh', 'ZH', pdfKey(p, 'zh')));
     if(p.kind === 'article' && !p.pdf && !p.pdfEn && !p.pdfZh) L.push('<span class="soon">'+esc(t('pdf.soon'))+'</span>');

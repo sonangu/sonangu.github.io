@@ -166,7 +166,7 @@ def pdf_entries(p):
     """(언어코드, href, 버튼 라벨, 집계 키) 목록."""
     out = []
     if p.get("pdf"):
-        label = p.get("pdfKoLabel") or ("한국어판 PDF" if p.get("pdfKoTrans") else "원문 PDF")
+        label = "한국어판 PDF" if p.get("pdfKoTrans") else "원문 PDF"
         out.append(("ko", p["pdf"], label, "paper:%s:ko" % p["id"]))
     if p.get("pdfEn"):
         label = "영문 원문 PDF" if p.get("pdfEnOriginal") else "영문판 PDF"
