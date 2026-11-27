@@ -48,6 +48,8 @@ a.pdflink, button.citebtn, a.ghostbtn{
 }
 a.pdflink .tagpdf{font-size:10px; letter-spacing:.06em; font-weight:700; color:var(--sage); background:var(--sage-soft); border-radius:4px; padding:1px 5px}
 a.pdflink:hover, button.citebtn:hover, a.ghostbtn:hover{border-color:var(--sage-2); background:var(--sage-soft); color:var(--sage)}
+a.pdflink.slides .tagpdf{color:var(--terra); background:var(--terra-soft)}
+a.pdflink.slides:hover{border-color:var(--terra); background:var(--terra-soft); color:var(--terra)}
 button.citebtn svg, a.ghostbtn svg{width:12px; height:12px; stroke:currentColor; fill:none; stroke-width:1.7}
 button.citebtn.done{background:var(--sage); border-color:var(--sage); color:#fff}
 .pcount{font-size:10.5px; font-weight:600; color:var(--muted); border-left:1px solid var(--line); padding-left:6px; margin-left:1px; min-width:12px; text-align:center}

@@ -322,6 +322,8 @@ a.pdflink, button.citebtn, a.ghostbtn{
 }
 a.pdflink .tagpdf{font-size:10px; letter-spacing:.06em; font-weight:700; color:var(--sage); background:var(--sage-soft); border-radius:4px; padding:1px 5px}
 a.pdflink:hover, button.citebtn:hover, a.ghostbtn:hover{border-color:var(--sage-2); background:var(--sage-soft); color:var(--sage)}
+a.pdflink.slides .tagpdf{color:var(--terra); background:var(--terra-soft)}
+a.pdflink.slides:hover{border-color:var(--terra); background:var(--terra-soft); color:var(--terra)}
 button.citebtn svg, a.ghostbtn svg{width:12px; height:12px; stroke:currentColor; fill:none; stroke-width:1.7}
 button.citebtn.done{background:var(--sage); border-color:var(--sage); color:#fff}
 .pcount{font-size:10.5px; font-weight:600; color:var(--muted); border-left:1px solid var(--line); padding-left:6px; margin-left:1px; min-width:12px; text-align:center}
@@ -587,6 +589,14 @@ def detail_page(p, items):
         )
     if not pdf_entries(p):
         acts.append('<span class="soon">PDF 준비 중</span>')
+    # 발표자료(슬라이드) — site PDF 우선, 없으면 외부 링크
+    slide_href = p.get("slidesPdf") or p.get("slidesUrl")
+    if slide_href:
+        if not re.match(r"^https?://", slide_href):
+            slide_href = "../" + slide_href.lstrip("/")
+        acts.append('<a class="pdflink slides" href="%s" target="_blank" rel="noopener" '
+                    'title="발표자료 PDF 열기"><span class="tagpdf">PPT</span>발표자료 '
+                    '<span aria-hidden="true">↗</span></a>' % esc(slide_href))
     if p.get("kci"):
         acts.append('<a class="ghostbtn" href="https://www.kci.go.kr/kciportal/ci/sereArticleSearch/'
                     'ciSereArtiView.kci?sereArticleSearchBean.artiId=%s" target="_blank" rel="noopener">'
