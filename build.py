@@ -604,8 +604,10 @@ def detail_page(p, items):
     elif p.get("absEn"):
         abstract = '<div class="abs"><span class="lbl">Abstract</span><p>%s</p></div>' % esc(p["absEn"])
     else:
-        abstract = ('<p class="note">이 글의 초록은 국문 원문과 KCI 서지에서 확인할 수 있습니다. '
-                    '필요하시면 <a href="mailto:leeyongseung@daegu.ac.kr">이메일</a>로 문의해 주세요.</p>')
+        head = ("이 글의 초록은 국문 원문과 KCI 서지에서 확인할 수 있습니다. " if p.get("kci")
+                else "이 글의 초록은 원문 PDF에서 확인할 수 있습니다. ")
+        abstract = ('<p class="note">' + head
+                    + '필요하시면 <a href="mailto:leeyongseung@daegu.ac.kr">이메일</a>로 문의해 주세요.</p>')
     if p.get("abs") and p.get("absEn"):
         abstract += '<div class="abs" style="margin-top:12px"><span class="lbl">Abstract (EN)</span><p>%s</p></div>' % esc(p["absEn"])
 
