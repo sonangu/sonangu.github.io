@@ -3,4 +3,4 @@ Allow: /
 
 Sitemap: https://yslee.pe.kr/sitemap.xml
 
-#DaumWebMasterTool:277f1210efd955b00f1a4fdf05df53c3177451e2e4f47506c17f7b779e1ae865:bBY3xhlFAprgQb834vQqzA==
+#DaumWebMasterTool:bf8cf207a0643ac900e5e5b9520595e24a12c9603e28a10b26ec8054d350a071:bBY3xhlFAprgQb834vQqzA==
