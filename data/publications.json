@@ -115,7 +115,8 @@
    ],
    "pdf": "papers/us-local-immigration-ko.pdf",
    "pdfEn": "papers/us-local-immigration-en.pdf",
-   "pdfZh": "papers/us-local-immigration-zh.pdf"
+   "pdfZh": "papers/us-local-immigration-zh.pdf",
+   "slidesPdf": "papers/slides/us-local-immigration-slides-ko.pdf"
   },
   {
    "id": "2024-study-abroad-capital",
