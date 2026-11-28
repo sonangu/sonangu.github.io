@@ -86,7 +86,8 @@
    ],
    "pdf": "papers/fake-news-ko.pdf",
    "pdfEn": "papers/fake-news-en.pdf",
-   "pdfZh": "papers/fake-news-zh.pdf"
+   "pdfZh": "papers/fake-news-zh.pdf",
+   "slidesPdf": "papers/slides/fake-news-slides-ko.pdf"
   },
   {
    "id": "2024-us-local-immigration",
